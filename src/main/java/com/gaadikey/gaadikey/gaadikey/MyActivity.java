@@ -1,19 +1,30 @@
 package com.gaadikey.gaadikey.gaadikey;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.provider.ContactsContract;
-import android.support.v7.app.ActionBarActivity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.*;
+
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+
+import java.io.IOException;
 
 
 public class MyActivity extends Activity {
 
+    GoogleCloudMessaging gcm;
+    String regid;
+    String PROJECT_NUMBER = "945667950391";
     private Spinner spinner;
     private static final String[] paths = {"item 1", "item 2", "item 3"};
 
@@ -76,6 +87,51 @@ public class MyActivity extends Activity {
         String sortOrder = ContactsContract.Contacts.DISPLAY_NAME + " COLLATE LOCALIZED ASC";
         return managedQuery(uri, projection, selection, selectionArgs, sortOrder);
     }
+
+
+    public void CompleteProfile_Click(View Button)
+    {
+        Log.e("Complete_Profile_Button_Clicked ", "Complete Profile Clicked.");
+        getRegId();
+
+        // CompleteProfile
+    }
+
+
+
+    // Generate Registartion ID for this device
+
+    public void getRegId(){
+        new AsyncTask<Void, Void, String>() {
+            @Override
+            protected String doInBackground(Void... params) {
+                String msg = "";
+                try {
+                    if (gcm == null) {
+                        gcm = GoogleCloudMessaging.getInstance(getApplicationContext());
+                    }
+                    regid = gcm.register(PROJECT_NUMBER);
+                    msg = "Device registered, registration ID=" + regid;
+                    Log.i("GCM",  msg);
+                    startActivity(new Intent(MyActivity.this, ListMobileActivity.class));
+
+                } catch (IOException ex) {
+                    msg = "Error :" + ex.getMessage();
+
+                }
+                return msg;
+            }
+
+            @Override
+            protected void onPostExecute(String msg) {
+
+                Log.e("Registration ID", "This device's unique registration ID is "+msg );
+                //etRegId.setText(msg + "\n");
+            }
+        }.execute(null, null, null);
+    }
+
+
 }
 
 

@@ -1,27 +1,29 @@
 package com.gaadikey.gaadikey.gaadikey;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.*;
-import android.widget.*;
-import android.content.*;
-import android.app.*;
-import org.apache.http.impl.client.*;
-import org.apache.http.client.*;
-import org.apache.http.client.methods.*;
-import org.apache.http.NameValuePair.*;
-import org.apache.http.*;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.message.*;
-import org.apache.http.entity.StringEntity;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import java.util.*;
-import java.io.*;
-import org.json.*;
-import android.os.AsyncTask;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 
@@ -35,6 +37,7 @@ public class VerificationActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
+
     }
 
     public void Phone_Email_Submission_Click(View Button)
@@ -45,7 +48,6 @@ public class VerificationActivity extends ActionBarActivity {
 
         final EditText emailField = (EditText) findViewById(R.id.Email);
         email = emailField.getText().toString();
-
 
         /*
         new AlertDialog.Builder(this)
@@ -96,7 +98,6 @@ public class VerificationActivity extends ActionBarActivity {
         new HttpAsyncGetTask().execute("http://gaadikey.in/generated?phonenumber="+phone);
 
     }
-
 
 
     public  String GET(String url){
@@ -237,7 +238,6 @@ public class VerificationActivity extends ActionBarActivity {
         return result;
 
     }
-
 
     private class HttpAsyncPostTask extends AsyncTask<String, Void, String> {
         @Override

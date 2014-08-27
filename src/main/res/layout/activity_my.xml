@@ -35,6 +35,16 @@
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Complete Profile"
+        android:id="@+id/button2"
+        android:layout_below="@+id/carspinner"
+        android:layout_centerHorizontal="true"
+        android:onClick="CompleteProfile_Click"
+        />
+
     <TextView
         android:id ="@+id/ContactsLabel"
         android:layout_width="fill_parent"
