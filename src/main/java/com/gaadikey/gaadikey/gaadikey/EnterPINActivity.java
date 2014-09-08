@@ -1,7 +1,6 @@
 package com.gaadikey.gaadikey.gaadikey;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -79,6 +78,9 @@ public class EnterPINActivity extends ActionBarActivity {
         final EditText pinField = (EditText) findViewById(R.id.PIN);
         PIN = pinField.getText().toString();
         Log.e("PIN" , "The recieved PIN is "+PIN) ;
+        SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+        phonenumber = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
+        Log.e("PIN verification" , "The phone number retrieved is "+phonenumber);
         // The Recieved PIN is ..
         new HttpAsyncGetTask().execute("http://gaadikey.in/generated?phonenumber="+phonenumber);
     }
@@ -164,10 +166,16 @@ public class EnterPINActivity extends ActionBarActivity {
                     Log.e("The token type is",   token_type );
                     // Save the following things in sharedStorage
 
-                    SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+
+                    SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString(getString(R.string.KEY_ACCESS_TOKEN), access_token);
+                    editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_VERIFIED);
                     editor.commit();
+
+                   // SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor2 = sharedPref.edit();
+                    editor2.putString(getString(R.string.KEY_ACCESS_TOKEN), access_token);
+                    editor2.commit();
 
 
                     Log.e("Persistence" , "Successfully inserted the access_token into the sharedPreferenes storage");

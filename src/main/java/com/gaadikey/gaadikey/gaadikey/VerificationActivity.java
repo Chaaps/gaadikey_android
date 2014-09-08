@@ -48,12 +48,14 @@ public class VerificationActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
         Log.e("Loaded", "activity_verification loaded");
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "DEFAULT VALUE (FALLBACK) ");
-        Log.e("Verifying access_token ", "Checking if access_key is "+theString);
-        Log.e("Access_Token recieved is ",  theString);
 
+        SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_NOTDISPATCHED);
+        editor.commit();
     }
+
+
 
     private void addContact(String name, String phone)
     {
@@ -128,6 +130,11 @@ public class VerificationActivity extends ActionBarActivity {
         ph.set_deviceid("randomnumber");
         ph.set_email("test@test.com");
         ph.set_phonenumber(phone);
+        SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(getString(R.string.KEY_phonenumber), phone);
+        editor.commit();
+
         addContact("Gaadi Key", "9008431992");
 
         new HttpAsyncPostTask().execute("http://gaadikey.in/generate");
@@ -164,6 +171,7 @@ public class VerificationActivity extends ActionBarActivity {
                 result = convertInputStreamToString(inputStream);
                 JSONObject jObject = new JSONObject(result);
                 String actualPIN = jObject.getString("PIN");
+
                 if(PIN.equals(actualPIN) )
                 {
                     new AlertDialog.Builder(this)
@@ -303,13 +311,17 @@ public class VerificationActivity extends ActionBarActivity {
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
             Toast.makeText(getBaseContext(), "Data Sent!", Toast.LENGTH_LONG).show();
-
+            SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_DISPATCHED);
+            editor.commit();
 
             // The control should now go to Enter PIN Screen
 
             // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
-             //
+
             startActivity(new Intent(VerificationActivity.this, EnterPINActivity.class));
+
 
 
 
