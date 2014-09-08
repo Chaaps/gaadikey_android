@@ -1,13 +1,37 @@
 package com.gaadikey.gaadikey.gaadikey;
 
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 
 public class EnterPINActivity extends ActionBarActivity {
+
+
+    public String PIN = "";
+    public String phonenumber = "9739888428";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,4 +59,216 @@ public class EnterPINActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void PIN_Submission_Click(View Button)
+    {
+        //     // PIN submission click.. When the PIN submit is clicked.... It has to post the received PIN to server to receive the access token.
+        Log.e("PIN Submission CLICK", "The PIN submission has been clicked...");
+        final EditText pinField = (EditText) findViewById(R.id.PIN);
+        PIN = pinField.getText().toString();
+        Log.e("PIN" , "The recieved PIN is "+PIN) ;
+        // The Recieved PIN is ..
+        new HttpAsyncGetTask().execute("http://gaadikey.in/generated?phonenumber="+phonenumber);
+    }
+    // write  the httpasyncgettask function  out here...
+    // this has to submit the phonenumber to server and should return the access token... along with the expiry date if any  .
+    // here is the function which does http get task asynchronously....
+    // should add "GET method" which just accepts the URL which is appended with PIN.  http://gaadikey.in/generated?phonenumber=9739888428
+
+    private class HttpAsyncGetTask extends AsyncTask<String, Void, String>
+    {
+        @Override
+        protected String doInBackground(String... urls)
+        {
+            Log.e("GET called " , " The url is "+urls[0]);
+            return  GET(urls[0]);
+        }
+        // onPostExecute displays the results of the AsyncTask.
+        @Override
+        protected void onPostExecute(String result)
+        {
+
+            try {
+                JSONObject jObject = new JSONObject(result);
+                String actualPIN = jObject.getString("PIN");
+                Log.e("enteredPIN", PIN);
+                Log.e("actualPIN", actualPIN);
+
+                if (PIN.equals(actualPIN)) {
+                    new AlertDialog.Builder(EnterPINActivity.this)
+                            .setTitle("Verification Status")
+                            .setMessage("Verification Success! Thanks for verifying your PIN. You can now build Gaadi Key profile")
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+
+                     new  GetAccessTokenPostTask().execute("http://gaadikey.in/token");
+
+                    startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
+
+                } else
+                {
+                    new AlertDialog.Builder(EnterPINActivity.this)
+                            .setTitle("Verification Status")
+                              .setMessage("The PIN which you entered is not matching! Please enter a valid PIN.")
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+
+                }
+
+                // startActivity
+            }
+
+            catch (Exception e)
+            {
+                    Log.e("Exception", "The Exception has occured "+e.getMessage());
+                    // The exception has been logged.
+            }
+
+        }
+    }
+
+
+    private class GetAccessTokenPostTask extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... urls)
+        {
+
+            Log.e("Post", "Calling this URL in background "+urls[0]);
+            return generateAccessToken(urls[0]);
+        }
+        // onPostExecute displays the results of the AsyncTask.
+        @Override
+        protected void onPostExecute(String result)
+        {
+
+            Log.e("Success posting", result);
+            Log.e("This should contain the access token ", result);
+            Toast.makeText(getBaseContext(), "Access token received!", Toast.LENGTH_LONG).show();
+            // The data has been sent
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+            //
+
+        }
+    }
+
+ //  This method has been put outside the class so that it fixes the this references appropriately.
+
+    public String generateAccessToken(String url)
+    {
+
+        Log.e("URL" , "the URL is "+url);
+        InputStream inputStream = null;
+        String result = "";
+        String clientid = "GaadiKeyClient";
+        String clientkey = "gaadi";
+        try
+        {
+
+
+            // 1. create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+            // 2. make POST request to the given URL
+            HttpPost httpPost = new HttpPost(url);
+            String formdata = "grant_type=password&username="+"9739888428"+"&password="+PIN;
+            Log.e("Json uploaded", "The Uploaded form data looks like "+formdata);
+            // ** Alternative way to convert Person object to JSON string usin Jackson Lib
+            // ObjectMapper mapper = new ObjectMapper();
+            // json = mapper.writeValueAsString(person);
+            // 5. set json to StringEntity
+            StringEntity se = new StringEntity(formdata);
+            // 6. set httpPost Entity
+            httpPost.setEntity(se);
+            String credentials = clientid + ":" + clientkey;
+            String base64EncodedCredentials = Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);// 7. Set some headers to inform server about the type of the content
+            httpPost.addHeader("Authorization", "Basic " + base64EncodedCredentials);//httpPost.setHeader("Accept", "application/json");
+            httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
+            HttpResponse httpResponse = httpclient.execute(httpPost);
+            // 9. receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+            // 10. convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+                Log.e("crash" , "We are here and somehow crashing!");
+                Log.e("Result in string ", result);
+            }
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+
+            Log.e("Exception block", e.getLocalizedMessage());
+            // TODO Auto-generated catch block
+        }
+
+        return result;
+
+    }
+
+    public  String GET(String url){
+        InputStream inputStream = null;
+        String result = "";
+        try {
+
+            // create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+
+            // make GET request to the given URL
+            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+
+            // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            // convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+                JSONObject jObject = new JSONObject(result);
+                String actualPIN = jObject.getString("PIN");
+                if(PIN.equals(actualPIN) )
+                {
+                    new AlertDialog.Builder(this)
+                            .setTitle("Verification Status")
+                            .setMessage("Verification Success! Thanƒks for verifying your PIN. You can now build Gaadi Key profile")
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+
+
+
+                }
+
+                else
+                {
+                    new AlertDialog.Builder(this)
+                            .setTitle("Verification Status")
+                            .setMessage("The PIN which you entered is not matching! Please enter a valid PIN.")
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
+            }
+
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+
+        return result;
+    }
+    // This converts the received data which is in input stream format to string.
+
+    private static String convertInputStreamToString(InputStream inputStream) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        String line = "";
+        String result = "";
+        while((line = bufferedReader.readLine()) != null)
+            result += line;
+        // reads line by line to generate the string..
+        inputStream.close();
+        return result;
+
+    }
+
 }

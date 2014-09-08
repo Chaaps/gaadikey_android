@@ -34,6 +34,4 @@ public class PhoneObject {
         this.email = email;
     }
 
-
-
 }

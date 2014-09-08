@@ -135,16 +135,7 @@ public class VerificationActivity extends ActionBarActivity {
     }
 
 
-    public void PIN_Submission_Click(View Button)
-    {
 
-        Log.e("PIN Submission CLICK", "The PIN submission has been clicked...");
-        final EditText pinField = (EditText) findViewById(R.id.PIN);
-        PIN = pinField.getText().toString();
-
-        new HttpAsyncGetTask().execute("http://gaadikey.in/generated?phonenumber="+phone);
-
-    }
 
 
     public  String GET(String url){
