@@ -2,8 +2,10 @@ package com.gaadikey.gaadikey.gaadikey;
 
 import android.app.AlertDialog;
 import android.content.ContentProviderOperation;
+import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
@@ -46,6 +48,11 @@ public class VerificationActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
         Log.e("Loaded", "activity_verification loaded");
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "DEFAULT VALUE (FALLBACK) ");
+        Log.e("Verifying access_token ", "Checking if access_key is "+theString);
+        Log.e("Access_Token recieved is ",  theString);
+
     }
 
     private void addContact(String name, String phone)

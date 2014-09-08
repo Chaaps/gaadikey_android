@@ -28,5 +28,15 @@
     <string name="title_activity_access_token">AccessTokenActivity</string>
     <string name="title_activity_blank">Blank</string>
     <string name="title_activity_enter_pin">EnterPINActivity</string>
-
+    <string name="KEY_ACCESS_TOKEN">default_access_token</string>
+    <string name="KEY_MOBILE_NUMBER"> </string>
+    <string name="KEY_LEVELS" ></string>
+    <string name="KEY_signupstatus"></string>
+    <string name="KEY_phonenumber"> </string>
+    <string name="KEY_deviceid"> </string>
+    <string name="KEY_Gaadino"> </string>
+    <string name="KEY_DLExpiry" > </string>
+    <string name="KEY_EmissionTest"></string>
+    <string name="KEY_Insurance"> </string>
+    <string name="KEY_Notes"></string>
 </resources>

@@ -1,7 +1,9 @@
 package com.gaadikey.gaadikey.gaadikey;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -32,6 +34,8 @@ public class EnterPINActivity extends ActionBarActivity {
 
     public String PIN = "";
     public String phonenumber = "9739888428";
+    //SharedPreferences sharedPref = getSharedPreferences("New", Context.MODE_PRIVATE);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,14 @@ public class EnterPINActivity extends ActionBarActivity {
         setContentView(R.layout.activity_enter_pin);
         Log.e("PIN", "Entered PIN activity. You will have to Enter the PIN. ");
         Log.e("Flow", "The control has reached here!");
+        // commented out!
+
+        //Log.e("Access token (persistant) " , "The access token which is saved is " +defaultString);
+
+
+
+
+       // int defaultValue = getResources().getInteger(R.string.saved_high_score_default);
     }
 
     @Override
@@ -142,6 +154,36 @@ public class EnterPINActivity extends ActionBarActivity {
         {
 
             Log.e("Success posting", result);
+
+            try
+             {
+                    JSONObject jObject = new JSONObject(result);
+                    String access_token = jObject.getString("access_token");
+                    String token_type   = jObject.getString("token_type");
+                    Log.e("The access token is",  access_token );
+                    Log.e("The token type is",   token_type );
+                    // Save the following things in sharedStorage
+
+                    SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString(getString(R.string.KEY_ACCESS_TOKEN), access_token);
+                    editor.commit();
+
+
+                    Log.e("Persistence" , "Successfully inserted the access_token into the sharedPreferenes storage");
+
+
+                    String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
+                    Log.e("Retrived value",  "The retrieved stuff is "+theString ) ;
+
+
+             }
+            catch(Exception e)
+             {
+                 Log.e("Parse", "Exception in parsing");
+
+             }
+
             Log.e("This should contain the access token ", result);
             Toast.makeText(getBaseContext(), "Access token received!", Toast.LENGTH_LONG).show();
             // The data has been sent

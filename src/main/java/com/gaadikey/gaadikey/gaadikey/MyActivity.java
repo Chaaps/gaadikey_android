@@ -97,8 +97,7 @@ public class MyActivity extends Activity {
         // CompleteProfile
     }
 
-
-
+    // verify  API has to be called.
     // Generate Registartion ID for this device
 
     public void getRegId(){

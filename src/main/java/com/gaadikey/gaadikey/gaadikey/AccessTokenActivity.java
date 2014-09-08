@@ -15,6 +15,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -113,6 +114,15 @@ public class AccessTokenActivity extends ActionBarActivity {
         String result = "";
         try
         {
+
+            JSONObject jObject = new JSONObject(result);
+            // JSON object created result...
+
+            //parse for the object
+            // hi and hello
+            // string hello = jObject.getString("hello");
+            // string hi = jObject.getString("hi");
+
             // 1. create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
             // 2. make POST request to the given URL
