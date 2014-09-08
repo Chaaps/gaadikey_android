@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Gaadi Key</string>
     <string name="hello_world">Hello Universe!</string>
     <string name="action_settings">Settings</string>
@@ -26,4 +27,6 @@
     <string name="title_activity_contacts">ContactsActivity</string>
     <string name="title_activity_access_token">AccessTokenActivity</string>
     <string name="title_activity_blank">Blank</string>
+    <string name="title_activity_enter_pin">EnterPINActivity</string>
+
 </resources>

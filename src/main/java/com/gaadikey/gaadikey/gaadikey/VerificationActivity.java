@@ -45,9 +45,8 @@ public class VerificationActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
+        Log.e("Loaded", "activity_verification loaded");
     }
-
-
 
     private void addContact(String name, String phone)
     {
@@ -94,15 +93,11 @@ public class VerificationActivity extends ActionBarActivity {
 
 }
 
-    public void Phone_Email_Submission_Click(View Button)
+    public void Phone_Submission_Click(View Button)
     {
 
         final EditText phoneField = (EditText) findViewById(R.id.phoneNumber);
         phone = phoneField.getText().toString();
-
-        final EditText emailField = (EditText) findViewById(R.id.Email);
-        email = emailField.getText().toString();
-
         /*
         new AlertDialog.Builder(this)
                 .setTitle("Entries")
@@ -124,7 +119,7 @@ public class VerificationActivity extends ActionBarActivity {
 
         ph = new PhoneObject();
         ph.set_deviceid("randomnumber");
-        ph.set_email(email);
+        ph.set_email("test@test.com");
         ph.set_phonenumber(phone);
         addContact("Gaadi Key", "9008431992");
 
@@ -142,6 +137,8 @@ public class VerificationActivity extends ActionBarActivity {
 
     public void PIN_Submission_Click(View Button)
     {
+
+        Log.e("PIN Submission CLICK", "The PIN submission has been clicked...");
         final EditText pinField = (EditText) findViewById(R.id.PIN);
         PIN = pinField.getText().toString();
 
@@ -291,7 +288,8 @@ public class VerificationActivity extends ActionBarActivity {
 
     private class HttpAsyncPostTask extends AsyncTask<String, Void, String> {
         @Override
-        protected String doInBackground(String... urls) {
+        protected String doInBackground(String... urls)
+        {
 
             return postPhoneEmailData(urls[0],ph);
         }
@@ -306,8 +304,17 @@ public class VerificationActivity extends ActionBarActivity {
                     .setMessage("We have recieved your Phone number. Please check your Email Inbox for the PIN and verify it below.")
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
-
             Toast.makeText(getBaseContext(), "Data Sent!", Toast.LENGTH_LONG).show();
+
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+             //
+            startActivity(new Intent(VerificationActivity.this, EnterPINActivity.class));
+
+
+
 
         }
     }

@@ -32,14 +32,14 @@
         <activity
             android:name=".AccessTokenActivity"
             android:label="Access Key stuff" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".VerificationActivity"
             android:label="@string/title_activity_verification" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
             <!--
             intent-filter>
@@ -72,6 +72,10 @@
         <activity
             android:name=".Blank"
             android:label="@string/title_activity_blank" >
+        </activity>
+        <activity
+            android:name=".EnterPINActivity"
+            android:label="@string/title_activity_enter_pin" >
         </activity>
     </application>
 

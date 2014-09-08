@@ -31,8 +31,6 @@ import java.io.InputStreamReader;
 
 public class AccessTokenActivity extends ActionBarActivity {
 
-
-
     // Everything is blank in the UI.. The actual code to get the access token is here!
 
     @Override
