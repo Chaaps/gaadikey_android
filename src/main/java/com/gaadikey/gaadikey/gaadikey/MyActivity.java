@@ -1,7 +1,9 @@
 package com.gaadikey.gaadikey.gaadikey;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -89,8 +91,7 @@ public class MyActivity extends Activity {
         String[] car_items = new String[]{"Honda City", "Hyundai Santro", "Maruti 800", "Maruti 1000"};
         ArrayAdapter<String> car_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, car_items);
         cardropdown.setAdapter(car_adapter);
-
-
+      //  choiceDialog();
     }
 
     private Cursor getContacts() {
@@ -194,6 +195,8 @@ public class MyActivity extends Activity {
                     String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
                     Log.e("Retrived value",  "The retrieved stuff is "+theString ) ;
 
+                    startActivity(new Intent(MyActivity.this, SettingUpActivity.class));
+
                 }
                 catch(Exception e)
                 {
@@ -288,6 +291,54 @@ public class MyActivity extends Activity {
             result += line;
         inputStream.close();
         return result;
+    }
+
+    public void choiceDialog()
+    {
+
+        final AlertDialog levelDialog;
+
+
+        // Strings to Show In Dialog with Radio Buttons
+        final CharSequence[] items = {"Bike","Car","Others"};
+
+        // Creating and Building the Dialog
+         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select The Difficulty Level");
+
+        // The dialog has to be shown along with options
+        // option1 option2 option3 option3 option4
+        levelDialog = builder.create();
+        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
+        public void onClick(DialogInterface dialog, int item) {
+
+        switch(item)
+        {
+            case 0:
+                // Your code when first option seletced
+                Log.e("Option 1 Selected", "Bike");
+                break;
+            case 1:
+                // Your code when 2nd  option seletced
+                Log.e("Option 2 Selected", "Car");
+                break;
+            case 2:
+                // Your code when 3rd option seletced
+                Log.e("Option 3 Selected", "Other");
+                break;
+
+        }
+
+         levelDialog.dismiss();
+
+        }
+        });
+
+
+        levelDialog.show();
+        Log.e("Level Dialog" , "Level dialog shown");
+
+
     }
 
 

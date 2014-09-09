@@ -318,7 +318,6 @@ public class EnterPINActivity extends ActionBarActivity {
         // reads line by line to generate the string..
         inputStream.close();
         return result;
-
     }
 
 }

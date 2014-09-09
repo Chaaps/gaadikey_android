@@ -36,6 +36,7 @@
         <activity
             android:name=".VerificationActivity"
             android:label="@string/title_activity_verification" >
+
             <!--
             intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -79,8 +80,13 @@
             android:theme="@style/FullscreenTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingUpActivity"
+            android:label="@string/title_activity_setting_up" >
         </activity>
     </application>
 

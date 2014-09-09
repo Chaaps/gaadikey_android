@@ -44,6 +44,7 @@ public class VerificationActivity extends ActionBarActivity {
     String email;
     String PIN;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
@@ -54,7 +55,6 @@ public class VerificationActivity extends ActionBarActivity {
         editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_NOTDISPATCHED);
         editor.commit();
     }
-
 
 
     private void addContact(String name, String phone)
@@ -138,19 +138,12 @@ public class VerificationActivity extends ActionBarActivity {
         addContact("Gaadi Key", "9008431992");
 
         new HttpAsyncPostTask().execute("http://gaadikey.in/generate");
-
        // Log.e("Response", "Expected Response");
        // Log.e("Actual Response", response);
-
         //System.out.print("The response is  "+response);
-
         //When Phone and Email address is clicked
         // Read the text from The textboxes phone and email
     }
-
-
-
-
 
     public  String GET(String url){
         InputStream inputStream = null;
@@ -321,10 +314,6 @@ public class VerificationActivity extends ActionBarActivity {
             // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
 
             startActivity(new Intent(VerificationActivity.this, EnterPINActivity.class));
-
-
-
-
 
         }
     }

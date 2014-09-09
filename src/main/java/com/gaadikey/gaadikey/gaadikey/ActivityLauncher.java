@@ -51,6 +51,8 @@ public class ActivityLauncher extends Activity {
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String launch_code = sharedPref.getString(getString(R.string.KEY_signupstatus),  Constants.PIN_NOTDISPATCHED);
 
+        sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
+
 
         if(launch_code.equals(""+Constants.PIN_NOTDISPATCHED))
         {
