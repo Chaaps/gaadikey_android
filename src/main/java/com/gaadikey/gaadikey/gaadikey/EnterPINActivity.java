@@ -32,7 +32,7 @@ public class EnterPINActivity extends ActionBarActivity {
 
 
     public String PIN = "";
-    public String phonenumber = "9739888428";
+    public String phonenumber = "";
     //SharedPreferences sharedPref = getSharedPreferences("New", Context.MODE_PRIVATE);
 
 
@@ -42,13 +42,9 @@ public class EnterPINActivity extends ActionBarActivity {
         setContentView(R.layout.activity_enter_pin);
         Log.e("PIN", "Entered PIN activity. You will have to Enter the PIN. ");
         Log.e("Flow", "The control has reached here!");
+
         // commented out!
-
         //Log.e("Access token (persistant) " , "The access token which is saved is " +defaultString);
-
-
-
-
        // int defaultValue = getResources().getInteger(R.string.saved_high_score_default);
     }
 
@@ -115,9 +111,20 @@ public class EnterPINActivity extends ActionBarActivity {
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
 
+                    SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+                    SharedPreferences.Editor editor2 = sharedPref.edit();
+                    //The verified phone number is updated.
+                    editor2.putString(getString(R.string.KEY_phonenumber), phonenumber);
+                    editor2.commit();
+
                      new  GetAccessTokenPostTask().execute("http://gaadikey.in/token");
 
                     startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
+
+                    // Store the phonenumber if PIN is verified!
+
+                    // KEY_phonenumber
+
 
                 } else
                 {
@@ -222,7 +229,11 @@ public class EnterPINActivity extends ActionBarActivity {
             HttpClient httpclient = new DefaultHttpClient();
             // 2. make POST request to the given URL
             HttpPost httpPost = new HttpPost(url);
-            String formdata = "grant_type=password&username="+"9739888428"+"&password="+PIN;
+
+            SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+            phonenumber = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
+
+            String formdata = "grant_type=password&username="+phonenumber+"&password="+PIN;
             Log.e("Json uploaded", "The Uploaded form data looks like "+formdata);
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
             // ObjectMapper mapper = new ObjectMapper();

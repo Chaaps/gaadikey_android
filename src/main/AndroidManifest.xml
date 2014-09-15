@@ -88,6 +88,18 @@
             android:name=".SettingUpActivity"
             android:label="@string/title_activity_setting_up" >
         </activity>
+        <activity
+            android:name=".IntroStep1"
+            android:label="@string/title_activity_intro_step1" >
+        </activity>
+        <activity
+            android:name=".IntroStep2"
+            android:label="@string/title_activity_intro_step2" >
+        </activity>
+        <activity
+            android:name=".IntroStep3"
+            android:label="@string/title_activity_intro_step3" >
+        </activity>
     </application>
 
 </manifest>

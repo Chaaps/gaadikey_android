@@ -47,11 +47,11 @@ public class ActivityLauncher extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String launch_code = sharedPref.getString(getString(R.string.KEY_signupstatus),  Constants.PIN_NOTDISPATCHED);
+        // commenting out this in order to persist all values!
 
-        sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
+     //   sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
 
 
         if(launch_code.equals(""+Constants.PIN_NOTDISPATCHED))
@@ -77,7 +77,7 @@ public class ActivityLauncher extends Activity {
         else if( launch_code.equals(""+Constants.PROFILE_REGISTERED))
         {
             Log.e("Launch code", "Profile is registered ");
-            startActivity(new Intent(ActivityLauncher.this,  ContactsActivity.class));
+            startActivity(new Intent(ActivityLauncher.this,  ListMobileActivity.class));
             Log.e("Launch code" , "profile registered");
             // go to Contacts Activity where all your contacts are present.
         }

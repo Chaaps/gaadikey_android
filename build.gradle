@@ -8,8 +8,8 @@ android {
         applicationId "com.gaadikey.gaadikey.gaadikey"
         minSdkVersion 9
         targetSdkVersion 20
-        versionCode 4
-        versionName "1.3"
+        versionCode 5
+        versionName "1.4"
     }
     buildTypes {
         release {
@@ -25,6 +25,12 @@ dependencies {
     // You must install or update the Google Repository through the SDK manager to use this dependency.
     // You must install or update the Google Repository through the SDK manager to use this dependency.
     // You must install or update the Google Repository through the SDK manager to use this dependency.
+    // You must install or update the Google Repository through the SDK manager to use this dependency.
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    // You must install or update the Google Repository through the SDK manager to use this dependency.
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
+    // You must install or update the Google Repository through the SDK manager to use this dependency.
+    // You must install or update the Support Repository through the SDK manager to use this dependency.
     // You must install or update the Google Repository through the SDK manager to use this dependency.
     // You must install or update the Support Repository through the SDK manager to use this dependency.
     // You must install or update the Google Repository through the SDK manager to use this dependency.

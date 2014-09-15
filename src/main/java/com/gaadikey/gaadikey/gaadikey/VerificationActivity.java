@@ -49,7 +49,6 @@ public class VerificationActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
         Log.e("Loaded", "activity_verification loaded");
-
         SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_NOTDISPATCHED);
@@ -296,7 +295,6 @@ public class VerificationActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result)
         {
-
             Log.e("Success posting", result);
             new AlertDialog.Builder(VerificationActivity.this)
                     .setTitle("Registration (2/2)")
@@ -308,17 +306,11 @@ public class VerificationActivity extends ActionBarActivity {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_DISPATCHED);
             editor.commit();
-
             // The control should now go to Enter PIN Screen
-
             // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
-
             startActivity(new Intent(VerificationActivity.this, EnterPINActivity.class));
-
         }
     }
-
-
     private class HttpAsyncGetTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
@@ -342,6 +334,12 @@ public class VerificationActivity extends ActionBarActivity {
                             .setMessage("Verification Success! Thanks for verifying your PIN. You can now build Gaadi Key profile")
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
+
+
+                    // Storing this state .. that it is verified!
+                    SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPref.edit();
+                    editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_VERIFIED);
 
                     startActivity(new Intent(VerificationActivity.this, MyActivity.class));
 
