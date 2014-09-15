@@ -36,8 +36,6 @@ import java.io.InputStreamReader;
 
 
 public class MyActivity extends Activity {
-
-
     ProfileObject profile_object;
     GoogleCloudMessaging gcm;
     String regid;
@@ -337,12 +335,7 @@ public class MyActivity extends Activity {
         levelDialog.show();
         Log.e("Level Dialog" , "Level dialog shown");
 
-
     }
-
-
-
-
 
 }
 
