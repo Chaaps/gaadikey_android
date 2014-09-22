@@ -57,6 +57,7 @@ public class ListMobileActivity extends ListActivity {
        // setListAdapter(new MobileArrayAdapter(this, MOBILE_OS));
         Log.e("List Adapter", "List Adapter is set");
 
+
         // Call The  /dummyContacts API from here..  so that you can dispaly the JSON in a phonebook format
 
 	}
@@ -237,6 +238,7 @@ public class ListMobileActivity extends ListActivity {
 
         } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
+
         }
 
         return result;
@@ -299,6 +301,8 @@ public class ListMobileActivity extends ListActivity {
                 }
 
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile, COUNTRIES));
+
+                Log.e("The number of items in the list is ", ""+contactsList.size());
 
                 setListAdapter(new MobileArrayAdapter(ListMobileActivity.this, contactsList));
 

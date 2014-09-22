@@ -100,6 +100,30 @@
             android:name=".IntroStep3"
             android:label="@string/title_activity_intro_step3" >
         </activity>
+        <activity
+            android:name=".StickyHome"
+            android:label="@string/title_activity_sticky_home" >
+        </activity>
+        <activity
+            android:name=".PublicLaneActivity"
+            android:label="@string/title_activity_public_lane" >
+        </activity>
+        <activity
+            android:name=".FriendsLaneActivity"
+            android:label="@string/title_activity_friends_lane" >
+        </activity>
+        <activity
+            android:name=".SafetyLaneActivity"
+            android:label="@string/title_activity_safety_lane" >
+        </activity>
+        <activity
+            android:name=".ShoppinglaneActivity"
+            android:label="@string/title_activity_shoppinglane" >
+        </activity>
+        <activity
+            android:name=".TripsLaneActivity"
+            android:label="@string/title_activity_trips_lane" >
+        </activity>
     </application>
 
 </manifest>

@@ -24,16 +24,21 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
+
+//bikes.php
 
 public class MyActivity extends Activity {
     ProfileObject profile_object;
@@ -49,6 +54,7 @@ public class MyActivity extends Activity {
         getMenuInflater().inflate(R.menu.my, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -80,16 +86,23 @@ public class MyActivity extends Activity {
             //  contactView.append("\n");
         }
 
-        Spinner dropdown = (Spinner) findViewById(R.id.spinner1);
-        String[] items = new String[]{"Honda Unicorn", "TVS Apache", "Bajaj Pulsar", "Yamaha RX", "Royal Enfield"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
-        dropdown.setAdapter(adapter);
+         // Commenting out hard coded spinner values, as we are getting the data from web server . . . .
+
+//        Spinner dropdown = (Spinner) findViewById(R.id.spinner1);
+//        String[] items = new String[]{"Honda Unicorn", "TVS Apache", "Bajaj Pulsar", "Yamaha RX", "Royal Enfield"};
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
+//        dropdown.setAdapter(adapter);
 
         Spinner cardropdown = (Spinner) findViewById(R.id.carspinner);
         String[] car_items = new String[]{"Honda City", "Hyundai Santro", "Maruti 800", "Maruti 1000"};
         ArrayAdapter<String> car_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, car_items);
         cardropdown.setAdapter(car_adapter);
       //  choiceDialog();
+
+        //call the get request method with the URL http://gaadikey.com/bikes.php to get the JSON response and to parse for the bike_name and bike_brand and bike_imgurl
+        new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
+
+       //  The url is sent to the method where the response is parsed for the TheBikeObject data
     }
 
     private Cursor getContacts() {
@@ -106,10 +119,8 @@ public class MyActivity extends Activity {
     public void CompleteProfile_Click(View Button)
     {
         //startActivity(new Intent(MyActivity.this, SettingUpActivity.class));
-
         Log.e("Complete_Profile_Button_Clicked ", "Complete Profile Clicked.");
         getRegId();
-
         profile_object = new ProfileObject();
         profile_object.set_phonenumber("phonenumber");
         profile_object.set_deviceid("yodeviceid");
@@ -119,9 +130,8 @@ public class MyActivity extends Activity {
         profile_object.set_vehicle_name("Honda something");
         profile_object.set_vehicletype(("2 wheeler"));
         new RegisterUserTask().execute("http://gaadikey.in/register");
-
+        Log.e("The complete profile has been clicked" , "The completed profile has been clicked ");
         // Testing by commenting out request stuff!
-
         // CompleteProfile
     }
 
@@ -140,7 +150,8 @@ public class MyActivity extends Activity {
                     regid = gcm.register(PROJECT_NUMBER);
                     msg = "Device registered, registration ID=" + regid;
                     Log.i("GCM",  msg);
-                    startActivity(new Intent(MyActivity.this, ListMobileActivity.class));
+                    Log.i("The recieved  id is " , regid);
+                   // startActivity(new Intent(MyActivity.this, ListMobileActivity.class));
 
                 } catch (IOException ex) {
                     msg = "Error :" + ex.getMessage();
@@ -336,6 +347,115 @@ public class MyActivity extends Activity {
         Log.e("Level Dialog" , "Level dialog shown");
 
     }
+
+
+    private class GetBikeDataTask extends AsyncTask<String, Void, String>
+    {
+
+        protected String doInBackground(String... urls)
+        {
+
+
+            Log.e("Pinging this URL ---> ", urls[0]);
+            return GetBikeData(urls[0]);
+
+
+        }
+        protected void onPostExecute(String result)
+        {
+
+            Log.e("And we received", result);
+            Log.e("Response from the registration step ", result);
+            try
+            {
+                    // The populate spinner should be present here!
+                    PopulateBikeSpinner(result);
+            }
+            catch(Exception e)
+            {
+                Log.e("Parse", "Exception in parsing");
+
+            }
+
+            // The data has been sent
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+            //
+        }
+    }
+
+
+    // GetBikeData is called
+
+
+
+    public void PopulateBikeSpinner(String result)
+    {
+        try {
+            JSONArray json = new JSONArray(result);
+            // check if this request was sucessful... if the request was successful
+            // then parse the phonebook and get contacts details
+            // contacts details are rendered one by one.
+            Log.e("The response recieved from the server is " , result );
+            // result
+
+            ArrayList<String> data = new ArrayList<String>();
+            for(int i=0;i<json.length();i++)
+            {
+
+                JSONObject jObject = json.getJSONObject(i);
+                String id =                 jObject.getString("id");
+                String bike_name =          jObject.getString("bike_name");
+                String bike_image    =      jObject.getString("bike_image");
+                String bike_brand   =       jObject.getString("bike_brand");
+                String priority       =     jObject.getString("priority");
+
+                Log.e("Bikes name received is  ", bike_name);
+                data.add(bike_name);
+                // loading these variables
+            }
+            //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile, COUNTRIES));
+            Spinner dropdown = (Spinner) findViewById(R.id.spinner1);
+            String[] items = new String[]{"Honda Unicorn", "TVS Apache", "Bajaj Pulsar", "Yamaha RX", "Royal Enfield"};
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, data); // passing the array list instead of array!
+            dropdown.setAdapter(adapter);
+        }
+
+        catch(Exception e)
+        {
+
+        }
+
+    }
+
+
+    public  String GetBikeData(String url){
+        InputStream inputStream = null;
+        String result = "";
+        try {
+            // create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+            // make GET request to the given URL
+            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+            // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            // convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+            }
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+
+        return result;
+    }
+
 
 }
 

@@ -223,8 +223,6 @@ public class EnterPINActivity extends ActionBarActivity {
         String clientkey = "gaadi";
         try
         {
-
-
             // 1. create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
             // 2. make POST request to the given URL

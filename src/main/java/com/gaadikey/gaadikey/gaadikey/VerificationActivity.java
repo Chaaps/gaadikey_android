@@ -2,13 +2,17 @@ package com.gaadikey.gaadikey.gaadikey;
 
 import android.app.AlertDialog;
 import android.content.ContentProviderOperation;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.RemoteException;
+import android.provider.BaseColumns;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
@@ -92,7 +96,11 @@ public class VerificationActivity extends ActionBarActivity {
         try{
             // Executing all the insert operations as a single database transaction
             getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
-            Toast.makeText(getBaseContext(), "Contact is successfully added", Toast.LENGTH_SHORT).show();
+            Log.e("Contact save status", "success");
+            SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString(getString(R.string.KEY_GaadiKey_Number_Saved), "yes");
+            editor.commit();
         }catch (RemoteException e) {
             e.printStackTrace();
         }catch (OperationApplicationException e) {
@@ -134,8 +142,18 @@ public class VerificationActivity extends ActionBarActivity {
         editor.putString(getString(R.string.KEY_phonenumber), phone);
         editor.commit();
 
-        addContact("Gaadi Key", "9008431992");
+//        String contactsavestatus = sharedPref.getString(getString(R.string.KEY_GaadiKey_Number_Saved),  "no");
+//        if(contactsavestatus.equals("no"))
 
+
+        String nameSaved = getContactDisplayNameByNumber("9008431992");
+        Log.e("The Given number is saved in the name of ", nameSaved);
+
+        if(getContactDisplayNameByNumber("9008431992").equals("?"))
+        addContact("Gaadi Key", "9008431992"); // Execute this statement only once.. That is save the gaadi phone number only when it is not saved in the phone book
+
+
+      //  new HttpAsyncPostTask().execute("http s://maps.googleapis.com/maps/api/place/nearbysearch/json");
         new HttpAsyncPostTask().execute("http://gaadikey.in/generate");
        // Log.e("Response", "Expected Response");
        // Log.e("Actual Response", response);
@@ -144,7 +162,41 @@ public class VerificationActivity extends ActionBarActivity {
         // Read the text from The textboxes phone and email
     }
 
-    public  String GET(String url){
+
+
+    public String getContactDisplayNameByNumber(String number) {
+        Uri uri = Uri.withAppendedPath(ContactsContract.PhoneLookup.CONTENT_FILTER_URI, Uri.encode(number));
+        String name = "?";
+
+        ContentResolver contentResolver = getContentResolver();
+        Cursor contactLookup = contentResolver.query(uri, new String[] {BaseColumns._ID,
+                ContactsContract.PhoneLookup.DISPLAY_NAME }, null, null, null);
+
+        try {
+            if (contactLookup != null && contactLookup.getCount() > 0) {
+                contactLookup.moveToNext();
+                name = contactLookup.getString(contactLookup.getColumnIndex(ContactsContract.Data.DISPLAY_NAME));
+                //String contactId = contactLookup.getString(contactLookup.getColumnIndex(BaseColumns._ID));
+            }
+        } finally {
+            if (contactLookup != null) {
+                contactLookup.close();
+            }
+        }
+
+        return name;
+    }
+
+    public void getThisThingDone()
+    {
+        Log.e("Do this ",  "Do this .. Do this now");
+    }
+
+
+
+    // passing https has a problem in android.. solve it
+    public  String GET(String url)
+    {
         InputStream inputStream = null;
         String result = "";
         try {
@@ -358,7 +410,6 @@ public class VerificationActivity extends ActionBarActivity {
 
 
             }
-
 
 
         }

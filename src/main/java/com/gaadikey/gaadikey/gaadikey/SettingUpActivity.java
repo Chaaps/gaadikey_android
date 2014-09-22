@@ -150,7 +150,11 @@ public class SettingUpActivity extends ActionBarActivity {
 
             Log.e("Success posting", result);
             Log.e("Flow change should happen" , "The flow should now shift to different view that is ListMobileActivity");
-            startActivity(new Intent(SettingUpActivity.this, ListMobileActivity.class));
+          //  startActivity(new Intent(SettingUpActivity.this, ListMobileActivity.class));
+
+            // This intent should take to StickyHome
+
+            startActivity(new Intent(SettingUpActivity.this, StickyHome.class));
             // The flow should now shift to different view that is ListMobileActivity //
 
 

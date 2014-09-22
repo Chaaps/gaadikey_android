@@ -77,9 +77,30 @@ public class ActivityLauncher extends Activity {
         else if( launch_code.equals(""+Constants.PROFILE_REGISTERED))
         {
             Log.e("Launch code", "Profile is registered ");
-            startActivity(new Intent(ActivityLauncher.this,  ListMobileActivity.class));
-            Log.e("Launch code" , "profile registered");
+       //     startActivity(new Intent(ActivityLauncher.this,  ListMobileActivity.class));
+       //     Log.e("Launch code" , "profile registered");
+            // Once the profile is registered take it to StickyHome
+            startActivity(new Intent(ActivityLauncher.this, StickyHome.class));
             // go to Contacts Activity where all your contacts are present.
+        }
+        else if(launch_code.equals(""+Constants.INTRO_STEP1_COMPLETED))
+        {
+            Log.e("Launch code", "Intro Step 1 completed");
+            startActivity(new Intent(ActivityLauncher.this, IntroStep2.class));
+
+        }
+
+        else if(launch_code.equals(""+Constants.INTRO_STEP2_COMPLETED))
+        {
+            Log.e("Launch code", "Intro Step 1 completed");
+            startActivity(new Intent(ActivityLauncher.this, IntroStep3.class));
+
+        }
+
+        else if(launch_code.equals(""+Constants.INTRO_STEP3_COMPLETED))
+        {
+            Log.e("Launch code", "Intro Step 1 completed");
+            // This should go to actual app
         }
     }
 
