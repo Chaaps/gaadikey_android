@@ -46,7 +46,6 @@ public class ListMobileActivity extends ListActivity {
 		//setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile,
 		//		R.id.label, MOBILE_OS));
 
-
         Log.e("Call", "PhoneBook retrieval calling");
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String phone = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
