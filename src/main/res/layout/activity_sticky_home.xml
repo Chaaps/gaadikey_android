@@ -9,25 +9,71 @@
     tools:context="com.gaadikey.gaadikey.gaadikey.StickyHome">
 
     <TextView
-        android:text="@string/hello_world"
+        android:text="My Gaadi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
         android:id="@+id/greet"/>
 
+    <ImageView
+        android:layout_below="@+id/greet"
+        android:id="@+id/thumbnail"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="20px"
+        android:layout_marginTop="5px"
+        android:src="@drawable/publiclane_icon" >
+    </ImageView>
+
+    <TextView
+            android:id="@+id/GaadiName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/thumbnail"
+            android:layout_toRightOf="@+id/thumbnail"
+            android:textSize="@dimen/GaadiName"
+            android:textStyle="bold"
+            android:text="Honda Unicorn 150 CC"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+    />
+
+        <!-- Genre -->
+    <TextView
+            android:id="@+id/GaadiMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/thumbnail"
+            android:layout_marginTop="5dp"
+            android:text="Set your Gaadi message. "
+            android:paddingTop="5dp"
+    />
+
+
     <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/statusMsg"
+        android:layout_below="@+id/GaadiMsg"
+        />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/greet"
-        android:id="@+id/editText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="Post"
+        android:onClick="Status_Submission_Click"
+        android:id="@+id/PostButton"
+        android:layout_toRightOf="@+id/statusMsg"
+        android:layout_centerHorizontal="true"
+        />
 
     <ListView android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/editText"/>
-
+        android:layout_below="@+id/statusMsg"/>
 
 
 </RelativeLayout>

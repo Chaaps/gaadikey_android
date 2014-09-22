@@ -102,7 +102,9 @@
         </activity>
         <activity
             android:name=".StickyHome"
-            android:label="@string/title_activity_sticky_home" >
+            android:label="@string/title_activity_sticky_home"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity
             android:name=".PublicLaneActivity"
