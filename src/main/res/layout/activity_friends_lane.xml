@@ -9,6 +9,7 @@
     tools:context="com.gaadikey.gaadikey.gaadikey.FriendsLaneActivity">
 
     <TextView
+        android:id="@+id/tipBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="15dp"
@@ -16,7 +17,6 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:text="None of your friends have joined the Gaadi Key Network Yet."
-        android:id="@+id/tipBox"
         android:layout_centerHorizontal="true" />
 
     <ListView
@@ -25,5 +25,66 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tipBox"
         ></ListView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suggestions"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@android:id/list"
+        android:id="@+id/SuggestionsLabel"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Does your friend Deepak own this vehicle"
+        android:layout_below="@+id/SuggestionsLabel"
+        android:id="@+id/Question"
+        />
+
+    <ImageView
+        android:layout_below="@+id/Question"
+        android:id="@+id/thumbnail"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="20px"
+        android:layout_marginTop="5px"
+        android:src="@drawable/publiclane_icon" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/GaadiName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:textSize="@dimen/GaadiName"
+        android:textStyle="bold"
+        android:text="Honda Unicorn 150 CC"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yes"
+        android:id="@+id/yesbutton"
+        android:layout_below="@+id/thumbnail"
+        />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:id="@+id/nobutton"
+        android:layout_below="@+id/thumbnail"
+        android:layout_toRightOf="@+id/yesbutton"/>
+
 
 </RelativeLayout>

@@ -66,7 +66,7 @@ public class SettingUpActivity extends ActionBarActivity {
         setContentView(R.layout.activity_setting_up);
         Log.e("Flow", "The flow is in SettingUpActivity");
         Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
-
+        int count = 0;
         try
         {
 
@@ -75,6 +75,14 @@ public class SettingUpActivity extends ActionBarActivity {
         {
             String name=phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+
+
+            Log.e("Phone number before is ", phoneNumber);
+            phoneNumber.replace(" ", "");
+            phoneNumber = phoneNumber.replaceAll("\\s+","");
+            phoneNumber = phoneNumber.trim();
+            Log.e("Phone number after is ", phoneNumber );
+
             Log.e("Name is ", name);
             Log.e("Number is ", phoneNumber);
             cob.setName(name);
@@ -95,8 +103,10 @@ public class SettingUpActivity extends ActionBarActivity {
                 jsonObject.put("phonenumber3", "not_assigned");
                 jsonObject.put("phonenumber4", "not_assigned");
                 jsonArray.put(jsonObject);
+                count++;
         }
 
+        Log.e("Number of contacts in this phone", ""+count);
         JSONObject newjsonObject = new JSONObject();
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String ph = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");

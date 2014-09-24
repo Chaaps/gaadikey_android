@@ -29,7 +29,7 @@ public class ProfileObject {
         return vehiclename;
     }
 
-    public void set_vehicle_name(String name)
+    public void set_vehicle_name(String vehiclename)
     {
         this.vehiclename = vehiclename ;
     }

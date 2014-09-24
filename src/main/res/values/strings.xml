@@ -40,13 +40,16 @@
     <string name="KEY_Insurance"></string>
     <string name="KEY_Notes"></string>
     <string name="KEY_GaadiKey_Number_Saved"></string>
+    <string name="KEY_GaadiImage">KEY_GaadiImage</string>
+    <string name="KEY_GaadiName">KEY_GaadiName</string>
+    <string name="KEY_GaadiMsg">KEY_GaadiMsg</string>
     <string name="title_activity_activity_launcher">Gaadi Key</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_setting_up">SettingUpActivity</string>
     <string name="title_activity_intro_step1">Step 1 of 3</string>
     <string name="title_activity_intro_step2">Step 2 of 3</string>
-    <string name="title_activity_intro_step3">Step 3 of 3</string>
+    <string name="title_activity_intro_step3">Step 3 osf 3</string>
     <string name="title_activity_sticky_home">My Lane</string>
     <string name="title_activity_public_lane">Public Lane</string>
     <string name="title_activity_friends_lane">Friends Lane</string>

@@ -3,6 +3,18 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <ImageView
+        android:id="@+id/bikeicon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="5px"
+        android:layout_marginTop="5px"
+        android:layout_marginBottom="5px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/bike_icon" >
+    </ImageView>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,6 +30,19 @@
         android:layout_height="wrap_content"
         android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown" />
+
+    <ImageView
+        android:layout_below="@+id/spinner1"
+        android:id="@+id/caricon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="5px"
+        android:layout_marginTop="5px"
+        android:layout_marginBottom="5px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/car_icon" >
+    </ImageView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -35,27 +60,37 @@
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"/>
 
+
+    <TextView
+        android:id="@+id/GaadiMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="5dp"
+        android:text="Set your Gaadi message. "
+        android:textStyle="bold"
+        android:paddingTop="5dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:id="@+id/gaadiMsg"
+        android:layout_below="@+id/GaadiMsg"
+        android:layout_gravity="center_horizontal"
+        />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Complete Profile"
         android:id="@+id/button2"
-        android:layout_below="@+id/carspinner"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:onClick="CompleteProfile_Click"
-        />
-
-    <TextView
-        android:id ="@+id/ContactsLabel"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Here are your contacts"
-        />
-
-    <TextView
-        android:id ="@+id/con"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         />
 
 </LinearLayout>
