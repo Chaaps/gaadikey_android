@@ -12,4 +12,5 @@ public class Constants {
     public static String INTRO_STEP1_COMPLETED = "5";
     public static String INTRO_STEP2_COMPLETED = "6";
     public static String INTRO_STEP3_COMPLETED = "7";
+    public static String RESET_OCCURRED =        "8";
 }

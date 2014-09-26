@@ -8,8 +8,8 @@ android {
         applicationId "com.gaadikey.gaadikey.gaadikey"
         minSdkVersion 9
         targetSdkVersion 20
-        versionCode 5
-        versionName "1.4"
+        versionCode 6
+        versionName "1.5"
     }
     buildTypes {
         release {
@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // Build this binary and upload it to server
+
+    // This build.gradle file and this is used to compile the app with the versionnumber like 1.5 and version code like 6 and to upload the same in store!
+    // When compiled this should generate the APK with  or without signed
+
 }
 
 dependencies {

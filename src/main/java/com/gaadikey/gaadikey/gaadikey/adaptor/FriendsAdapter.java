@@ -21,6 +21,8 @@ import java.util.HashMap;
 /**
  * Created by madratgames on 22/09/14.
  */
+
+
 public class FriendsAdapter extends ArrayAdapter <HashMap<String, String>>  {
 
     private final Context context;
@@ -29,7 +31,7 @@ public class FriendsAdapter extends ArrayAdapter <HashMap<String, String>>  {
     public FriendsAdapter(Context context, ArrayList<HashMap<String, String>> val) {
         super(context, R.layout.list_friends, val);
         this.context = context;
-        this.contactlist =  val;
+        this.contactlist = val;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {

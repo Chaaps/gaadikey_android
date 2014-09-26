@@ -166,6 +166,7 @@ public class PublicLaneActivity extends ListActivity {
         return result;
     }
 
+
     public void returnNothing()
     {
         /* This function returns nothing!
