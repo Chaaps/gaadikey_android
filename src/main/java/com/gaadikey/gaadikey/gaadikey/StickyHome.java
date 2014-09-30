@@ -1,7 +1,9 @@
 package com.gaadikey.gaadikey.gaadikey;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -97,6 +99,32 @@ public class StickyHome extends ListActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.sticky_home, menu);
         return true;
+    }
+
+    public void ImageTap(View view)
+    {
+        Log.e("Image Tap", "Image Tap has occured ");
+        // Show a popup asking the user if they wish to change the gaadi pic
+
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        Log.e("Dialog selection", "Yes");
+                        break;
+
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        Log.e("Dialog selection", "No");
+                        break;
+                }
+            }
+        };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Would you like to change the default gaadi picture?").setPositiveButton("Yes", dialogClickListener)
+                .setNegativeButton("No", dialogClickListener).show();
+
     }
 
     @Override

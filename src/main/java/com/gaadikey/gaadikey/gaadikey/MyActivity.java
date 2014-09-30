@@ -182,7 +182,7 @@ public class MyActivity extends Activity {
             profile_object.set_vehicle_name(GAADI_NAME);
             profile_object.set_vehicletype("4 wheeler");
         }
-        new RegisterUserTask().execute("http://gaadikey.in/register");
+        new RegisterUserTask().execute("https://gaadikey.in/register");
         Log.e("The complete profile has been clicked" , "The completed profile has been clicked ");
         // Testing by commenting out request stuff!
         // CompleteProfile

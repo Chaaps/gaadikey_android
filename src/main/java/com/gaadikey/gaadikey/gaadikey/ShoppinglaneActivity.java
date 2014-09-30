@@ -39,7 +39,7 @@ public class ShoppinglaneActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoppinglane);
-        new RetriveShoppingProducts_GetTask().execute("http://gaadikey.in/affiliate_ads?os=android");
+        new RetriveShoppingProducts_GetTask().execute("https://gaadikey.in/affiliate_ads?os=android");
         // Affiliate ads for android OS is retrieved.
 
     }

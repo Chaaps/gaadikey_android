@@ -22,7 +22,11 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
         ComponentName comp = new ComponentName(context.getPackageName(),
         		GcmMessageHandler.class.getName());
 
-        Intent notificationIntent = new Intent(context, ListMobileActivity.class);
+      //  Intent notificationIntent = new Intent(context, ListMobileActivity.class);
+
+        Intent notificationIntent = new Intent(context, WelcomesYou.class);
+
+
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Bundle extras = intent.getExtras();

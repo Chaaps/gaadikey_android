@@ -78,7 +78,7 @@ public class EnterPINActivity extends ActionBarActivity {
         phonenumber = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
         Log.e("PIN verification" , "The phone number retrieved is "+phonenumber);
         // The Recieved PIN is ..
-        new HttpAsyncGetTask().execute("http://gaadikey.in/generated?phonenumber="+phonenumber);
+        new HttpAsyncGetTask().execute("https://gaadikey.in/generated?phonenumber="+phonenumber);
     }
     // write  the httpasyncgettask function  out here...
     // this has to submit the phonenumber to server and should return the access token... along with the expiry date if any  .
@@ -117,7 +117,7 @@ public class EnterPINActivity extends ActionBarActivity {
                     editor2.putString(getString(R.string.KEY_phonenumber), phonenumber);
                     editor2.commit();
 
-                     new  GetAccessTokenPostTask().execute("http://gaadikey.in/token");
+                     new  GetAccessTokenPostTask().execute("https://gaadikey.in/token");
 
                     startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
 

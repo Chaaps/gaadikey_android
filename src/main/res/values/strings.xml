@@ -56,5 +56,6 @@
     <string name="title_activity_safety_lane">Safety Lane</string>
     <string name="title_activity_shoppinglane">Shopping Lane</string>
     <string name="title_activity_trips_lane">Trips Lane</string>
+    <string name="title_activity_welcomes_you">Thanks</string>
 
 </resources>

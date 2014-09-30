@@ -154,7 +154,7 @@ public class VerificationActivity extends ActionBarActivity {
 
 
       //  new HttpAsyncPostTask().execute("http s://maps.googleapis.com/maps/api/place/nearbysearch/json");
-        new HttpAsyncPostTask().execute("http://gaadikey.in/generate");
+        new HttpAsyncPostTask().execute("https://gaadikey.in/generate");
        // Log.e("Response", "Expected Response");
        // Log.e("Actual Response", response);
         //System.out.print("The response is  "+response);
@@ -200,7 +200,6 @@ public class VerificationActivity extends ActionBarActivity {
         InputStream inputStream = null;
         String result = "";
         try {
-
             // create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
 
@@ -246,8 +245,6 @@ public class VerificationActivity extends ActionBarActivity {
 
         return result;
     }
-
-
 
     public String postPhoneEmailData(String url,PhoneObject phone) {
         // Create a new HttpClient and Post Header
@@ -340,7 +337,6 @@ public class VerificationActivity extends ActionBarActivity {
         @Override
         protected String doInBackground(String... urls)
         {
-
             return postPhoneEmailData(urls[0],ph);
         }
         // onPostExecute displays the results of the AsyncTask.

@@ -54,24 +54,43 @@ public class ActivityLauncher extends Activity {
      //   sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
 
 
+        //  The ActivityLauncher activity has to be popped out of the stack once a new activity is launched.
+
+
+
         if(launch_code.equals(""+Constants.PIN_NOTDISPATCHED))
         {
+
             Log.e("Status code", "PIN is not dispatched");
-            startActivity(new Intent(ActivityLauncher.this, VerificationActivity.class ));
+
+            Intent i = new Intent(ActivityLauncher.this, VerificationActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+
+           // startActivity(new Intent(ActivityLauncher.this, VerificationActivity.class ));
             // launch verificationActivity
         }
         else if( launch_code.equals(""+Constants.PIN_DISPATCHED))
         {
             Log.e("Launch code", "PIN is dispatched ");
-            startActivity(new Intent(ActivityLauncher.this, EnterPINActivity.class));
+       //     startActivity(new Intent(ActivityLauncher.this, EnterPINActivity.class));
+
+            Intent i = new Intent(ActivityLauncher.this, EnterPINActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+
             // go to enter PIN activity
         }
 
         else if( launch_code.equals(""+Constants.PIN_VERIFIED))
         {
             Log.e("Launch code", "PIN is verified ");
-            startActivity(new Intent(ActivityLauncher.this, MyActivity.class));
+          //  startActivity(new Intent(ActivityLauncher.this, MyActivity.class));
             // go to MyActivity in order to complete profile registration.
+            Intent i = new Intent(ActivityLauncher.this, MyActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
+
         }
 
         else if( launch_code.equals(""+Constants.PROFILE_REGISTERED))
@@ -80,9 +99,16 @@ public class ActivityLauncher extends Activity {
        //     startActivity(new Intent(ActivityLauncher.this,  ListMobileActivity.class));
        //     Log.e("Launch code" , "profile registered");
             // Once the profile is registered take it to StickyHome
-            startActivity(new Intent(ActivityLauncher.this, StickyHome.class));
+        //    startActivity(new Intent(ActivityLauncher.this, StickyHome.class));
+
+            //StickyHome
+            Intent i = new Intent(ActivityLauncher.this, StickyHome.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
             // go to Contacts Activity where all your contacts are present.
         }
+        // The following conditions are not yet implemented
+
         else if(launch_code.equals(""+Constants.INTRO_STEP1_COMPLETED))
         {
             Log.e("Launch code", "Intro Step 1 completed");

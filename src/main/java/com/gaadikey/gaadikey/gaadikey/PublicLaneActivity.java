@@ -36,7 +36,7 @@ public class PublicLaneActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_public_lane);
-        new PublicDataTask().execute("http://gaadikey.in/publiclane");
+        new PublicDataTask().execute("https://gaadikey.in/publiclane");
     }
 
     @Override

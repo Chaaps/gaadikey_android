@@ -123,7 +123,7 @@ public class SettingUpActivity extends ActionBarActivity {
         }
 
         Log.e("Uploaded json is" , jsonString);
-        new PostDataTask().execute("http://gaadikey.in/submitcontacts", jsonString);
+        new PostDataTask().execute("https://gaadikey.in/submitcontacts", jsonString);
         phones.close();
 
     }
