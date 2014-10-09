@@ -4,9 +4,6 @@ package com.gaadikey.gaadikey.gaadikey;
  * Created by madratgames on 08/10/14.
  */
 
-import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +11,9 @@ import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.Menu;
@@ -28,12 +28,11 @@ import com.gaadikey.gaadikey.gaadikey.adaptor.NavDrawerListAdapter;
 import java.util.ArrayList;
 
 
-public class LaunchActivity_NavDrawer extends Activity {
+public class LaunchActivity_NavDrawer extends FragmentActivity {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
-
     // nav drawer title
     private CharSequence mDrawerTitle;
 
@@ -47,13 +46,18 @@ public class LaunchActivity_NavDrawer extends Activity {
 
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
+    private String searchString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launchdrawer);
 
-
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            searchString = extras.getString("searchString");
+            Log.e("Obtained Searchstring is ", searchString);
+        }
 //        SnippetsDB_Helper logindb;
 //        logindb=new SnippetsDB_Helper(this);
 //        //logindb=logindb.open();
@@ -96,6 +100,8 @@ public class LaunchActivity_NavDrawer extends Activity {
         // Communities, Will add a counter here
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuTags[7], navMenuIcons.getResourceId(7, -1), true, "22"));
 
+   //     navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
+
         // empty list
      //   navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
     //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[9], navMenuTags[9], navMenuIcons.getResourceId(9, -1)));
@@ -127,8 +133,8 @@ public class LaunchActivity_NavDrawer extends Activity {
         adapter = new NavDrawerListAdapter(getApplicationContext(),
                 navDrawerItems);
         mDrawerList.setAdapter(adapter);
-
         // enabling action bar app icon and behaving it as toggle button
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
@@ -173,9 +179,12 @@ public class LaunchActivity_NavDrawer extends Activity {
         public void onItemClick(AdapterView<?> parent, View view, int position,
                                 long id) {
             // display view for selected nav drawer item
+            searchString="";
             displayView(position);
         }
     }
+
+
 
 
 
@@ -243,7 +252,6 @@ public class LaunchActivity_NavDrawer extends Activity {
 
 
 
-
     /**
      * Diplaying fragment view for selected nav drawer list item
      * */
@@ -255,7 +263,8 @@ public class LaunchActivity_NavDrawer extends Activity {
         switch (position) {
 
             case 0:
-               // fragment = new Fragment_PublicLane(); // This should be the home fragment
+              //  fragment = new Fragment_SearchResults();
+                fragment = Fragment_SearchResults.newInstance(searchString);
 
                 break;
             case 1:
@@ -269,6 +278,15 @@ public class LaunchActivity_NavDrawer extends Activity {
                 break;
             case 4:
                 fragment = new Fragment_ShoppingLane(); // Shopping lane fragment
+                break;
+            case 5:
+                fragment = new Fragment_NumberPlate();
+                break;
+            case 6:
+                fragment = new Fragment_Settings();
+                break;
+            case 7:
+                fragment = new Fragment_Feedback();
                 break;
 //            case 5:
 //                fragment = new Fragment_TripsLane();  // Trips lane fragment
@@ -289,7 +307,7 @@ public class LaunchActivity_NavDrawer extends Activity {
 
         if (fragment != null) {
 
-            FragmentManager fragmentManager = getFragmentManager();
+            FragmentManager fragmentManager = getSupportFragmentManager();
 
             //FragmentManager fragmentManager =  getFragmentManager();
 

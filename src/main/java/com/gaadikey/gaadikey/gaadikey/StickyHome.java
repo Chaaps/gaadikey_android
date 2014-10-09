@@ -41,7 +41,7 @@ public class StickyHome extends ListActivity {
         lanes.add("Friends Lane");
         lanes.add("Safety Lane");
         lanes.add("Shopping Lane");
-        lanes.add("Trips Lane");
+      //  lanes.add("Trips Lane");
         ImageView thumbnail = (ImageView) findViewById(R.id.thumbnail);
         TextView  gaadiname_field = (TextView) findViewById(R.id.GaadiName);
         TextView  gaadimsg_field  = (TextView) findViewById(R.id.GaadiMsg);
@@ -73,24 +73,78 @@ public class StickyHome extends ListActivity {
 
         final EditText edittext = (EditText) findViewById(R.id.editText_search);
 
-        edittext.setOnKeyListener(new View.OnKeyListener()
-        {
-            public boolean onKey(View v, int keyCode, KeyEvent event)
-            {
+        edittext.setOnEditorActionListener(
+                new EditText.OnEditorActionListener() {
+                    @Override
+                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
-                Log.e("Log", "Log");
-                // If the event is a key-down event on the "enter" button
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
-                    Log.e("Enter captured from textbox", "Enter Captured! ");
-                    // Perform action on key press
-                   // Toast.makeText(HelloFormStuff.this, edittext.getText(), Toast.LENGTH_SHORT).show();
-                    return true;
-                }
-                return false;
-            }
-        });
+
+                        if (event != null) {
+                            // if shift key is down, then we want to insert the '\n' char in the TextView;
+                            // otherwise, the default action is to send the message.
+
+                            if (!event.isShiftPressed())
+                            {
+                                        Log.e(" Enter is pressed! ", "Yes");
+                                //return true;
+                                // Start the activity here
+
+                            }
+                            return false;
+                        }
+
+                        Log.e("here we are ", "Yes");
+
+                        Intent i = new Intent(StickyHome.this, LaunchActivity_NavDrawer.class);
+                        i.putExtra("searchString",edittext.getText().toString());
+
+                        SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor_4 = sharedPref4.edit();
+                        editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
+                        editor_4.commit();
+                        startActivity(i);
+
+                        return true;
+                    }
+                });
+
+
+
+
+
+
+
+//        edittext.setOnKeyListener(new View.OnKeyListener()
+//        {
+//            public boolean onKey(View v, int keyCode, KeyEvent event)
+//            {
+//
+//                Log.e("Log", "Log");
+//
+//                //(event.getAction() == KeyEvent.ACTION_DOWN) &&
+//                // If the event is a key-down event on the "enter" button
+//                if ( event != null &&
+//                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+//
+//                    Log.e("Enter captured from textbox", "Enter Captured! ");
+//                    //Storing this as 0 in Key_HomeMenu so that it opens up search results fragment!
+//
+//                    SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor_4 = sharedPref4.edit();
+//                    editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
+//                    editor_4.commit();
+//
+//
+//                    startActivity(new Intent(StickyHome.this,  LaunchActivity_NavDrawer.class));
+//                    // Perform action on key press
+//                   // Toast.makeText(HelloFormStuff.this, edittext.getText(), Toast.LENGTH_SHORT).show();
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
+
     }
 
     protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -160,15 +214,20 @@ public class StickyHome extends ListActivity {
         return true;
     }
 
-
-
-
-
-
     public void OpenNumberPlateFragment(View view)
     {
+        // Get the index of number plate fragment in the drawer and store it.. in KEY_HomeMenu key..
+
+        SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor_4 = sharedPref4.edit();
+        editor_4.putString(getString(R.string.KEY_HomeMenu), "5" ); // The Number plate is present in the 5th position in list of fragments
+        editor_4.commit();
 
         Log.e("Number Plate has been clicked" , "NumberPlate ");
+
+        Intent i = new Intent(StickyHome.this, LaunchActivity_NavDrawer.class);
+        startActivity(i);
+
     }
 
     public void SearchGaadiNo(View view)

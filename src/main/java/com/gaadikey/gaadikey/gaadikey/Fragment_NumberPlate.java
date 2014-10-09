@@ -1,6 +1,6 @@
 package com.gaadikey.gaadikey.gaadikey;
+import android.support.v4.app.Fragment;
 
-import android.app.Fragment;
 
 /**
  * Created by madratgames on 08/10/14.

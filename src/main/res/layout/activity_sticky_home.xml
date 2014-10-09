@@ -11,6 +11,8 @@
     <EditText
         android:id="@+id/editText_search"
         android:layout_width="fill_parent"
+        android:singleLine="true"
+        android:imeActionLabel="Search"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext_rounded_corners"/>
 

@@ -164,9 +164,9 @@ public class SettingUpActivity extends ActionBarActivity {
 
             // This intent should take to StickyHome
 
-          //  startActivity(new Intent(SettingUpActivity.this, StickyHome.class));
+            startActivity(new Intent(SettingUpActivity.this, StickyHome.class));
 
-            startActivity(new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class));
+         //   startActivity(new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class));
             // The flow should now shift to different view that is ListMobileActivity //
 
 

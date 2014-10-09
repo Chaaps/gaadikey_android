@@ -22,7 +22,6 @@ import java.util.HashMap;
  * Created by madratgames on 22/09/14.
  */
 
-
 public class FriendsAdapter extends ArrayAdapter <HashMap<String, String>>  {
 
     private final Context context;
