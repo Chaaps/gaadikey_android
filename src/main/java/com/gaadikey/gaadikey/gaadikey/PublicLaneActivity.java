@@ -170,7 +170,6 @@ public class PublicLaneActivity extends ListActivity {
     public void returnNothing()
     {
         /* This function returns nothing!
-
          */
     }
 

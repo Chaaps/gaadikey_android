@@ -139,6 +139,4 @@ public class WelcomesYou extends ActionBarActivity {
         return result;
     }
 
-
-
 }

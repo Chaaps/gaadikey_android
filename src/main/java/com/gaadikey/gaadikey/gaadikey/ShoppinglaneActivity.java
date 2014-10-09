@@ -34,7 +34,6 @@ import java.util.HashMap;
 public class ShoppinglaneActivity extends ListActivity {
 
     ArrayList<HashMap<String, String>> shoppingList =   new ArrayList<HashMap<String, String>>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

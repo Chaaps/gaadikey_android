@@ -79,11 +79,12 @@
             android:label="@string/title_activity_activity_launcher"
             android:noHistory="true"
             android:theme="@style/FullscreenTheme" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".SettingUpActivity"
@@ -133,6 +134,19 @@
             android:name=".WelcomesYou"
             android:label="@string/title_activity_welcomes_you"
             android:noHistory="true" >
+        </activity>
+        <activity
+            android:name=".IntroActivity"
+            android:label="@string/title_activity_intro"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+        <activity
+            android:name=".LaunchActivity_NavDrawer"
+            android:label=" "
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

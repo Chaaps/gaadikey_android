@@ -3,6 +3,7 @@ package com.gaadikey.gaadikey.gaadikey;
 /**
  * Created by madratgames on 08/09/14.
  */
+
 public class ProfileObject {
 
     public String vehicletype;

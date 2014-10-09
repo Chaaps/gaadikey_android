@@ -11,9 +11,11 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -67,30 +69,87 @@ public class StickyHome extends ListActivity {
 
         setListAdapter(new StickyHomeAdapter(StickyHome.this, lanes));
         // This should open the Sticky home
+
+
+        final EditText edittext = (EditText) findViewById(R.id.editText_search);
+
+        edittext.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+
+                Log.e("Log", "Log");
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+
+                    Log.e("Enter captured from textbox", "Enter Captured! ");
+                    // Perform action on key press
+                   // Toast.makeText(HelloFormStuff.this, edittext.getText(), Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
+            }
+        });
     }
 
-    protected void onListItemClick(ListView l, View v, int position, long id)
-    {
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+
+        SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor_4 = sharedPref4.edit();
+        editor_4.putString(getString(R.string.KEY_HomeMenu), "" + (position+1) ); // Incrementing the position by 1
+        editor_4.commit();
+
         Log.e("Click happened", "Click happened ");
-       // Toast.makeText(this, "You clicked " + lanes.get(position), Toast.LENGTH_LONG).show();
+        // Toast.makeText(this, "You clicked " + lanes.get(position), Toast.LENGTH_LONG).show();
         // Removing toast UI from the code.. Launching the activity directly from here!
         //  Open the activity which opens up  Public Lane
         // if the clicked item is public lane then open the public lane activity
-         if(lanes.get(position).equals("Public Lane"))
-         startActivity(new Intent(StickyHome.this, PublicLaneActivity.class));
+//        if (lanes.get(position).equals("Public Lane"))
+//            startActivity(new Intent(StickyHome.this, PublicLaneActivity.class));
+//
+//        if (lanes.get(position).equals("Friends Lane"))
+//            startActivity(new Intent(StickyHome.this, FriendsLaneActivity.class));
+//        // The friends Lane activity,would now contain the contents present in ContactHome
+//
+//        if (lanes.get(position).equals("Safety Lane"))
+//            startActivity(new Intent(StickyHome.this, SafetyLaneActivity.class));
+//
+//        if (lanes.get(position).equals("Shopping Lane"))
+//            startActivity(new Intent(StickyHome.this, ShoppinglaneActivity.class));
+//
+//        if (lanes.get(position).equals("Trips Lane"))
+//            startActivity(new Intent(StickyHome.this, TripsLaneActivity.class));
 
-         if(lanes.get(position).equals("Friends Lane"))
-         startActivity(new Intent(StickyHome.this, FriendsLaneActivity.class));
-         // The friends Lane activity,would now contain the contents present in ContactHome
 
-         if(lanes.get(position).equals("Safety Lane"))
-         startActivity(new Intent(StickyHome.this, SafetyLaneActivity.class));
+        // Remember the selected position  and then launch the activity!
 
-         if(lanes.get(position).equals("Shopping Lane"))
-         startActivity(new Intent(StickyHome.this, ShoppinglaneActivity.class));
 
-         if(lanes.get(position).equals("Trips Lane"))
-         startActivity(new Intent(StickyHome.this, TripsLaneActivity.class));
+        if (lanes.get(position).equals("Public Lane")) {
+            startActivity(new Intent(StickyHome.this, LaunchActivity_NavDrawer.class));
+
+        }
+
+        if (lanes.get(position).equals("Friends Lane")) {
+            startActivity(new Intent(StickyHome.this,  LaunchActivity_NavDrawer.class));
+            // The friends Lane activity,would now contain the contents present in ContactHome
+        }
+
+        if(lanes.get(position).equals("Safety Lane")) {
+            startActivity(new Intent(StickyHome.this, LaunchActivity_NavDrawer.class));
+
+        }
+
+        if(lanes.get(position).equals("Shopping Lane")) {
+            startActivity(new Intent(StickyHome.this, LaunchActivity_NavDrawer.class));
+
+        }
+
+        if(lanes.get(position).equals("Trips Lane")) {
+            startActivity(new Intent(StickyHome.this, LaunchActivity_NavDrawer.class));
+
+        }
+
 
     }
 
@@ -99,6 +158,22 @@ public class StickyHome extends ListActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.sticky_home, menu);
         return true;
+    }
+
+
+
+
+
+
+    public void OpenNumberPlateFragment(View view)
+    {
+
+        Log.e("Number Plate has been clicked" , "NumberPlate ");
+    }
+
+    public void SearchGaadiNo(View view)
+    {
+        Log.e("Search Gaadi No.. ", "Search");
     }
 
     public void ImageTap(View view)

@@ -26,9 +26,5 @@ public class AccessTokenObject {
     public void set_expires_in(String expires_in)  { this.expires_in = expires_in; }
 
     //AccessTokenObject
-
-
     // Get and Set done for AccessToken Object
-
-
 }

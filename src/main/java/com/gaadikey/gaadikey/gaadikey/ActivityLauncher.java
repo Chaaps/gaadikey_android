@@ -50,22 +50,26 @@ public class ActivityLauncher extends Activity {
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String launch_code = sharedPref.getString(getString(R.string.KEY_signupstatus),  Constants.PIN_NOTDISPATCHED);
         // commenting out this in order to persist all values!
-
-     //   sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
-
-
-        //  The ActivityLauncher activity has to be popped out of the stack once a new activity is launched.
+        // sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
+        // The ActivityLauncher activity has to be popped out of the stack once a new activity is launched.
+        // Temporarily launch the IntroActivity ..  for every condition for testing purposes!!!
 
 
+        // The  Intro activity is launched!!!  this should take to IntroActivity with the introduction steps!
+
+        // Disabling the  below conditions temporarily ... All launch instances will lead to introductionActivity!
 
         if(launch_code.equals(""+Constants.PIN_NOTDISPATCHED))
         {
-
             Log.e("Status code", "PIN is not dispatched");
-
-            Intent i = new Intent(ActivityLauncher.this, VerificationActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Intent i = new Intent(ActivityLauncher.this, IntroActivity.class);
+            i.setFlags((Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK ));
             startActivity(i);
+            //  If the user is unverified .. Alert him/her to enter the PIN!
+
+//            Intent i = new Intent(ActivityLauncher.this, VerificationActivity.class);
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            startActivity(i);
 
            // startActivity(new Intent(ActivityLauncher.this, VerificationActivity.class ));
             // launch verificationActivity
@@ -105,6 +109,17 @@ public class ActivityLauncher extends Activity {
             Intent i = new Intent(ActivityLauncher.this, StickyHome.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
+
+
+            // The StickyHome is now LaunchActivity_NavDrawer
+
+
+//            Intent i = new Intent(ActivityLauncher.this, LaunchActivity_NavDrawer.class );
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+//            startActivity(i);
+
+
+
             // go to Contacts Activity where all your contacts are present.
         }
         // The following conditions are not yet implemented
@@ -128,6 +143,7 @@ public class ActivityLauncher extends Activity {
             Log.e("Launch code", "Intro Step 1 completed");
             // This should go to actual app
         }
+
     }
 
 }
