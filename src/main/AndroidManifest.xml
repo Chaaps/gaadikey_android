@@ -27,15 +27,19 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MyActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+
         </activity>
         <activity
             android:name=".AccessTokenActivity"
-            android:label="Access Key stuff" >
+            android:label="Access Key stuff"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".VerificationActivity"
-            android:label="@string/title_activity_verification" >
+            android:label="@string/title_activity_verification"
+            android:screenOrientation="portrait" >
 
             <!--
             intent-filter>
@@ -71,7 +75,8 @@
         </activity>
         <activity
             android:name=".EnterPINActivity"
-            android:label="@string/title_activity_enter_pin" >
+            android:label="@string/title_activity_enter_pin"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".ActivityLauncher"
@@ -88,7 +93,8 @@
         </activity>
         <activity
             android:name=".SettingUpActivity"
-            android:label="@string/title_activity_setting_up" >
+            android:label="@string/title_activity_setting_up"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".IntroStep1"
@@ -146,7 +152,8 @@
         <activity
             android:name=".LaunchActivity_NavDrawer"
             android:label=" "
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+           >
         </activity>
     </application>
 

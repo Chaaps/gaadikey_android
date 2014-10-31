@@ -56,6 +56,10 @@ public class MyActivity extends Activity {
     private String UniqueNotifyID = "";
     ArrayList<HashMap<String, String>> bikedata;
     ArrayList<String> bikestringdata;
+
+    ArrayList<HashMap<String, String>> cardata;
+    ArrayList<String> carstringdata;
+
     String GAADI_IMAGEPATH = "";
     String GAADI_MESSAGE = "" ;
     String GAADI_NAME = "";
@@ -106,6 +110,7 @@ public class MyActivity extends Activity {
 
         //call the get request method with the URL http://gaadikey.com/bikes.php to get the JSON response and to parse for the bike_name and bike_brand and bike_imgurl
         new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
+        new GetCarDataTask().execute("http://gaadikey.com/cars.php");
         getRegId();
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
@@ -167,6 +172,7 @@ public class MyActivity extends Activity {
         profile_object.set_gaadimsg(GAADI_MESSAGE);
         profile_object.set_notifyid(regid);
         Spinner bikedropdown = (Spinner) findViewById(R.id.spinner1);
+        Spinner cardropdown  = (Spinner) findViewById(R.id.carspinner);
         if(selected_profile.equals("bike")) {
             GAADI_IMAGEPATH = bikedata.get(bikedropdown.getSelectedItemPosition()).get("bike_image");
             GAADI_NAME = bikedata.get(bikedropdown.getSelectedItemPosition()).get("bike_name");
@@ -176,8 +182,8 @@ public class MyActivity extends Activity {
         }
         else if(selected_profile.equals("car"))
         {
-            GAADI_IMAGEPATH = "http://car.com/car.jpg";
-            GAADI_NAME = "Mercedes Benz";
+            GAADI_IMAGEPATH = cardata.get(cardropdown.getSelectedItemPosition()).get("car_image");
+            GAADI_NAME = cardata.get(cardropdown.getSelectedItemPosition()).get("car_name");
             profile_object.set_gaadipic(GAADI_IMAGEPATH);
             profile_object.set_vehicle_name(GAADI_NAME);
             profile_object.set_vehicletype("4 wheeler");
@@ -567,7 +573,6 @@ public class MyActivity extends Activity {
         {
 
         }
-
     }
 
 
@@ -620,6 +625,187 @@ public class MyActivity extends Activity {
             bmImage.setImageBitmap(result);
         }
     }
+
+
+    private class GetCarDataTask extends AsyncTask<String, Void, String>
+    {
+
+        protected String doInBackground(String... urls)
+        {
+
+
+            Log.e("Pinging this URL ---> ", urls[0]);
+            return GetCarData(urls[0]);
+
+
+        }
+        protected void onPostExecute(String result)
+        {
+
+            Log.e("And we received", result);
+            Log.e("Response from the registration step ", result);
+            try
+            {
+                // The populate spinner should be present here!
+                PopulateCarSpinner(result);
+            }
+            catch(Exception e)
+            {
+                Log.e("Parse", "Exception in parsing");
+
+            }
+
+            // The data has been sent
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+            //
+        }
+    }
+
+
+    public void PopulateCarSpinner(String result)
+    {
+
+
+
+        try {
+            JSONArray json = new JSONArray(result);
+            // check if this request was sucessful... if the request was successful
+            // then parse the phonebook and get contacts details
+            // contacts details are rendered one by one.
+            Log.e("The response recieved from the server is " , result );
+            // result
+            cardata = new ArrayList<HashMap<String, String>>();
+            carstringdata = new ArrayList<String>();
+
+            for(int i=0;i<json.length();i++)
+            {
+                HashMap<String, String> map = new HashMap<String, String>();
+                JSONObject jObject = json.getJSONObject(i);
+                String id =                 jObject.getString("id");
+                String car_name =          jObject.getString("car_name");
+                String car_image    =      jObject.getString("car_image");
+                String car_brand   =       jObject.getString("car_brand");
+                String priority       =     jObject.getString("priority");
+                map.put("id" , id);
+                map.put("car_name", car_name);
+                map.put("car_image", car_image);
+                map.put("car_brand", car_brand);
+                map.put("priority", priority);
+                Log.e("Cars name received is  ", car_name);
+                cardata.add(map);
+                carstringdata.add(car_name);
+                // loading these variables
+            }
+            //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile, COUNTRIES));
+            Spinner bikedropdown = (Spinner) findViewById(R.id.spinner1);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bikestringdata); // passing the array list instead of array!
+            bikedropdown.setAdapter(adapter);
+
+            Spinner cardropdown = (Spinner) findViewById(R.id.carspinner);
+            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, carstringdata);
+            cardropdown.setAdapter(adapter1);
+
+            // Car On selected event
+
+            cardropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+
+
+                    Log.e("The Selected index in cardrop down is ", ""+position);
+
+                    if(position!=0)
+                    {
+                        Log.e("The Selected index in bike dropdown is ", "" + position);
+                        ImageView caricon_imageview = (ImageView) findViewById(R.id.caricon);
+                        new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
+                    }
+
+                    // The below code is pending as we are not retrieving the car data
+
+//                    ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
+//                    new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("ImgUrl"));
+
+
+                    // your code here
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                    // your code here
+                }
+
+            });
+
+
+            // Bike on selected event
+
+
+            bikedropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
+                {
+
+                    // Since 0 is returned for the first item... don't do anything .
+                    if(position!=0)
+                    {
+                        Log.e("The Selected index in bike dropdown is ", "" + position);
+                        ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
+                        new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("bike_image"));
+                    }
+                    // Now change the bike images, based on the selection among bikes
+                    // your code here
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView)
+                {
+
+                    Log.e("The very first time ", "Nothing is selected ");
+                    // your code here
+                }
+
+            });
+        }
+
+        catch(Exception e)
+        {
+
+        }
+
+    }
+
+
+    public  String GetCarData(String url){
+        InputStream inputStream = null;
+        String result = "";
+        try {
+            // create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+            // make GET request to the given URL
+            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+            // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            // convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+            }
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+
+        return result;
+    }
+
+
+
 
 
 }

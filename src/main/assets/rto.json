@@ -1,0 +1,5467 @@
+[
+  {
+    "RegNo":"AN01",
+    "Place":"Port Blair, Andaman District",
+    "State":"Andaman & Nicobar Islands"
+  },
+  {
+    "RegNo":"AN02",
+    "Place":"Car Nicobar, Nicobar District",
+    "State":"Andaman & Nicobar Islands"
+  },
+  {
+    "RegNo":"AP01",
+    "Place":"Adilabad / Mancherial / Nirmal",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP02",
+    "Place":"Anantapur / Hindupur",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP03",
+    "Place":"Chittoor / Tirupati / Madanapalle / Rajampet",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP04",
+    "Place":"Kadapa / Proddatur",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP05",
+    "Place":"Kakinada / Amalapuram / Rajahmundry",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP06",
+    "Place":"Kakinada",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP07",
+    "Place":"Guntur / Piduguralla / Narasaraopet / Repalle",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP08",
+    "Place":"Guntur",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP09",
+    "Place":"Khairtabad, Hyderabad District",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP10",
+    "Place":"Secunderabad, Hyderabad District",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP11",
+    "Place":"Malakpet, Hyderabad District",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP12",
+    "Place":"Bahadurpura, Hyderabad District",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP13",
+    "Place":"Mehdipatnam, Hyderabad District",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP14",
+    "Place":"Karimnagar",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP15",
+    "Place":"Karimnagar / Jagtial / Peddapalli",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP16 & AP17",
+    "Place":"Bejawada / Gudivada / Machilipatnam / Nandigama",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP18 & AP19",
+    "Place":"Nuzvid",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP20",
+    "Place":"Khammam / Kothagudem / Sathupally / Yellandu",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP21",
+    "Place":"Kurnool / Adoni / Nandyal",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP22",
+    "Place":"Mahaboobnagar / Pebbair / Gadwal",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP23",
+    "Place":"Medak / Siddipet / Sangareddy (RC puram)",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP24",
+    "Place":"Nalgonda / Bhongir / Suryapet",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP25",
+    "Place":"Nizamabad / Kamareddy",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP26",
+    "Place":"Nellore / Kavali / Gudur / Sullurpeta",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP27",
+    "Place":"Ongole / Chirala / Markapur / Prakasam",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP28 & AP29",
+    "Place":"Rangareddy",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP30",
+    "Place":"Srikakulam /Tekkali /Palasa/Sompeta/Ichchapuram/Kaviti",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP31",
+    "Place":"Visakhapatnam / Gajuwaka / Anakapalli",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP32",
+    "Place":"Visakhapatnam",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP33 & AP34",
+    "Place":"Gajuwaka",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP35",
+    "Place":"Vizianagaram",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP36",
+    "Place":"Warangal / Jangaon / Mahabubabad",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AP37",
+    "Place":"Eluru / Jangareddygudem / Kovvur / Tadepalligudem / Tanuku / Bhimavaram / Palakollu / Chintalapudi",
+    "State":"Andhra Pradesh"
+  },
+  {
+    "RegNo":"AR01",
+    "Place":"Itanagar",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR02",
+    "Place":"Itanagar (commercial vehicles of state transport)",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR03",
+    "Place":"Tawang",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR04",
+    "Place":"Bomdila",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR05",
+    "Place":"Seppa",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR06",
+    "Place":"Ziro",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR07",
+    "Place":"Daporijo",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR08",
+    "Place":"Along",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR09",
+    "Place":"Pasighat",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR10",
+    "Place":"Anini",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR11",
+    "Place":"Tezu",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR12",
+    "Place":"Changlang",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR13",
+    "Place":"Khonsa",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AR14",
+    "Place":"Yingkiong",
+    "State":"Arunachal Pradesh"
+  },
+  {
+    "RegNo":"AS01",
+    "Place":"Guwahati, Kamrup",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS02",
+    "Place":"Nagaon",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS03",
+    "Place":"Jorhat",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS04",
+    "Place":"Sibsagar",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS05",
+    "Place":"Golaghat",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS06",
+    "Place":"Dibrugarh",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS07",
+    "Place":"Lakhimpur district",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS08",
+    "Place":"Dima Hasao",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS09",
+    "Place":"Karbi Anglong",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS10",
+    "Place":"Karimganj",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS11",
+    "Place":"Cachar",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS12",
+    "Place":"Sonitpur",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS13",
+    "Place":"Darrang",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS14",
+    "Place":"Nalbari",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS15",
+    "Place":"Barpeta",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS16",
+    "Place":"Kokrajhar",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS17",
+    "Place":"Dhubri",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS18",
+    "Place":"Goalpara",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS19",
+    "Place":"Bongaigaon",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS21",
+    "Place":"Marigaon",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS22",
+    "Place":"Dhemaji",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS23",
+    "Place":"Tinsukia",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS24",
+    "Place":"Hailakandi",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS25",
+    "Place":"Guwahati no longer used",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS27",
+    "Place":"Udalguri",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS20",
+    "Place":"Assam State Transport Corporation (ASTC)",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS30",
+    "Place":"Assam Police vehicles",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"AS31",
+    "Place":"Assam Police",
+    "State":"Assam"
+  },
+  {
+    "RegNo":"BR01",
+    "Place":"Patna",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR02",
+    "Place":"Gaya",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR03",
+    "Place":"Bhojpur",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR04",
+    "Place":"Chapra",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR05",
+    "Place":"Motihari",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR06",
+    "Place":"Muzaffarpur",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR07",
+    "Place":"Darbhanga",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR08",
+    "Place":"Munger",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR09",
+    "Place":"Begusarai",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR10",
+    "Place":"Bhagalpur",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR11",
+    "Place":"Purnea",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR18",
+    "Place":"Chaibasa",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR19",
+    "Place":"Saharsa",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR20",
+    "Place":"(not allotted after Jharkhand Division)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR21",
+    "Place":"Nalanda",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR22",
+    "Place":"Bettiah",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR23",
+    "Place":"Giridih",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR24",
+    "Place":"Dehri",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR25",
+    "Place":"Jehanabad",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR26",
+    "Place":"Aurangabad",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR27",
+    "Place":"Nawada",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR28",
+    "Place":"Gopalganj",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR29",
+    "Place":"Siwan",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR30",
+    "Place":"Sitamarhi",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR31",
+    "Place":"Vaishali district",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR32",
+    "Place":"Madhubani",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR33",
+    "Place":"Samastipur",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR34",
+    "Place":"Khagaria",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR35",
+    "Place":"(not allotted after Jharkhand Division)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR36",
+    "Place":"(not allotted after Jharkhand Division)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR37",
+    "Place":"Kishanganj",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR38",
+    "Place":"Araria",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR39",
+    "Place":"Katihar",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR40",
+    "Place":"(not allotted after Jharkhand Division)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR41",
+    "Place":"(not allotted after Jharkhand Division)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR42",
+    "Place":"(not allotted after Jharkhand Division)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR43",
+    "Place":"Madhepura",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR44",
+    "Place":"Buxar",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR45",
+    "Place":"Bhabua",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR46",
+    "Place":"Jamui",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR47",
+    "Place":"Koderma",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR50",
+    "Place":"Supaul",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR51",
+    "Place":"Banka",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR52",
+    "Place":"Sheikhpura",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR53",
+    "Place":"Lakhisarai",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR54",
+    "Place":"(not allotted)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR55",
+    "Place":"(not allotted)",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"BR56",
+    "Place":"Arwal",
+    "State":"Bihar"
+  },
+  {
+    "RegNo":"CG01",
+    "Place":"Governor of Chattisgarh",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG02",
+    "Place":"Government of Chattisgarh",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG03",
+    "Place":"Chattisgarh Police",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG04",
+    "Place":"Raipur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG05",
+    "Place":"Dhamtari",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG06",
+    "Place":"Mahasamund",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG07",
+    "Place":"Durg",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG08",
+    "Place":"Rajnandgaon",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG09",
+    "Place":"Kawardha",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG10",
+    "Place":"Bilaspur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG11",
+    "Place":"JanjgirChampa",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG12",
+    "Place":"Korba",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG13",
+    "Place":"Raigarh",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG14",
+    "Place":"Jashpur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG15",
+    "Place":"Ambikapur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG16",
+    "Place":"Baikunthpur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG17",
+    "Place":"Jagdalpur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG18",
+    "Place":"Dantewada",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG19",
+    "Place":"Kanker",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CG20",
+    "Place":"Bijapur",
+    "State":"Chhattisgarh"
+  },
+  {
+    "RegNo":"CH01",
+    "Place":"Chandigarh",
+    "State":"Chandigarh"
+  },
+  {
+    "RegNo":"CH01 G",
+    "Place":"Chandigarh  Government Vehicles",
+    "State":"Chandigarh"
+  },
+  {
+    "RegNo":"CH02",
+    "Place":"Chandigarh  Commercial Vehicles",
+    "State":"Chandigarh"
+  },
+  {
+    "RegNo":"CH03",
+    "Place":"Chandigarh",
+    "State":"Chandigarh"
+  },
+  {
+    "RegNo":"CH04",
+    "Place":"Chandigarh",
+    "State":"Chandigarh"
+  },
+  {
+    "RegNo":"DD02",
+    "Place":"Diu",
+    "State":"Daman and Diu"
+  },
+  {
+    "RegNo":"DD03",
+    "Place":"Daman",
+    "State":"Daman and Diu"
+  },
+  {
+    "RegNo":"DL1",
+    "Place":"Delhi North: Mall Road",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL2",
+    "Place":"New Delhi: Tilak Marg",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL3",
+    "Place":"South Delhi South: Sheikh Sarai",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL4",
+    "Place":"West Delhi West 1: West Janakpuri",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL5",
+    "Place":"North East Delhi: Loni Road",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL6",
+    "Place":"Central Delhi Central: Sarai Kale Khan",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL7",
+    "Place":"East Delhi East 1: Mayur Vihar",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL8",
+    "Place":"North West Delhi 1: Wazir Pur",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL9",
+    "Place":"South West Delhi South West 1: Janakpuri / Palam",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL10",
+    "Place":"West DelhiII: Raja Garden",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL11",
+    "Place":"North West Delhi North West Zone II: Rohini",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL12",
+    "Place":"South West Delhi South West II: Vasant Vihar",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL13",
+    "Place":"East Delhi II: Surajmal Vihar / Shahdara",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL14",
+    "Place":"Sonipat due to the NCR, effectively situated in Haryana",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL15",
+    "Place":"Gurgaon due to the NCR, effectively situated in Haryana",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL16",
+    "Place":"Faridabad due to the NCR, effectively situated in Haryana",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL17",
+    "Place":"Noida due to the NCR, effectively situated in Uttar Pradesh",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL18",
+    "Place":"Ghaziabad due to the NCR, effectively situated in Uttar Pradesh",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL1L",
+    "Place":"Delhi for trucks",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL1N",
+    "Place":"Delhi for nonresident Indians",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL1P",
+    "Place":"Delhi for commercial buses",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL1R",
+    "Place":"Delhi for auto rickshaws and radio taxis",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL1T",
+    "Place":"Delhi for commercial taxis",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DL1Y",
+    "Place":"Delhi for commercial private taxis",
+    "State":"Delhi"
+  },
+  {
+    "RegNo":"DN09",
+    "Place":"Silvassa",
+    "State":"Dadra & Nagar Haveli"
+  },
+  {
+    "RegNo":"GA01",
+    "Place":"Panaji",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA02",
+    "Place":"Margao",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA03",
+    "Place":"Mapusa",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA04",
+    "Place":"Bicholim",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA05",
+    "Place":"Ponda",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA06",
+    "Place":"Vasco da Gama",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA07",
+    "Place":"Panaji",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA08",
+    "Place":"Margao",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA09",
+    "Place":"Quepem",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA10",
+    "Place":"Canacona",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GA11",
+    "Place":"Pernem",
+    "State":"Goa"
+  },
+  {
+    "RegNo":"GJ01",
+    "Place":"Ahmedabad",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ02",
+    "Place":"Mehsana",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ03",
+    "Place":"Rajkot",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ04",
+    "Place":"Bhavnagar",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ05",
+    "Place":"Surat",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ06",
+    "Place":"Vadodara",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ07",
+    "Place":"Kheda",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ08",
+    "Place":"Palanpur",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ09",
+    "Place":"Sabarkantha",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ10",
+    "Place":"Jamnagar",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ11",
+    "Place":"Junagadh",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ12",
+    "Place":"Kutch",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ13",
+    "Place":"Surendranagar",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ14",
+    "Place":"Amreli",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ15",
+    "Place":"Valsad",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ16",
+    "Place":"Bharuch",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ17",
+    "Place":"Panchmahal (Godhara)",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ18",
+    "Place":"Gandhinagar",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ19",
+    "Place":"Bardoli",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ20",
+    "Place":"Dahod",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ21",
+    "Place":"Navsari",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ22",
+    "Place":"Narmada",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ23",
+    "Place":"Anand",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ24",
+    "Place":"Patan",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ25",
+    "Place":"Porbandar",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ26",
+    "Place":"Vyara",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ27",
+    "Place":"East Ahmedabad",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ28",
+    "Place":"West Surat",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ29",
+    "Place":"Vadodara rural",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"GJ30",
+    "Place":"East Rajkot",
+    "State":"Gujarat"
+  },
+  {
+    "RegNo":"HP01 & HP02",
+    "Place":"Shimla  Urban (tourist buses & taxis)",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP03",
+    "Place":"Shimla  Urban",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP04",
+    "Place":"Dharamsala (autorikshaws)",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP05",
+    "Place":"Mandi (autorikshaws)",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP06",
+    "Place":"Rampur Bushar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP07",
+    "Place":"Shimla",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP08",
+    "Place":"Chaupal",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP09",
+    "Place":"Theog",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP10",
+    "Place":"Rohru",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP11",
+    "Place":"Arki",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP12",
+    "Place":"Nalagarh",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP13",
+    "Place":"Kandaghat",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP14",
+    "Place":"Solan",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP15",
+    "Place":"Parwanoo",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP16",
+    "Place":"Rajgarh",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP17",
+    "Place":"Paonta Sahib",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP18",
+    "Place":"Nahan",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP19",
+    "Place":"Amb",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP20",
+    "Place":"Una",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP21",
+    "Place":"Barsar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP22",
+    "Place":"Hamirpur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP23",
+    "Place":"Ghumarwin",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP24",
+    "Place":"Bilaspur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP25",
+    "Place":"Kalpa",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP26",
+    "Place":"Nichar (Bhaba Nagar)",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP27",
+    "Place":"Pooh",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP28",
+    "Place":"Sarkaghat",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP29",
+    "Place":"Jogindernagar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP30",
+    "Place":"Karsog",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP31",
+    "Place":"Sundernagar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP32",
+    "Place":"Mandi",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP33",
+    "Place":"Mandi",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP34",
+    "Place":"Kullu",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP35",
+    "Place":"Anni",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP36",
+    "Place":"Dehra",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP37",
+    "Place":"Palampur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP38",
+    "Place":"Nurpur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP39",
+    "Place":"Dharamshala",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP40",
+    "Place":"Kangra",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP41",
+    "Place":"Kaza",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP42",
+    "Place":"Keylong",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP43",
+    "Place":"Udaipur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP44",
+    "Place":"Churah",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP45",
+    "Place":"Pangi",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP46",
+    "Place":"Bharmour",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP47",
+    "Place":"Dalhousie",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP48",
+    "Place":"Chamba",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP49",
+    "Place":"Banjar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP50",
+    "Place":"Shimla (autorikshaws)",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP51 & HP52",
+    "Place":"Shimla (rural)",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP53",
+    "Place":"Baijnath",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP54",
+    "Place":"Jawali",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP55",
+    "Place":"Nadaun / Hamirpur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP56",
+    "Place":"Jaisinghpur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP57",
+    "Place":"Chowari",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP58",
+    "Place":"Manali",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP62",
+    "Place":"DodraKwar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP63",
+    "Place":"Shimla",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP64",
+    "Place":"Solan",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP65",
+    "Place":"Mandi",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP66",
+    "Place":"Kullu",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP67",
+    "Place":"Hamirpur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP68",
+    "Place":"Kangra",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP69",
+    "Place":"Bilaspur",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP71",
+    "Place":"Nahan",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP72",
+    "Place":"Una",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP73",
+    "Place":"Chamba",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP74",
+    "Place":"Bhoranj",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HP76",
+    "Place":"Paddhar",
+    "State":"Himachal Pradesh"
+  },
+  {
+    "RegNo":"HR01",
+    "Place":"Ambala (HR 01 GA for trucks; HR 01 PA, PB, PC so on for tourist buses; see also HR37)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR02",
+    "Place":"Yamuna Nagar",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR03",
+    "Place":"Panchkula",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR04",
+    "Place":"Naraingarh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR05",
+    "Place":"Karnal",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR06",
+    "Place":"Panipat",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR07",
+    "Place":"Kuru",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR08",
+    "Place":"Kaithal",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR09",
+    "Place":"Guhla",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR10",
+    "Place":"Sonepat",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR11",
+    "Place":"Gohana",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR12",
+    "Place":"Rohtak",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR13",
+    "Place":"Bahadurgarh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR14",
+    "Place":"Jhajjar",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR15",
+    "Place":"Meham",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR16",
+    "Place":"Bhiwani",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR17",
+    "Place":"Siwani",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR18",
+    "Place":"Loharu",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR19",
+    "Place":"Charkhi Dadri",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR20",
+    "Place":"Hisar",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR21",
+    "Place":"Hansi",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR22",
+    "Place":"Fatehabad",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR23",
+    "Place":"Tohana",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR24",
+    "Place":"Sirsa",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR25",
+    "Place":"Dabwali",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR26",
+    "Place":"Gurgaon",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR27",
+    "Place":"Nuh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR28",
+    "Place":"Ferozepur Jhirka",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR29",
+    "Place":"Ballabgarh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR30",
+    "Place":"Palwal",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR31",
+    "Place":"Jind",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR32",
+    "Place":"Narwana",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR33",
+    "Place":"Safidon",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR34",
+    "Place":"Mohindergarh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR35",
+    "Place":"Narnaul",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR36",
+    "Place":"Rewari",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR37",
+    "Place":"Ambala (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR38",
+    "Place":"Faridabad (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR39",
+    "Place":"Hisar (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR40",
+    "Place":"Assandh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR41",
+    "Place":"Pehowa",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR42",
+    "Place":"Ganaur",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR43",
+    "Place":"Kosli",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR44",
+    "Place":"Ellenabad",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR45",
+    "Place":"Karnal (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR46",
+    "Place":"Rohtak (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR47",
+    "Place":"Rewari (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR48",
+    "Place":"Tosham",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR49",
+    "Place":"Kalka",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR50",
+    "Place":"Hodal",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR51",
+    "Place":"Faridabad",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR52",
+    "Place":"Hatin",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR53",
+    "Place":"Adampur",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR54",
+    "Place":"Ambala  Barara",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR55",
+    "Place":"Gurgaon (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR56",
+    "Place":"Jind (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR57",
+    "Place":"Sirsa (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR58",
+    "Place":"Jagadhari, Yamuna Nagar (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR59",
+    "Place":"Ratia",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR60",
+    "Place":"Samalkha",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR61",
+    "Place":"Bhiwani (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR62",
+    "Place":"Fatehabad (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR63",
+    "Place":"Jhajjar (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR64",
+    "Place":"Kaithal (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR65",
+    "Place":"Kurukshetra (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR66",
+    "Place":"Narnaul (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR67",
+    "Place":"Panipat (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR68",
+    "Place":"Panchkula (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR69",
+    "Place":"Sonipat (commercial vehicles only)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR70",
+    "Place":"This series belongs to the Transport Commissioner in Chandigarh",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR71",
+    "Place":"Bilaspur",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR72",
+    "Place":"Gurgaon (South)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR73",
+    "Place":"Palwal",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR74",
+    "Place":"Mewat (Nuh)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR75",
+    "Place":"Indri",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR76",
+    "Place":"Pataudi",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR77",
+    "Place":"Beri",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR78",
+    "Place":"Sahabad",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR79",
+    "Place":"Kharkhoda",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR80",
+    "Place":"Barwala",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR86",
+    "Place":"Sonipat",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR88",
+    "Place":"Kundli",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"HR99",
+    "Place":"(temporary numbers)",
+    "State":"Haryana"
+  },
+  {
+    "RegNo":"JH01",
+    "Place":"Ranchi",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH02",
+    "Place":"Hazaribagh / Ramgarh",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH03",
+    "Place":"Daltonganj",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH04",
+    "Place":"Dumka",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH05",
+    "Place":"Jamshedpur",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH06",
+    "Place":"Chaibasa",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH07",
+    "Place":"Gumla",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH08",
+    "Place":"Lohardaga",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH09",
+    "Place":"Bokaro Steel City",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH10",
+    "Place":"Dhanbad",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH11",
+    "Place":"Giridih",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH12",
+    "Place":"Koderma",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH13",
+    "Place":"Chatra",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH14",
+    "Place":"Garhwa",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH15",
+    "Place":"Deoghar",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH16",
+    "Place":"Pakur",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH17",
+    "Place":"Godda",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH18",
+    "Place":"Sahibganj",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH19",
+    "Place":"Latehar",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH20",
+    "Place":"Simdega",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH21",
+    "Place":"Jamtara",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JH22",
+    "Place":"SaraikelaKharsawan",
+    "State":"Jharkhand"
+  },
+  {
+    "RegNo":"JK01",
+    "Place":"Srinagar",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK02",
+    "Place":"Jammu",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK03",
+    "Place":"Anantnag",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK04",
+    "Place":"Budgam",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK05",
+    "Place":"Baramulla",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK06",
+    "Place":"Doda",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK07",
+    "Place":"Kargil",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK08",
+    "Place":"Kathua",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK09",
+    "Place":"Kupwara",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK10",
+    "Place":"Leh",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK11",
+    "Place":"Rajouri",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK12",
+    "Place":"Poonch",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK13",
+    "Place":"Pulwama",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK14",
+    "Place":"Udhampur",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK15",
+    "Place":"Bandipora",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK16",
+    "Place":"Ganderbal",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK17",
+    "Place":"Kishtwar",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK18",
+    "Place":"Kulgam",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK19",
+    "Place":"Ramban",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK20",
+    "Place":"Reasi",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK21",
+    "Place":"Samba",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"JK22",
+    "Place":"Shopian",
+    "State":"Jammu & Kashmir"
+  },
+  {
+    "RegNo":"KA01",
+    "Place":"Bangalore Central (Koramangala)",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA02",
+    "Place":"Bangalore West (Rajajinagar)",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA03",
+    "Place":"Bangalore East (Indiranagar)",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA04",
+    "Place":"Bangalore North (Yeshwanthpur)",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA05",
+    "Place":"Bangalore South (Jayanagar)]]",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA06",
+    "Place":"Tumkur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA07",
+    "Place":"Kolar",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA08",
+    "Place":"Kolar Gold Fields (KGF)",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA09",
+    "Place":"Mysore West",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA10",
+    "Place":"Chamrajnagar",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA11",
+    "Place":"Mandya",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA12",
+    "Place":"Madikeri",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA13",
+    "Place":"Hassan",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA14",
+    "Place":"Shimoga",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA15",
+    "Place":"Sagara",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA16",
+    "Place":"Chitradurga",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA17",
+    "Place":"Davangere",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA18",
+    "Place":"Chickmagalur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA19",
+    "Place":"Mangalore",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA20",
+    "Place":"Udupi",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA21",
+    "Place":"Puttur / Sullia",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA22",
+    "Place":"Belgaum",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA23",
+    "Place":"Chikkodi",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA24",
+    "Place":"Bailhongal",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA25",
+    "Place":"Dharwad",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA26",
+    "Place":"Gadag",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA27",
+    "Place":"Haveri",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA28",
+    "Place":"Bijapur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA29",
+    "Place":"Bagalkot",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA30",
+    "Place":"Karwar",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA31",
+    "Place":"Sirsi",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA32",
+    "Place":"Gulbarga",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA33",
+    "Place":"Yadgir",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA34",
+    "Place":"Bellary",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA35",
+    "Place":"Hospet",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA36",
+    "Place":"Raichur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA37",
+    "Place":"Koppal",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA38",
+    "Place":"Bidar",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA39",
+    "Place":"Bhalki",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA40",
+    "Place":"Chikkaballapur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA41",
+    "Place":"Rajarajeshwari Nagar, Bangalore Urban district",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA42",
+    "Place":"Ramanagara",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA43",
+    "Place":"Devanahalli, Bangalore Rural district",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA44",
+    "Place":"Tiptur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA45",
+    "Place":"Hunsur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA46",
+    "Place":"Sakleshpur",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA47",
+    "Place":"Honnavar",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA48",
+    "Place":"Jamkhandi",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA49",
+    "Place":"Gokak",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA50",
+    "Place":"Yelahanka, Bangalore Urban district",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA51",
+    "Place":"Electronics City, Bangalore Urban district",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA52",
+    "Place":"Nelamangala, Bangalore Urban district",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA53",
+    "Place":"K.R. Puram, Bangalore Urban district",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA54",
+    "Place":"Nagamangala",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA55",
+    "Place":"Mysore East",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA56",
+    "Place":"Basavakalyan",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KA57",
+    "Place":"Shantinagar, Bangalore Urban district (only for KSRTC, BMTC and autos[1])",
+    "State":"Karnataka"
+  },
+  {
+    "RegNo":"KL01",
+    "Place":"Thiruvananthapuram City",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL02",
+    "Place":"Kollam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL03",
+    "Place":"Pathanamthitta",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL04",
+    "Place":"Alappuzha",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL05",
+    "Place":"Kottayam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL06",
+    "Place":"Idukki",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL07",
+    "Place":"Eranakulam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL08",
+    "Place":"Thrissur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL09",
+    "Place":"Palakkad",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL10",
+    "Place":"Malappuram",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL11",
+    "Place":"Kozhikode",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL12",
+    "Place":"Wayanad",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL13",
+    "Place":"Kannur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL14",
+    "Place":"Kasargode",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL15",
+    "Place":"Thiruvananthapuram (Kerala State Road Transport Corporation buses)",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL16",
+    "Place":"ThiruvananthapuramAttingal",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL17",
+    "Place":"Muvattupuzha",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL18",
+    "Place":"Vadakara",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL19",
+    "Place":"ThiruvananthapuramParassala",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL20",
+    "Place":"ThiruvananthapuramNeyyattinkara",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL21",
+    "Place":"ThiruvananthapuramNedumangad",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL22",
+    "Place":"Kazhakkoottam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL23",
+    "Place":"Karunagapally",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL24",
+    "Place":"Kottarakara",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL25",
+    "Place":"Punalur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL26",
+    "Place":"Adoor",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL27",
+    "Place":"Thiruvalla",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL28",
+    "Place":"Mallappally",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL29",
+    "Place":"Kayamkulam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL30",
+    "Place":"Chengannur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL31",
+    "Place":"Mavelikara",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL32",
+    "Place":"Cherthala",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL33",
+    "Place":"Changanassery",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL34",
+    "Place":"Kanjirappally",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL35",
+    "Place":"Pala",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL36",
+    "Place":"Vaikom",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL37",
+    "Place":"Vandiperiyar",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL38",
+    "Place":"Thodupuzha",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL39",
+    "Place":"Thripunithura",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL40",
+    "Place":"Perumbavoor",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL41",
+    "Place":"Aluva",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL42",
+    "Place":"North Paravur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL43",
+    "Place":"Mattancherry",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL44",
+    "Place":"kothamangalam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL45",
+    "Place":"Irinjalakuda",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL46",
+    "Place":"Guruvayur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL47",
+    "Place":"Kodungallur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL48",
+    "Place":"Wadakkancherry",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL49",
+    "Place":"Alathur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL50",
+    "Place":"Mannarghat",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL51",
+    "Place":"Ottappalam",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL52",
+    "Place":"Pattambi",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL53",
+    "Place":"Perinthalmanna",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL54",
+    "Place":"Ponnani",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL55",
+    "Place":"Tirur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL56",
+    "Place":"Koyilandi",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL57",
+    "Place":"Koduvally",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL58",
+    "Place":"Thalassery",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL59",
+    "Place":"Thaliparamba",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL60",
+    "Place":"Kanhangad",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL61",
+    "Place":"Kunnathur",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL62",
+    "Place":"Ranni",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL63",
+    "Place":"Angamaly",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL64",
+    "Place":"Chalakkudy",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"KL65",
+    "Place":"Thirurangadi",
+    "State":"Kerala"
+  },
+  {
+    "RegNo":"LD01",
+    "Place":"Kavaratti",
+    "State":"Lakshadweep"
+  },
+  {
+    "RegNo":"MH01",
+    "Place":"Mumbai (Central)  RTO is located in Tardeo",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH02",
+    "Place":"Mumbai (West)  RTO is located in Andheri West",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH03",
+    "Place":"Mumbai (East)  RTO is located in Wadala",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH04",
+    "Place":"Thane",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH05",
+    "Place":"Thane (Central Suburbs): Kalyan, Dombivli, Ulhasnagar, Ambernath and Badlapur  RTO is located in Kalyan",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH06",
+    "Place":"Raigad  RTO is located in Pen (does not include Navi Mumbai, Kharghar to Panvel to Pen)",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH07",
+    "Place":"Sindhudurg",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH08",
+    "Place":"Ratnagiri",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH09",
+    "Place":"Kolhapur",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH10",
+    "Place":"Sangli",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH11",
+    "Place":"Satara",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH12",
+    "Place":"Pune",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH13",
+    "Place":"Solapur",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH14",
+    "Place":"Pune (Outskirts)  RTO is located in PimpriChinchwad",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH15",
+    "Place":"Nashik",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH16",
+    "Place":"Ahmednagar",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH17",
+    "Place":"Shrirampur",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH18",
+    "Place":"Dhule",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH19",
+    "Place":"Jalgaon",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH20",
+    "Place":"Aurangabad",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH21",
+    "Place":"Jalna",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH22",
+    "Place":"Parbhani",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH23",
+    "Place":"Beed",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH24",
+    "Place":"Latur",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH25",
+    "Place":"Osmanabad",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH26",
+    "Place":"Nanded",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH27",
+    "Place":"Amravati",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH28",
+    "Place":"Buldana",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH29",
+    "Place":"Yavatmal  RTO is located on Nagpur Road",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH30",
+    "Place":"Akola",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH31",
+    "Place":"Nagpur",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH32",
+    "Place":"Wardha",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH33",
+    "Place":"Gadchiroli",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH34",
+    "Place":"Chandrapur",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH35",
+    "Place":"Gondia",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH36",
+    "Place":"Bhandara",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH37",
+    "Place":"Washim",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH38",
+    "Place":"Hingoli",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH39",
+    "Place":"Nandurbar",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH40",
+    "Place":"Wadi, Nagpur (rural)",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH41",
+    "Place":"Malegaon",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH42",
+    "Place":"Baramati",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH43",
+    "Place":"Navi Mumbai  RTO is located in Vashi (Sanpada)",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH44",
+    "Place":"Ambejogai",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH45",
+    "Place":"Akluj",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH46",
+    "Place":"Panvel",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH47",
+    "Place":"Borivali, Mumbai (Western Suburbs from Goregaon to Dahisar)[2]",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH48",
+    "Place":"Vasai Thane (Western Suburbs from Vasai)  RTO is located in Virar",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH49",
+    "Place":"Nagpur (East)  RTO is located on Bhandara Road",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"MH50",
+    "Place":"Karad (Satara Rural)  RTO is located in Karad",
+    "State":"Maharashtra"
+  },
+  {
+    "RegNo":"ML01",
+    "Place":"Shillong (government vehicles)",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML02",
+    "Place":"Shillong (police vehicles)",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML03",
+    "Place":"Shillong (vehicles owned by transport corporations)",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML04",
+    "Place":"Jaintia Hills",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML05",
+    "Place":"East Khasi Hills",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML06",
+    "Place":"West Khasi Hills",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML07",
+    "Place":"East Garo Hills",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML08",
+    "Place":"West Garo Hills",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML09",
+    "Place":"South Garo Hills",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"ML10",
+    "Place":"RiBhoi",
+    "State":"Meghalaya"
+  },
+  {
+    "RegNo":"MN01",
+    "Place":"Imphal",
+    "State":"Manipur"
+  },
+  {
+    "RegNo":"MN02",
+    "Place":"Churachandpur",
+    "State":"Manipur"
+  },
+  {
+    "RegNo":"MN03",
+    "Place":"Kangpokpi",
+    "State":"Manipur"
+  },
+  {
+    "RegNo":"MN04",
+    "Place":"Thoubal",
+    "State":"Manipur"
+  },
+  {
+    "RegNo":"MP01",
+    "Place":"State Governor's Vehicle",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP02",
+    "Place":"M.P. Government Vehicle",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP03",
+    "Place":"M.P. Police Vehicle",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP04",
+    "Place":"Bhopal",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP05",
+    "Place":"Hoshangabad",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP06",
+    "Place":"Morena",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP07",
+    "Place":"Gwalior",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP08",
+    "Place":"Guna",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP09",
+    "Place":"Indore",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP10",
+    "Place":"Khargone",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP11",
+    "Place":"Dhar",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP12",
+    "Place":"Khandwa",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP13",
+    "Place":"Ujjain",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP14",
+    "Place":"Mandsaur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP15",
+    "Place":"Sagar",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP16",
+    "Place":"Chhatarpur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP17",
+    "Place":"Rewa",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP18",
+    "Place":"Shahdol",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP19",
+    "Place":"Satna",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP20",
+    "Place":"Jabalpur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP21",
+    "Place":"Katni",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP22",
+    "Place":"Seoni",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP23",
+    "Place":"Raipur (not in use)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP24",
+    "Place":"Durg (not in use)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP25",
+    "Place":"Jagdalpur (not in use)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP26",
+    "Place":"Bilaspur (not in use)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP27",
+    "Place":"Ambikapur (not in use)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP28",
+    "Place":"Chhindwara",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP29",
+    "Place":"Rajnandgaon (not in use)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP30",
+    "Place":"Bhind",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP31",
+    "Place":"Sheopur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP32",
+    "Place":"Datia",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP33",
+    "Place":"Shivpuri",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP34",
+    "Place":"Damoh",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP35",
+    "Place":"Panna",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP36",
+    "Place":"Tikamgarh",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP37",
+    "Place":"Sehore",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP38",
+    "Place":"Raisen",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP39",
+    "Place":"Rajgarh",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP40",
+    "Place":"Vidisha",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP41",
+    "Place":"Dewas",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP42",
+    "Place":"Shajapur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP43",
+    "Place":"Ratlam",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP44",
+    "Place":"Neemuch",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP45",
+    "Place":"Jhabua",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP46",
+    "Place":"Badwani",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP47",
+    "Place":"Harda",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP48",
+    "Place":"Betul",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP49",
+    "Place":"Narsinghpur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP50",
+    "Place":"Balaghat",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP51",
+    "Place":"Mandla",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP52",
+    "Place":"Dindori",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP53",
+    "Place":"Sidhi",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP54",
+    "Place":"Umariya",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP55",
+    "Place":"not in use",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP56",
+    "Place":"not in use",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP57",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP58",
+    "Place":"not in use",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP59",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP60",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP61",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP62",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP63",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP64",
+    "Place":"(not alloted)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP65",
+    "Place":"Anoopur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP66",
+    "Place":"Singrauli",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP67",
+    "Place":"Ashoknagar",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP68",
+    "Place":"Burhanpur",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MP69",
+    "Place":"Alirajpur (upcoming)",
+    "State":"Madhya Pradesh"
+  },
+  {
+    "RegNo":"MZ01",
+    "Place":"Aizawl",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ02",
+    "Place":"Lunglei",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ03",
+    "Place":"Saiha",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ04",
+    "Place":"Champhai",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ05",
+    "Place":"Kolasib",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ06",
+    "Place":"Serchhip",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ07",
+    "Place":"Lawngtlai",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"MZ08",
+    "Place":"Mamit",
+    "State":"Mizoram"
+  },
+  {
+    "RegNo":"NL01",
+    "Place":"Kohima",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL02",
+    "Place":"Mokokchung",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL03",
+    "Place":"Tuensang",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL04",
+    "Place":"Mon",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL05",
+    "Place":"Wokha",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL06",
+    "Place":"Zunheboto",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL07",
+    "Place":"Dimapur",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"NL08",
+    "Place":"Phek",
+    "State":"Nagaland"
+  },
+  {
+    "RegNo":"OR01",
+    "Place":"Balasore",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR02",
+    "Place":"Bhubaneswar",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR03",
+    "Place":"Bolangir",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR04",
+    "Place":"Chandikhole",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR05",
+    "Place":"Cuttack",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR06",
+    "Place":"Dhenkanal",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR07",
+    "Place":"Ganjam",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR08",
+    "Place":"Kalahandi",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR09",
+    "Place":"Keonjhar",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR10",
+    "Place":"Koraput",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR11",
+    "Place":"Mayurbhanj",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR12",
+    "Place":"Phulabani",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR13",
+    "Place":"Puri",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR14",
+    "Place":"Rourkela",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR15",
+    "Place":"Sambalpur",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR16",
+    "Place":"Sundergarh",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR17",
+    "Place":"Baragarh",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR18",
+    "Place":"Rayagada",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR19",
+    "Place":"Angul",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR20",
+    "Place":"Gajapati",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR21",
+    "Place":"Jagatsinghpur",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR22",
+    "Place":"Bhadrak",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR23",
+    "Place":"Jharsuguda",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR24",
+    "Place":"Nabarangpur",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR25",
+    "Place":"Nayagarh",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR26",
+    "Place":"Nuapada",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR27",
+    "Place":"Boudh",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR28",
+    "Place":"Debagarh",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR29",
+    "Place":"Kendarapara",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR30",
+    "Place":"Malkangiri",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"OR31",
+    "Place":"Sonepur",
+    "State":"Orissa"
+  },
+  {
+    "RegNo":"PB01",
+    "Place":"Taxis",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB02",
+    "Place":"Amritsar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB03",
+    "Place":"Bathinda",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB04",
+    "Place":"Faridkot",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB05",
+    "Place":"Ferozepur",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB06",
+    "Place":"Gurdaspur",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB07",
+    "Place":"Hoshiarpur",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB08",
+    "Place":"Jalandhar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB09",
+    "Place":"Kapurthala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB10",
+    "Place":"Ludhiana",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB11",
+    "Place":"Patiala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB12",
+    "Place":"Ropar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB13",
+    "Place":"Sangrur",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB14",
+    "Place":"Ajnala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB15",
+    "Place":"Abohar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB16",
+    "Place":"Anandpur Sahib",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB17",
+    "Place":"Baba Bakala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB18",
+    "Place":"Batala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB19",
+    "Place":"Barnala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB20",
+    "Place":"Balachaur",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB21",
+    "Place":"Dasua",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB22",
+    "Place":"Fazilka",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB23",
+    "Place":"Fatehgarh Sahib",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB24",
+    "Place":"Garhshankar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB25",
+    "Place":"Jagraon",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB26",
+    "Place":"Khanna",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB27",
+    "Place":"Kharar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB28",
+    "Place":"Malerkotla",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB29",
+    "Place":"Moga",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB30",
+    "Place":"Muktsar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB31",
+    "Place":"Mansa",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB32",
+    "Place":"Nawanshahr",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB33",
+    "Place":"Nakodar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB34",
+    "Place":"Nabha",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB35",
+    "Place":"Pathankot",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB36",
+    "Place":"Phagwara",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB37",
+    "Place":"Phillaur",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB38",
+    "Place":"Patti",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB39",
+    "Place":"Rajpura",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB40",
+    "Place":"Rampura Phul",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB41",
+    "Place":"Sultanpur Lodhi",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB42",
+    "Place":"Samana",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB43",
+    "Place":"Samrala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB44",
+    "Place":"Sunam",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB45",
+    "Place":"Talwandi Sabo",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB46",
+    "Place":"Tarn Taran",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB47",
+    "Place":"Zira",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB48",
+    "Place":"Amloh",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB49",
+    "Place":"Khamano",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB50",
+    "Place":"Budhlada",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB51",
+    "Place":"Jhunir / Sardulgarh",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB52",
+    "Place":"Bassi Pathana",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB53",
+    "Place":"Malout",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB54",
+    "Place":"Mukerian",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB55",
+    "Place":"Payal",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB56",
+    "Place":"Raikot",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB57",
+    "Place":"Bhulath",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB58",
+    "Place":"Dera Baba Nanak",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB59",
+    "Place":"Dhuri",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB60",
+    "Place":"Gidderbaha",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB61",
+    "Place":"Jalalabad",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB62",
+    "Place":"Jaitu",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB63",
+    "Place":"Khadoor Sahib",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB64",
+    "Place":"Moonak",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB65",
+    "Place":"Mohali",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB66",
+    "Place":"Nihal Singh Wala",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB67",
+    "Place":"Shahkot",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB68",
+    "Place":"Dhar",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB69",
+    "Place":"Bagha Purana",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB70",
+    "Place":"Dera Bassi",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB71",
+    "Place":"Chamkaur Sahib",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB72",
+    "Place":"Patran",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB73",
+    "Place":"Tappa Mandi",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB74",
+    "Place":"Nangal",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PB75",
+    "Place":"Lehra",
+    "State":"Punjab"
+  },
+  {
+    "RegNo":"PY01",
+    "Place":"Pondicherry",
+    "State":"Pondicherry"
+  },
+  {
+    "RegNo":"PY02",
+    "Place":"Karaikal",
+    "State":"Pondicherry"
+  },
+  {
+    "RegNo":"PY03",
+    "Place":"Mahe",
+    "State":"Pondicherry"
+  },
+  {
+    "RegNo":"PY04",
+    "Place":"Yanam",
+    "State":"Pondicherry"
+  },
+  {
+    "RegNo":"RJ01",
+    "Place":"Ajmer",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ02",
+    "Place":"Alwar",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ03",
+    "Place":"Banswara",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ04",
+    "Place":"Barmer",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ05",
+    "Place":"Bharatpur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ06",
+    "Place":"Bhilwara",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ07",
+    "Place":"Bikaner",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ08",
+    "Place":"Bundi",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ09",
+    "Place":"Chittaurgarh",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ10",
+    "Place":"Churu",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ11",
+    "Place":"Dholpur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ12",
+    "Place":"Dungarpur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ13",
+    "Place":"Sri Ganganagar",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ14",
+    "Place":"Jaipur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ15",
+    "Place":"Jaisalmer",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ16",
+    "Place":"Jalore",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ17",
+    "Place":"Jhalawar",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ18",
+    "Place":"Jhunjhunu",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ19",
+    "Place":"Jodhpur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ20",
+    "Place":"Kota",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ21",
+    "Place":"Nagaur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ22",
+    "Place":"Pali",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ23",
+    "Place":"Sikar",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ24",
+    "Place":"Sirohi",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ25",
+    "Place":"Sawai Madhopur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ26",
+    "Place":"Tonk",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ27",
+    "Place":"Udaipur",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ28",
+    "Place":"Baran",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ29",
+    "Place":"Dausa",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ30",
+    "Place":"Rajsamand",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ31",
+    "Place":"Hanumangarh",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ32",
+    "Place":"Kotputli",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ33",
+    "Place":"Ramganj Mandi",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ34",
+    "Place":"Karauli",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ35",
+    "Place":"Pratapgarh",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ36",
+    "Place":"Beawar",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ37",
+    "Place":"Didwana",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"RJ38",
+    "Place":"Rawhhuu",
+    "State":"Rajasthan"
+  },
+  {
+    "RegNo":"SK01",
+    "Place":"Gangtok, East Sikkim",
+    "State":"Sikkim"
+  },
+  {
+    "RegNo":"SK02",
+    "Place":"Gyalshing, West Sikkim",
+    "State":"Sikkim"
+  },
+  {
+    "RegNo":"SK03",
+    "Place":"Mangan, North Sikkim",
+    "State":"Sikkim"
+  },
+  {
+    "RegNo":"SK04",
+    "Place":"Jorethang, South Sikkim",
+    "State":"Sikkim"
+  },
+  {
+    "RegNo":"TN01",
+    "Place":"Chennai Central (Ayanavaram)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN02",
+    "Place":"Chennai West (Anna Nagar)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN03",
+    "Place":"Chennai North East (Tondiarpet)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN04",
+    "Place":"Chennai East (Basin Bridge)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN05",
+    "Place":"Chennai North (Vyasarpadi)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN06",
+    "Place":"Chennai South East (Mandaveli)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN07",
+    "Place":"Chennai South (Thiruvanmiyur)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN09",
+    "Place":"Chennai West (K.K. Nagar)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN10",
+    "Place":"Chennai South West (Valasarawakkam)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN11",
+    "Place":"Tambaram",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN16",
+    "Place":"Tindivanam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN18",
+    "Place":"Sengundram",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN19",
+    "Place":"Chengalpattu",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN20",
+    "Place":"Tiruvallur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN21",
+    "Place":"Kanchipuram",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN22",
+    "Place":"Meenambakkam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN23",
+    "Place":"Vellore",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN24",
+    "Place":"Krishnagiri",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN25",
+    "Place":"Thiruvannamalai",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN28",
+    "Place":"Namakkal",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN29",
+    "Place":"Dharmapuri",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN30",
+    "Place":"Salem (West)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN31",
+    "Place":"Cuddalore",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN32",
+    "Place":"Villupuram",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN33",
+    "Place":"Erode",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN34",
+    "Place":"Thiruchengode",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN36",
+    "Place":"Gobichettipalayam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN37",
+    "Place":"Coimbatore (South)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN38",
+    "Place":"Coimbatore (North)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN39",
+    "Place":"Tirupur (North)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN40",
+    "Place":"Mettupalayam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN41",
+    "Place":"Pollachi",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN42",
+    "Place":"Tirupur (South)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN43",
+    "Place":"Uthagamandalam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN45",
+    "Place":"Tiruchirapalli",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN46",
+    "Place":"Perambalur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN47",
+    "Place":"Karur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN48",
+    "Place":"Srirangam (Tiruchirapalli)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN49",
+    "Place":"Thanjavur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN50",
+    "Place":"Tiruvarur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN51",
+    "Place":"Nagapattinam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN52",
+    "Place":"Sankagiri",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN54",
+    "Place":"Salem (East)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN55",
+    "Place":"Pudukottai",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN56",
+    "Place":"Perundurai",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN57",
+    "Place":"Dindigul",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN58",
+    "Place":"Madurai (South)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN59",
+    "Place":"Madurai (North)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN60",
+    "Place":"Theni",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN61",
+    "Place":"Ariyalur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN63",
+    "Place":"Sivagangai",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN64",
+    "Place":"Madurai (Central)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN65",
+    "Place":"Ramanathapuram",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN66",
+    "Place":"Coimbatore (Central)",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN67",
+    "Place":"Virudhunagar",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN68",
+    "Place":"Kumbakonam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN69",
+    "Place":"Tuticorin",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN70",
+    "Place":"Hosur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN72",
+    "Place":"Tirunelveli",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN73",
+    "Place":"Ranipet",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN74",
+    "Place":"Nagercoil",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN75",
+    "Place":"Marthandam",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN76",
+    "Place":"Tenkasi",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN77",
+    "Place":"Attur",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN78",
+    "Place":"Dharapuram",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN/N, TN/AN",
+    "Place":"State Transport Undertakings",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TN/G, TN/AG",
+    "Place":"State Government Vehicles",
+    "State":"Tamil Nadu"
+  },
+  {
+    "RegNo":"TR01",
+    "Place":"Agartala",
+    "State":"Tripura"
+  },
+  {
+    "RegNo":"TR02",
+    "Place":"Kailashahar",
+    "State":"Tripura"
+  },
+  {
+    "RegNo":"TR03",
+    "Place":"Udaipura",
+    "State":"Tripura"
+  },
+  {
+    "RegNo":"UK01",
+    "Place":"Almora",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK02",
+    "Place":"Bageshwar",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK03",
+    "Place":"Champawat",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK04",
+    "Place":"Nanital",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK05",
+    "Place":"Pithoragarh",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK06",
+    "Place":"Udham Singh Nagar",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UA07",
+    "Place":"Dehra Dun (UK07TC for taxis)",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK08",
+    "Place":"Haridwar",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK09",
+    "Place":"Tehri",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK10",
+    "Place":"Uttarkashi",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK11",
+    "Place":"Chamoli",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK12",
+    "Place":"Pauri",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UK13",
+    "Place":"Rudraprayag",
+    "State":"Uttarakhand"
+  },
+  {
+    "RegNo":"UP01",
+    "Place":"Almora (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP02",
+    "Place":"Haldwani (not longer in useï¿½?)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP03",
+    "Place":"Pithoragarh (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP04",
+    "Place":"Udham Singh Nagar (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP05",
+    "Place":"Chamoli (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP06",
+    "Place":"Pauri (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP07",
+    "Place":"Dehradun (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP08",
+    "Place":"Tehri (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP09",
+    "Place":"Uttarkashi (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP10",
+    "Place":"Haridwar (not longer in use)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP11",
+    "Place":"Saharanpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP12",
+    "Place":"Muzaffarnagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP13",
+    "Place":"Bulandshahr",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP14",
+    "Place":"Ghaziabad",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP15",
+    "Place":"Meerut (UP15AT for taxis, UP15AG for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP16",
+    "Place":"NOIDA / Gautam Buddha Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP17",
+    "Place":"Baghpat",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP18",
+    "Place":"Prabudh Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP20",
+    "Place":"Bijnor",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP21",
+    "Place":"Moradabad",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP22",
+    "Place":"Rampur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP23",
+    "Place":"Jyotiba Phule Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP24",
+    "Place":"Badaun",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP25",
+    "Place":"Bareilly",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP26",
+    "Place":"Pilibhit",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP27",
+    "Place":"Shahjahanpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP28",
+    "Place":"Ayodhya",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP29",
+    "Place":"to be alloted",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP30",
+    "Place":"Hardoi",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP31",
+    "Place":"Kheri",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP32",
+    "Place":"Lucknow",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP33",
+    "Place":"Raebareli",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP33T, AT, BT, CT & so on",
+    "Place":"Raebareli for commercial vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP33G, AG, BG, CG & so on",
+    "Place":"Raebareli for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP34",
+    "Place":"Sitapur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP35",
+    "Place":"Unnao",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP35B, H, T",
+    "Place":"Unnao for commercial vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP36",
+    "Place":"Lucknow (when UP32 will be exhausted)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP37",
+    "Place":"Hapur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP40",
+    "Place":"Bahraich",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP41",
+    "Place":"Barabanki",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP42",
+    "Place":"Faizabad",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP43",
+    "Place":"Gonda",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP44",
+    "Place":"Sultanpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP45",
+    "Place":"Ambedkar Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP46",
+    "Place":"Shrawasti",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP47",
+    "Place":"Balrampur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP50",
+    "Place":"Azamgarh",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP50T, AT, BT,& so on",
+    "Place":"Azamgarh for commercial vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP50, AG,BG & so on",
+    "Place":"Azamgarh for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP51",
+    "Place":"Basti",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP52",
+    "Place":"Deoria",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP53",
+    "Place":"Gorakhpur for private vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP53T, AT, BT, CT & so on",
+    "Place":"Gorakhpur for commercial vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP53AG",
+    "Place":"Gorakhpur for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP54",
+    "Place":"Mau",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP55",
+    "Place":"Siddharth Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP56",
+    "Place":"Mahrajganj",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP57",
+    "Place":"Padrauna",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP58",
+    "Place":"Sant Kabir Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP59",
+    "Place":"to be alloted",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP60",
+    "Place":"Ballia",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP61",
+    "Place":"Ghazipur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP62",
+    "Place":"Jaunpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP62T",
+    "Place":"Jaunpur for taxis, private vehicle",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP63",
+    "Place":"Mirzapur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP64",
+    "Place":"Sonbhadra",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP65",
+    "Place":"Varanasi",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP66",
+    "Place":"Bhadohi",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP67",
+    "Place":"Chandauli",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP68",
+    "Place":"to be alloted",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP69",
+    "Place":"to be alloted",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP70",
+    "Place":"Allahabad",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP71",
+    "Place":"Fatehpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP72",
+    "Place":"Pratapgarh",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP73",
+    "Place":"Kaushambi",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP74",
+    "Place":"Kannauj",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP75",
+    "Place":"Etawah",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP75G",
+    "Place":"Etawah for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP76",
+    "Place":"Farrukhabad",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP77",
+    "Place":"Kanpur Dehat (rural)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP78",
+    "Place":"Kanpur  Urban",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP78G, AG, BG, CG & so on",
+    "Place":"Kanpur Government Vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP78AN, BN, CN & so on",
+    "Place":"Kanpur CNG Vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP78AT, BT, CT & so on",
+    "Place":"Kanpur CNG Vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP79",
+    "Place":"Auraiya",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP80",
+    "Place":"Agra",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP81",
+    "Place":"Aligarh",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP82",
+    "Place":"Etah",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP83",
+    "Place":"Firozabad",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP84",
+    "Place":"Mainpuri",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP85",
+    "Place":"Mathura",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP86",
+    "Place":"Mahamaya Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP87",
+    "Place":"Kanshiram Nagar",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP88",
+    "Place":"to be alloted",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP89",
+    "Place":"to be alloted",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP90",
+    "Place":"Banda",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP91",
+    "Place":"Hamirpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP92",
+    "Place":"Jalaun",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP93",
+    "Place":"Jhansi",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP93E",
+    "Place":"Jhansi for public transport",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP93AG",
+    "Place":"Jhansi for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP94",
+    "Place":"Lalitpur",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP95",
+    "Place":"Mahoba",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP95B",
+    "Place":"Mahoba for commercial vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP95G",
+    "Place":"Mahoba for government vehicles",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"UP96",
+    "Place":"Chitrakoot Dham (Karwi)",
+    "State":"Uttar Pradesh"
+  },
+  {
+    "RegNo":"WB01",
+    "Place":"Kolkata (twowheelers)  exhausted",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB02",
+    "Place":"Kolkata (private fourwheelers)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB03",
+    "Place":"Kolkata (goods carriages)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB04",
+    "Place":"Kolkata (passenger vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB05",
+    "Place":"Kolkata (tractors, trailers, cranes)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB06",
+    "Place":"Kolkata (private fourwheelers)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB07",
+    "Place":"Kolkata (twowheelers)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB08",
+    "Place":"Kolkata  to be used",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB09",
+    "Place":"Kolkata  to be used",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB10",
+    "Place":"Kolkata  to be used",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB11",
+    "Place":"Howrah (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB12",
+    "Place":"Howrah (other than transport vehicles),",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB13",
+    "Place":"Howrah  to be used",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB14",
+    "Place":"Howrah (other than transport vehicles)  till WB14 K",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB15",
+    "Place":"Hooghly (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB16",
+    "Place":"Hooghly (other than transport vehicles)  exhausted",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB18",
+    "Place":"Hooghly (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB19",
+    "Place":"South 24 Parganas, Alipore (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB20",
+    "Place":"South 24 Parganas, Alipore (other than transport vehicles)  exhausted for twowheelers",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB22",
+    "Place":"South 24 Parganas, Alipore (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB23",
+    "Place":"Barrackpore (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB24",
+    "Place":"Barrackpore (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB25",
+    "Place":"Barasat (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB26",
+    "Place":"Barasat (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB29",
+    "Place":"Tamluk (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB30",
+    "Place":"Tamluk (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB31",
+    "Place":"Contai (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB32",
+    "Place":"Contai (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB33",
+    "Place":"Midnapur (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB34",
+    "Place":"Midnapur (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB37",
+    "Place":"Asansol (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB38",
+    "Place":"Asansol (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB39",
+    "Place":"Durgapur (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB40",
+    "Place":"Durgapur (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB41",
+    "Place":"Burdwan (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB42",
+    "Place":"Burdwan (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB44",
+    "Place":"Asansol (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB51",
+    "Place":"Nadia (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB52",
+    "Place":"Nadia (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB53",
+    "Place":"Birbhum (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB54",
+    "Place":"Birbhum (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB55",
+    "Place":"Purulia (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB56",
+    "Place":"Purulia (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB57",
+    "Place":"Murshidabad (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB58",
+    "Place":"Murshidabad (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB59",
+    "Place":"Raiganj (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB60",
+    "Place":"Raiganj (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB61",
+    "Place":"Balurghat (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB62",
+    "Place":"Balurghat (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB63",
+    "Place":"Cooch Behar (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB64",
+    "Place":"Cooch Behar (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB65",
+    "Place":"Malda (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB66",
+    "Place":"Malda (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB67",
+    "Place":"Bankura (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB68",
+    "Place":"Bankura (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB69",
+    "Place":"Alipurduar (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB70",
+    "Place":"Alipurduar (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB71",
+    "Place":"Jalpaiguri (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB72",
+    "Place":"Jalpaiguri (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB73",
+    "Place":"Siliguri (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB74",
+    "Place":"Siliguri (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB76",
+    "Place":"Darjeeling (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB77",
+    "Place":"Darjeeling (other than transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB78",
+    "Place":"Kalimpong (transport vehicles)",
+    "State":"West Bengal"
+  },
+  {
+    "RegNo":"WB79",
+    "Place":"Kalimpong (other than transport vehicles)",
+    "State":"West Bengal"
+  }
+]

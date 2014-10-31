@@ -5,7 +5,6 @@ package com.gaadikey.gaadikey.gaadikey;
  */
 public class ViewNotifyObject {
 
-
     public String phonenumber;
     public String gkey;
     public String name;

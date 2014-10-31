@@ -12,9 +12,9 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,22 +28,19 @@ import com.gaadikey.gaadikey.gaadikey.adaptor.NavDrawerListAdapter;
 import java.util.ArrayList;
 
 
-public class LaunchActivity_NavDrawer extends FragmentActivity {
+public class LaunchActivity_NavDrawer extends ActionBarActivity {
 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     // nav drawer title
     private CharSequence mDrawerTitle;
-
     // used to store app title
     private CharSequence mTitle;
-
     // slide menu items
     private String[] navMenuTitles;
     private String[] navMenuTags;;
     private TypedArray navMenuIcons;
-
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
     private String searchString = "";
@@ -61,9 +58,6 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
 //        SnippetsDB_Helper logindb;
 //        logindb=new SnippetsDB_Helper(this);
 //        //logindb=logindb.open();
-
-
-
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -99,20 +93,15 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuTags[6], navMenuIcons.getResourceId(6, -1)));
         // Communities, Will add a counter here
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuTags[7], navMenuIcons.getResourceId(7, -1), true, "22"));
-
-   //     navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
-
+        //     navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
         // empty list
-     //   navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
-    //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[9], navMenuTags[9], navMenuIcons.getResourceId(9, -1)));
-    //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[10], navMenuTags[10], navMenuIcons.getResourceId(10, -1)));
-
+        //   navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
+        //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[9], navMenuTags[9], navMenuIcons.getResourceId(9, -1)));
+        //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[10], navMenuTags[10], navMenuIcons.getResourceId(10, -1)));
         // Pages
-    //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[11], navMenuTags[11], navMenuIcons.getResourceId(11, -1)));
-
+        //    navDrawerItems.add(new NavDrawerItem(navMenuTitles[11], navMenuTags[11], navMenuIcons.getResourceId(11, -1)));
         // Pages
-      //  navDrawerItems.add(new NavDrawerItem(navMenuTitles[12], navMenuTags[12], navMenuIcons.getResourceId(12, -1)));
-
+        //  navDrawerItems.add(new NavDrawerItem(navMenuTitles[12], navMenuTags[12], navMenuIcons.getResourceId(12, -1)));
 //        // Pages
 //        navDrawerItems.add(new NavDrawerItem(navMenuTitles[13], navMenuTags[13], navMenuIcons.getResourceId(13, -1)));
 //
@@ -120,23 +109,19 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
 //
 //        navDrawerItems.add(new NavDrawerItem(navMenuTitles[15], navMenuTags[15], navMenuIcons.getResourceId(15, -1)));
 
-
-
-
-
         // Recycle the typed array
         navMenuIcons.recycle();
-
         mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
-
         // setting the nav drawer list adapter
-        adapter = new NavDrawerListAdapter(getApplicationContext(),
-                navDrawerItems);
+        adapter = new NavDrawerListAdapter(getApplicationContext(),navDrawerItems);
         mDrawerList.setAdapter(adapter);
         // enabling action bar app icon and behaving it as toggle button
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        //getActionBar().setDisplayHomeAsUpEnabled(true);
+        //getActionBar().setHomeButtonEnabled(true);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.drawable.ic_drawer, //nav menu toggle icon
@@ -144,19 +129,27 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
                 R.string.app_name // nav drawer close - description for accessibility
         ) {
             public void onDrawerClosed(View view) {
-                getActionBar().setTitle(mTitle);
+
+                getSupportActionBar().setTitle(mTitle);
+                //getActionBar().setTitle(mTitle);
                 // calling onPrepareOptionsMenu() to show action bar icons
-                invalidateOptionsMenu();
+                // invalidateOptionsMenu();
+                supportInvalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
-                getActionBar().setTitle(mDrawerTitle);
+                //getActionBar().setTitle(mDrawerTitle);
+                getSupportActionBar().setTitle(mTitle);
+                // mDrawerList.bringToFront();
+                // mDrawerLayout.requestLayout();
+
                 // calling onPrepareOptionsMenu() to hide action bar icons
-                invalidateOptionsMenu();
+                //invalidateOptionsMenu();
+                supportInvalidateOptionsMenu();
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerLayout.setFocusable(false);
+        // mDrawerLayout.setFocusable(false);
         String homemenu_position = "";
         int homemenu_position_int = 0;
 
@@ -175,18 +168,17 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
      * */
     private class SlideMenuClickListener implements
             ListView.OnItemClickListener {
+
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position,
                                 long id) {
             // display view for selected nav drawer item
+
+            Log.e("The Item click has occured! ", "Item click!!! " );
             searchString="";
             displayView(position);
         }
     }
-
-
-
-
 
 
 
@@ -263,7 +255,8 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
         switch (position) {
 
             case 0:
-              //  fragment = new Fragment_SearchResults();
+
+                //  fragment = new Fragment_SearchResults();
                 fragment = Fragment_SearchResults.newInstance(searchString);
 
                 break;
@@ -329,9 +322,12 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        getActionBar().setTitle(mTitle);
+        //getActionBar().setTitle(mTitle);
+        getSupportActionBar().setTitle(mTitle);
     }
 
+
+    // Handle the click event
     /**
      * When using the ActionBarDrawerToggle, you must call it during
      * onPostCreate() and onConfigurationChanged()...
@@ -360,12 +356,8 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
 
     public void onBackPressed()
     {
-
-
-
         if(mDrawerLayout.isDrawerOpen(mDrawerList))
         {
-
             Intent i = new Intent(this, StickyHome.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
             startActivity(i);
@@ -378,4 +370,6 @@ public class LaunchActivity_NavDrawer extends FragmentActivity {
         }
 
     }
+
+
 }

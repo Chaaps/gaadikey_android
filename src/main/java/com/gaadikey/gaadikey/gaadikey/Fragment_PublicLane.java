@@ -1,13 +1,10 @@
 package com.gaadikey.gaadikey.gaadikey;
-import android.support.v4.app.Fragment;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.adaptor.PublicLaneAdapter;
 
@@ -58,6 +54,8 @@ public class Fragment_PublicLane extends Fragment {
 
         listview = (ListView) view.findViewById(R.id.list);
 
+
+
       //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,56 +63,57 @@ public class Fragment_PublicLane extends Fragment {
                                     long arg3) {
 
 
+                  // If you wish to show a dialog box with options, comment out the below code!
 
 
-                //final String item = (String) arg0.getItemAtPosition(position);
-                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
-
-                // LayoutInflater inflater= getActivity().getLayoutInflater();
-                //this is what I did to add the layout to the alert dialog
-                adb.setTitle("Browse");
-                adb.setMessage("Is this your friend?");
-               // adb.setIcon(R.drawable.cmd);
-
-                //final EditText input = new EditText(getActivity());
-                //input.setText("Send a message: ");
-                //adb.setView(input);
-
-                adb.setNegativeButton("Execute", new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog,int id) {
-
-                        Log.e("Negative action clicked", "Negative");
-                      //  Intent i=new Intent(getActivity(), activity_compiler.class);
-                      //   i.putExtras(bundle);
-                      //  startActivity(i);
-                    }
-                });
-
-                // Setting Negative "Save" Button
-                adb.setNeutralButton("Save", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // User pressed No button. Write Logic Here
-                        //System.out.println("value of id=========" + codeid[position]);
-
-                        Toast.makeText(getActivity(), "Code saved in my codes", Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-                // Setting Netural "share" Button
-                adb.setPositiveButton("share", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        // User pressed Cancel button. Write Logic Here
-                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-                        sharingIntent.setType("text/plain");
-                        String shareBody = "Here is the share content body";
-                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
-                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
-                    }
-                });
-
-
-                adb.show();
+//                //final String item = (String) arg0.getItemAtPosition(position);
+//                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
+//
+//                // LayoutInflater inflater= getActivity().getLayoutInflater();
+//                //this is what I did to add the layout to the alert dialog
+//                adb.setTitle("Browse");
+//                adb.setMessage("Is this your friend?");
+//               // adb.setIcon(R.drawable.cmd);
+//
+//                //final EditText input = new EditText(getActivity());
+//                //input.setText("Send a message: ");
+//                //adb.setView(input);
+//
+//                adb.setNegativeButton("Execute", new DialogInterface.OnClickListener(){
+//                    public void onClick(DialogInterface dialog,int id) {
+//
+//                        Log.e("Negative action clicked", "Negative");
+//                      //  Intent i=new Intent(getActivity(), activity_compiler.class);
+//                      //   i.putExtras(bundle);
+//                      //  startActivity(i);
+//                    }
+//                });
+//
+//                // Setting Negative "Save" Button
+//                adb.setNeutralButton("Save", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // User pressed No button. Write Logic Here
+//                        //System.out.println("value of id=========" + codeid[position]);
+//
+//                        Toast.makeText(getActivity(), "Code saved in my codes", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//                // Setting Netural "share" Button
+//                adb.setPositiveButton("share", new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // User pressed Cancel button. Write Logic Here
+//                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+//                        sharingIntent.setType("text/plain");
+//                        String shareBody = "Here is the share content body";
+//                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+//                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+//                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+//                    }
+//                });
+//
+//
+//                adb.show();
 
 
             }
@@ -174,7 +173,7 @@ public class Fragment_PublicLane extends Fragment {
                     if(!vehiclename.equals("null")) {
                         map.put("vehiclename", vehiclename);
                         map.put("gaadipic", gaadipic);
-                        map.put("modifiedOn", "Joined public lane "+cs.toString()+" ago");
+                        map.put("modifiedOn", "Joined public lane "+cs.toString()+" ");
                         publicList.add(map);
                     }
                 }
@@ -237,6 +236,9 @@ public class Fragment_PublicLane extends Fragment {
         inputStream.close();
         return result;
     }
+
+
+
 
 
 

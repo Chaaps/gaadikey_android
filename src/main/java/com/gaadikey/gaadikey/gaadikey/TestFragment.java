@@ -8,23 +8,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 
 public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";
     public static String running_content = "";
+    public static TestFragmentAdapter testfragadapt;
 
-    public static TestFragment newInstance(String content) {
+    public static TestFragment newInstance(String content, TestFragmentAdapter test) {
         TestFragment fragment = new TestFragment();
         StringBuilder builder = new StringBuilder();
+        testfragadapt = test;
+        Log.e("Triggered", "Triggered");
         // Get Started Blue button has to be added for the last instance!
         // The 20 time repeater has been removed from the text!!!!!
         // The text is fetched depending on the type of intro like intro1, intro2, intro3, intro4 .. etc ...
-
 //        for (int i = 0; i < 20; i++) {
 //            builder.append(content).append(" ");
 //        }
-
         running_content = content; // The running_content is populated! depending on the condition change the layout of the introduction page!
 
 
@@ -53,6 +55,8 @@ public final class TestFragment extends Fragment {
         fragment.id = content;
 
 
+
+
         return fragment;
     }
 
@@ -76,18 +80,52 @@ public final class TestFragment extends Fragment {
 
     }
 
+
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState)
     {
         View view=null;
+        final LayoutInflater _inflater = inflater;
         if(id.equalsIgnoreCase("intro1"))
         {
             view = inflater.inflate(R.layout.intro1, container, false);
+
+            LinearLayout l1 = (LinearLayout) view.findViewById(R.id.layout1);
+            l1.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v)
+                {
+                   // View view=null;
+                    Log.e("Tap", "yes");
+                    //view  = inflater.inflate((R.layout.intro2, container, false))
+                    // Start new activity from a fragment
+                    //getActivity().getViewPager().setCurrentItem(index);
+                    // IntroActivity.getActivity().
+                }
+            });
+
+
             return view;
         }
         else if(id.equalsIgnoreCase("intro2"))
         {
             view = inflater.inflate(R.layout.intro2, container, false);
+            LinearLayout l2 = (LinearLayout) view.findViewById(R.id.layout2);
+            l2.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v)
+                {
+                    // View view=null;
+                    Log.e("Tap", "yes");
+                    //testfragadapt.getItem(3);
+
+                    //view  = inflater.inflate((R.layout.intro2, container, false))
+                    // Start new activity from a fragment
+                    //getActivity().getViewPager().setCurrentItem(index);
+                    // IntroActivity.getActivity().
+
+                }
+            });
 
 
             return view;
@@ -95,6 +133,21 @@ public final class TestFragment extends Fragment {
         else if(id.equalsIgnoreCase("intro3"))
         {
             view = inflater.inflate(R.layout.intro3, container, false);
+            LinearLayout l3 = (LinearLayout) view.findViewById(R.id.layout3);
+            l3.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v)
+                {
+                    // View view=null;
+                    Log.e("Tap", "yes");
+                    //testfragadapt.getItem(4);
+
+                    //view  = inflater.inflate((R.layout.intro2, container, false))
+                    // Start new activity from a fragment
+                    //getActivity().getViewPager().setCurrentItem(index);
+                    // IntroActivity.getActivity().
+
+                }
+            });
             return view;
         }
         else if(id.equalsIgnoreCase("intro4"))
@@ -118,6 +171,9 @@ public final class TestFragment extends Fragment {
         }
 
         return view;
+
+
+
 //
 //
 //

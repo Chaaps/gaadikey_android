@@ -109,6 +109,8 @@ public class VerificationActivity extends ActionBarActivity {
 
 }
 
+
+
     public void Phone_Submission_Click(View Button)
     {
 
@@ -246,6 +248,8 @@ public class VerificationActivity extends ActionBarActivity {
         return result;
     }
 
+
+
     public String postPhoneEmailData(String url,PhoneObject phone) {
         // Create a new HttpClient and Post Header
         InputStream inputStream = null;
@@ -359,6 +363,8 @@ public class VerificationActivity extends ActionBarActivity {
             startActivity(new Intent(VerificationActivity.this, EnterPINActivity.class));
         }
     }
+
+
     private class HttpAsyncGetTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
@@ -397,16 +403,13 @@ public class VerificationActivity extends ActionBarActivity {
                             .setMessage("The PIN which you entered is not matching! Please enter a valid PIN.")
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
-
                 }
             }
 
             catch (Exception e)
             {
 
-
             }
-
 
         }
     }

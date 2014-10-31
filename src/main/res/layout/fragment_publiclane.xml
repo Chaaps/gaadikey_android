@@ -25,7 +25,7 @@
             android:paddingBottom="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="! Over 200 Vehicles joined this Lane. 20 Super vehicles, 10 Bikes, 5 Cars, 40 cycles. "
+            android:text="Listing out all the recent Gaadis which joined the public lane! "
             android:id="@+id/textView"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true" />

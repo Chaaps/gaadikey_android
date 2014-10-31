@@ -23,6 +23,7 @@ public abstract class BaseSampleActivity extends FragmentActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -47,5 +48,10 @@ public abstract class BaseSampleActivity extends FragmentActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void hello_test()
+    {
+
     }
 }

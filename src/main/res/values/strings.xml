@@ -39,7 +39,7 @@
     <string name="KEY_EmissionTest"></string>
     <string name="KEY_Insurance"></string>
     <string name="KEY_Notes"></string>
-    <string name="KEY_GaadiKey_Number_Saved"></string>
+    <string name="KEY_GaadiKey_Number_Saved">KEY_GaadiKey_Number_Saved</string>
     <string name="KEY_GaadiImage">KEY_GaadiImage</string>
     <string name="KEY_GaadiName">KEY_GaadiName</string>
     <string name="KEY_GaadiMsg">KEY_GaadiMsg</string>
@@ -60,6 +60,14 @@
     <string name="title_activity_welcomes_you">Thanks</string>
     <string name="title_activity_intro">Welcome to GaadiKey</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="KEY_picker1_laststate">KEY_picker1_laststate</string>
+    <string name="KEY_picker2_laststate">KEY_picker2_laststate</string>
+    <string name="KEY_picker3_laststate">KEY_picker3_laststate</string>
+    <string name="KEY_picker4_laststate">KEY_picker4_laststate</string>
+    <string name="KEY_digit1_laststate">KEY_digit1_laststate</string>
+    <string name="KEY_digit2_laststate">KEY_digit2_laststate</string>
+    <string name="KEY_digit3_laststate">KEY_digit3_laststate</string>
+    <string name="KEY_digit4_laststate">KEY_digit4_laststate</string>
 
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

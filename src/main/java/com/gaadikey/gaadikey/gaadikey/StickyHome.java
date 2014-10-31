@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +51,7 @@ public class StickyHome extends ListActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         IMAGE_PATH = sharedPref.getString(getString(R.string.KEY_GaadiImage), "default");
+      //  IMAGE_PATH = "http://gaadikey.com/images/GaadiKey_bikes/bajaj/bajaj-discover-100m.jpg"; // hARD CODING THE IMAGE url TO CHECK IF 37KB IMAGE LOADING IS THE ISSUE
         GAADI_MSG = sharedPref.getString(getString(R.string.KEY_GaadiMsg), "Set status");
         GAADI_NAME = sharedPref.getString(getString(R.string.KEY_GaadiName), "Your Vehicle Name here");
 
@@ -66,6 +68,15 @@ public class StickyHome extends ListActivity {
             new ImageDownloader(thumbnail).execute(IMAGE_PATH);
 
         }
+
+        TextView numberplateText =  (TextView) findViewById(R.id.numberplate);
+        SharedPreferences sharedPref1 =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+        String numberplatestring = sharedPref1.getString(getString(R.string.KEY_GaadiKey_Number_Saved),  "KA50Q7896");
+        numberplateText.setText(numberplatestring); // setting the string obtained from the KEY set by number picker change listener
+
+        Typeface typface=Typeface.createFromAsset(getAssets(),"LicensePlate.ttf");
+
+        numberplateText.setTypeface(typface);
 
         setListAdapter(new StickyHomeAdapter(StickyHome.this, lanes));
         // This should open the Sticky home
@@ -223,10 +234,13 @@ public class StickyHome extends ListActivity {
         editor_4.putString(getString(R.string.KEY_HomeMenu), "5" ); // The Number plate is present in the 5th position in list of fragments
         editor_4.commit();
 
+
+
         Log.e("Number Plate has been clicked" , "NumberPlate ");
 
         Intent i = new Intent(StickyHome.this, LaunchActivity_NavDrawer.class);
         startActivity(i);
+
 
     }
 
@@ -246,7 +260,7 @@ public class StickyHome extends ListActivity {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
                         Log.e("Dialog selection", "Yes");
-                        break;
+                              break;
 
                     case DialogInterface.BUTTON_NEGATIVE:
                         Log.e("Dialog selection", "No");

@@ -27,7 +27,7 @@ class TestFragmentAdapter extends FragmentPagerAdapter implements IconPagerAdapt
     public Fragment getItem(int position) {
 
         Log.e("Content Position is ", ""+position);
-        return TestFragment.newInstance(CONTENT[position % CONTENT.length]);
+        return TestFragment.newInstance(CONTENT[position % CONTENT.length], this);
     }
 
     @Override

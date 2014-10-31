@@ -53,10 +53,7 @@ public class ActivityLauncher extends Activity {
         // sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
         // The ActivityLauncher activity has to be popped out of the stack once a new activity is launched.
         // Temporarily launch the IntroActivity ..  for every condition for testing purposes!!!
-
-
         // The  Intro activity is launched!!!  this should take to IntroActivity with the introduction steps!
-
         // Disabling the  below conditions temporarily ... All launch instances will lead to introductionActivity!
 
         if(launch_code.equals(""+Constants.PIN_NOTDISPATCHED))

@@ -80,19 +80,35 @@
         android:layout_centerHorizontal="true"
         />
 
-    <ImageView
-        android:layout_below="@+id/statusMsg"
-        android:id="@+id/numberplate"
+    <!--<ImageView-->
+        <!--android:layout_below="@+id/statusMsg"-->
+        <!--android:id="@+id/numberplate"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginLeft="5px"-->
+        <!--android:layout_marginRight="20px"-->
+        <!--android:layout_marginTop="5px"-->
+        <!--android:src="@drawable/numberplate"-->
+        <!--android:onClick="OpenNumberPlateFragment"-->
+        <!--android:layout_centerHorizontal="true">-->
+    <!--</ImageView>-->
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5px"
-        android:layout_marginRight="20px"
-        android:layout_marginTop="5px"
-        android:src="@drawable/numberplate"
+        android:text="@string/KEY_GaadiKey_Number_Saved"
+        android:clickable="true"
         android:onClick="OpenNumberPlateFragment"
-        android:layout_centerHorizontal="true">
-    </ImageView>
-
+        android:id="@+id/numberplate"
+        android:layout_below="@id/statusMsg"
+        android:layout_centerHorizontal="true"
+        android:textSize="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/empty_numberplate"
+        android:gravity="center_vertical"
+        android:paddingLeft="25dp"
+      />
 
     <ListView android:id="@android:id/list"
         android:layout_width="fill_parent"
