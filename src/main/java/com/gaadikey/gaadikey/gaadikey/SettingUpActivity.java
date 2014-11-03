@@ -161,18 +161,16 @@ public class SettingUpActivity extends ActionBarActivity {
             Log.e("Success posting", result);
             Log.e("Flow change should happen" , "The flow should now shift to different view that is ListMobileActivity");
           //  startActivity(new Intent(SettingUpActivity.this, ListMobileActivity.class));
-
             // This intent should take to StickyHome
+          //  startActivity(new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class));
+            // Remove all the older activities from the stack .. so that when the user presses back, it doesn't take to older screens which are no longer required!
+            Intent intent = new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
 
-            startActivity(new Intent(SettingUpActivity.this, StickyHome.class));
 
          //   startActivity(new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class));
             // The flow should now shift to different view that is ListMobileActivity //
-
-
-
-
-
 
             try
             {

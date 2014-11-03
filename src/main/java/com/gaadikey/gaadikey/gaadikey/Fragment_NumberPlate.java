@@ -28,11 +28,9 @@ import java.util.HashMap;
  */
 public class Fragment_NumberPlate extends Fragment{
 
-
     ListView listview;
     NumberPicker picker1 = null;
     NumberPicker picker2 = null;
-
 
     String picker1filler = "KA";
     String picker2filler = "50";
@@ -364,9 +362,12 @@ public class Fragment_NumberPlate extends Fragment{
                 editor_5.putString(getString(R.string.KEY_GaadiKey_Number_Saved),  formedString+" "+formedStringPart2);
                 editor_5.commit();
 
-                Intent i = new Intent(getActivity(), StickyHome.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-                startActivity(i);
+
+                ((LaunchActivity_NavDrawer) getActivity()).displayView(0);
+
+//                Intent i = new Intent(getActivity(), StickyHome.class);
+//                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+//                startActivity(i);
 
             }
         });

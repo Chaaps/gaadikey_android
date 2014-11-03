@@ -4,9 +4,7 @@ package com.gaadikey.gaadikey.gaadikey;
  * Created by madratgames on 08/10/14.
  */
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -16,7 +14,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -89,10 +86,13 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuTags[4], navMenuIcons.getResourceId(4, -1)));
         // What's hot, We  will add a counter here
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuTags[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
+
         // Find People
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuTags[6], navMenuIcons.getResourceId(6, -1)));
         // Communities, Will add a counter here
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuTags[7], navMenuIcons.getResourceId(7, -1), true, "22"));
+        // Adding an extra tab for Search!
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
         //     navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
         // empty list
         //   navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
@@ -156,10 +156,11 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         if (savedInstanceState == null) {
             // on first time display view for first nav item
             //displayView(0);
-            SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
-            homemenu_position = sharedPref.getString(getString(R.string.KEY_HomeMenu), "0");
-            homemenu_position_int = Integer.parseInt(homemenu_position);
-            displayView(homemenu_position_int);
+          //  SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+          //  homemenu_position = sharedPref.getString(getString(R.string.KEY_HomeMenu), "0");
+         //   homemenu_position_int = Integer.parseInt(homemenu_position);
+           // displayView(homemenu_position_int);
+            displayView(0);
         }
     }
 
@@ -182,11 +183,11 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
 
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
+ //   @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -233,13 +234,13 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
      * Called when invalidateOptionsMenu() is triggered
      **/
 
-    @Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        // if nav drawer is opened, hide the action items
-        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
-        return super.onPrepareOptionsMenu(menu);
-    }
+//    @Override
+//    public boolean onPrepareOptionsMenu(Menu menu) {
+//        // if nav drawer is opened, hide the action items
+//        boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
+//        menu.findItem(R.id.action_settings).setVisible(!drawerOpen);
+//        return super.onPrepareOptionsMenu(menu);
+//    }
 
 
 
@@ -247,17 +248,15 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
     /**
      * Diplaying fragment view for selected nav drawer list item
      * */
-    private void displayView(int position) {
+    public void displayView(int position) {
         // update the main content by replacing fragments
         Fragment fragment = null;
-
-
         switch (position) {
 
             case 0:
-
                 //  fragment = new Fragment_SearchResults();
-                fragment = Fragment_SearchResults.newInstance(searchString);
+              //  fragment = Fragment_SearchResults.newInstance(searchString);
+                fragment = new Fragment_Home();
 
                 break;
             case 1:
@@ -276,9 +275,12 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                 fragment = new Fragment_NumberPlate();
                 break;
             case 6:
-                fragment = new Fragment_Settings();
+                fragment = Fragment_SearchResults.newInstance(searchString);
                 break;
             case 7:
+                fragment = new Fragment_Settings();
+                break;
+            case 8:
                 fragment = new Fragment_Feedback();
                 break;
 //            case 5:
@@ -326,7 +328,6 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         getSupportActionBar().setTitle(mTitle);
     }
 
-
     // Handle the click event
     /**
      * When using the ActionBarDrawerToggle, you must call it during
@@ -358,9 +359,12 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
     {
         if(mDrawerLayout.isDrawerOpen(mDrawerList))
         {
-            Intent i = new Intent(this, StickyHome.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-            startActivity(i);
+//            Intent i = new Intent(this, StickyHome.class);
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+//            startActivity(i);
+
+            this.finish();
+            //Process.killProcess( Process.myPid() );
             // Open the Base Activity
         }
         else

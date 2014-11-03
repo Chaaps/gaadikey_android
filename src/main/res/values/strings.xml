@@ -68,31 +68,30 @@
     <string name="KEY_digit2_laststate">KEY_digit2_laststate</string>
     <string name="KEY_digit3_laststate">KEY_digit3_laststate</string>
     <string name="KEY_digit4_laststate">KEY_digit4_laststate</string>
-
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
-        <item>Search</item>
+        <item>Home</item>
         <item>Public Lane</item>
         <item>Friends Lane</item>
         <item>Safety Lane</item>
         <item>Shopping Lane</item>
         <item>Number Plate</item>
+        <item>Search</item>
         <item>Settings</item>
         <item>Feedback</item>
     </string-array>
-
     <!-- Nav Drawer Menu tags -->
     <string-array name="nav_drawer_tags">
-        <item>Search Gaadi No.</item>
+        <item>Your GaadiKey Profile</item>
         <item>All bikes and cars on the road</item>
         <item>All of your friends Bikes and cars</item>
         <item>Rules of the Road. For your safety!</item>
         <item>One pit stop for shopping. Hurry!</item>
         <item>Hang your Gaadi number here</item>
+        <item>Search Gaadi No.</item>
         <item>Turn off, Turn on</item>
         <item>We do hear you!</item>
     </string-array>
-
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
@@ -102,10 +101,10 @@
         <item>@drawable/ic_people</item>
         <item>@drawable/ic_python</item>
         <item>@drawable/ic_whats_hot</item>
+        <item>@drawable/ic_java</item>
         <item>@drawable/ic_pages</item>
         <item>@drawable/ic_mycodes</item>
     </array>
-
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
     <string name="title_activity_testact">Code Compile</string>

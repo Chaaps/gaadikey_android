@@ -35,7 +35,6 @@ import java.util.HashMap;
  */
 public class Fragment_SearchResults extends Fragment {
 
-
     ListView listview;
     ArrayList<HashMap<String, String>> gaadiList= new ArrayList<HashMap<String, String>>();
 

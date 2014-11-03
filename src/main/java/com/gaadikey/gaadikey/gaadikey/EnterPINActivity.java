@@ -35,7 +35,6 @@ public class EnterPINActivity extends ActionBarActivity {
     public String phonenumber = "";
     //SharedPreferences sharedPref = getSharedPreferences("New", Context.MODE_PRIVATE);
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

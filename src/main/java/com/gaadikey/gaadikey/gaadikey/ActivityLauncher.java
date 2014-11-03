@@ -103,19 +103,18 @@ public class ActivityLauncher extends Activity {
         //    startActivity(new Intent(ActivityLauncher.this, StickyHome.class));
 
             //StickyHome
-            Intent i = new Intent(ActivityLauncher.this, StickyHome.class);
+         //   Intent i = new Intent(ActivityLauncher.this, StickyHome.class);
+            // For the fragment approach!
+            Intent i = new Intent(ActivityLauncher.this, LaunchActivity_NavDrawer.class);
+
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
-
-
             // The StickyHome is now LaunchActivity_NavDrawer
 
 
 //            Intent i = new Intent(ActivityLauncher.this, LaunchActivity_NavDrawer.class );
 //            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
 //            startActivity(i);
-
-
 
             // go to Contacts Activity where all your contacts are present.
         }
@@ -141,6 +140,6 @@ public class ActivityLauncher extends Activity {
             // This should go to actual app
         }
 
+        //Activity Launcher!
     }
-
 }
