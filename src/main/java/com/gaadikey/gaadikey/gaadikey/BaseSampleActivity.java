@@ -2,7 +2,6 @@ package com.gaadikey.gaadikey.gaadikey;
 
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -17,11 +16,11 @@ public abstract class BaseSampleActivity extends FragmentActivity {
     ViewPager mPager;
     PageIndicator mIndicator;
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu, menu);
+//        return true;
+//    }
 
 
     @Override

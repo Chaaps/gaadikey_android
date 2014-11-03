@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -114,7 +115,14 @@ public class VerificationActivity extends ActionBarActivity {
     public void Phone_Submission_Click(View Button)
     {
 
+        Log.e("The Submission Click has occured once and should only occur once!!!", "Click event");
         final EditText phoneField = (EditText) findViewById(R.id.phoneNumber);
+
+        final android.widget.Button submissionClick = (Button) findViewById(R.id.button);
+        submissionClick.setEnabled(false);
+        submissionClick.setFocusable(false); // removes the focus from the button!
+        // This should disbale the button temporarily, Prevents the user from clicking the button more than once!
+
         phone = phoneField.getText().toString();
         /*
         new AlertDialog.Builder(this)

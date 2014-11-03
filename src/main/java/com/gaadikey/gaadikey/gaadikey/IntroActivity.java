@@ -19,9 +19,6 @@ public class IntroActivity extends BaseSampleActivity {
         mIndicator = (CirclePageIndicator)findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
 
-
-
-
     }
 
     public void setCurrentPagerItem(int item)

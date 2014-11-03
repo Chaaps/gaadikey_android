@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -47,12 +46,15 @@ public class EnterPINActivity extends ActionBarActivity {
        // int defaultValue = getResources().getInteger(R.string.saved_high_score_default);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.enter_pin, menu);
-        return true;
-    }
+
+    //Disable Menu Items to stop showing Settings and Other Options on Menu Click
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.enter_pin, menu);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -68,6 +70,10 @@ public class EnterPINActivity extends ActionBarActivity {
 
     public void PIN_Submission_Click(View Button)
     {
+        Log.e("The Button Click has occured. ", "Click");
+        //Disable the Submission button immediately after click event has occurred. In order to avoid multiple clicks!
+
+
         //     // PIN submission click.. When the PIN submit is clicked.... It has to post the received PIN to server to receive the access token.
         Log.e("PIN Submission CLICK", "The PIN submission has been clicked...");
         final EditText pinField = (EditText) findViewById(R.id.PIN);
