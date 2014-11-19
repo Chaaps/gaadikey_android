@@ -154,6 +154,7 @@ public class VerificationActivity extends ActionBarActivity {
         final EditText phoneField = (EditText) findViewById(R.id.phoneNumber);
 
         final android.widget.Button submissionClick = (Button) findViewById(R.id.button);
+        // tHE BLOW CODE DISABLES THE BUTTON
         submissionClick.setEnabled(false);
         submissionClick.setFocusable(false); // removes the focus from the button!
         // This should disbale the button temporarily, Prevents the user from clicking the button more than once!

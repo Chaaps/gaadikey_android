@@ -168,6 +168,15 @@ public class MyActivity extends Activity {
 
     public void CompleteProfile_Click(View Button)
     {
+        // Remove the Button Focus
+        // Disable further Clicks!
+
+        final android.widget.Button completeProfileClick = (Button) findViewById(R.id.button2); // Identifier for complete profile button
+        // tHE BLOW CODE DISABLES THE BUTTON
+        completeProfileClick.setEnabled(false);
+        completeProfileClick.setFocusable(false); // removes the focus from the button!
+
+
         final EditText gaadiMsgField = (EditText) findViewById(R.id.gaadiMsg);
         GAADI_MESSAGE = gaadiMsgField.getText().toString();
         //startActivity(new Intent(MyActivity.this, SettingUpActivity.class));
