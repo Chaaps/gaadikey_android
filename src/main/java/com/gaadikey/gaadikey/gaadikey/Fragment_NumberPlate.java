@@ -1,7 +1,6 @@
 package com.gaadikey.gaadikey.gaadikey;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -348,6 +347,8 @@ public class Fragment_NumberPlate extends Fragment{
                 {
                     formedString = sharedPref5.getString(getString(R.string.KEY_GaadiKey_Number_Saved),  "KA50Q7896");
                 }
+
+                // WelcomesYou
 
                 editor_5.putString(getString(R.string.KEY_picker1_laststate), picker1.getDisplayedValues()[picker1.getValue()]);
                 editor_5.putString(getString(R.string.KEY_picker2_laststate), picker2.getDisplayedValues()[picker2.getValue()]);

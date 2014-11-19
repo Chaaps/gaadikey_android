@@ -49,7 +49,7 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_setting_up">SettingUpActivity</string>
     <string name="title_activity_intro_step1">Step 1 of 3</string>
-    <string name="title_activity_intro_step2">Step 2 of 3</string>
+    <string name="title_activity_intro_step2">           Step 2 of 3</string>
     <string name="title_activity_intro_step3">Step 3 osf 3</string>
     <string name="title_activity_sticky_home">My Lane</string>
     <string name="title_activity_public_lane">Public Lane</string>
@@ -95,15 +95,15 @@
     <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
-        <item>@drawable/ic_home</item>
-        <item>@drawable/ic_java</item>
-        <item>@drawable/ic_pages</item>
-        <item>@drawable/ic_people</item>
-        <item>@drawable/ic_python</item>
-        <item>@drawable/ic_whats_hot</item>
-        <item>@drawable/ic_java</item>
-        <item>@drawable/ic_pages</item>
-        <item>@drawable/ic_mycodes</item>
+        <item>@drawable/home</item>
+        <item>@drawable/public_lane</item>
+        <item>@drawable/friends_lane</item>
+        <item>@drawable/safety_lane</item>
+        <item>@drawable/shopping_lane</item>
+        <item>@drawable/number_plate</item>
+        <item>@drawable/search</item>
+        <item>@drawable/settings</item>
+        <item>@drawable/feedback</item>
     </array>
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>

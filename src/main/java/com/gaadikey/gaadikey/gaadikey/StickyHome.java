@@ -89,8 +89,6 @@ public class StickyHome extends ListActivity {
                     @Override
                     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
-
-
                         if (event != null) {
                             // if shift key is down, then we want to insert the '\n' char in the TextView;
                             // otherwise, the default action is to send the message.

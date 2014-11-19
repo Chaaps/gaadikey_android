@@ -5,13 +5,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -32,6 +38,16 @@ public class EnterPINActivity extends ActionBarActivity {
 
     public String PIN = "";
     public String phonenumber = "";
+
+    private CountDownTimer countDownTimer;
+    private boolean timerHasStarted = false;
+    private Button startB;
+    private final long startTime = 150 * 1000;
+    private final long interval = 1 * 1000;
+    private TextView TimeText;
+    Tracker t;
+
+
     //SharedPreferences sharedPref = getSharedPreferences("New", Context.MODE_PRIVATE);
 
     @Override
@@ -40,10 +56,21 @@ public class EnterPINActivity extends ActionBarActivity {
         setContentView(R.layout.activity_enter_pin);
         Log.e("PIN", "Entered PIN activity. You will have to Enter the PIN. ");
         Log.e("Flow", "The control has reached here!");
+        TimeText = (TextView) findViewById(R.id.TimeText);
+        countDownTimer = new MyCountDownTimer(startTime, interval);
+        countDownTimer.start();
+        t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("EnterPINActivity"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
 
         // commented out!
         //Log.e("Access token (persistant) " , "The access token which is saved is " +defaultString);
        // int defaultValue = getResources().getInteger(R.string.saved_high_score_default);
+    }
+
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //outState.putString(KEY_CONTENT, mContent);
     }
 
 
@@ -70,6 +97,11 @@ public class EnterPINActivity extends ActionBarActivity {
 
     public void PIN_Submission_Click(View Button)
     {
+        t.send(new HitBuilders.EventBuilder()
+                .setCategory("PINSubmitted")
+                .setAction("PIN_SubmitClick")
+                .setLabel("")
+                .build());
         Log.e("The Button Click has occured. ", "Click");
         //Disable the Submission button immediately after click event has occurred. In order to avoid multiple clicks!
 
@@ -77,6 +109,7 @@ public class EnterPINActivity extends ActionBarActivity {
         //     // PIN submission click.. When the PIN submit is clicked.... It has to post the received PIN to server to receive the access token.
         Log.e("PIN Submission CLICK", "The PIN submission has been clicked...");
         final EditText pinField = (EditText) findViewById(R.id.PIN);
+
         PIN = pinField.getText().toString();
         Log.e("PIN" , "The recieved PIN is "+PIN) ;
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
@@ -125,6 +158,7 @@ public class EnterPINActivity extends ActionBarActivity {
                      new  GetAccessTokenPostTask().execute("https://gaadikey.in/token");
 
                     startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
+                    finish();
 
                     // Store the phonenumber if PIN is verified!
 
@@ -332,6 +366,26 @@ public class EnterPINActivity extends ActionBarActivity {
         // reads line by line to generate the string..
         inputStream.close();
         return result;
+    }
+
+
+    public class MyCountDownTimer extends CountDownTimer {
+
+        public MyCountDownTimer(long startTime, long interval) {
+            super(startTime, interval);
+        }
+        @Override
+
+        public void onFinish() {
+
+            TimeText.setText("Time's up!");
+        }
+        @Override
+        public void onTick(long millisUntilFinished) {
+
+            Log.e("Tick Tick", "Tick Tick");
+            TimeText.setText("You will receive PIN within " + millisUntilFinished / 1000 + " seconds");
+        }
     }
 
 }

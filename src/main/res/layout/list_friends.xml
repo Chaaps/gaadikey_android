@@ -1,30 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:padding="5dp" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip" >
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="50px"
-        android:layout_height="50px"
-        android:layout_marginLeft="5px"
-        android:layout_marginRight="20px"
-        android:layout_marginTop="5px"
-        android:src="@drawable/friendslane_icon" >
-    </ImageView>
+    <ImageView android:id="@+id/icon"
+        android:maxHeight="64dp"
+        android:maxWidth="64dp"
+        android:scaleType="centerCrop"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="6dip"
+        android:src="@drawable/ic_launcher"/>
+
+    <RelativeLayout
+        android:layout_toRightOf="@id/icon"
+        android:layout_width="100dp"
+        android:layout_height="64dp"
+        android:id="@+id/Block2">
 
     <TextView
-        android:id="@+id/label"
+        android:id="@+id/GaadiName"
+        android:layout_width="wrap_content"
+        android:layout_height="26dip"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="Ford Fiesta"
+        android:textSize="12sp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@+id/label"
-        android:textSize="30px" >
+        android:layout_above="@id/GaadiName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:text="Abhilash"
+        android:textSize="16sp"
+        android:id="@+id/ContactName"/>
+    </RelativeLayout>
 
-    </TextView>
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:text="Invite"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/Block2"
+        android:id="@+id/inviteButton"/>
 
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/icon"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignWithParentIfMissing="true"-->
+        <!--android:layout_toRightOf="@id/ContactName"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:text="Invite"-->
+        <!--android:textSize="16sp"-->
+        <!--android:id="@+id/inviteButton"-->
+        <!--/>-->
 
-
-
-
-</LinearLayout>
+</RelativeLayout>

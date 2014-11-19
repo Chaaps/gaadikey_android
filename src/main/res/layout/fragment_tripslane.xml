@@ -47,7 +47,6 @@
         android:layout_below="@+id/chooselabel"
         android:id="@+id/FromSection"
         >
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

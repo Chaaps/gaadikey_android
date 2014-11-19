@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.gaadikey.gaadikey.gaadikey.util.SystemUiHider;
+import com.google.android.gms.analytics.Tracker;
 
 
 /**
@@ -44,11 +45,19 @@ public class ActivityLauncher extends Activity {
      */
     private SystemUiHider mSystemUiHider;
 
+
+    private static final String PROPERTY_ID = "UA-56315292-2";
+    private Tracker tracker;
+    //HashMap<TrackerName, Tracker> mTrackers = new HashMap<TrackerName, Tracker>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String launch_code = sharedPref.getString(getString(R.string.KEY_signupstatus),  Constants.PIN_NOTDISPATCHED);
+        Log.e("The launch code is ", launch_code);
+
+
         // commenting out this in order to persist all values!
         // sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
         // The ActivityLauncher activity has to be popped out of the stack once a new activity is launched.
@@ -71,7 +80,15 @@ public class ActivityLauncher extends Activity {
            // startActivity(new Intent(ActivityLauncher.this, VerificationActivity.class ));
             // launch verificationActivity
         }
-        else if( launch_code.equals(""+Constants.PIN_DISPATCHED))
+//        else if(launch_code.equals(""+Constants.VERIFY_VISITED))
+//        {
+//            Intent i = new Intent(ActivityLauncher.this, VerificationActivity.class);
+//            i.setFlags((Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK ));
+//            startActivity(i);
+//
+//        }
+
+        else if( launch_code.equals(""+Constants.PIN_REQUESTSENT))
         {
             Log.e("Launch code", "PIN is dispatched ");
        //     startActivity(new Intent(ActivityLauncher.this, EnterPINActivity.class));
@@ -106,7 +123,7 @@ public class ActivityLauncher extends Activity {
          //   Intent i = new Intent(ActivityLauncher.this, StickyHome.class);
             // For the fragment approach!
             Intent i = new Intent(ActivityLauncher.this, LaunchActivity_NavDrawer.class);
-
+            i.putExtra("view", "normal");
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(i);
             // The StickyHome is now LaunchActivity_NavDrawer
@@ -142,4 +159,48 @@ public class ActivityLauncher extends Activity {
 
         //Activity Launcher!
     }
+
+
+
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+        SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+        String launch_code = sharedPref.getString(getString(R.string.KEY_signupstatus),  Constants.PIN_NOTDISPATCHED);
+        savedInstanceState.putString("launch_code", launch_code);
+        // etc.
+    }
+
+//    @Override
+//    public void onSaveInstanceState(Bundle savedInstanceState)
+//    {
+//        super.onSaveInstanceState(savedInstanceState);
+//        // Save UI state changes to the savedInstanceState.
+//        // This bundle will be passed to onCreate if the process is
+//        // killed and restarted.
+//        savedInstanceState.putBoolean("MyBoolean", true);
+//        savedInstanceState.putDouble("myDouble", 1.9);
+//        savedInstanceState.putInt("MyInt", 1);
+//        savedInstanceState.putString("MyString", "Welcome back to Android");
+//        // etc.
+//    }
+
+    public void onRestoreInstanceState(Bundle savedInstanceState)
+    {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore UI state from the savedInstanceState.
+
+        String myString = savedInstanceState.getString("launch_code");
+        Log.e("Launch_code retrived is ", myString);
+    }
+
+
+
+
+
+
 }
+
+

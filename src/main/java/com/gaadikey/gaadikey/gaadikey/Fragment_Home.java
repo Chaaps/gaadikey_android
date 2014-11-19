@@ -137,6 +137,7 @@ public class Fragment_Home extends Fragment  {
 
                         Intent i = new Intent(getActivity(), LaunchActivity_NavDrawer.class);
                         i.putExtra("searchString",edittext.getText().toString());
+                        i.putExtra("view", "normal");
 
                         SharedPreferences sharedPref4 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor_4 = sharedPref4.edit();

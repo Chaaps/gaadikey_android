@@ -106,7 +106,4 @@ public class PublicLaneAdapter extends ArrayAdapter<HashMap<String, String>> {
         }
     }
 
-
-
-
 }

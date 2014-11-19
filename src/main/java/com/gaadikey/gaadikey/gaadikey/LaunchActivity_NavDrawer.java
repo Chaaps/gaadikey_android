@@ -21,6 +21,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.adaptor.NavDrawerListAdapter;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import java.util.ArrayList;
 
@@ -41,15 +43,21 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
     private String searchString = "";
+    Tracker t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launchdrawer);
 
+        t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("StickyHome"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             searchString = extras.getString("searchString");
+            if(searchString!=null)
             Log.e("Obtained Searchstring is ", searchString);
         }
 //        SnippetsDB_Helper logindb;
@@ -160,8 +168,33 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
           //  homemenu_position = sharedPref.getString(getString(R.string.KEY_HomeMenu), "0");
          //   homemenu_position_int = Integer.parseInt(homemenu_position);
            // displayView(homemenu_position_int);
-            displayView(0);
-        }
+           // displayView(0);
+                String value = extras.getString("view");
+                if (value.equals("normal")) {
+                    displayView(0); // when opened naturally
+                }
+                else if (value.equals("FriendsLane")) {
+                    displayView(2);
+                    // Open the appropriate fragment here !
+                } else if (value.equals("PublicLane")) {
+                    displayView(1);
+                } else if (value.equals("ShoppingLane")) {
+                    displayView(4); //SHOPPINGLANE INTEGER
+                } else if (value.equals("SafetyLane")) {
+                    displayView(3);
+                    // Open the SafetyLane  Fragment
+                } else if (value.equals("NumberPlate")) {
+                    displayView(5);
+                } else if (value.equals("Search")) {
+                    displayView(6);
+                } else if (value.equals("Feedback")) {
+                    displayView(8);
+                    // The Feedback page
+                }
+            }
+
+
+
     }
 
     /**
@@ -261,27 +294,68 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                 break;
             case 1:
                 fragment = new Fragment_PublicLane();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("Public")
+                        .setLabel("")
+                        .build());
                 break;
             case 2:
                 fragment = new Fragment_FriendsLane(); // This should be the friends lane fragment!
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("Friends")
+                        .setLabel("")
+                        .build());
+
                 break;
             case 3:
                 fragment = new Fragment_SafetyLane(); // This is friends lane fragment!
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("Safety")
+                        .setLabel("")
+                        .build());
                 break;
             case 4:
                 fragment = new Fragment_ShoppingLane(); // Shopping lane fragment
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("Shopping")
+                        .setLabel("")
+                        .build());
                 break;
             case 5:
                 fragment = new Fragment_NumberPlate();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("NumberPlate")
+                        .setLabel("")
+                        .build());
                 break;
             case 6:
                 fragment = Fragment_SearchResults.newInstance(searchString);
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("SearchNumberPlate")
+                        .setLabel("")
+                        .build());
                 break;
             case 7:
                 fragment = new Fragment_Settings();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("Settings")
+                        .setLabel("")
+                        .build());
                 break;
             case 8:
                 fragment = new Fragment_Feedback();
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("Feedback")
+                        .setLabel("")
+                        .build());
                 break;
 //            case 5:
 //                fragment = new Fragment_TripsLane();  // Trips lane fragment
@@ -348,6 +422,54 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         mDrawerToggle.onConfigurationChanged(newConfig);
         //
     }
+//    @Override
+//    public void onNewIntent(Intent intent) {
+//
+//        Log.e("You are here in the new intent", "new intent");
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//            String value = extras.getString("view");
+//            if(value.equals("FriendsLane"))
+//            {
+//                displayView(2);
+//                // Open the appropriate fragment here !
+//            }
+//            else
+//            if(value.equals("PublicLane"))
+//            {
+//                displayView(1);
+//            }
+//            else
+//            if(value.equals("ShoppingLane"))
+//            {
+//                displayView(4); //SHOPPINGLANE INTEGER
+//            }
+//            else
+//            if(value.equals("SafetyLane"))
+//            {
+//                displayView(3);
+//                // Open the SafetyLane  Fragment
+//            }
+//            else
+//            if(value.equals("NumberPlate"))
+//            {
+//                displayView(5);
+//            }
+//            else
+//            if(value.equals("Search"))
+//            {
+//                displayView(6);
+//            }
+//            else
+//            if(value.equals("Feedback"))
+//            {
+//                displayView(8);
+//                // The Feedback page
+//            }
+//        }
+//
+//
+//    }
 
 
     @Override

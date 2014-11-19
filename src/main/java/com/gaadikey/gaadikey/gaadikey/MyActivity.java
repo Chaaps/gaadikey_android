@@ -26,6 +26,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.apache.http.HttpResponse;
@@ -65,6 +67,7 @@ public class MyActivity extends Activity {
     String GAADI_NAME = "";
     String selected_profile = "bike";
     String PHONE_NUMBER = "";
+    Tracker t;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -89,34 +92,28 @@ public class MyActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("CompleteProfile"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
+
         Button btn = (Button) findViewById(R.id.button2);
         btn.setEnabled(true);
 
         // Reading the phone  number from persistance storage
         SharedPreferences sharedPref = getSharedPreferences("android_shared",Context.MODE_PRIVATE);
         PHONE_NUMBER = sharedPref.getString(getString(R.string.KEY_phonenumber), "phonenumber");
-                // Disable completion button until we get the notification ID
-         // Commenting out hard coded spinner values, as we are getting the data from web server . . . .
-//        Spinner dropdown = (Spinner) findViewById(R.id.spinner1);
-//        String[] items = new String[]{"Honda Unicorn", "TVS Apache", "Bajaj Pulsar", "Yamaha RX", "Royal Enfield"};
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
-//        dropdown.setAdapter(adapter);
-
-        Spinner cardropdown = (Spinner) findViewById(R.id.carspinner);
-        String[] car_items = new String[]{"Honda City", "Hyundai Santro", "Maruti 800", "Maruti 1000"};
-        ArrayAdapter<String> car_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, car_items);
-        cardropdown.setAdapter(car_adapter);
-      //  choiceDialog();
-
-        //call the get request method with the URL http://gaadikey.com/bikes.php to get the JSON response and to parse for the bike_name and bike_brand and bike_imgurl
-        new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
-        new GetCarDataTask().execute("http://gaadikey.com/cars.php");
         getRegId();
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
+                        t.send(new HitBuilders.EventBuilder()
+                                .setCategory("BikeClick")
+                                .setAction("Bike_Click")
+                                .setLabel("")
+                                .build());
                         Log.e("Bike is Clicked", "Bike");
                         ImageView caricon = (ImageView) findViewById(R.id.caricon);
                         TextView cartextview  = (TextView) findViewById(R.id.textView2);
@@ -125,11 +122,17 @@ public class MyActivity extends Activity {
                         caricon.setVisibility(View.GONE);
                         carspinner.setVisibility(View.GONE);
                         selected_profile = "bike";
+                        new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
                         //Yes button clicked
                         break;
 
                     case DialogInterface.BUTTON_NEGATIVE:
                         Log.e("Car is Clicked", "Car");
+                        t.send(new HitBuilders.EventBuilder()
+                                .setCategory("CarClick")
+                                .setAction("Car_Click")
+                                .setLabel("")
+                                .build());
                         ImageView bikeicon = (ImageView) findViewById(R.id.bikeicon);
                         TextView biketextview = (TextView) findViewById(R.id.textView);
                         Spinner bikespinner = (Spinner) findViewById(R.id.spinner1);
@@ -137,6 +140,7 @@ public class MyActivity extends Activity {
                         biketextview.setVisibility(View.GONE);
                         bikespinner.setVisibility(View.GONE);
                         selected_profile="car";
+                        new GetCarDataTask().execute("http://gaadikey.com/cars.php");
                         //No button clicked
                         break;
                 }
@@ -148,6 +152,8 @@ public class MyActivity extends Activity {
                 .setNegativeButton("Car", dialogClickListener).show();
        //  The url is sent to the method where the response is parsed for the TheBikeObject data
     }
+
+
 
     private Cursor getContacts() {
         // Run query
@@ -231,13 +237,6 @@ public class MyActivity extends Activity {
     }
 
 
-    // from somewhere
-
-    //RegisterThisUser("http://gaadikey.in/register", profile_object);
-
-    // gaadikey.in/register  // profile_object
-
-
     private class RegisterUserTask extends AsyncTask<String, Void, String> {
 
         protected String doInBackground(String... urls)
@@ -273,7 +272,14 @@ public class MyActivity extends Activity {
 
                     SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor_4 = sharedPref4.edit();
-                    editor_4.putString(getString(R.string.KEY_GaadiImage), GAADI_IMAGEPATH);
+                    String rootstring = "http://gaadikey.com/images";
+                    String web_image_path =  GAADI_IMAGEPATH;
+                    String path = "";
+                    if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                    String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+
+                    Log.e("Image path is ", path);
+                    editor_4.putString(getString(R.string.KEY_GaadiImage), resize_path);
                     editor_4.commit();
 
                     // All details stored in persistant , Should be able to retrieve the values with the respective keys!
@@ -298,6 +304,9 @@ public class MyActivity extends Activity {
                 //
             }
     }
+
+
+
 
 
     public String RegisterThisUser(String url, ProfileObject profile_object ) {
@@ -382,52 +391,7 @@ public class MyActivity extends Activity {
         return result;
     }
 
-    public void choiceDialog()
-    {
 
-        final AlertDialog levelDialog;
-
-
-        // Strings to Show In Dialog with Radio Buttons
-        final CharSequence[] items = {"Bike","Car","Others"};
-
-        // Creating and Building the Dialog
-         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Select The Difficulty Level");
-
-        // The dialog has to be shown along with options
-        // option1 option2 option3 option3 option4
-        levelDialog = builder.create();
-        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
-        public void onClick(DialogInterface dialog, int item) {
-
-        switch(item)
-        {
-            case 0:
-                // Your code when first option seletced
-                Log.e("Option 1 Selected", "Bike");
-                break;
-            case 1:
-                // Your code when 2nd  option seletced
-                Log.e("Option 2 Selected", "Car");
-                break;
-            case 2:
-                // Your code when 3rd option seletced
-                Log.e("Option 3 Selected", "Other");
-                break;
-
-        }
-
-         levelDialog.dismiss();
-
-        }
-        });
-
-
-        levelDialog.show();
-        Log.e("Level Dialog" , "Level dialog shown");
-
-    }
 
 
     private class GetBikeDataTask extends AsyncTask<String, Void, String>
@@ -475,8 +439,6 @@ public class MyActivity extends Activity {
     public void PopulateBikeSpinner(String result)
     {
 
-
-
         try {
             JSONArray json = new JSONArray(result);
             // check if this request was sucessful... if the request was successful
@@ -511,53 +473,27 @@ public class MyActivity extends Activity {
             ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bikestringdata); // passing the array list instead of array!
             bikedropdown.setAdapter(adapter);
 
-            Spinner cardropdown = (Spinner) findViewById(R.id.carspinner);
-
-            // Car On selected event
-
-            cardropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-
-
-                    Log.e("The Selected index in cardrop down is ", ""+position);
-
-                    // The below code is pending as we are not retrieving the car data
-
-//                    ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
-//                    new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("ImgUrl"));
-
-
-                    // your code here
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parentView) {
-                    // your code here
-                }
-
-            });
-
-
-            // Bike on selected event
-
-
             bikedropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
                 {
-
                     // Since 0 is returned for the first item... don't do anything .
                     if(position!=0)
                     {
                         Log.e("The Selected index in bike dropdown is ", "" + position);
                         ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
-                        new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("bike_image"));
+
+                        String rootstring = "http://gaadikey.com/images";
+                        String web_image_path =  bikedata.get(position).get("bike_image");
+                        String path = "";
+                        if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                        String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                        Log.e("Resize path is ", resize_path);
+                        new ImageDownloader(bikeicon_imageview).execute(resize_path);
                     }
                     // Now change the bike images, based on the selection among bikes
                     // your code here
                 }
-
                 @Override
                 public void onNothingSelected(AdapterView<?> parentView)
                 {
@@ -567,6 +503,9 @@ public class MyActivity extends Activity {
                 }
 
             });
+
+
+
         }
 
         catch(Exception e)
@@ -699,10 +638,6 @@ public class MyActivity extends Activity {
                 carstringdata.add(car_name);
                 // loading these variables
             }
-            //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile, COUNTRIES));
-            Spinner bikedropdown = (Spinner) findViewById(R.id.spinner1);
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bikestringdata); // passing the array list instead of array!
-            bikedropdown.setAdapter(adapter);
 
             Spinner cardropdown = (Spinner) findViewById(R.id.carspinner);
             ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, carstringdata);
@@ -719,9 +654,19 @@ public class MyActivity extends Activity {
 
                     if(position!=0)
                     {
-                        Log.e("The Selected index in bike dropdown is ", "" + position);
+                        Log.e("The Selected index in car dropdown is ", "" + position);
                         ImageView caricon_imageview = (ImageView) findViewById(R.id.caricon);
-                        new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
+
+                        String rootstring = "http://gaadikey.com/images";
+                        String web_image_path =  cardata.get(position).get("car_image");
+                        String path = "";
+                        if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                        String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                        Log.e("Resize path is", resize_path);
+                        new ImageDownloader(caricon_imageview).execute(resize_path);
+
+
+                      //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
                     }
 
                     // The below code is pending as we are not retrieving the car data
@@ -744,31 +689,7 @@ public class MyActivity extends Activity {
             // Bike on selected event
 
 
-            bikedropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
-                {
 
-                    // Since 0 is returned for the first item... don't do anything .
-                    if(position!=0)
-                    {
-                        Log.e("The Selected index in bike dropdown is ", "" + position);
-                        ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
-                        new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("bike_image"));
-                    }
-                    // Now change the bike images, based on the selection among bikes
-                    // your code here
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parentView)
-                {
-
-                    Log.e("The very first time ", "Nothing is selected ");
-                    // your code here
-                }
-
-            });
         }
 
         catch(Exception e)

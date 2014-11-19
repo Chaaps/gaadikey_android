@@ -16,9 +16,11 @@ public final class TestFragment extends Fragment {
     public static String running_content = "";
     public static TestFragmentAdapter testfragadapt;
 
+
     public static TestFragment newInstance(String content, TestFragmentAdapter test) {
         TestFragment fragment = new TestFragment();
         StringBuilder builder = new StringBuilder();
+
         testfragadapt = test;
         Log.e("Triggered", "Triggered");
         // Get Started Blue button has to be added for the last instance!
@@ -70,12 +72,16 @@ public final class TestFragment extends Fragment {
         if ((savedInstanceState != null) && savedInstanceState.containsKey(KEY_CONTENT)) {
             mContent = savedInstanceState.getString(KEY_CONTENT);
         }
+
+       // mContent = savedInstanceState.getString(KEY_CONTENT); //Saved Instance state is directly read!
+
     }
 
 
     public void getStarted_Click(Button view)
     {
         Log.e("Get started has been clicked! ", "The click has occured! ");
+
         // get started has been clicked!
 
     }
@@ -164,6 +170,7 @@ public final class TestFragment extends Fragment {
 
                     Intent intent = new Intent(getActivity(), VerificationActivity.class);
                     startActivity(intent);
+                    getActivity().finish();
 
                 }
             });

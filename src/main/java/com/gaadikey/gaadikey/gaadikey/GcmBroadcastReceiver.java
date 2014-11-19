@@ -23,11 +23,77 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
         		GcmMessageHandler.class.getName());
 
       //  Intent notificationIntent = new Intent(context, ListMobileActivity.class);
+        // WelcomesYou page opens up  when a notification is received! This can be based on the message
 
-        Intent notificationIntent = new Intent(context, WelcomesYou.class);
+        Bundle messages =  intent.getExtras();
+        String thetitle = messages.getString("title");
+        String themessage = messages.getString("message");
+        String thenavigationpage = ""; //check for n
+
+        thenavigationpage = messages.getString("navigation_page");
+        if (thenavigationpage == null)
+        thenavigationpage = "no_navigation";
+
+        Log.e("Navigation page is " , thenavigationpage);
+
+        Intent notificationIntent; // Variable to declare the next Activity to be called!
+        PendingIntent pendingIntent = null; // The Pending Intent
+
+        if(thenavigationpage.equals("welcome")) {
+
+            notificationIntent = new Intent(context, WelcomesYou.class);
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        else if(thenavigationpage.equals("safetylane")){
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "SafetyLane");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        else if(thenavigationpage.equals("friendslane")) {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "FriendsLane");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        else if(thenavigationpage.equals("publiclane")) {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "PublicLane");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        else if(thenavigationpage.equals("shoppinglane")) {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "ShoppingLane");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        else if(thenavigationpage.equals("search")) {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "Search");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+        else if(thenavigationpage.equals("numberplate")) {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "NumberPlate");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+
+        else if(thenavigationpage.equals("feedback")) {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "Feedback");
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+        else
+        {
+            notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
+            notificationIntent.putExtra("view", "normal"); // when it is normal
+            pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        }
 
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Bundle extras = intent.getExtras();
         Log.e("Special", "The Special Message is " + extras.getString("title"));

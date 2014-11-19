@@ -12,6 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -60,11 +63,17 @@ public class SettingUpActivity extends ActionBarActivity {
 
     ContactsObject cob = new ContactsObject();
     String jsonString = "";
+    Tracker t;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_up);
         Log.e("Flow", "The flow is in SettingUpActivity");
+
+        t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("SettingUp"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
+
         Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
         int count = 0;
         try
@@ -78,15 +87,24 @@ public class SettingUpActivity extends ActionBarActivity {
 
 
             Log.e("Phone number before is ", phoneNumber);
-            phoneNumber.replace(" ", "");
-            phoneNumber = phoneNumber.replaceAll("\\s+","");
+            phoneNumber=  phoneNumber.replace(" ", ""); // removes all spaces
+            phoneNumber=  phoneNumber.replace("-", "");
+            phoneNumber=  phoneNumber.replace("(", ""); // Eliminate opening brackets if any
+            phoneNumber=  phoneNumber.replace(")", ""); // Eliminate closing brackets if any
+            phoneNumber = phoneNumber.replaceAll("\\s+",""); // removes all whitespaces including tab spaces etc
             phoneNumber = phoneNumber.trim();
+
+            // Eliminate +91 in the phone number string..
+            if(phoneNumber.startsWith("+91")) phoneNumber = phoneNumber.substring(3,phoneNumber.length());
+            if(phoneNumber.startsWith("0")) phoneNumber = phoneNumber.substring(1, phoneNumber.length());
+
+
             Log.e("Phone number after is ", phoneNumber );
 
             Log.e("Name is ", name);
             Log.e("Number is ", phoneNumber);
             cob.setName(name);
-            cob.setDesc("public.gaaikey.com");
+            cob.setDesc("public.gaadikey.com");
             cob.setImgUrl("http://gaadikey.com/images/gaadi/3.jpg");
             cob.setGkey("not_assigned");
             cob.setPhonenumber1(phoneNumber);
@@ -165,6 +183,7 @@ public class SettingUpActivity extends ActionBarActivity {
           //  startActivity(new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class));
             // Remove all the older activities from the stack .. so that when the user presses back, it doesn't take to older screens which are no longer required!
             Intent intent = new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class);
+            intent.putExtra("view", "normal");
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
 

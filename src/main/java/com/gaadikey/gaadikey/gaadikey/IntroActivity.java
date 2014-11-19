@@ -3,10 +3,14 @@ package com.gaadikey.gaadikey.gaadikey;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.viewpagerindicator.CirclePageIndicator;
 
 public class IntroActivity extends BaseSampleActivity {
-    @Override
+
+    Tracker t;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.simple_circles);
@@ -18,6 +22,9 @@ public class IntroActivity extends BaseSampleActivity {
 
         mIndicator = (CirclePageIndicator)findViewById(R.id.indicator);
         mIndicator.setViewPager(mPager);
+        t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("Welcome"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
 
     }
 

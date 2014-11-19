@@ -153,6 +153,13 @@ public class Fragment_PublicLane extends Fragment {
                     JSONObject jObject = json.getJSONObject(i);
                     String vehiclename =           jObject.getString("vehiclename");
                     String gaadipic =         jObject.getString("gaadipic");
+                    String rootstring = "http://gaadikey.com/images";
+                    String web_image_path =  gaadipic;
+                    String path = "";
+                    if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                    String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+
+                    Log.e("Image path is ", resize_path);
                     String modifiedOn    =         jObject.getString("modifiedOn");
                     //     modifiedOn = "Joined public lane "+TimeUtils.millisToLongDHMS(24000)+" ago.";
 //                    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yy:HH:mm:SSS'Z'");
@@ -172,7 +179,7 @@ public class Fragment_PublicLane extends Fragment {
                     CharSequence cs = DateUtils.getRelativeTimeSpanString(mills);
                     if(!vehiclename.equals("null")) {
                         map.put("vehiclename", vehiclename);
-                        map.put("gaadipic", gaadipic);
+                        map.put("gaadipic", resize_path);
                         map.put("modifiedOn", "Joined public lane "+cs.toString()+" ");
                         publicList.add(map);
                     }

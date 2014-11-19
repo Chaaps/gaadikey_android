@@ -1,15 +1,19 @@
 package com.gaadikey.gaadikey.gaadikey;
-import android.support.v4.app.Fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.adaptor.FriendsAdapter;
 
@@ -33,6 +37,7 @@ import java.util.HashMap;
 public class Fragment_FriendsLane extends Fragment{
 
     public static ArrayList<HashMap<String, String>> contactsList = new ArrayList<HashMap<String, String>>();
+    public static ArrayList<HashMap<String, String>> nonMembersList = new ArrayList<HashMap<String, String>>();
 
     ListView listview;
 
@@ -42,24 +47,51 @@ public class Fragment_FriendsLane extends Fragment{
         System.out.println("loading listview.........");
         SharedPreferences sharedPref =  getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         String phone = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
-
-        String thecontacts_retrieval_url = "https://gaadikey.in/dummycontacts?phonenumber="+phone;
+        //String thecontacts_retrieval_url = "https://gaadikey.in/dummycontacts?phonenumber="+phone;
+        String thecontacts_retrieval_url = "https://gaadikey.in/checkmembership?phonenumber="+phone; // The Contacts retrieval URL has been populated!
         new RetrivePhoneBook_GetTask().execute(thecontacts_retrieval_url);
+
+
 
         listview = (ListView) view.findViewById(R.id.list);
 
+        View rowView = inflater.inflate(R.layout.list_friends, listview, false);
+
         //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
 
-//        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
-//                                    long arg3) {
-//
-//
-//                Toast.makeText(getActivity(), "The contact item selected in the friends list is in the position " + position, Toast.LENGTH_LONG).show();
-//
-//
-//            }
-//        });
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
+                                    long arg3) {
+
+
+                Toast.makeText(getActivity(), "The contact item selected in the friends list is in the position " + position, Toast.LENGTH_LONG).show();
+                Button inviteButton = (Button) arg1.findViewById(R.id.inviteButton);
+
+                inviteButton.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+
+                        try {
+
+                            Log.e("Click", "Click");
+
+                            Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+                            sendIntent.putExtra("sms_body", "default content");
+                            sendIntent.setType("vnd.android-dir/mms-sms");
+                            startActivity(sendIntent);
+
+                        } catch (Exception e) {
+                            Toast.makeText(getActivity().getApplicationContext(),
+                                    "SMS faild, please try again later!",
+                                    Toast.LENGTH_LONG).show();
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+            }
+        });
 
         return view;
 
@@ -80,6 +112,7 @@ public class Fragment_FriendsLane extends Fragment{
         {
 
             contactsList = new ArrayList<HashMap<String, String>>();
+            nonMembersList = new ArrayList<HashMap< String, String>>();
 
             try
             {
@@ -92,27 +125,68 @@ public class Fragment_FriendsLane extends Fragment{
             for(int i=0;i<json.length();i++)
             {
                 HashMap<String, String> map = new HashMap<String, String>();
+                /* The Below is the response from the URL Dummy Contacts */
+//
+//                JSONObject jObject = json.getJSONObject(i);
+//                String Name =           jObject.getString("Name");
+//                String ImgUrl =         jObject.getString("ImgUrl");
+//                String Desc    =         jObject.getString("Desc");
+//                String gkey   =          jObject.getString("gkey");
+//                String phonenumber1       = jObject.getString("phonenumber1");
+//                String phonenumber2       = jObject.getString("phonenumber2");
+//                String phonenumber3       = jObject.getString("phonenumber3");
+//                String phonenumber4       = jObject.getString("phonenumber4");
+//                Log.e("Values ", "Name is "+Name);
+//                Log.e("Values ", "Phonenumber is "+phonenumber1);
+//                map.put("Name", Name);
+//                map.put("ImgUrl", ImgUrl);
+//                map.put("Desc", Desc);
+//                map.put("gkey", gkey);
+//                map.put("phonenumber1",  phonenumber1);
+//                map.put("phonenumber2",  phonenumber2);
+//                map.put("phonenumber3",  phonenumber3);
+//                map.put("phonenumber4",  phonenumber4);
+//                contactsList.add(map);
+
+                /* The Response from the checkmembershipstatus API should look like
+                 */
+
                 JSONObject jObject = json.getJSONObject(i);
-                String Name =           jObject.getString("Name");
-                String ImgUrl =         jObject.getString("ImgUrl");
-                String Desc    =         jObject.getString("Desc");
-                String gkey   =          jObject.getString("gkey");
-                String phonenumber1       = jObject.getString("phonenumber1");
-                String phonenumber2       = jObject.getString("phonenumber2");
-                String phonenumber3       = jObject.getString("phonenumber3");
-                String phonenumber4       = jObject.getString("phonenumber4");
-                Log.e("Values ", "Name is "+Name);
-                Log.e("Values ", "Phonenumber is "+phonenumber1);
-                map.put("Name", Name);
-                map.put("ImgUrl", ImgUrl);
-                map.put("Desc", Desc);
-                map.put("gkey", gkey);
-                map.put("phonenumber1",  phonenumber1);
-                map.put("phonenumber2",  phonenumber2);
-                map.put("phonenumber3",  phonenumber3);
-                map.put("phonenumber4",  phonenumber4);
+                String  phonenumber =    jObject.getString("phonenumber");
+                String  memberstatus  = jObject.getString("memberstatus");
+                String  name  = jObject.getString("name");
+                String vehiclename = "";
+                String vehicletype = "";
+                String gaadipic  = "";
+
+
+                if(memberstatus.equals("yes")) {
+                    vehiclename = jObject.getString("vehiclename");
+                    vehicletype = jObject.getString("vehicletype");
+                    gaadipic = jObject.getString("gaadipic");
+                }
+
+                String rootstring = "http://gaadikey.com/images";
+                String web_image_path =  gaadipic;
+                String path = "";
+                if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+
+                Log.e("Image path is ", resize_path);
+                map.put("phonenumber", phonenumber);
+                map.put("memberstatus", memberstatus);
+                map.put("name", name);
+                map.put("vehiclename", vehiclename);
+                map.put("vehicletype",  vehicletype);
+                map.put("gaadipic",     resize_path);
+
+                if(memberstatus.equals("no"))
+                nonMembersList.add(map);
+                else
                 contactsList.add(map);
             }
+
+            contactsList.addAll(nonMembersList);
             //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
             Log.e("The number of items in the list is ", ""+contactsList.size());
             listview.setAdapter(new FriendsAdapter(getActivity(), contactsList));

@@ -27,6 +27,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
@@ -48,18 +51,41 @@ public class VerificationActivity extends ActionBarActivity {
     String phone;
     String email;
     String PIN;
+    Tracker t;
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
         Log.e("Loaded", "activity_verification loaded");
-        SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_NOTDISPATCHED);
-        editor.commit();
+//        SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPref.edit();
+//        editor.putString(getString(R.string.KEY_signupstatus), Constants.VERIFY_VISITED);
+//        editor.commit();
+        //Get a Tracker (should auto-report)
+        t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("VerificationActivity"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
+
     }
 
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //outState.putString(KEY_CONTENT, mContent);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+      //  GoogleAnalytics.getInstance(this).reportActivityStart(this);
+    }
+
+    protected void  onStop(){
+        super.onStop();
+        //Stop the analytics tracking
+       // GoogleAnalytics.getInstance(this).reportActivityStop(this);
+    }
 
     private void addContact(String name, String phone)
     {
@@ -115,6 +141,15 @@ public class VerificationActivity extends ActionBarActivity {
     public void Phone_Submission_Click(View Button)
     {
 
+        // Get tracker.
+     //   Tracker t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        // Build and send an Event.
+        t.send(new HitBuilders.EventBuilder()
+                .setCategory("PhoneNumberSubmitted")
+                .setAction("PhoneNumber_SubmitClick")
+                .setLabel("")
+                .build());
+
         Log.e("The Submission Click has occured once and should only occur once!!!", "Click event");
         final EditText phoneField = (EditText) findViewById(R.id.phoneNumber);
 
@@ -151,6 +186,15 @@ public class VerificationActivity extends ActionBarActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(getString(R.string.KEY_phonenumber), phone);
         editor.commit();
+
+        SharedPreferences sharedPref1 =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+        SharedPreferences.Editor editor1 = sharedPref.edit();
+        editor1.putString(getString(R.string.KEY_signupstatus), Constants.PIN_REQUESTSENT);
+        editor1.commit();
+
+        //PIN_REQUESTSENT
+        //sharedPref1 now  storing the PIN_REQUESTSENT as early as possible
+
 
 //        String contactsavestatus = sharedPref.getString(getString(R.string.KEY_GaadiKey_Number_Saved),  "no");
 //        if(contactsavestatus.equals("no"))
@@ -201,7 +245,6 @@ public class VerificationActivity extends ActionBarActivity {
     {
         Log.e("Do this ",  "Do this .. Do this now");
     }
-
 
 
     // passing https has a problem in android.. solve it
@@ -356,19 +399,12 @@ public class VerificationActivity extends ActionBarActivity {
         protected void onPostExecute(String result)
         {
             Log.e("Success posting", result);
-            new AlertDialog.Builder(VerificationActivity.this)
-                    .setTitle("Registration (2/2)")
-                    .setMessage("We have recieved your Phone number. Please check your Email Inbox for the PIN and verify it below.")
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .show();
-            Toast.makeText(getBaseContext(), "Data Sent!", Toast.LENGTH_LONG).show();
-            SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_DISPATCHED);
-            editor.commit();
+            Toast.makeText(getBaseContext(), "You will be receiving PIN by SMS", Toast.LENGTH_LONG).show();
+
             // The control should now go to Enter PIN Screen
             // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
             startActivity(new Intent(VerificationActivity.this, EnterPINActivity.class));
+            finish();
         }
     }
 
@@ -421,6 +457,9 @@ public class VerificationActivity extends ActionBarActivity {
 
         }
     }
+
+
+
 
 
 

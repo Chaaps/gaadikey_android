@@ -29,7 +29,6 @@ import java.io.InputStreamReader;
 
 //Only form data body is required .
 
-
 public class AccessTokenActivity extends ActionBarActivity {
 
     // Everything is blank in the UI.. The actual code to get the access token is here!
