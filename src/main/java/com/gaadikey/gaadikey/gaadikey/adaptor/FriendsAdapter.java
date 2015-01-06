@@ -41,15 +41,13 @@ public class FriendsAdapter extends ArrayAdapter <HashMap<String, String>>  {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_friends, parent, false);
-        TextView textView = (TextView) rowView.findViewById(R.id.ContactName);
+        TextView textView = (TextView) rowView.findViewById(R.id.ContactName); //Contact name
         TextView textView2 = (TextView) rowView.findViewById(R.id.GaadiName);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-
         Button inviteButton = (Button) rowView.findViewById(R.id.inviteButton);
         inviteButton.setTag(position); // setting the position
-
-
         // Button inviteButton = (Button) rowView.findViewById(R.id.inviteButton);
+
 
         inviteButton.setOnClickListener(new View.OnClickListener() {
 

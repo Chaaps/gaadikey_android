@@ -56,8 +56,13 @@ public class WelcomesYou extends ActionBarActivity {
         Log.e("Button clicked ", "Yes");
         // Take this activity to StickyHome
         // Going to stickey home would be like going back to home.
-        startActivity(new Intent(WelcomesYou.this, StickyHome.class));
+        // Launch the Launch_DrawerActivity in order to launch the new drawer base activity when clicked from the notification!
+        Intent i = new Intent(WelcomesYou.this , LaunchActivity_NavDrawer.class);
+        i.putExtra("view", "normal");
+        startActivity(i); // LaunchDrawer
+        // When Back to Home is clicked. This should go to default drawer home area!
 
+       // startActivity(new Intent(WelcomesYou.this, StickyHome.class));
     }
 
     private class RegisteredUserCountTask extends AsyncTask<String, Void, String> {

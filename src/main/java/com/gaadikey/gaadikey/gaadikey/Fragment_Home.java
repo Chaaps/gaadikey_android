@@ -1,18 +1,15 @@
 package com.gaadikey.gaadikey.gaadikey;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,13 +23,11 @@ import java.util.ArrayList;
  * Created by madratgames on 31/10/14.
  */
 public class Fragment_Home extends Fragment  {
-
     ArrayList<String> lanes = new ArrayList<String>();
     ListView listview;
     String IMAGE_PATH = "";
     String GAADI_MSG = "";
     String GAADI_NAME = "";
-
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -46,10 +41,18 @@ public class Fragment_Home extends Fragment  {
             @Override
             public void onClick(View view) {
 
-                ((LaunchActivity_NavDrawer) getActivity()).displayView(5); // This opens up numberplate view!
+                ((LaunchActivity_NavDrawer) getActivity()).displayView(6); // This opens up numberplate view!
             }
         });
 
+        thumbnail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // Open up the settings view when clicked from here!
+                ((LaunchActivity_NavDrawer) getActivity()).displayView(8); // The 7th option is settings!
+            }
+        });
 
 
 
@@ -90,6 +93,7 @@ public class Fragment_Home extends Fragment  {
         lanes.add("Friends Lane");
         lanes.add("Safety Lane");
         lanes.add("Shopping Lane");
+        lanes.add("News");
 
         listview = (ListView) view.findViewById(R.id.list);
         listview.setAdapter(new StickyHomeAdapter(getActivity(), lanes));
@@ -109,45 +113,47 @@ public class Fragment_Home extends Fragment  {
             }
             });
 
-
-        final EditText edittext = (EditText) view.findViewById(R.id.editText_search);
-
-        edittext.setOnEditorActionListener(
-                new EditText.OnEditorActionListener() {
-                    @Override
-                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        // Removing the edittext for now
 
 
-
-                        if (event != null) {
-                            // if shift key is down, then we want to insert the '\n' char in the TextView;
-                            // otherwise, the default action is to send the message.
-
-                            if (!event.isShiftPressed())
-                            {
-                                Log.e(" Enter is pressed! ", "Yes");
-                                //return true;
-                                // Start the activity here
-
-                            }
-                            return false;
-                        }
-
-                        Log.e("here we are ", "Yes");
-
-                        Intent i = new Intent(getActivity(), LaunchActivity_NavDrawer.class);
-                        i.putExtra("searchString",edittext.getText().toString());
-                        i.putExtra("view", "normal");
-
-                        SharedPreferences sharedPref4 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor_4 = sharedPref4.edit();
-                        editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
-                        editor_4.commit();
-                        startActivity(i);
-
-                        return true;
-                    }
-                });
+//        final EditText edittext = (EditText) view.findViewById(R.id.editText_search);
+//
+//        edittext.setOnEditorActionListener(
+//                new EditText.OnEditorActionListener() {
+//                    @Override
+//                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//
+//
+//
+//                        if (event != null) {
+//                            // if shift key is down, then we want to insert the '\n' char in the TextView;
+//                            // otherwise, the default action is to send the message.
+//
+//                            if (!event.isShiftPressed())
+//                            {
+//                                Log.e(" Enter is pressed! ", "Yes");
+//                                //return true;
+//                                // Start the activity here
+//
+//                            }
+//                            return false;
+//                        }
+//
+//                        Log.e("here we are ", "Yes");
+//
+//                        Intent i = new Intent(getActivity(), LaunchActivity_NavDrawer.class);
+//                        i.putExtra("searchString",edittext.getText().toString());
+//                        i.putExtra("view", "normal");
+//
+//                        SharedPreferences sharedPref4 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+//                        SharedPreferences.Editor editor_4 = sharedPref4.edit();
+//                        editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
+//                        editor_4.commit();
+//                        startActivity(i);
+//
+//                        return true;
+//                    }
+//                });
 
 
 

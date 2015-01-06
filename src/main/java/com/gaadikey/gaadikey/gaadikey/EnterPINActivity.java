@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,8 @@ public class EnterPINActivity extends ActionBarActivity {
     public String PIN = "";
     public String phonenumber = "";
 
+    ProgressBar pb; // The   Progressbar variable has been declared ..
+
     private CountDownTimer countDownTimer;
     private boolean timerHasStarted = false;
     private Button startB;
@@ -54,6 +57,9 @@ public class EnterPINActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_pin);
+        pb = (ProgressBar) findViewById(R.id.progress);
+        // selecting the progressbar component by choosing the id from layout
+
         Log.e("PIN", "Entered PIN activity. You will have to Enter the PIN. ");
         Log.e("Flow", "The control has reached here!");
         TimeText = (TextView) findViewById(R.id.TimeText);
@@ -97,6 +103,16 @@ public class EnterPINActivity extends ActionBarActivity {
 
     public void PIN_Submission_Click(View Button)
     {
+
+        countDownTimer.cancel();
+
+        final android.widget.Button pinSubmissionClick = (Button) findViewById(R.id.button2); // Identifier for complete profile button
+        // tHE BLOW CODE DISABLES THE BUTTON
+        pinSubmissionClick.setEnabled(false);
+        pinSubmissionClick.setFocusable(false); // removes the focus from the button!
+
+
+
         t.send(new HitBuilders.EventBuilder()
                 .setCategory("PINSubmitted")
                 .setAction("PIN_SubmitClick")
@@ -125,6 +141,14 @@ public class EnterPINActivity extends ActionBarActivity {
 
     private class HttpAsyncGetTask extends AsyncTask<String, Void, String>
     {
+
+        @Override
+        protected void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+
+        }
+
         @Override
         protected String doInBackground(String... urls)
         {
@@ -136,6 +160,7 @@ public class EnterPINActivity extends ActionBarActivity {
         protected void onPostExecute(String result)
         {
 
+            pb.setVisibility(View.GONE); // Hiding the progress bar here!
             try {
                 JSONObject jObject = new JSONObject(result);
                 String actualPIN = jObject.getString("PIN");
@@ -143,11 +168,14 @@ public class EnterPINActivity extends ActionBarActivity {
                 Log.e("actualPIN", actualPIN);
 
                 if (PIN.equals(actualPIN)) {
-                    new AlertDialog.Builder(EnterPINActivity.this)
-                            .setTitle("Verification Status")
-                            .setMessage("Verification Success! Thanks for verifying your PIN. You can now build Gaadi Key profile")
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
+
+                    Toast.makeText(getBaseContext(), "PIN verification successful", Toast.LENGTH_LONG).show();
+
+//                    new AlertDialog.Builder(EnterPINActivity.this)
+//                            .setTitle("Verification Status")
+//                            .setMessage("Verification Success! Thanks for verifying your PIN. You can now build Gaadi Key profile")
+//                            .setIcon(android.R.drawable.ic_dialog_alert)
+//                            .show();
 
                     SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
                     SharedPreferences.Editor editor2 = sharedPref.edit();
@@ -157,8 +185,7 @@ public class EnterPINActivity extends ActionBarActivity {
 
                      new  GetAccessTokenPostTask().execute("https://gaadikey.in/token");
 
-                    startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
-                    finish();
+
 
                     // Store the phonenumber if PIN is verified!
 
@@ -167,11 +194,14 @@ public class EnterPINActivity extends ActionBarActivity {
 
                 } else
                 {
-                    new AlertDialog.Builder(EnterPINActivity.this)
-                            .setTitle("Verification Status")
-                              .setMessage("The PIN which you entered is not matching! Please enter a valid PIN.")
-                            .setIcon(android.R.drawable.ic_dialog_alert)
-                            .show();
+
+                    Toast.makeText(getBaseContext(), "Please enter a valid PIN.", Toast.LENGTH_LONG).show();
+
+//                    new AlertDialog.Builder(EnterPINActivity.this)
+//                            .setTitle("Verification Status")
+//                              .setMessage("The PIN which you entered is not matching! Please enter a valid PIN.")
+//                            .setIcon(android.R.drawable.ic_dialog_alert)
+//                            .show();
 
                 }
 
@@ -189,6 +219,16 @@ public class EnterPINActivity extends ActionBarActivity {
 
 
     private class GetAccessTokenPostTask extends AsyncTask<String, Void, String> {
+
+
+        @Override
+        protected  void onPreExecute()
+        {
+
+            pb.setVisibility(View.VISIBLE);
+
+
+        }
         @Override
         protected String doInBackground(String... urls)
         {
@@ -200,6 +240,8 @@ public class EnterPINActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result)
         {
+
+            pb.setVisibility(View.GONE);
 
             Log.e("Success posting", result);
 
@@ -229,6 +271,9 @@ public class EnterPINActivity extends ActionBarActivity {
 
                     String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
                     Log.e("Retrived value",  "The retrieved stuff is "+theString ) ;
+
+                    startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
+                    finish();
 
 
              }
@@ -283,6 +328,8 @@ public class EnterPINActivity extends ActionBarActivity {
             String base64EncodedCredentials = Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);// 7. Set some headers to inform server about the type of the content
             httpPost.addHeader("Authorization", "Basic " + base64EncodedCredentials);//httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
+         //   httpPost.setHeader("Accept-version", getString(R.string.API_VERSION));
+            // accept-version has been added to recieve the token
             HttpResponse httpResponse = httpclient.execute(httpPost);
             // 9. receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
@@ -312,9 +359,12 @@ public class EnterPINActivity extends ActionBarActivity {
 
             // create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
+            HttpGet get = new HttpGet(url);
+            get.setHeader("Accept-version", getString(R.string.API_VERSION));
 
+            // Header has been set Accept-version to 0.0.1!
             // make GET request to the given URL
-            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+            HttpResponse httpResponse = httpclient.execute(get); // The created HTTPget object is executed!
 
             // receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
@@ -386,6 +436,8 @@ public class EnterPINActivity extends ActionBarActivity {
             Log.e("Tick Tick", "Tick Tick");
             TimeText.setText("You will receive PIN within " + millisUntilFinished / 1000 + " seconds");
         }
+
+
     }
 
 }

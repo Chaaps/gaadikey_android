@@ -241,6 +241,8 @@ public class SettingUpActivity extends ActionBarActivity {
                 //httpPost.setHeader("Accept", "application/json");
                 httpPost.addHeader("Authorization", "Bearer "+access_token);
                 httpPost.setHeader("Content-type", "application/json");
+                httpPost.setHeader("Accept-version", getString(R.string.API_VERSION));
+
                 HttpResponse httpResponse = httpclient.execute(httpPost);
                 // 9. receive response as inputStream
                 inputStream = httpResponse.getEntity().getContent();

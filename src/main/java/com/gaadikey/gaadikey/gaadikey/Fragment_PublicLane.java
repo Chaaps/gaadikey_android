@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.gaadikey.gaadikey.gaadikey.adaptor.PublicLaneAdapter;
 
@@ -38,6 +39,7 @@ public class Fragment_PublicLane extends Fragment {
 
 
     ListView listview;
+    ProgressBar pb;
 
 
     @Override
@@ -45,6 +47,7 @@ public class Fragment_PublicLane extends Fragment {
     {
 
         View view = inflater.inflate(R.layout.fragment_publiclane, container,false);
+        pb = (ProgressBar) view.findViewById(R.id.progress);
 
         System.out.println("loading listview.........");
 
@@ -130,6 +133,12 @@ public class Fragment_PublicLane extends Fragment {
 
     public class PublicDataTask extends AsyncTask<String, Void, String> {
 
+
+        protected void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+        }
+
         protected String doInBackground(String... urls)
         {
             return getPublicData(urls[0]);
@@ -137,6 +146,7 @@ public class Fragment_PublicLane extends Fragment {
 
         protected void onPostExecute(String result)
         {
+            pb.setVisibility(View.GONE);
             publicList = new ArrayList<HashMap<String, String>>();
             Log.e("The result is ", result);
             try
@@ -214,6 +224,8 @@ public class Fragment_PublicLane extends Fragment {
             HttpGet httpGet = new HttpGet(url);
             //Adds the header to the GET http object.
             httpGet.addHeader("Authorization", "Bearer " + access_token);
+            httpGet.addHeader("Accept-version", getString(R.string.API_VERSION)); // Added API_VERSION in the header!
+            Log.e("The access token is " , access_token);
             // Access Token is now attached as a Bearer token!
             // make GET request to the given URL
             HttpResponse httpResponse = httpclient.execute(httpGet);

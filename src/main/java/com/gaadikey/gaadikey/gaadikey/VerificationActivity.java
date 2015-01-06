@@ -25,6 +25,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.analytics.HitBuilders;
@@ -52,12 +53,15 @@ public class VerificationActivity extends ActionBarActivity {
     String email;
     String PIN;
     Tracker t;
+    ProgressBar pb; // Progressbar
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
+        pb = (ProgressBar) findViewById(R.id.progress); // The progress bar has been identified.
+
         Log.e("Loaded", "activity_verification loaded");
 //        SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor = sharedPref.edit();
@@ -154,7 +158,6 @@ public class VerificationActivity extends ActionBarActivity {
         final EditText phoneField = (EditText) findViewById(R.id.phoneNumber);
 
         final android.widget.Button submissionClick = (Button) findViewById(R.id.button);
-        // tHE BLOW CODE DISABLES THE BUTTON
         submissionClick.setEnabled(false);
         submissionClick.setFocusable(false); // removes the focus from the button!
         // This should disbale the button temporarily, Prevents the user from clicking the button more than once!
@@ -330,6 +333,8 @@ public class VerificationActivity extends ActionBarActivity {
             // 7. Set some headers to inform server about the type of the content
             //httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
+            httpPost.setHeader("Accept-version", getString(R.string.API_VERSION));
+            // Specifying the API version
 
             HttpResponse httpResponse = httpclient.execute(httpPost);
 
@@ -390,6 +395,16 @@ public class VerificationActivity extends ActionBarActivity {
     }
 
     private class HttpAsyncPostTask extends AsyncTask<String, Void, String> {
+
+
+        protected void onPreExecute()
+        {
+            // Called before calling anything else
+            pb.setVisibility(View.VISIBLE);
+
+
+        }
+
         @Override
         protected String doInBackground(String... urls)
         {
@@ -399,6 +414,8 @@ public class VerificationActivity extends ActionBarActivity {
         @Override
         protected void onPostExecute(String result)
         {
+            pb.setVisibility(View.INVISIBLE); //Disables the progressbar
+
             Log.e("Success posting", result);
             Toast.makeText(getBaseContext(), "You will be receiving PIN by SMS", Toast.LENGTH_LONG).show();
 

@@ -18,9 +18,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
+import android.content.DialogInterface.OnCancelListener;
+
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -43,7 +48,8 @@ import java.util.HashMap;
  */
 public class Fragment_Settings extends Fragment {
 
-
+    ProgressBar pb;
+    Tracker t;
     String PHONE_NUMBER = ""; // PHONNUMBER get it from the persistance storage!
     View view = null;
     ArrayList<HashMap<String, String>> bikedata;
@@ -51,6 +57,17 @@ public class Fragment_Settings extends Fragment {
 
     ArrayList<HashMap<String, String>> cardata;
     ArrayList<String> carstringdata;
+
+    ArrayList<HashMap<String, String>> cabdata; // cabdata
+    ArrayList<String> cabstringdata;
+
+    ArrayList<HashMap<String, String>> rickshawdata;  // rickshawdata
+    ArrayList<String> rickshawstringdata;
+
+    ArrayList<HashMap<String, String>> busdata;   // busdata
+    ArrayList<String> busstringdata;
+
+
 
     String GAADI_IMAGEPATH = "";
     String GAADI_MESSAGE = "" ;
@@ -62,7 +79,13 @@ public class Fragment_Settings extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_settings, container, false);
         Button UpdateProfileButton = (Button) view.findViewById(R.id.updateProfileButton);
+        pb = (ProgressBar) view.findViewById(R.id.progress); // Identifies the progressbar
         // Handle the click event for updateProfile button!
+
+        t = ((GaadiKey) getActivity().getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
+        t.setScreenName("Settings"); // =
+        t.send(new HitBuilders.AppViewBuilder().build());
+
         UpdateProfileButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -80,9 +103,11 @@ public class Fragment_Settings extends Fragment {
              //   profile_object.set_notifyid(regid);
                 Spinner bikedropdown = (Spinner) view.findViewById(R.id.spinner1);
                 Spinner cardropdown = (Spinner) view.findViewById(R.id.carspinner);
+                Spinner cabdropdown = (Spinner) view.findViewById(R.id.cabspinner);
+                Spinner busdropdown = (Spinner) view.findViewById(R.id.busspinner);
+                Spinner rickshawdropdown = (Spinner) view.findViewById(R.id.rickshawspinner);
                 if (selected_profile.equals("bike")) {
                     //bike_image
-
                     String rootstring = "http://gaadikey.com/images";
                     String web_image_path =  bikedata.get(bikedropdown.getSelectedItemPosition()).get("bike_image");
                     String path = "";
@@ -111,6 +136,58 @@ public class Fragment_Settings extends Fragment {
                     profile_object.set_vehicle_name(GAADI_NAME);
                     profile_object.set_vehicletype("4 wheeler");
                 }
+
+                else if (selected_profile.equals("cab"))
+                {
+                    String rootstring = "http://gaadikey.com/images";
+                    String web_image_path =  cabdata.get(cabdropdown.getSelectedItemPosition()).get("service_image");
+                    String path = "";
+                    if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                    String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                    Log.e("Resize path is ", resize_path);
+
+                    GAADI_IMAGEPATH = cabdata.get(cabdropdown.getSelectedItemPosition()).get("service_image");
+                    GAADI_NAME = cabdata.get(cabdropdown.getSelectedItemPosition()).get("service_name");
+                    profile_object.set_gaadipic(GAADI_IMAGEPATH);
+                    profile_object.set_vehicle_name(GAADI_NAME);
+                    profile_object.set_vehicletype("cab wheeler");
+
+
+
+                }
+                else if(selected_profile.equals("bus"))
+                {
+                    String rootstring = "http://gaadikey.com/images";
+                    String web_image_path =  busdata.get(busdropdown.getSelectedItemPosition()).get("bus_image");
+                    String path = "";
+                    if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                    String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                    Log.e("Resize path is ", resize_path);
+
+                    GAADI_IMAGEPATH = busdata.get(busdropdown.getSelectedItemPosition()).get("bus_image");
+                    GAADI_NAME = busdata.get(busdropdown.getSelectedItemPosition()).get("bus_name");
+                    profile_object.set_gaadipic(GAADI_IMAGEPATH);
+                    profile_object.set_vehicle_name(GAADI_NAME);
+                    profile_object.set_vehicletype("bus wheeler");
+
+                }
+                else if(selected_profile.equals("rickshaw"))
+                {
+                    String rootstring = "http://gaadikey.com/images";
+                    String web_image_path =  rickshawdata.get(rickshawdropdown.getSelectedItemPosition()).get("rickshaw_image");
+                    String path = "";
+                    if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                    String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                    Log.e("Resize path is ", resize_path);
+
+                    GAADI_IMAGEPATH = rickshawdata.get(rickshawdropdown.getSelectedItemPosition()).get("rickshaw_image");
+                    GAADI_NAME = rickshawdata.get(rickshawdropdown.getSelectedItemPosition()).get("rickshaw_name");
+                    profile_object.set_gaadipic(GAADI_IMAGEPATH);
+                    profile_object.set_vehicle_name(GAADI_NAME);
+                    profile_object.set_vehicletype("rickshaw wheeler");
+
+
+                }
                 new UpdateUserTask().execute("https://gaadikey.in/update"); // Call this and update the data to server!
                 Log.e("The complete profile has been clicked", "The completed profile has been clicked ");
 
@@ -136,46 +213,50 @@ public class Fragment_Settings extends Fragment {
 
 
 
+        // Removing the older Alertbox!
 
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which){
-                    case DialogInterface.BUTTON_POSITIVE:
-                        Log.e("Bike is Clicked", "Bike");
-                        ImageView caricon = (ImageView) view.findViewById(R.id.caricon); // get car icon!
-                        TextView cartextview  = (TextView) view.findViewById(R.id.textView2);
-                        Spinner carspinner = (Spinner) view.findViewById(R.id.carspinner);
-                        cartextview.setVisibility(View.GONE);
-                        caricon.setVisibility(View.GONE);
-                        carspinner.setVisibility(View.GONE);
-                        selected_profile = "bike";
-                        new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
-                        //Yes button clicked
-                        break;
 
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        Log.e("Car is Clicked", "Car");
-                        ImageView bikeicon = (ImageView) view.findViewById(R.id.bikeicon); // get bike icon!
-                        TextView biketextview = (TextView) view.findViewById(R.id.textView);
-                        Spinner bikespinner = (Spinner) view.findViewById(R.id.spinner1);
-                        bikeicon.setVisibility(View.GONE);
-                        biketextview.setVisibility(View.GONE);
-                        bikespinner.setVisibility(View.GONE);
-                        selected_profile="car";
-                        new GetCarDataTask().execute("http://gaadikey.com/cars.php");
-                        //No button clicked
-                        break;
-                }
-            }
-        };
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
-        builder.setMessage("With which vehicle would you like to build your Gaadi Key profile?").setPositiveButton("Bike", dialogClickListener)
-                .setNegativeButton("Car", dialogClickListener).show();
+//        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                switch (which){
+//                    case DialogInterface.BUTTON_POSITIVE:
+//                        Log.e("Bike is Clicked", "Bike");
+//                        ImageView caricon = (ImageView) view.findViewById(R.id.caricon); // get car icon!
+//                        TextView cartextview  = (TextView) view.findViewById(R.id.textView2);
+//                        Spinner carspinner = (Spinner) view.findViewById(R.id.carspinner);
+//                        cartextview.setVisibility(View.GONE);
+//                        caricon.setVisibility(View.GONE);
+//                        carspinner.setVisibility(View.GONE);
+//                        selected_profile = "bike";
+//                        new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
+//                        //Yes button clicked
+//                        break;
+//
+//                    case DialogInterface.BUTTON_NEGATIVE:
+//                        Log.e("Car is Clicked", "Car");
+//                        ImageView bikeicon = (ImageView) view.findViewById(R.id.bikeicon); // get bike icon!
+//                        TextView biketextview = (TextView) view.findViewById(R.id.textView);
+//                        Spinner bikespinner = (Spinner) view.findViewById(R.id.spinner1);
+//                        bikeicon.setVisibility(View.GONE);
+//                        biketextview.setVisibility(View.GONE);
+//                        bikespinner.setVisibility(View.GONE);
+//                        selected_profile="car";
+//                        new GetCarDataTask().execute("http://gaadikey.com/cars.php");
+//                        //No button clicked
+//                        break;
+//                }
+//            }
+//        };
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());
+//        builder.setMessage("With which vehicle would you like to build your Gaadi Key profile?").setPositiveButton("Bike", dialogClickListener)
+//                .setNegativeButton("Car", dialogClickListener).show();
 
 
         // Fragment Search Result layout attached!
+        AlertDialogView();
+
         return view;
 
     }
@@ -391,6 +472,14 @@ public class Fragment_Settings extends Fragment {
     private class GetBikeDataTask extends AsyncTask<String, Void, String>
     {
 
+        @Override
+
+        protected  void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+
+        }
+
         protected String doInBackground(String... urls)
         {
             Log.e("Pinging this URL ---> ", urls[0]);
@@ -399,7 +488,7 @@ public class Fragment_Settings extends Fragment {
         }
         protected void onPostExecute(String result)
         {
-
+            pb.setVisibility(View.GONE);
             Log.e("And we received", result);
             Log.e("Response from the registration step ", result);
             try
@@ -560,6 +649,11 @@ public class Fragment_Settings extends Fragment {
     private class GetCarDataTask extends AsyncTask<String, Void, String>
     {
 
+        protected void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+        }
+
         protected String doInBackground(String... urls)
         {
 
@@ -571,7 +665,7 @@ public class Fragment_Settings extends Fragment {
         }
         protected void onPostExecute(String result)
         {
-
+            pb.setVisibility(View.GONE);
             Log.e("And we received", result);
             Log.e("Response from the registration step ", result);
             try
@@ -625,9 +719,6 @@ public class Fragment_Settings extends Fragment {
 
     public void PopulateCarSpinner(String result)
     {
-
-
-
         try {
             JSONArray json = new JSONArray(result);
             // check if this request was sucessful... if the request was successful
@@ -701,6 +792,272 @@ public class Fragment_Settings extends Fragment {
                 public void onNothingSelected(AdapterView<?> parentView) {
                     // your code here
                 }
+            });
+            // Bike on selected event
+
+        }
+        catch(Exception e)
+        {
+
+        }
+
+    }
+
+    private void AlertDialogView() {
+        final CharSequence[] items = { "I have a bike", "I have a car", "I take a cab", "I take a bus", "I take a rickshaw" };
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this.getActivity());//ERROR ShowDialog cannot be resolved to a type
+        builder.setCancelable(true); // true or false!
+        builder.setTitle("How do you commute?");
+        builder.setSingleChoiceItems(items, -1,
+                new DialogInterface.OnClickListener() {
+
+
+
+                    public void onClick(DialogInterface dialog, int item)
+                    {
+                        if(item == 0)
+                        {
+                            // Go to Choosing bike page
+                            t.send(new HitBuilders.EventBuilder()
+                                    .setCategory("BikeClick")
+                                    .setAction("Bike_Click")
+                                    .setLabel("")
+                                    .build()); // Analytics for Google!
+
+                            Log.e("Bike is Clicked", "Bike");
+                            RelativeLayout bikeWidget = (RelativeLayout) view.findViewById(R.id.bikewidget);
+                            bikeWidget.setVisibility(View.VISIBLE);
+//                            ImageView bikeicon = (ImageView) findViewById(R.id.bikeicon);
+//                            TextView biketextview = (TextView) findViewById(R.id.textView);
+//                            Spinner bikespinner = (Spinner) findViewById(R.id.spinner1);
+//                            bikeicon.setVisibility(View.VISIBLE);
+//                            biketextview.setVisibility(View.VISIBLE);
+//                            bikespinner.setVisibility(View.VISIBLE);
+
+                            selected_profile = "bike";
+                            new GetBikeDataTask().execute("http://gaadikey.com/bikes.php");
+                            dialog.dismiss();
+                            //Yes button clicked
+                        }
+                        if(item == 1)
+                        {
+                            Log.e("Car is Clicked", "Car");
+                            t.send(new HitBuilders.EventBuilder()
+                                    .setCategory("CarClick")
+                                    .setAction("Car_Click")
+                                    .setLabel("")
+                                    .build());
+                            RelativeLayout carWidget = (RelativeLayout) view.findViewById(R.id.carwidget);
+                            carWidget.setVisibility(View.VISIBLE);
+
+//                            ImageView caricon = (ImageView) findViewById(R.id.caricon);
+//                            TextView cartextview  = (TextView) findViewById(R.id.textView2);
+//                            Spinner carspinner = (Spinner) findViewById(R.id.carspinner);
+//                            cartextview.setVisibility(View.VISIBLE);
+//                            caricon.setVisibility(View.VISIBLE);
+//                            carspinner.setVisibility(View.VISIBLE);
+                            selected_profile="car";
+                            new GetCarDataTask().execute("http://gaadikey.com/cars.php");
+                            dialog.dismiss();
+                            // Go Car page
+                        }
+                        if( item ==2 )
+                        {
+                            Log.e("Cab is clicked" , "Cab");
+                            t.send(new HitBuilders.EventBuilder()
+                                    .setCategory("CabClick")
+                                    .setAction("Cab_Click")
+                                    .setLabel("")
+                                    .build());
+
+                            RelativeLayout cabWidget = (RelativeLayout) view.findViewById(R.id.cabwidget);
+                            cabWidget.setVisibility(View.VISIBLE);
+                            selected_profile = "cab";
+                            new GetCabDataTask().execute("http://gaadikey.com/cabs.php");
+                            dialog.dismiss();
+
+                        }
+
+                        if( item ==3 )
+                        {
+                            Log.e("Bus is clicked" , "Bus");
+                            t.send(new HitBuilders.EventBuilder()
+                                    .setCategory("BusClick")
+                                    .setAction("Bus_Click")
+                                    .setLabel("")
+                                    .build());
+
+                            RelativeLayout buswidget = (RelativeLayout) view.findViewById(R.id.buswidget);
+                            buswidget.setVisibility(View.VISIBLE);
+                            selected_profile = "bus";
+                            new GetBusDataTask().execute("http://gaadikey.com/buses.php");
+                            dialog.dismiss();
+
+                        }
+
+                        if( item == 4 )
+                        {
+                            Log.e("Rickshaw is clicked " , "Rickshaw");
+                            t.send(new HitBuilders.EventBuilder()
+                                    .setCategory("RickshawClick")
+                                    .setAction("Rickshaw_Click")
+                                    .setLabel("")
+                                    .build());
+
+                            RelativeLayout rickshawwidget = (RelativeLayout) view.findViewById(R.id.rickshawwidget);
+                            rickshawwidget.setVisibility(View.VISIBLE);
+                            selected_profile = "rickshaw";
+                            new GetRickshawDataTask().execute("http://gaadikey.com/rickshaws.php");
+                            dialog.dismiss();
+
+                        }
+
+
+                        Toast.makeText(getActivity().getApplicationContext(), items[item],
+                                Toast.LENGTH_SHORT).show();
+                        // Open up activity with corresponding options!
+
+                    }
+                });
+
+
+        builder.setOnCancelListener(new OnCancelListener() {
+
+                                        public void onCancel(DialogInterface dialog) {
+
+                                            // send the control back to home!
+                                            ((LaunchActivity_NavDrawer) getActivity()).displayView(0);
+                                            // The cancel event occurs here
+
+                                            // Your code
+                                        }
+                                    });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
+    private class GetCabDataTask extends AsyncTask<String, Void, String>
+    {
+
+        protected void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+        }
+
+        protected String doInBackground(String... urls)
+        {
+
+
+            Log.e("Pinging this URL ---> ", urls[0]);
+            return GetCabData(urls[0]);
+
+
+        }
+        protected void onPostExecute(String result)
+        {
+            pb.setVisibility(View.GONE);
+            Log.e("And we received", result);
+            Log.e("Response from the registration step ", result);
+            try
+            {
+                // The populate spinner should be present here!
+                PopulateCabSpinner(result);
+            }
+            catch(Exception e)
+            {
+                Log.e("Parse", "Exception in parsing");
+
+            }
+
+            // The data has been sent
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+            //
+        }
+    }
+
+
+    public void PopulateCabSpinner(String result)
+    {
+
+
+
+        try {
+            JSONArray json = new JSONArray(result);
+            // check if this request was sucessful... if the request was successful
+            // then parse the phonebook and get contacts details
+            // contacts details are rendered one by one.
+            Log.e("The response recieved from the server is " , result );
+            // result
+            cabdata = new ArrayList<HashMap<String, String>>();
+            cabstringdata = new ArrayList<String>();
+
+            for(int i=0;i<json.length();i++)
+            {
+                HashMap<String, String> map = new HashMap<String, String>();
+                JSONObject jObject = json.getJSONObject(i);
+                String id =                 jObject.getString("id");
+                String service_name =          jObject.getString("service_name");
+                String service_image    =      jObject.getString("service_image");
+
+                map.put("id" , id);
+                map.put("service_name", service_name);
+                map.put("service_image", service_image);
+
+                Log.e("Cabs name received is  ", service_name);
+                cabdata.add(map);
+                cabstringdata.add(service_name);
+                // loading these variables
+            }
+
+            Spinner cabdropdown = (Spinner) view.findViewById(R.id.cabspinner);
+            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, cabstringdata);
+            cabdropdown.setAdapter(adapter1);
+
+            // Car On selected event
+
+            cabdropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+
+
+                    Log.e("The Selected index in cardrop down is ", ""+position);
+
+                    //  if(position!=0)
+                    {
+                        Log.e("The Selected index in car dropdown is ", "" + position);
+                        ImageView caricon_imageview = (ImageView) view.findViewById(R.id.cabicon);
+
+                        String rootstring = "http://gaadikey.com/images";
+                        String web_image_path =  cabdata.get(position).get("service_image");
+                        String path = "";
+                        if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                        String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                        Log.e("Resize path is", resize_path);
+                        new ImageDownloader(caricon_imageview).execute(resize_path);
+
+
+                        //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
+                    }
+
+                    // The below code is pending as we are not retrieving the car data
+
+//                    ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
+//                    new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("ImgUrl"));
+
+
+                    // your code here
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                    // your code here
+                }
 
             });
 
@@ -716,6 +1073,359 @@ public class Fragment_Settings extends Fragment {
 
         }
 
+    }
+
+    public  String GetCabData(String url)
+    {
+        InputStream inputStream = null;
+        String result = "";
+        try {
+            // create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+            // make GET request to the given URL
+            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+            // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            // convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+            }
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+
+        return result;
+    }
+
+
+    private class GetBusDataTask extends AsyncTask<String, Void, String>
+    {
+
+        protected void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+        }
+
+        protected String doInBackground(String... urls)
+        {
+
+
+            Log.e("Pinging this URL ---> ", urls[0]);
+            return GetBusData(urls[0]);
+
+
+        }
+        protected void onPostExecute(String result)
+        {
+            pb.setVisibility(View.GONE);
+            Log.e("And we received", result);
+            Log.e("Response from the registration step ", result);
+            try
+            {
+                // The populate spinner should be present here!
+                PopulateBusSpinner(result);
+            }
+            catch(Exception e)
+            {
+                Log.e("Parse", "Exception in parsing");
+
+            }
+
+            // The data has been sent
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+            //
+        }
+    }
+
+
+    public void PopulateBusSpinner(String result)
+    {
+
+        try {
+            JSONArray json = new JSONArray(result);
+            // check if this request was sucessful... if the request was successful
+            // then parse the phonebook and get contacts details
+            // contacts details are rendered one by one.
+            Log.e("The response recieved from the server is " , result );
+            // result
+            busdata = new ArrayList<HashMap<String, String>>();
+            busstringdata = new ArrayList<String>();
+            for(int i=0;i<json.length();i++)
+            {
+                HashMap<String, String> map = new HashMap<String, String>();
+                JSONObject jObject = json.getJSONObject(i);
+                String id =                 jObject.getString("id");
+                String bus_name =          jObject.getString("bus_name");
+                String bus_image    =      jObject.getString("bus_image");
+                map.put("id" , id);
+                map.put("bus_name", bus_name);
+                map.put("bus_image", bus_image);
+                Log.e("Bus name received is  ", bus_name);
+                busdata.add(map);
+                busstringdata.add(bus_name);
+
+                // loading these variables
+            }
+
+            Spinner busdropdown = (Spinner) view.findViewById(R.id.busspinner);
+            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, busstringdata);
+            busdropdown.setAdapter(adapter1);
+
+            // Car On selected event
+
+            busdropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+
+
+                    Log.e("The Selected index in cardrop down is ", ""+position);
+                    //  if(position!=0)
+                    {
+                        Log.e("The Selected index in car dropdown is ", "" + position);
+                        ImageView busicon_imageview = (ImageView) view.findViewById(R.id.busicon);
+                        String rootstring = "http://gaadikey.com/images";
+                        String web_image_path =  busdata.get(position).get("bus_image");
+                        String path = "";
+                        if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                        String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                        Log.e("Resize path is", resize_path);
+                        new ImageDownloader(busicon_imageview).execute(resize_path);
+                        //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
+                    }
+
+                    // The below code is pending as we are not retrieving the car data
+
+//                    ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
+//                    new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("ImgUrl"));
+
+
+                    // your code here
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                    // your code here
+                }
+
+            });
+
+
+            // Bike on selected event
+
+
+
+        }
+
+        catch(Exception e)
+        {
+
+        }
+
+    }
+
+
+    public  String GetBusData(String url){
+        InputStream inputStream = null;
+        String result = "";
+        try {
+            // create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+            // make GET request to the given URL
+            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+            // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            // convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+            }
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+
+        return result;
+    }
+
+    private class GetRickshawDataTask extends AsyncTask<String, Void, String>
+    {
+
+        protected String doInBackground(String... urls)
+        {
+
+
+            Log.e("Pinging this URL ---> ", urls[0]);
+            return GetRickshawData(urls[0]);
+
+
+        }
+        protected void onPostExecute(String result)
+        {
+
+            Log.e("And we received", result);
+            Log.e("Response from the registration step ", result);
+            try
+            {
+                // The populate spinner should be present here!
+                PopulateRickshawSpinner(result);
+            }
+            catch(Exception e)
+            {
+                Log.e("Parse", "Exception in parsing");
+
+            }
+
+            // The data has been sent
+
+            // The control should now go to Enter PIN Screen
+
+            // Once the  Phone number is recieved by the server, The flow has to go to EnterPINActivity.
+            //
+        }
+    }
+
+
+    public void PopulateRickshawSpinner(String result)
+    {
+
+
+
+        try {
+            JSONArray json = new JSONArray(result);
+            // check if this request was sucessful... if the request was successful
+            // then parse the phonebook and get contacts details
+            // contacts details are rendered one by one.
+            Log.e("The response recieved from the server is " , result );
+            // result
+            rickshawdata = new ArrayList<HashMap<String, String>>();
+            rickshawstringdata = new ArrayList<String>();
+
+            for(int i=0;i<json.length();i++)
+            {
+                HashMap<String, String> map = new HashMap<String, String>();
+                JSONObject jObject = json.getJSONObject(i);
+                String id =                 jObject.getString("id");
+                String rickshaw_name =          jObject.getString("rickshaw_name");
+                String rickshaw_image    =      jObject.getString("rickshaw_image");
+
+                map.put("id" , id);
+                map.put("rickshaw_name", rickshaw_name);
+                map.put("rickshaw_image", rickshaw_image);
+                Log.e("Rickshaw name received is  ", rickshaw_name);
+                rickshawdata.add(map);
+                rickshawstringdata.add(rickshaw_name);
+                // loading these variables
+            }
+
+            Spinner rickshawdropdown = (Spinner) view.findViewById(R.id.rickshawspinner);
+            ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, rickshawstringdata);
+            rickshawdropdown.setAdapter(adapter1);
+
+            // Car On selected event
+
+            rickshawdropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                    Log.e("The Selected index in cardrop down is ", ""+position);
+                    //  if(position!=0)
+                    {
+                        Log.e("The Selected index in car dropdown is ", "" + position);
+                        ImageView caricon_imageview = (ImageView) view.findViewById(R.id.rickshawicon);
+
+                        String rootstring = "http://gaadikey.com/images";
+                        String web_image_path =  rickshawdata.get(position).get("rickshaw_image");
+                        String path = "";
+                        if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
+                        String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                        Log.e("Resize path is", resize_path);
+                        new ImageDownloader(caricon_imageview).execute(resize_path);
+                        //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
+                    }
+
+                    // The below code is pending as we are not retrieving the car data
+
+//                    ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
+//                    new ImageDownloader(bikeicon_imageview).execute(bikedata.get(position).get("ImgUrl"));
+
+
+                    // your code here
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parentView) {
+                    // your code here
+                }
+
+            });
+
+
+            // Bike on selected event
+
+
+
+        }
+
+        catch(Exception e)
+        {
+
+        }
+
+    }
+
+
+    public  String GetRickshawData(String url){
+        InputStream inputStream = null;
+        String result = "";
+        try {
+            // create HttpClient
+            HttpClient httpclient = new DefaultHttpClient();
+            // make GET request to the given URL
+            HttpResponse httpResponse = httpclient.execute(new HttpGet(url));
+            // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+            // convert inputstream to string
+            if(inputStream != null) {
+                result = convertInputStreamToString(inputStream);
+            }
+            else
+                result = "Did not work!";
+
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+
+        return result;
+    }
+
+    public void onBackPressed()
+    {
+
+        RelativeLayout rickshawWidget = (RelativeLayout) view.findViewById(R.id.rickshawwidget);
+        rickshawWidget.setVisibility(View.GONE);
+
+        RelativeLayout bikeWidget = (RelativeLayout) view.findViewById(R.id.bikewidget);
+        bikeWidget.setVisibility(View.GONE);
+
+        RelativeLayout carWidget = (RelativeLayout) view.findViewById(R.id.carwidget);
+        carWidget.setVisibility(View.GONE);
+
+        RelativeLayout cabWidget = (RelativeLayout) view.findViewById(R.id.cabwidget);
+        cabWidget.setVisibility(View.GONE);
+
+        RelativeLayout busWidget = (RelativeLayout) view.findViewById(R.id.buswidget);
+        busWidget.setVisibility(View.GONE);
+
+        AlertDialogView(); // Shows the dialog to choose among transportation mode
     }
 
 

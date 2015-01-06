@@ -29,6 +29,16 @@ import java.util.ArrayList;
 
 public class LaunchActivity_NavDrawer extends ActionBarActivity {
 
+
+    // Temporary variables used for quick fix
+
+    String TITLE = "";
+    String DATE  = "";
+    String BODY  = "";
+
+    Fragment fragment = null; // declaring fragment as global!
+
+    public String CURRENTVIEW = "Home";
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -92,15 +102,20 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], navMenuTags[3],  navMenuIcons.getResourceId(3, -1), true, "22"));
         // Pages
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[4], navMenuTags[4], navMenuIcons.getResourceId(4, -1)));
-        // What's hot, We  will add a counter here
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuTags[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
+        // News
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuTags[5], navMenuIcons.getResourceId(5, -1)));
 
-        // Find People
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuTags[6], navMenuIcons.getResourceId(6, -1)));
-        // Communities, Will add a counter here
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuTags[7], navMenuIcons.getResourceId(7, -1), true, "22"));
-        // Adding an extra tab for Search!
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
+        // What's hot, We  will add a counter here
+//        navDrawerItems.add(new NavDrawerItem(navMenuTitles[5], navMenuTags[5], navMenuIcons.getResourceId(5, -1), true, "50+"));
+//
+//        // Find People
+//        navDrawerItems.add(new NavDrawerItem(navMenuTitles[6], navMenuTags[6], navMenuIcons.getResourceId(6, -1)));
+//        // Communities, Will add a counter here
+//        navDrawerItems.add(new NavDrawerItem(navMenuTitles[7], navMenuTags[7], navMenuIcons.getResourceId(7, -1), true, "22"));
+//        // Adding an extra tab for Search!
+//        navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
+
+
         //     navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
         // empty list
         //   navDrawerItems.add(new NavDrawerItem(navMenuTitles[8], navMenuTags[8], navMenuIcons.getResourceId(8, -1)));
@@ -171,9 +186,11 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
            // displayView(0);
                 String value = extras.getString("view");
                 if (value.equals("normal")) {
+
                     displayView(0); // when opened naturally
                 }
                 else if (value.equals("FriendsLane")) {
+
                     displayView(2);
                     // Open the appropriate fragment here !
                 } else if (value.equals("PublicLane")) {
@@ -184,13 +201,18 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                     displayView(3);
                     // Open the SafetyLane  Fragment
                 } else if (value.equals("NumberPlate")) {
-                    displayView(5);
-                } else if (value.equals("Search")) {
                     displayView(6);
+                } else if (value.equals("Search")) {
+                    displayView(7);
                 } else if (value.equals("Feedback")) {
                     displayView(8);
                     // The Feedback page
+                } else if(value.equals("News"))  {
+                    displayView(5);
+                } else if(value.equals("NewsPush")) {
+                    displayView(555);
                 }
+
             }
 
 
@@ -278,22 +300,52 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
 
 
 
+    public void listitem_click_notify(String title, String date, String content)
+    {
+        // This block should receive the data
+
+        TITLE = title;
+        BODY = content;
+        DATE = date;
+
+        getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.frame_container, new Fragment_NewsDetail()).commit();
+        getSupportFragmentManager().executePendingTransactions();
+
+
+    }
+
+    public void writeReviewClicked()
+    {
+
+
+        getSupportFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.frame_container, new Fragment_ReviewVehicle()).commit(); // Fragment review vehicle called
+        getSupportFragmentManager().executePendingTransactions();
+
+    }
+
+
+
+
     /**
      * Diplaying fragment view for selected nav drawer list item
      * */
     public void displayView(int position) {
+
+        clearbackstack();
+        Bundle bundle = new Bundle();
         // update the main content by replacing fragments
-        Fragment fragment = null;
+       // Fragment fragment = null;
         switch (position) {
 
             case 0:
                 //  fragment = new Fragment_SearchResults();
               //  fragment = Fragment_SearchResults.newInstance(searchString);
                 fragment = new Fragment_Home();
-
+                CURRENTVIEW = "Home";
                 break;
             case 1:
                 fragment = new Fragment_PublicLane();
+                CURRENTVIEW = "PublicLane";
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
                         .setAction("Public")
@@ -302,6 +354,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                 break;
             case 2:
                 fragment = new Fragment_FriendsLane(); // This should be the friends lane fragment!
+                CURRENTVIEW = "FriendsLane";
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
                         .setAction("Friends")
@@ -311,6 +364,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                 break;
             case 3:
                 fragment = new Fragment_SafetyLane(); // This is friends lane fragment!
+                CURRENTVIEW = "SafetyLane";
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
                         .setAction("Safety")
@@ -319,6 +373,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                 break;
             case 4:
                 fragment = new Fragment_ShoppingLane(); // Shopping lane fragment
+                CURRENTVIEW = "ShoppingLane";
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
                         .setAction("Shopping")
@@ -326,14 +381,27 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                         .build());
                 break;
             case 5:
+                fragment = new Fragment_News();
+                CURRENTVIEW = "News"; // NewsList
+                t.send(new HitBuilders.EventBuilder()
+                        .setCategory("StickyHome")
+                        .setAction("News")
+                        .setLabel("")
+                        .build());
+                bundle.putString("type" , "direct");
+                fragment.setArguments(bundle);
+
+                break;
+            case 6:
                 fragment = new Fragment_NumberPlate();
+                CURRENTVIEW = "NumberPlate";
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
                         .setAction("NumberPlate")
                         .setLabel("")
                         .build());
                 break;
-            case 6:
+            case 7:
                 fragment = Fragment_SearchResults.newInstance(searchString);
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
@@ -341,7 +409,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                         .setLabel("")
                         .build());
                 break;
-            case 7:
+            case 8:
                 fragment = new Fragment_Settings();
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
@@ -349,7 +417,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                         .setLabel("")
                         .build());
                 break;
-            case 8:
+            case 9:
                 fragment = new Fragment_Feedback();
                 t.send(new HitBuilders.EventBuilder()
                         .setCategory("StickyHome")
@@ -357,6 +425,13 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                         .setLabel("")
                         .build());
                 break;
+
+            case 555:
+                fragment = new Fragment_News();
+                bundle.putString("type" , "push");
+                fragment.setArguments(bundle);
+
+
 //            case 5:
 //                fragment = new Fragment_TripsLane();  // Trips lane fragment
 //                break;
@@ -384,9 +459,11 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                     .replace(R.id.frame_container, fragment).commit();
 
             // update selected item and title, then close the drawer
-            mDrawerList.setItemChecked(position, true);
-            mDrawerList.setSelection(position);
-            setTitle(navMenuTitles[position]);
+            if(position < 555) {
+                mDrawerList.setItemChecked(position, true);
+                mDrawerList.setSelection(position);
+                setTitle(navMenuTitles[position]);
+            }
             mDrawerLayout.closeDrawer(mDrawerList);
 
         } else {
@@ -477,23 +554,88 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         super.onActivityResult(requestCode, resultCode, result);
     }
 
+
+    public void clearbackstack()
+    {
+        FragmentManager fm = getSupportFragmentManager();
+        for(int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+            fm.popBackStack();
+        }
+
+    }
+
     public void onBackPressed()
     {
-        if(mDrawerLayout.isDrawerOpen(mDrawerList))
-        {
-//            Intent i = new Intent(this, StickyHome.class);
-//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
-//            startActivity(i);
 
-            this.finish();
-            //Process.killProcess( Process.myPid() );
-            // Open the Base Activity
-        }
-        else
+        if(CURRENTVIEW.equals("Home"))
         {
-            mDrawerLayout.openDrawer(mDrawerList);
-            //  The Drawer is displayed!
+         //   mDrawerLayout.openDrawer(mDrawerList);
+           // clearbackstack();
+            this.finish();
         }
+        else if (CURRENTVIEW.equals("PublicLane"))
+        {
+           // clearbackstack();
+            displayView(0);
+        }
+        else if(CURRENTVIEW.equals("FriendsLane"))
+        {
+            //clearbackstack();
+            displayView(0);
+        }
+        else if(CURRENTVIEW.equals("ShoppingLane"))
+        {
+          //  clearbackstack();
+            displayView(0);
+        }
+        else if(CURRENTVIEW.equals("FriendsLane"))
+        {
+            //clearbackstack();
+            displayView(0);
+        }
+        else if(CURRENTVIEW.equals("SafetyLane"))
+        {
+            //clearbackstack();
+            displayView(0);
+        }
+        else if(CURRENTVIEW.equals("News"))
+        {
+
+            Log.e("This is ", "Triggered ");
+
+            Log.e("Backstack count is ", ""+fragment.getFragmentManager().getBackStackEntryCount());
+            if (fragment != null && fragment.getFragmentManager().getBackStackEntryCount() > 0){
+                // Get the fragment fragment manager - and pop the backstack
+                fragment.getFragmentManager().popBackStack();
+            }
+            else {
+                displayView(0); // displayView
+
+            }
+        }
+
+        else if(CURRENTVIEW.equals("NumberPlate"))
+        {
+           // clearbackstack();
+            displayView(0);
+        }
+
+
+//        if(mDrawerLayout.isDrawerOpen(mDrawerList))
+//        {
+////            Intent i = new Intent(this, StickyHome.class);
+////            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+////            startActivity(i);
+//
+//            this.finish();
+//            //Process.killProcess( Process.myPid() );
+//            // Open the Base Activity
+//        }
+//        else
+//        {
+//            mDrawerLayout.openDrawer(mDrawerList);
+//            //  The Drawer is displayed!
+//        }
 
     }
 

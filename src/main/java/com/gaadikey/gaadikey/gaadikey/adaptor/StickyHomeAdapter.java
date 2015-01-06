@@ -43,15 +43,15 @@ public class StickyHomeAdapter extends ArrayAdapter <String>{
         textView.setText(laneList.get(position));
         System.out.println(s);
         if (s.equals("Public Lane")) {
-            imageView.setImageResource(R.drawable.publiclane_icon);
+            imageView.setImageResource(R.drawable.public_lane);
         } else if (s.equals("Friends Lane")) {
-            imageView.setImageResource(R.drawable.friendslane_icon);
+            imageView.setImageResource(R.drawable.friends_lane);
         } else if (s.equals("Safety Lane")) {
-            imageView.setImageResource(R.drawable.safetylane_icon);
+            imageView.setImageResource(R.drawable.safety_lane);
         } else if (s.equals("Shopping Lane")) {
-            imageView.setImageResource(R.drawable.shoppinglane_icon);
-        } else if (s.equals("Trips Lane")) {
-            imageView.setImageResource(R.drawable.tripslane_icon);
+            imageView.setImageResource(R.drawable.shopping_lane);
+        } else if (s.equals("News")) {
+            imageView.setImageResource(R.drawable.feedback);
         }
       //  new ImageDownloader(imageView).execute(contactlist.get(position).get("ImgUrl"));
 

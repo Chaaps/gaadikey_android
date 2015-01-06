@@ -200,7 +200,18 @@ public class Fragment_SearchResults extends Fragment {
             // Creating the httpGetObject
             HttpGet httpGet = new HttpGet(url);
             //Adds the header to the GET http object.
+            Log.e("Access token is ", access_token ); // access_token is access_token
             httpGet.addHeader("Authorization", "Bearer " + access_token);
+            httpGet.addHeader("Accept-version", getString(R.string.API_VERSION));
+
+            // The 0.0.1 version is not enabled for searchResults till now!
+            // commenting out the Accept-version header!!!
+
+            //httpGet.addHeader("Accept-version", "0.0.1"); // The accept-version has been added!
+            // This would ping the 0.0.1 version of the API ...
+            // You can ignore sending the phone number from  now! , You can directly send the phone number!
+
+
             // Access Token is now attached as a Bearer token!
             // make GET request to the given URL
             HttpResponse httpResponse = httpclient.execute(httpGet);

@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.adaptor.ShoppingAdapter;
@@ -38,6 +39,7 @@ import java.util.HashMap;
 public class Fragment_ShoppingLane extends Fragment {
 
     ListView listview;
+    ProgressBar pb;
     ArrayList<HashMap<String, String>> shoppingList =   new ArrayList<HashMap<String, String>>();
 
     //
@@ -45,6 +47,7 @@ public class Fragment_ShoppingLane extends Fragment {
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_shoppinglane, container, false);
+        pb = (ProgressBar) view.findViewById(R.id.progress); // identifying progress indicator!
 
         System.out.println("loading listview.........");
 
@@ -60,6 +63,13 @@ public class Fragment_ShoppingLane extends Fragment {
 
     private class RetriveShoppingProducts_GetTask extends AsyncTask<String, Void, String>
     {
+
+        @Override
+        protected void onPreExecute()
+        {
+            pb.setVisibility(View.VISIBLE);
+        }
+
         @Override
         protected String doInBackground(String... urls)
         {
@@ -70,6 +80,7 @@ public class Fragment_ShoppingLane extends Fragment {
         @Override
         protected void onPostExecute(String result)
         {
+            pb.setVisibility(View.GONE);
             shoppingList = new ArrayList<HashMap<String, String>>();
             try
             {
@@ -131,6 +142,8 @@ public class Fragment_ShoppingLane extends Fragment {
             HttpGet httpGet = new HttpGet(url);
             //Adds the header to the GET http object.
             httpGet.addHeader("Authorization", "Bearer " + access_token);
+            httpGet.addHeader("Accept-version", getString(R.string.API_VERSION)); // Added API_VERSION in the header!
+
             // Access Token is now attached as a Bearer token!
             // make GET request to the given URL
             HttpResponse httpResponse = httpclient.execute(httpGet);

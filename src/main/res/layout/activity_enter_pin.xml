@@ -47,4 +47,12 @@
         android:layout_centerHorizontal="true"
         />
 
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/> //to make it appear in the middle of screen , // Enable the progressbar as soon as progress button is clicked.
+
 </RelativeLayout>

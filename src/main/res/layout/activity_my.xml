@@ -1,72 +1,209 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <RelativeLayout
+        android:id="@+id/widgetcontainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/bikewidget"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/bikeicon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
+            android:src="@drawable/bike_icon" >
+        </ImageView>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/bikeicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Which Bike?"
+            android:id="@+id/textView"
+            />
+        <Spinner
+            android:layout_below="@id/textView"
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/bikeicon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="5px"
-        android:layout_marginRight="5px"
-        android:layout_marginTop="5px"
-        android:layout_marginBottom="5px"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/bike_icon" >
-    </ImageView>
+    <RelativeLayout
+        android:id="@+id/carwidget"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/caricon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
+            android:src="@drawable/car_icon" >
+        </ImageView>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/caricon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Which car?"
+            android:id="@+id/textView2"
+             />
+        <Spinner
+            android:layout_below="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/carspinner"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_gravity="center_horizontal"
+            android:spinnerMode="dropdown"/>
+    </RelativeLayout>
 
 
-    <TextView
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Choose Bike"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/btn_dropdown"
-        android:spinnerMode="dropdown" />
-
+        android:id="@+id/cabwidget"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        >
     <ImageView
-        android:layout_below="@+id/spinner1"
-        android:id="@+id/caricon"
+        android:id="@+id/cabicon"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="5px"
         android:layout_marginRight="5px"
         android:layout_marginTop="5px"
         android:layout_marginBottom="5px"
-        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/car_icon" >
     </ImageView>
 
     <TextView
+        android:layout_below="@id/cabicon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Choose Car"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal" />
+        android:text="Which cab?"
+        android:id="@+id/cablabel"
+        android:layout_centerHorizontal="true"
+       />
 
     <Spinner
+        android:layout_below="@+id/cablabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/carspinner"
+        android:id="@+id/cabspinner"
         android:background="@android:drawable/btn_dropdown"
         android:layout_gravity="center_horizontal"
         android:spinnerMode="dropdown"/>
 
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buswidget"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        >
+        <ImageView
+            android:id="@+id/busicon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/car_icon" >
+        </ImageView>
+
+        <TextView
+            android:layout_below="@id/busicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Which bus?"
+            android:id="@+id/buslabel"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Spinner
+            android:layout_below="@+id/buslabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/busspinner"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_gravity="center_horizontal"
+            android:spinnerMode="dropdown"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rickshawwidget"
+        android:visibility="gone"
+        android:layout_gravity="center_horizontal"
+        >
+        <ImageView
+            android:id="@+id/rickshawicon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5px"
+            android:layout_marginRight="5px"
+            android:layout_marginTop="5px"
+            android:layout_marginBottom="5px"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/car_icon" >
+        </ImageView>
+
+        <TextView
+            android:layout_below="@id/rickshawicon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Which rickshaw?"
+            android:id="@+id/rickshawlabel"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Spinner
+            android:layout_below="@+id/rickshawlabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rickshawspinner"
+            android:background="@android:drawable/btn_dropdown"
+            android:layout_gravity="center_horizontal"
+            android:spinnerMode="dropdown"/>
+    </RelativeLayout>
+    </RelativeLayout>
+
 
     <TextView
+        android:layout_below="@+id/widgetcontainer"
         android:id="@+id/GaadiMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button2"
         android:layout_marginTop="5dp"
         android:text="Set your Gaadi message. "
         android:textStyle="bold"
@@ -75,16 +212,17 @@
         />
 
     <EditText
+        android:layout_below="@+id/GaadiMsg"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:ems="10"
         android:id="@+id/gaadiMsg"
-        android:layout_below="@+id/GaadiMsg"
         android:layout_gravity="center_horizontal"
         />
 
     <Button
+        android:layout_below="@+id/gaadiMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -94,4 +232,12 @@
         android:onClick="CompleteProfile_Click"
         />
 
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

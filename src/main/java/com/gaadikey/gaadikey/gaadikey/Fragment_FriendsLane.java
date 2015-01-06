@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.adaptor.FriendsAdapter;
@@ -38,22 +39,25 @@ public class Fragment_FriendsLane extends Fragment{
 
     public static ArrayList<HashMap<String, String>> contactsList = new ArrayList<HashMap<String, String>>();
     public static ArrayList<HashMap<String, String>> nonMembersList = new ArrayList<HashMap<String, String>>();
+    ProgressBar pb;
 
     ListView listview;
 
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_friendslane, container, false);
+        pb = (ProgressBar) view.findViewById(R.id.progress); // ADDING PROGRESSBAR PRIOR TO Retrieving the contact details!
         System.out.println("loading listview.........");
         SharedPreferences sharedPref =  getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         String phone = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
         //String thecontacts_retrieval_url = "https://gaadikey.in/dummycontacts?phonenumber="+phone;
-        String thecontacts_retrieval_url = "https://gaadikey.in/checkmembership?phonenumber="+phone; // The Contacts retrieval URL has been populated!
+        // String thecontacts_retrieval_url = "https://gaadikey.in/checkmembership?phonenumber="+phone; // The Contacts retrieval URL has been populated!
+        // The API 0.0.1 is highly secire no need to send the phone number in the URL as parameter.
+        // Sending the obtained access token is enough
+        String thecontacts_retrieval_url = "https://gaadikey.in/checkmembership";
+
         new RetrivePhoneBook_GetTask().execute(thecontacts_retrieval_url);
-
-
-
-        listview = (ListView) view.findViewById(R.id.list);
+       listview = (ListView) view.findViewById(R.id.list);
 
         View rowView = inflater.inflate(R.layout.list_friends, listview, false);
 
@@ -63,8 +67,7 @@ public class Fragment_FriendsLane extends Fragment{
             public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
                                     long arg3) {
 
-
-                Toast.makeText(getActivity(), "The contact item selected in the friends list is in the position " + position, Toast.LENGTH_LONG).show();
+              //  Toast.makeText(getActivity(), "The contact item selected in the friends list is in the position " + position, Toast.LENGTH_LONG).show();
                 Button inviteButton = (Button) arg1.findViewById(R.id.inviteButton);
 
                 inviteButton.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +104,12 @@ public class Fragment_FriendsLane extends Fragment{
     private class RetrivePhoneBook_GetTask extends AsyncTask<String, Void, String>
     {
         @Override
+        protected void onPreExecute() {
+
+            pb.setVisibility(View.VISIBLE);
+        }
+
+        @Override
         protected String doInBackground(String... urls)
         {
             Log.e("GET called ", " The url is " + urls[0]);
@@ -110,7 +119,7 @@ public class Fragment_FriendsLane extends Fragment{
         @Override
         protected void onPostExecute(String result)
         {
-
+            pb.setVisibility(View.GONE);
             contactsList = new ArrayList<HashMap<String, String>>();
             nonMembersList = new ArrayList<HashMap< String, String>>();
 
@@ -134,7 +143,7 @@ public class Fragment_FriendsLane extends Fragment{
 //                String gkey   =          jObject.getString("gkey");
 //                String phonenumber1       = jObject.getString("phonenumber1");
 //                String phonenumber2       = jObject.getString("phonenumber2");
-//                String phonenumber3       = jObject.getString("phonenumber3");
+//                String phonenumber3       = jObject.getStri ng("phonenumber3");
 //                String phonenumber4       = jObject.getString("phonenumber4");
 //                Log.e("Values ", "Name is "+Name);
 //                Log.e("Values ", "Phonenumber is "+phonenumber1);
@@ -215,6 +224,11 @@ public class Fragment_FriendsLane extends Fragment{
             HttpGet httpGet = new HttpGet(url);
             //Adds the header to the GET http object.
             httpGet.addHeader("Authorization", "Bearer " + access_token);
+            httpGet.setHeader("Accept-version", getString(R.string.API_VERSION));
+           // The accept-version has been added!
+            // This would ping the 0.0.1 version of the API ...
+            // You can ignore sending the phone number from  now! , You can directly send the phone number!
+
             // Access Token is now attached as a Bearer token!
             // make GET request to the given URL
             HttpResponse httpResponse = httpclient.execute(httpGet);

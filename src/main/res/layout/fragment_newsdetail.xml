@@ -1,23 +1,22 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/newsframe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.gaadikey.gaadikey.gaadikey.Fragment_PublicLane">
+    tools:context="com.gaadikey.gaadikey.gaadikey.Fragment_NewsDetail">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
+        android:id="@+id/DetailView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        >
-
+        android:paddingBottom="@dimen/activity_vertical_margin">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,15 +24,30 @@
             android:paddingBottom="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="Listing out all the recent Gaadis which joined the public lane! "
-            android:id="@+id/textView"
+            android:text="Loading title"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:id="@+id/Heading"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true" />
-
-        <ListView android:id="@+id/list"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@+id/textView"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Heading"
+            android:id="@+id/byline"
+            android:text="date 11-02-2014"
+            />
+        <ScrollView
+            android:layout_below="@+id/byline"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/body_tv"
+            android:text="The body goes here!"
+            />
+        </ScrollView>
 
         <ProgressBar
             android:id="@+id/progress"
@@ -41,8 +55,8 @@
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            />
 
     </RelativeLayout>
-
 </FrameLayout>

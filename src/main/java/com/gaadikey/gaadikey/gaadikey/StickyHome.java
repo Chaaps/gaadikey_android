@@ -42,6 +42,10 @@ public class StickyHome extends ListActivity {
         lanes.add("Friends Lane");
         lanes.add("Safety Lane");
         lanes.add("Shopping Lane");
+      //  lanes.add("News");        // Adding extra Tab for the news section
+        // on click the news has to render in the list view.. The collection of news ... on click the new with detailed view has to be rendered!
+
+
       //  lanes.add("Trips Lane");
         ImageView thumbnail = (ImageView) findViewById(R.id.thumbnail);
         TextView  gaadiname_field = (TextView) findViewById(R.id.GaadiName);
