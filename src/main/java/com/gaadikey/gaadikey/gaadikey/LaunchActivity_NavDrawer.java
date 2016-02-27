@@ -409,14 +409,6 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                         .setLabel("")
                         .build());
                 break;
-            case 8:
-                fragment = new Fragment_Settings();
-                t.send(new HitBuilders.EventBuilder()
-                        .setCategory("StickyHome")
-                        .setAction("Settings")
-                        .setLabel("")
-                        .build());
-                break;
             case 9:
                 fragment = new Fragment_Feedback();
                 t.send(new HitBuilders.EventBuilder()

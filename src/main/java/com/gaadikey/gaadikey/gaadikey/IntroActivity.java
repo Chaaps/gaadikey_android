@@ -20,8 +20,6 @@ public class IntroActivity extends BaseSampleActivity {
         mPager = (ViewPager)findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
 
-        mIndicator = (CirclePageIndicator)findViewById(R.id.indicator);
-        mIndicator.setViewPager(mPager);
         t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
         t.setScreenName("Welcome"); // =
         t.send(new HitBuilders.AppViewBuilder().build());
