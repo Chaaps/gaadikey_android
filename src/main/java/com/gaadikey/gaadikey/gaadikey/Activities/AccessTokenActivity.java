@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey;
+package com.gaadikey.gaadikey.gaadikey.Activities;
 
 import android.app.AlertDialog;
 import android.os.AsyncTask;
@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.gaadikey.gaadikey.gaadikey.R;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

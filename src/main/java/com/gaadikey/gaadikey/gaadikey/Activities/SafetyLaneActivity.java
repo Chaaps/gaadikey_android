@@ -1,32 +1,28 @@
-package com.gaadikey.gaadikey.gaadikey;
+package com.gaadikey.gaadikey.gaadikey.Activities;
 
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.gaadikey.gaadikey.gaadikey.R;
 
-public class RadioActivity extends ActionBarActivity {
+
+public class SafetyLaneActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_radio);
-      //  AlertDialogView();
-        Log.e("We are at Radio Activity" , "The Radio Activity is here "); // consoling that it has entered radio activity!
-
+        setContentView(R.layout.activity_safety_lane);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.radio, menu);
+        getMenuInflater().inflate(R.menu.safety_lane, menu);
         return true;
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

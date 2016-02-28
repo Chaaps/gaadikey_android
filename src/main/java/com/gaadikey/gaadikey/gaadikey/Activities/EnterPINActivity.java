@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey;
+package com.gaadikey.gaadikey.gaadikey.Activities;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -17,6 +17,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gaadikey.gaadikey.gaadikey.Constants;
+import com.gaadikey.gaadikey.gaadikey.GaadiKey;
+import com.gaadikey.gaadikey.gaadikey.R;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 

@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.gaadikey.gaadikey.gaadikey.Activities.EnterPINActivity;
+import com.gaadikey.gaadikey.gaadikey.Activities.IntroActivity;
+import com.gaadikey.gaadikey.gaadikey.Activities.MyActivity;
 import com.gaadikey.gaadikey.gaadikey.util.SystemUiHider;
 import com.google.android.gms.analytics.Tracker;
 

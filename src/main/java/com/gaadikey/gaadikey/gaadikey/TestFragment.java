@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.gaadikey.gaadikey.gaadikey.Activities.VerificationActivity;
+
 
 public final class TestFragment extends Fragment {
     private static final String KEY_CONTENT = "TestFragment:Content";

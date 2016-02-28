@@ -1,20 +1,16 @@
-package com.gaadikey.gaadikey.gaadikey;
+package com.gaadikey.gaadikey.gaadikey.Activities;
 
 import android.app.ListActivity;
-import android.content.ComponentName;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ListView;
-import android.widget.Toast;
 
-import com.gaadikey.gaadikey.gaadikey.adaptor.ShoppingAdapter;
+import com.gaadikey.gaadikey.gaadikey.R;
+import com.gaadikey.gaadikey.gaadikey.adaptor.PublicLaneAdapter;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -27,27 +23,27 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Date;
 
 
-public class ShoppinglaneActivity extends ListActivity {
+public class PublicLaneActivity extends ListActivity {
 
-    ArrayList<HashMap<String, String>> shoppingList =   new ArrayList<HashMap<String, String>>();
-    @Override
+    //@Override
+    public static ArrayList<HashMap<String, String>> publicList = new ArrayList<HashMap<String, String>>();
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shoppinglane);
-        new RetriveShoppingProducts_GetTask().execute("https://gaadikey.in/affiliate_ads?os=android");
-        // Affiliate ads for android OS is retrieved.
-
+        setContentView(R.layout.activity_public_lane);
+        new PublicDataTask().execute("https://gaadikey.in/publiclane");
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.shoppinglane, menu);
+        getMenuInflater().inflate(R.menu.public_lane, menu);
         return true;
     }
 
@@ -63,20 +59,17 @@ public class ShoppinglaneActivity extends ListActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public class PublicDataTask extends AsyncTask<String, Void, String> {
 
-    private class RetriveShoppingProducts_GetTask extends AsyncTask<String, Void, String>
-    {
-        @Override
         protected String doInBackground(String... urls)
         {
-            Log.e("GET called ", " The url is " + urls[0]);
-            return  getData(urls[0]);
+            return getPublicData(urls[0]);
         }
-        // onPostExecute displays the results of the AsyncTask.
-        @Override
+
         protected void onPostExecute(String result)
         {
-            shoppingList = new ArrayList<HashMap<String, String>>();
+            publicList = new ArrayList<HashMap<String, String>>();
+            Log.e("The result is ", result);
             try
             {
                 JSONArray json = new JSONArray(result);
@@ -89,25 +82,35 @@ public class ShoppinglaneActivity extends ListActivity {
                 {
                     HashMap<String, String> map = new HashMap<String, String>();
                     JSONObject jObject = json.getJSONObject(i);
-                    String Source =        jObject.getString("ad_source");
-                    String Title =         jObject.getString("ad_title");
-                    String Image    =      jObject.getString("ad_image");
-                    String Price   =       jObject.getString("ad_price");
-                    String URL       =     jObject.getString("ad_clickurl");
-                    String Notes     =     jObject.getString("ad_notes");
-                    map.put("Source", Source);
-                    map.put("Title", Title);
-                    map.put("Image", Image);
-                    map.put("Price", Price);
-                    map.put("URL",   URL);
-                    map.put("Notes", Notes);
-                    shoppingList.add(map);
+                    String vehiclename =           jObject.getString("vehiclename");
+                    String gaadipic =         jObject.getString("gaadipic");
+                    String modifiedOn    =         jObject.getString("modifiedOn");
+               //     modifiedOn = "Joined public lane "+TimeUtils.millisToLongDHMS(24000)+" ago.";
+//                    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yy:HH:mm:SSS'Z'");
+//                    Date date = DATE_FORMAT.parse(modifiedOn);
+                    //2014-09-24T05:34:36.228Z
+                    SimpleDateFormat formatter, FORMATTER;
+                    formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                   // String oldDate = "2011-03-10T11:54:30.207Z";  //This is modifiedOn
+                    Date date = formatter.parse(modifiedOn.substring(0, 24));
+                    FORMATTER = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss.SSS");
+
+                    Log.e("Formatter date", FORMATTER.format(date));
+                    Date newdate = FORMATTER.parse(FORMATTER.format(date));
+                  //  System.out.println("NewDate-->"+FORMATTER.format(date));
+
+                    long mills = newdate.getTime();
+                    CharSequence cs = DateUtils.getRelativeTimeSpanString(mills);
+                    if(!vehiclename.equals("null")) {
+                        map.put("vehiclename", vehiclename);
+                        map.put("gaadipic", gaadipic);
+                        map.put("modifiedOn", "Joined public lane "+cs.toString()+" ago");
+                        publicList.add(map);
+                    }
                 }
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", "" + shoppingList.size());
-                setListAdapter(new ShoppingAdapter(ShoppinglaneActivity.this, shoppingList));
-                Log.e("Shopping lane is ", "true ");
-
+                Log.e("The number of items in the list is ", ""+publicList.size());
+                setListAdapter(new PublicLaneAdapter(PublicLaneActivity.this, publicList));
             }
 
             catch (Exception e)
@@ -117,16 +120,15 @@ public class ShoppinglaneActivity extends ListActivity {
             }
 
         }
+
     }
 
 
-
-    public  String getData(String url){
+    public String getPublicData(String url)
+    {
         InputStream inputStream = null;
         String result = "";
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
-        // sharedPref
-        // retrieve this
         String access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
         try {
             // create HttpClient
@@ -150,6 +152,7 @@ public class ShoppinglaneActivity extends ListActivity {
             Log.d("InputStream", e.getLocalizedMessage());
         }
         return result;
+
     }
 
 
@@ -165,39 +168,11 @@ public class ShoppinglaneActivity extends ListActivity {
     }
 
 
-
-    protected void on7ListItemClick(ListView l, View v, int position, long id)
+    public void returnNothing()
     {
-
-        String advertisement_url = "";
-        advertisement_url = shoppingList.get(position).get("URL");
-        // onClick should open  a URL IN THE BROWSER
-        Log.e("Trying to open this advertisement URL ", advertisement_url);
-        Intent internetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(advertisement_url));
-        internetIntent.setComponent(new ComponentName("com.android.browser","com.android.browser.BrowserActivity"));
-        internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        this.startActivity(internetIntent);
-
-        Log.e("Click happened", "Click happened ");
-        Log.e("Here it happened ", " These are the values "+l);
-        Log.e("Here it happened ", " These are the values "+v);
-        Log.e("Here it happened ", " These are the values "+position);
-        Log.e("Here it happened ", " These are the values "+id);
-        Toast.makeText(this, "The shopping item selected in the Shopping list is in the position " + position, Toast.LENGTH_LONG).show();
-        // Show a toast notification
-//        Toast.makeText(this,position, Toast.LENGTH_LONG ).show();
-//		//get selected items
-//	//	String selectedValue = (String) getListAdapter().getItem(position);
-//	//	Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();
-//
-//        vnObj = new ViewNotifyObject();
-//        vnObj.set_phonenumber("1234567890");
-//        vnObj.set_gkey("thegkey");
-//        vnObj.set_sendto("270820141113");
-//        vnObj.set_vehicle("Vehicle__" + "selectedValue");
-//        vnObj.set_name("selectedValue");
-//
-//        new HttpAsyncPostTask().execute("http://gaadikey.in/viewnotify");
-
+        /* This function returns nothing!
+         */
     }
+
+
 }

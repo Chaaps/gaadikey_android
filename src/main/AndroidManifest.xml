@@ -28,18 +28,18 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MyActivity"
+            android:name=".Activities.MyActivity"
             android:label="@string/app_name"
             android:noHistory="true"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".AccessTokenActivity"
+            android:name=".Activities.AccessTokenActivity"
             android:label="Access Key stuff"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".VerificationActivity"
+            android:name=".Activities.VerificationActivity"
             android:label="@string/title_activity_verification"
             android:screenOrientation="portrait" >
 
@@ -51,11 +51,11 @@
             -->
         </activity>
         <activity
-            android:name=".ContactsActivity"
+            android:name=".Activities.ContactsActivity"
             android:label="@string/title_activity_contacts" >
         </activity>
         <activity
-            android:name=".ListMobileActivity"
+            android:name=".Activities.ListMobileActivity"
             android:label="Your Contacts" >
         </activity>
 
@@ -76,7 +76,7 @@
             android:label="@string/title_activity_blank" >
         </activity>
         <activity
-            android:name=".EnterPINActivity"
+            android:name=".Activities.EnterPINActivity"
             android:label="@string/title_activity_enter_pin"
             android:screenOrientation="portrait" >
         </activity>
@@ -95,7 +95,7 @@
 
         </activity>
         <activity
-            android:name=".SettingUpActivity"
+            android:name=".Activities.SettingUpActivity"
             android:label="@string/title_activity_setting_up"
             android:noHistory="true"
             android:screenOrientation="portrait" >
@@ -119,25 +119,25 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".PublicLaneActivity"
+            android:name=".Activities.PublicLaneActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_public_lane"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".FriendsLaneActivity"
+            android:name=".Activities.FriendsLaneActivity"
             android:label="@string/title_activity_friends_lane" >
         </activity>
         <activity
-            android:name=".SafetyLaneActivity"
+            android:name=".Activities.SafetyLaneActivity"
             android:label="@string/title_activity_safety_lane" >
         </activity>
         <activity
-            android:name=".ShoppinglaneActivity"
+            android:name=".Activities.ShoppinglaneActivity"
             android:label="@string/title_activity_shoppinglane" >
         </activity>
         <activity
-            android:name=".TripsLaneActivity"
+            android:name=".Activities.TripsLaneActivity"
             android:label="@string/title_activity_trips_lane" >
         </activity>
         <activity
@@ -146,7 +146,7 @@
             android:noHistory="true" >
         </activity>
         <activity
-            android:name=".IntroActivity"
+            android:name=".Activities.IntroActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_intro"
             android:screenOrientation="portrait"
@@ -164,7 +164,7 @@
             android:resource="@xml/global_tracker" />
 
         <activity
-            android:name=".RadioActivity"
+            android:name=".Activities.RadioActivity"
             android:label="@string/title_activity_radio"
             >
 

@@ -1,24 +1,26 @@
-package com.gaadikey.gaadikey.gaadikey;
+package com.gaadikey.gaadikey.gaadikey.Activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.gaadikey.gaadikey.gaadikey.R;
 
-public class SafetyLaneActivity extends ActionBarActivity {
+
+public class TripsLaneActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_safety_lane);
+        setContentView(R.layout.activity_trips_lane);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.safety_lane, menu);
+        getMenuInflater().inflate(R.menu.trips_lane, menu);
         return true;
     }
 
