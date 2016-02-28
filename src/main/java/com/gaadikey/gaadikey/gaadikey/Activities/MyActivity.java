@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -30,7 +30,7 @@ import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.Constants;
 import com.gaadikey.gaadikey.gaadikey.GaadiKey;
-import com.gaadikey.gaadikey.gaadikey.ProfileObject;
+import com.gaadikey.gaadikey.gaadikey.serializables.ProfileObject;
 import com.gaadikey.gaadikey.gaadikey.R;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;

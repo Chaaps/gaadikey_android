@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.R;
-import com.gaadikey.gaadikey.gaadikey.TestFragmentAdapter;
+import com.gaadikey.gaadikey.gaadikey.adapters.TestFragmentAdapter;
 import com.viewpagerindicator.PageIndicator;
 
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -11,8 +11,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.R;
-import com.gaadikey.gaadikey.gaadikey.ViewNotifyObject;
-import com.gaadikey.gaadikey.gaadikey.adaptor.MobileArrayAdapter;
+import com.gaadikey.gaadikey.gaadikey.serializables.ViewNotifyObject;
+import com.gaadikey.gaadikey.gaadikey.adapters.MobileArrayAdapter;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.app.ListActivity;
 import android.content.ComponentName;
@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.gaadikey.gaadikey.gaadikey.R;
-import com.gaadikey.gaadikey.gaadikey.adaptor.ShoppingAdapter;
+import com.gaadikey.gaadikey.gaadikey.adapters.ShoppingAdapter;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

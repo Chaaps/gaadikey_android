@@ -10,10 +10,103 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02ddc8d9-86a9-475d-a931-14bbe9f92e51" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/AccessTokenActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/AccessTokenActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/FriendsAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/GaadiNumberAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/MobileArrayAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/NavDrawerListAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/NewsAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/PublicLaneAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/ShoppingAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/StickyHomeAdapter.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ActivityLauncher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Blank.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_FriendsLane.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_Home.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_News.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_NewsDetail.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_PublicLane.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_SearchResults.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_ShoppingLane.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/LaunchActivity_NavDrawer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TestFragment.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_Feedback.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_Feedback.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_NumberPlate.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_NumberPlate.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_ReviewVehicle.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_ReviewVehicle.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_SafetyLane.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_SafetyLane.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragment_TripsLane.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_TripsLane.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/IntroStep1.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/IntroStep1.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/IntroStep2.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/IntroStep2.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/IntroStep3.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/IntroStep3.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TestFragmentAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/TestFragmentAdapter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/WelcomesYou.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/WelcomesYou.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gaadikey_android.iml" afterPath="$PROJECT_DIR$/gaadikey_android.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/AccessTokenActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/AccessTokenActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/ContactsActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/ContactsActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/EnterPINActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/EnterPINActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/MyActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/MyActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/RadioActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/RadioActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/SafetyLaneActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/SafetyLaneActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/SettingUpActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/SettingUpActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/TripsLaneActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/TripsLaneActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/VerificationActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/VerificationActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ContactsObject.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ContactsObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GcmBroadcastReceiver.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GcmBroadcastReceiver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/StickyHome.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/StickyHome.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/LaunchActivity_NavDrawer.java" afterPath="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/LaunchActivity_NavDrawer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_access_token.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_access_token.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_activity_launcher.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_activity_launcher.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_blank.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_blank.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_contacts.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_contacts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_enter_pin.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_enter_pin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_friends_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_friends_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_intro.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_intro.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_intro_step1.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_intro_step1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_intro_step2.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_intro_step2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_intro_step3.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_intro_step3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_public_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_public_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_radio.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_radio.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_safety_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_safety_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_setting_up.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_setting_up.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_shoppinglane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_shoppinglane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_trips_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_trips_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_verification.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_verification.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/activity_welcomes_you.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_welcomes_you.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_base_sample.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_base_sample.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_feedback.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_feedback.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_friendslane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_friendslane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_news.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_news.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_newsdetail.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_newsdetail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_numberplate.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_numberplate.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_publiclane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_publiclane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_reviewvehicle.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_reviewvehicle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_safetylane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_safetylane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_searchresults.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_searchresults.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_shoppinglane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_shoppinglane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_tripslane.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_tripslane.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/access_token.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/access_token.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/blank.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/blank.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/contacts.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/contacts.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/enter_pin.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/enter_pin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/friends_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/friends_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/intro.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/intro.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/intro_step1.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/intro_step1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/intro_step2.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/intro_step2.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/intro_step3.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/intro_step3.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/my.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/my.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/public_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/public_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/radio.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/radio.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/safety_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/safety_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/setting_up.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/setting_up.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/shoppinglane.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/shoppinglane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/trips_lane.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/trips_lane.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/verification.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/verification.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/menu/welcomes_you.xml" afterPath="$PROJECT_DIR$/src/main/res/menu/welcomes_you.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/xml/app_tracker.xml" afterPath="$PROJECT_DIR$/src/main/res/xml/app_tracker.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/xml/ecommerce_tracker.xml" afterPath="$PROJECT_DIR$/src/main/res/xml/ecommerce_tracker.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/xml/global_tracker.xml" afterPath="$PROJECT_DIR$/src/main/res/xml/global_tracker.xml" />
     </list>
     <ignored path="gaadikey_android.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,21 +135,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AccessTokenActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/AccessTokenActivity.java">
+      <file leaf-file-name="TestFragmentAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/TestFragmentAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GaadiKey.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GaadiKey.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GaadiKey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4528302">
-              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContactsObject.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ContactsObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.13274336">
+              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blank.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/Blank.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityLauncher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/ActivityLauncher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/TestFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="159" column="17" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fragment_NewsDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_NewsDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LaunchActivity_NavDrawer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/LaunchActivity_NavDrawer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Fragment_SafetyLane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_SafetyLane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WelcomesYou.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/WelcomesYou.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -1097,9 +1270,24 @@
         <option value="$PROJECT_DIR$/build/intermediates/res/merged/debug/values-v23/values-v23.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/LaunchActivity_NavDrawer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GaadiKey.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TestFragmentAdapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/AccessTokenActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/EnterPINActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GaadiKey.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/SafetyLaneActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TestFragmentAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/LaunchActivity_NavDrawer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_FriendsLane.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Fragments/Fragment_NumberPlate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_NumberPlate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_TripsLane.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/WelcomesYou.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/TestFragmentAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/Blank.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/ActivityLauncher.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/TestFragment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_NewsDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/LaunchActivity_NavDrawer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ContactsObject.java" />
       </list>
     </option>
   </component>
@@ -1108,6 +1296,31 @@
     <option name="y" value="23" />
     <option name="width" value="1260" />
     <option name="height" value="709" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SerializableHasSerialVersionUIDField</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1256,36 +1469,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaadikey" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Activities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaadikey_android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gaadikey_android" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -1301,7 +1484,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="gaadikey_android" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -1309,6 +1492,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.gaadikey.gaadikey.gaadikey.activities" />
+      <recent name="com.gaadikey.gaadikey.gaadikey.adapters" />
+      <recent name="com.gaadikey.gaadikey.gaadikey.fragments" />
+      <recent name="com.gaadikey.gaadikey.gaadikey.Fragments" />
       <recent name="com.gaadikey.gaadikey.gaadikey.Activities" />
     </key>
   </component>
@@ -1596,25 +1783,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1260" height="709" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32676518" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32715008" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24958949" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1622,7 +1809,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922825" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922825" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1636,50 +1823,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TestFragmentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GaadiKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#934#935#0" expanded="false" />
-            <element signature="e#957#958#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/simple_circles.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72164947">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adaptor/PublicLaneAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="40.037037">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/list_news.xml">
       <provider editor-type-id="android-designer">
         <state />
@@ -1754,14 +1897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/LaunchActivity_NavDrawer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15613383">
-          <caret line="410" column="22" selection-start-line="410" selection-start-column="22" selection-end-line="410" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82300884">
@@ -1770,23 +1905,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ContactsObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10619469">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TestFragmentAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53097343">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/Activities/AccessTokenActivity.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/AccessTokenActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
@@ -1794,10 +1913,322 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/ContactsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/EnterPINActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/IntroActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/FriendsLaneActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/ListMobileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/MyActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/PublicLaneActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/RadioActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/ShoppinglaneActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/VerificationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/SettingUpActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33274338">
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/SafetyLaneActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/BaseSampleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21238938">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/IntroStep2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/IntroStep1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/IntroStep3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_NumberPlate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25309736">
+          <caret line="136" column="31" selection-start-line="136" selection-start-column="31" selection-end-line="136" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_News.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10619469">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18584071">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_FriendsLane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18584071">
+          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_Feedback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18584071">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_PublicLane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_ReviewVehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/PhoneObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_TripsLane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18584071">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_ShoppingLane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21238938">
+          <caret line="39" column="13" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_SearchResults.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18584071">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_SafetyLane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ViewNotifyObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/TimeUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/WelcomesYou.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/adapters/TestFragmentAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/Blank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/AccessTokenObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/ActivityLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/TestFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="159" column="17" selection-start-line="159" selection-start-column="17" selection-end-line="159" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/activities/LaunchActivity_NavDrawer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/fragments/Fragment_NewsDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/GaadiKey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4528302">
-          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gaadikey/gaadikey/gaadikey/ContactsObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13274336">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
           <folding />
         </state>
       </provider>

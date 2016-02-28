@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,9 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.gaadikey.gaadikey.gaadikey.ContactsObject;
+import com.gaadikey.gaadikey.gaadikey.serializables.ContactsObject;
 import com.gaadikey.gaadikey.gaadikey.GaadiKey;
-import com.gaadikey.gaadikey.gaadikey.LaunchActivity_NavDrawer;
 import com.gaadikey.gaadikey.gaadikey.R;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;

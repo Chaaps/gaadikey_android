@@ -1,12 +1,11 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
-import com.gaadikey.gaadikey.gaadikey.Activities.BaseSampleActivity;
 import com.gaadikey.gaadikey.gaadikey.GaadiKey;
 import com.gaadikey.gaadikey.gaadikey.R;
-import com.gaadikey.gaadikey.gaadikey.TestFragmentAdapter;
+import com.gaadikey.gaadikey.gaadikey.adapters.TestFragmentAdapter;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 

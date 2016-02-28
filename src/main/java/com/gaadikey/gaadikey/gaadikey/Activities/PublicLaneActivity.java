@@ -1,4 +1,4 @@
-package com.gaadikey.gaadikey.gaadikey.Activities;
+package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.app.ListActivity;
 import android.content.SharedPreferences;
@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.gaadikey.gaadikey.gaadikey.R;
-import com.gaadikey.gaadikey.gaadikey.adaptor.PublicLaneAdapter;
+import com.gaadikey.gaadikey.gaadikey.adapters.PublicLaneAdapter;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

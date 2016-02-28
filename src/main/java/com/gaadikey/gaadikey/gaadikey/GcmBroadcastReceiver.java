@@ -15,6 +15,9 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 
+import com.gaadikey.gaadikey.gaadikey.activities.LaunchActivity_NavDrawer;
+import com.gaadikey.gaadikey.gaadikey.activities.WelcomesYou;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
