@@ -360,7 +360,7 @@ public class Fragment_NumberPlate extends Fragment{
                 editor_5.putString(getString(R.string.KEY_digit4_laststate), digit4.getDisplayedValues()[digit4.getValue()]);
 
                 editor_5.putString(getString(R.string.KEY_GaadiKey_Number_Saved),  formedString+" "+formedStringPart2);
-                editor_5.commit();
+                editor_5.apply();
 
 
                 ((LaunchActivity_NavDrawer) getActivity()).displayView(0);
@@ -414,7 +414,7 @@ public class Fragment_NumberPlate extends Fragment{
 //        SharedPreferences sharedPref5 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor_5 = sharedPref5.edit();
 //        editor_5.putString(getString(R.string.KEY_GaadiKey_Number_Saved),  formedString);
-//        editor_5.commit();
+//        editor_5.apply();
 //
 //    }
 

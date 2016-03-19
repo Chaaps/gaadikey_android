@@ -60,7 +60,7 @@ public class ActivityLauncher extends Activity {
 
 
         // commenting out this in order to persist all values!
-        // sharedPref.edit().clear().commit();  // This clears all the values present in the sharedpreferences!
+        // sharedPref.edit().clear().apply();  // This clears all the values present in the sharedpreferences!
         // The ActivityLauncher activity has to be popped out of the stack once a new activity is launched.
         // Temporarily launch the IntroActivity ..  for every condition for testing purposes!!!
         // The  Intro activity is launched!!!  this should take to IntroActivity with the introduction steps!

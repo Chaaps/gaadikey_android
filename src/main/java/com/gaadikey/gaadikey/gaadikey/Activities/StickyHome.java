@@ -111,7 +111,7 @@ public class StickyHome extends ListActivity {
                         SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor_4 = sharedPref4.edit();
                         editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
-                        editor_4.commit();
+                        editor_4.apply();
                         startActivity(i);
 
                         return true;
@@ -140,7 +140,7 @@ public class StickyHome extends ListActivity {
 //                    SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
 //                    SharedPreferences.Editor editor_4 = sharedPref4.edit();
 //                    editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
-//                    editor_4.commit();
+//                    editor_4.apply();
 //
 //
 //                    startActivity(new Intent(StickyHome.this,  LaunchActivity_NavDrawer.class));
@@ -159,7 +159,7 @@ public class StickyHome extends ListActivity {
         SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor_4 = sharedPref4.edit();
         editor_4.putString(getString(R.string.KEY_HomeMenu), "" + (position+1) ); // Incrementing the position by 1
-        editor_4.commit();
+        editor_4.apply();
 
         // Toast.makeText(this, "You clicked " + lanes.get(position), Toast.LENGTH_LONG).show();
         // Removing toast UI from the code.. Launching the activity directly from here!
@@ -227,7 +227,7 @@ public class StickyHome extends ListActivity {
         SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor_4 = sharedPref4.edit();
         editor_4.putString(getString(R.string.KEY_HomeMenu), "5" ); // The Number plate is present in the 5th position in list of fragments
-        editor_4.commit();
+        editor_4.apply();
 
 
 

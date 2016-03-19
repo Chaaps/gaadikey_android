@@ -156,7 +156,7 @@ public class EnterPINActivity extends ActionBarActivity {
                     SharedPreferences.Editor editor2 = sharedPref.edit();
                     //The verified phone number is updated.
                     editor2.putString(getString(R.string.KEY_phonenumber), phonenumber);
-                    editor2.commit();
+                    editor2.apply();
 
                     new GetAccessTokenPostTask().execute("https://gaadikey.in/token");
 
@@ -221,12 +221,12 @@ public class EnterPINActivity extends ActionBarActivity {
                 SharedPreferences sharedPref = getSharedPreferences("android_shared", MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
                 editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_VERIFIED);
-                editor.commit();
+                editor.apply();
 
                 // SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor2 = sharedPref.edit();
                 editor2.putString(getString(R.string.KEY_ACCESS_TOKEN), access_token);
-                editor2.commit();
+                editor2.apply();
 
                 String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
 

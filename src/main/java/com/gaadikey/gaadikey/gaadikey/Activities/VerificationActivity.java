@@ -69,7 +69,7 @@ public class VerificationActivity extends ActionBarActivity {
 //        SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor = sharedPref.edit();
 //        editor.putString(getString(R.string.KEY_signupstatus), Constants.VERIFY_VISITED);
-//        editor.commit();
+//        editor.apply();
         //Get a Tracker (should auto-report)
         t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
         t.setScreenName("VerificationActivity"); // =
@@ -133,7 +133,7 @@ public class VerificationActivity extends ActionBarActivity {
             SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString(getString(R.string.KEY_GaadiKey_Number_Saved), "yes");
-            editor.commit();
+            editor.apply();
         }catch (RemoteException e) {
             e.printStackTrace();
         }catch (OperationApplicationException e) {
@@ -190,12 +190,12 @@ public class VerificationActivity extends ActionBarActivity {
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString(getString(R.string.KEY_phonenumber), phone);
-        editor.commit();
+        editor.apply();
 
         SharedPreferences sharedPref1 =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         SharedPreferences.Editor editor1 = sharedPref.edit();
         editor1.putString(getString(R.string.KEY_signupstatus), Constants.PIN_REQUESTSENT);
-        editor1.commit();
+        editor1.apply();
 
         //PIN_REQUESTSENT
         //sharedPref1 now  storing the PIN_REQUESTSENT as early as possible

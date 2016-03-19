@@ -272,7 +272,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
 //                transaction.replace(R.id.frame_container, newFragment);
 //                transaction.addToBackStack(null);
 //                // Commit the transaction
-//                transaction.commit();
+//                transaction.apply();
                 return true;
 
             case R.id.item1:

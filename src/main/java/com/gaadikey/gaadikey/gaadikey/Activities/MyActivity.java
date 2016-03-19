@@ -429,17 +429,17 @@ public class MyActivity extends Activity {
                     SharedPreferences sharedPref = getSharedPreferences("android_shared",Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor2 = sharedPref.edit();
                     editor2.putString(getString(R.string.KEY_signupstatus), Constants.PROFILE_REGISTERED);
-                    editor2.commit();
+                    editor2.apply();
 
                     SharedPreferences sharedPref2 = getSharedPreferences("android_shared",  Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor_2 = sharedPref2.edit();
                     editor_2.putString(getString(R.string.KEY_GaadiName), GAADI_NAME);
-                    editor_2.commit();
+                    editor_2.apply();
 
                     SharedPreferences sharedPref3 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor_3 = sharedPref3.edit();
                     editor_3.putString(getString(R.string.KEY_GaadiMsg), GAADI_MESSAGE);
-                    editor_3.commit();
+                    editor_3.apply();
 
 
                     SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
@@ -451,7 +451,7 @@ public class MyActivity extends Activity {
                     String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
 
                     editor_4.putString(getString(R.string.KEY_GaadiImage), resize_path);
-                    editor_4.commit();
+                    editor_4.apply();
 
                     // All details stored in persistant , Should be able to retrieve the values with the respective keys!
                     String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");

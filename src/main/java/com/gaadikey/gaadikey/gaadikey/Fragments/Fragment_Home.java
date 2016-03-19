@@ -96,7 +96,7 @@ public class Fragment_Home extends Fragment {
                 SharedPreferences sharedPref4 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor_4 = sharedPref4.edit();
                 editor_4.putString(getString(R.string.KEY_HomeMenu), "" + position); // Incrementing the position by 1
-                editor_4.commit();
+                editor_4.apply();
 
                 ((LaunchActivity_NavDrawer) getActivity()).displayView(position + 1);
 
