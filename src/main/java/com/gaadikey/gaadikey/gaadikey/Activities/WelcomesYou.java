@@ -55,7 +55,6 @@ public class WelcomesYou extends ActionBarActivity {
 
     public void BackHome_Clicked(View button)
     {
-        Log.e("Button clicked ", "Yes");
         // Take this activity to StickyHome
         // Going to stickey home would be like going back to home.
         // Launch the Launch_DrawerActivity in order to launch the new drawer base activity when clicked from the notification!
@@ -82,7 +81,6 @@ public class WelcomesYou extends ActionBarActivity {
             {
                 JSONObject jObject = new JSONObject(result);
                 String user_count = jObject.getString("registered_users");
-                Log.e("The number of registered users is ", user_count);
                 TextView t = (TextView) findViewById(R.id.textstring2);
                 t.setText("You are one among the "+user_count+" happy Gaadi Key users");
 
@@ -91,7 +89,6 @@ public class WelcomesYou extends ActionBarActivity {
             catch (Exception e)
             {
 
-                Log.e("This request didn't complete ", e.getLocalizedMessage());
 
             }
 
@@ -103,7 +100,6 @@ public class WelcomesYou extends ActionBarActivity {
     public String getUserCount(String url)
     {
 
-        Log.e("The url to be pinged is ", url);
         InputStream inputStream = null;
         String result = "";
         try {

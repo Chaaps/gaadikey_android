@@ -52,7 +52,6 @@ public class NewsAdapter extends ArrayAdapter<HashMap<String, String>> {
         GaadiNametextView.setText(newsList.get(position).get("title"));
         //TimestamptextView.setText(newsList.get(position).get("content"));
         System.out.println(s);
-        Log.e("Called", "Called");
        // new ImageDownloader(imageView).execute(publicList.get(position).get("gaadipic"));
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
@@ -85,7 +84,6 @@ public class NewsAdapter extends ArrayAdapter<HashMap<String, String>> {
                 InputStream in = new URL(url).openStream();
                 mIcon = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
-                Log.e("Error", e.getMessage());
             }
             return mIcon;
         }

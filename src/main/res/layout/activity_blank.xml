@@ -20,7 +20,6 @@
         android:id="@+id/editText"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="76dp"
-        android:onClick="clicked"/>
+        android:layout_marginTop="76dp"/>
 
 </RelativeLayout>

@@ -70,7 +70,6 @@ public class ShoppinglaneActivity extends ListActivity {
         @Override
         protected String doInBackground(String... urls)
         {
-            Log.e("GET called ", " The url is " + urls[0]);
             return  getData(urls[0]);
         }
         // onPostExecute displays the results of the AsyncTask.
@@ -84,7 +83,6 @@ public class ShoppinglaneActivity extends ListActivity {
                 // check if this request was sucessful... if the request was successful
                 // then parse the phonebook and get contacts details
                 // contacts details are rendered one by one .
-                Log.e("The response recieved from the server is " , result );
                 // result
                 for(int i=0;i<json.length();i++)
                 {
@@ -105,15 +103,12 @@ public class ShoppinglaneActivity extends ListActivity {
                     shoppingList.add(map);
                 }
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", "" + shoppingList.size());
                 setListAdapter(new ShoppingAdapter(ShoppinglaneActivity.this, shoppingList));
-                Log.e("Shopping lane is ", "true ");
 
             }
 
             catch (Exception e)
             {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
                 // The exception has been logged.
             }
 
@@ -173,17 +168,11 @@ public class ShoppinglaneActivity extends ListActivity {
         String advertisement_url = "";
         advertisement_url = shoppingList.get(position).get("URL");
         // onClick should open  a URL IN THE BROWSER
-        Log.e("Trying to open this advertisement URL ", advertisement_url);
         Intent internetIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(advertisement_url));
         internetIntent.setComponent(new ComponentName("com.android.browser","com.android.browser.BrowserActivity"));
         internetIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(internetIntent);
 
-        Log.e("Click happened", "Click happened ");
-        Log.e("Here it happened ", " These are the values "+l);
-        Log.e("Here it happened ", " These are the values "+v);
-        Log.e("Here it happened ", " These are the values "+position);
-        Log.e("Here it happened ", " These are the values "+id);
         Toast.makeText(this, "The shopping item selected in the Shopping list is in the position " + position, Toast.LENGTH_LONG).show();
         // Show a toast notification
 //        Toast.makeText(this,position, Toast.LENGTH_LONG ).show();

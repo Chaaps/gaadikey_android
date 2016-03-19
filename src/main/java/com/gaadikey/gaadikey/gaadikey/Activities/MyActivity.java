@@ -134,7 +134,6 @@ public class MyActivity extends Activity {
                                 .setAction("Bike_Click")
                                 .setLabel("")
                                 .build());
-                        Log.e("Bike is Clicked", "Bike");
                         ImageView caricon = (ImageView) findViewById(R.id.caricon);
                         TextView cartextview  = (TextView) findViewById(R.id.textView2);
                         Spinner carspinner = (Spinner) findViewById(R.id.carspinner);
@@ -147,7 +146,6 @@ public class MyActivity extends Activity {
                         break;
 
                     case DialogInterface.BUTTON_NEGATIVE:
-                        Log.e("Car is Clicked", "Car");
                         t.send(new HitBuilders.EventBuilder()
                                 .setCategory("CarClick")
                                 .setAction("Car_Click")
@@ -198,12 +196,9 @@ public class MyActivity extends Activity {
         completeProfileClick.setEnabled(false);
         completeProfileClick.setFocusable(false); // removes the focus from the button!
 
-        Log.e("In Complete Profile Click" , "Before");
         final EditText gaadiMsgField = (EditText) findViewById(R.id.gaadiMsg);
-        Log.e("Text content is ", gaadiMsgField.getText().toString());
         GAADI_MESSAGE = gaadiMsgField.getText().toString();
         //startActivity(new Intent(MyActivity.this, SettingUpActivity.class));
-        Log.e("Complete_Profile_Button_Clicked ", "Complete Profile Clicked.");
         profile_object = new ProfileObject();
         profile_object.set_phonenumber(PHONE_NUMBER);
         profile_object.set_deviceid(regid);
@@ -258,7 +253,6 @@ public class MyActivity extends Activity {
 
         }
         new RegisterUserTask().execute("https://gaadikey.in/register");
-        Log.e("The complete profile has been clicked" , "The completed profile has been clicked ");
         // Testing by commenting out request stuff!
         // CompleteProfile
     }
@@ -293,7 +287,6 @@ public class MyActivity extends Activity {
             @Override
             protected void onPostExecute(String msg) {
 
-                Log.e("Registration ID", "This device's unique registration ID is "+msg );
                 //etRegId.setText(msg + "\n");
             }
         }.execute(null, null, null);
@@ -318,7 +311,6 @@ public class MyActivity extends Activity {
                                     .setLabel("")
                                     .build()); // Analytics for Google!
 
-                            Log.e("Bike is Clicked", "Bike");
                             RelativeLayout bikeWidget = (RelativeLayout) findViewById(R.id.bikewidget);
                             bikeWidget.setVisibility(View.VISIBLE);
 
@@ -338,7 +330,6 @@ public class MyActivity extends Activity {
                         }
                         if(item == 1)
                         {
-                            Log.e("Car is Clicked", "Car");
                             t.send(new HitBuilders.EventBuilder()
                                     .setCategory("CarClick")
                                     .setAction("Car_Click")
@@ -362,7 +353,6 @@ public class MyActivity extends Activity {
 
                         if( item ==2 )
                         {
-                            Log.e("Cab is clicked" , "Cab");
                             t.send(new HitBuilders.EventBuilder()
                                     .setCategory("CabClick")
                                     .setAction("Cab_Click")
@@ -379,7 +369,6 @@ public class MyActivity extends Activity {
 
                         if( item ==3 )
                         {
-                            Log.e("Bus is clicked" , "Bus");
                             t.send(new HitBuilders.EventBuilder()
                                     .setCategory("BusClick")
                                     .setAction("Bus_Click")
@@ -396,7 +385,6 @@ public class MyActivity extends Activity {
 
                         if( item == 4 )
                         {
-                            Log.e("Rickshaw is clicked " , "Rickshaw");
                             t.send(new HitBuilders.EventBuilder()
                                     .setCategory("RickshawClick")
                                     .setAction("Rickshaw_Click")
@@ -435,8 +423,6 @@ public class MyActivity extends Activity {
         protected void onPostExecute(String result)
         {
 
-                Log.e("Success posting", result);
-                Log.e("Response from the registration step ", result);
                 try
                 {
                     // Save the following things in sharedStorage
@@ -464,23 +450,17 @@ public class MyActivity extends Activity {
                     if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                     String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
 
-                    Log.e("Image path is ", path);
                     editor_4.putString(getString(R.string.KEY_GaadiImage), resize_path);
                     editor_4.commit();
 
                     // All details stored in persistant , Should be able to retrieve the values with the respective keys!
-                    Log.e("Profile Registered State saved ", "Proof "+sharedPref.getString(getString(R.string.KEY_signupstatus), "default signup stuff"));
-                    Log.e("Persistence" , "Successfully inserted the access_token into the sharedPreferenes storage");
                     String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
-                    Log.e("Retrived value",  "The retrieved stuff is "+theString ) ;
                     startActivity(new Intent(MyActivity.this, SettingUpActivity.class));
                 }
                 catch(Exception e)
                 {
-                    Log.e("Parse", "Exception in parsing");
 
                 }
-                Log.e("This should contain the access token ", result);
                 Toast.makeText(getBaseContext(), "Access token received!", Toast.LENGTH_LONG).show();
                 // The data has been sent
 
@@ -507,11 +487,9 @@ public class MyActivity extends Activity {
         // sharedPref
         // retrieve this
         access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
-        Log.e("Register ", "The retrieved access token is "+access_token);
         //access_token
         try {
 
-            Log.e("Inside Try block URL is ", url);
             // 1. create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
             // 2. make POST request to the given URL
@@ -526,10 +504,8 @@ public class MyActivity extends Activity {
             jsonObject.accumulate("notifyid", profile_object.get_notifyid());
             jsonObject.accumulate("vehicletype", profile_object.get_vehicletype());
             jsonObject.accumulate("vehiclename", profile_object.get_vehiclename());
-            Log.e("Hello the vehiclename is ", profile_object.get_vehiclename());
             // 4. convert JSONObject to JSON to String
             json = jsonObject.toString();
-            Log.e("Json uploaded", "The Uploaded json looks like " + json);
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
             // ObjectMapper mapper = new ObjectMapper();
             // json = mapper.writeValueAsString(person);
@@ -551,16 +527,12 @@ public class MyActivity extends Activity {
             // 10. convert inputstream to string
             if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-                Log.e("crash", "We are here and somehow crashing!");
-                Log.e("Result in string ", result);
 
             } else
                 result = "Did not work!";
 
         } catch (Exception e)
         {
-            Log.e("Crashed again", "Crashed");
-            Log.e("Exception block", e.getLocalizedMessage());
             // TODO Auto-generated catch block
         }
 
@@ -592,7 +564,6 @@ public class MyActivity extends Activity {
         {
 
 
-            Log.e("Pinging this URL ---> ", urls[0]);
             return GetBikeData(urls[0]);
 
 
@@ -600,8 +571,6 @@ public class MyActivity extends Activity {
         protected void onPostExecute(String result)
         {
             pb.setVisibility(View.GONE);
-            Log.e("And we received", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                     // The populate spinner should be present here!
@@ -609,7 +578,6 @@ public class MyActivity extends Activity {
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
 
@@ -635,7 +603,6 @@ public class MyActivity extends Activity {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             bikedata = new ArrayList<HashMap<String, String>>();
             bikestringdata = new ArrayList<String>();
@@ -654,7 +621,6 @@ public class MyActivity extends Activity {
                 map.put("bike_image", bike_image);
                 map.put("bike_brand", bike_brand);
                 map.put("priority", priority);
-                Log.e("Bikes name received is  ", bike_name);
                 bikedata.add(map);
                 bikestringdata.add(bike_name);
                 // loading these variables
@@ -671,7 +637,6 @@ public class MyActivity extends Activity {
                     // Since 0 is returned for the first item... don't do anything .
                  //   if(position!=0)
                     {
-                        Log.e("The Selected index in bike dropdown is ", "" + position);
                         ImageView bikeicon_imageview = (ImageView) findViewById(R.id.bikeicon);
 
                         String rootstring = "http://gaadikey.com/images";
@@ -679,7 +644,6 @@ public class MyActivity extends Activity {
                         String path = "";
                         if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                         String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
-                        Log.e("Resize path is ", resize_path);
                         new ImageDownloader(bikeicon_imageview).execute(resize_path);
                     }
                     // Now change the bike images, based on the selection among bikes
@@ -689,7 +653,6 @@ public class MyActivity extends Activity {
                 public void onNothingSelected(AdapterView<?> parentView)
                 {
 
-                    Log.e("The very first time ", "Nothing is selected ");
                     // your code here
                 }
             });
@@ -743,7 +706,6 @@ public class MyActivity extends Activity {
                 InputStream in = new java.net.URL(url).openStream();
                 mIcon = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
-                Log.e("Error", e.getMessage());
             }
             return mIcon;
         }
@@ -767,7 +729,6 @@ public class MyActivity extends Activity {
         {
 
 
-            Log.e("Pinging this URL ---> ", urls[0]);
             return GetCarData(urls[0]);
 
 
@@ -775,8 +736,6 @@ public class MyActivity extends Activity {
         protected void onPostExecute(String result)
         {
             pb.setVisibility(View.GONE); // The progressbar is now gone!
-            Log.e("And we received", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                 // The populate spinner should be present here!
@@ -784,7 +743,6 @@ public class MyActivity extends Activity {
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
 
@@ -808,7 +766,6 @@ public class MyActivity extends Activity {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             cardata = new ArrayList<HashMap<String, String>>();
             carstringdata = new ArrayList<String>();
@@ -827,7 +784,6 @@ public class MyActivity extends Activity {
                 map.put("car_image", car_image);
                 map.put("car_brand", car_brand);
                 map.put("priority", priority);
-                Log.e("Cars name received is  ", car_name);
                 cardata.add(map);
                 carstringdata.add(car_name);
                 // loading these variables
@@ -844,11 +800,9 @@ public class MyActivity extends Activity {
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
 
                   //  if(position!=0)
                     {
-                        Log.e("The Selected index in car dropdown is ", "" + position);
                         ImageView caricon_imageview = (ImageView) findViewById(R.id.caricon);
 
                         String rootstring = "http://gaadikey.com/images";
@@ -856,7 +810,6 @@ public class MyActivity extends Activity {
                         String path = "";
                         if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                         String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
-                        Log.e("Resize path is", resize_path);
                         new ImageDownloader(caricon_imageview).execute(resize_path);
 
 
@@ -935,7 +888,6 @@ public class MyActivity extends Activity {
         {
 
 
-            Log.e("Pinging this URL ---> ", urls[0]);
             return GetCabData(urls[0]);
 
 
@@ -943,8 +895,6 @@ public class MyActivity extends Activity {
         protected void onPostExecute(String result)
         {
             pb.setVisibility(View.GONE); // Remove the progress bar!
-            Log.e("And we received", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                 // The populate spinner should be present here!
@@ -952,7 +902,6 @@ public class MyActivity extends Activity {
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
 
@@ -976,7 +925,6 @@ public class MyActivity extends Activity {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             cabdata = new ArrayList<HashMap<String, String>>();
             cabstringdata = new ArrayList<String>();
@@ -993,7 +941,6 @@ public class MyActivity extends Activity {
                 map.put("service_name", service_name);
                 map.put("service_image", service_image);
 
-                Log.e("Cabs name received is  ", service_name);
                 cabdata.add(map);
                 cabstringdata.add(service_name);
                 // loading these variables
@@ -1010,11 +957,9 @@ public class MyActivity extends Activity {
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
 
                   //  if(position!=0)
                     {
-                        Log.e("The Selected index in car dropdown is ", "" + position);
                         ImageView caricon_imageview = (ImageView) findViewById(R.id.cabicon);
 
                         String rootstring = "http://gaadikey.com/images";
@@ -1022,7 +967,6 @@ public class MyActivity extends Activity {
                         String path = "";
                         if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                         String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
-                        Log.e("Resize path is", resize_path);
                         new ImageDownloader(caricon_imageview).execute(resize_path);
 
 
@@ -1099,7 +1043,6 @@ public class MyActivity extends Activity {
         {
 
 
-            Log.e("Pinging this URL ---> ", urls[0]);
             return GetBusData(urls[0]);
 
 
@@ -1108,8 +1051,6 @@ public class MyActivity extends Activity {
         {
             pb.setVisibility(View.GONE); // It is gone!
 
-            Log.e("And we received", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                 // The populate spinner should be present here!
@@ -1117,7 +1058,6 @@ public class MyActivity extends Activity {
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
 
@@ -1139,7 +1079,6 @@ public class MyActivity extends Activity {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             busdata = new ArrayList<HashMap<String, String>>();
             busstringdata = new ArrayList<String>();
@@ -1153,7 +1092,6 @@ public class MyActivity extends Activity {
                 map.put("id" , id);
                 map.put("bus_name", bus_name);
                 map.put("bus_image", bus_image);
-                Log.e("Bus name received is  ", bus_name);
                 busdata.add(map);
                 busstringdata.add(bus_name);
 
@@ -1171,17 +1109,14 @@ public class MyActivity extends Activity {
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
                     //  if(position!=0)
                     {
-                        Log.e("The Selected index in car dropdown is ", "" + position);
                         ImageView busicon_imageview = (ImageView) findViewById(R.id.busicon);
                         String rootstring = "http://gaadikey.com/images";
                         String web_image_path =  busdata.get(position).get("bus_image");
                         String path = "";
                         if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                         String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
-                        Log.e("Resize path is", resize_path);
                         new ImageDownloader(busicon_imageview).execute(resize_path);
                         //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
                     }
@@ -1255,7 +1190,6 @@ public class MyActivity extends Activity {
         {
 
 
-            Log.e("Pinging this URL ---> ", urls[0]);
             return GetRickshawData(urls[0]);
 
 
@@ -1263,8 +1197,6 @@ public class MyActivity extends Activity {
         protected void onPostExecute(String result)
         {
             pb.setVisibility(View.GONE); // The progressbar is now removed!
-            Log.e("And we received", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                 // The populate spinner should be present here!
@@ -1272,7 +1204,6 @@ public class MyActivity extends Activity {
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
 
@@ -1296,7 +1227,6 @@ public class MyActivity extends Activity {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             rickshawdata = new ArrayList<HashMap<String, String>>();
             rickshawstringdata = new ArrayList<String>();
@@ -1312,7 +1242,6 @@ public class MyActivity extends Activity {
                 map.put("id" , id);
                 map.put("rickshaw_name", rickshaw_name);
                 map.put("rickshaw_image", rickshaw_image);
-                Log.e("Rickshaw name received is  ", rickshaw_name);
                 rickshawdata.add(map);
                 rickshawstringdata.add(rickshaw_name);
                 // loading these variables
@@ -1329,11 +1258,9 @@ public class MyActivity extends Activity {
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
 
                     //  if(position!=0)
                     {
-                        Log.e("The Selected index in car dropdown is ", "" + position);
                         ImageView caricon_imageview = (ImageView) findViewById(R.id.rickshawicon);
 
                         String rootstring = "http://gaadikey.com/images";
@@ -1341,7 +1268,6 @@ public class MyActivity extends Activity {
                         String path = "";
                         if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                         String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
-                        Log.e("Resize path is", resize_path);
                         new ImageDownloader(caricon_imageview).execute(resize_path);
                         //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
                     }

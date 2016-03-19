@@ -66,7 +66,6 @@ public class VerificationActivity extends ActionBarActivity {
         setContentView(R.layout.activity_verification);
         pb = (ProgressBar) findViewById(R.id.progress); // The progress bar has been identified.
 
-        Log.e("Loaded", "activity_verification loaded");
 //        SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor = sharedPref.edit();
 //        editor.putString(getString(R.string.KEY_signupstatus), Constants.VERIFY_VISITED);
@@ -131,7 +130,6 @@ public class VerificationActivity extends ActionBarActivity {
         try{
             // Executing all the insert operations as a single database transaction
             getContentResolver().applyBatch(ContactsContract.AUTHORITY, ops);
-            Log.e("Contact save status", "success");
             SharedPreferences sharedPref = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putString(getString(R.string.KEY_GaadiKey_Number_Saved), "yes");
@@ -158,7 +156,6 @@ public class VerificationActivity extends ActionBarActivity {
                 .setLabel("")
                 .build());
 
-        Log.e("The Submission Click has occured once and should only occur once!!!", "Click event");
         final EditText phoneField = (EditText) findViewById(R.id.phoneNumber);
 
         final android.widget.Button submissionClick = (Button) findViewById(R.id.button);
@@ -209,7 +206,6 @@ public class VerificationActivity extends ActionBarActivity {
 
 
         String nameSaved = getContactDisplayNameByNumber("9008431992");
-        Log.e("The Given number is saved in the name of ", nameSaved);
 
         if(getContactDisplayNameByNumber("9008431992").equals("?"))
         addContact("Gaadi Key", "9008431992"); // Execute this statement only once.. That is save the gaadi phone number only when it is not saved in the phone book
@@ -217,8 +213,6 @@ public class VerificationActivity extends ActionBarActivity {
 
       //  new HttpAsyncPostTask().execute("http s://maps.googleapis.com/maps/api/place/nearbysearch/json");
         new HttpAsyncPostTask().execute("https://gaadikey.in/generate");
-       // Log.e("Response", "Expected Response");
-       // Log.e("Actual Response", response);
         //System.out.print("The response is  "+response);
         //When Phone and Email address is clicked
         // Read the text from The textboxes phone and email
@@ -249,10 +243,6 @@ public class VerificationActivity extends ActionBarActivity {
         return name;
     }
 
-    public void getThisThingDone()
-    {
-        Log.e("Do this ",  "Do this .. Do this now");
-    }
 
 
     // passing https has a problem in android.. solve it
@@ -326,7 +316,6 @@ public class VerificationActivity extends ActionBarActivity {
             jsonObject.accumulate("email", phone.get_email());
             // 4. convert JSONObject to JSON to String
             json = jsonObject.toString();
-            Log.e("Json uploaded", "The Uploaded json looks like "+json);
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
             // ObjectMapper mapper = new ObjectMapper();
             // json = mapper.writeValueAsString(person);
@@ -349,8 +338,6 @@ public class VerificationActivity extends ActionBarActivity {
             // 10. convert inputstream to string
             if(inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-                Log.e("crash" , "We are here and somehow crashing!");
-                Log.e("Result in string ", result);
 
             }
             else
@@ -358,7 +345,6 @@ public class VerificationActivity extends ActionBarActivity {
 
             } catch (Exception e) {
 
-                 Log.e("Exception block", e.getLocalizedMessage());
                 // TODO Auto-generated catch block
             }
 
@@ -420,7 +406,6 @@ public class VerificationActivity extends ActionBarActivity {
         {
             pb.setVisibility(View.INVISIBLE); //Disables the progressbar
 
-            Log.e("Success posting", result);
             Toast.makeText(getBaseContext(), "You will be receiving PIN by SMS", Toast.LENGTH_LONG).show();
 
             // The control should now go to Enter PIN Screen
@@ -445,8 +430,6 @@ public class VerificationActivity extends ActionBarActivity {
             try {
                 JSONObject jObject = new JSONObject(result);
                 String actualPIN = jObject.getString("PIN");
-                Log.e("enteredPIN", PIN);
-                Log.e("actualPIN", actualPIN);
 
                 if (PIN.equals(actualPIN)) {
                     new AlertDialog.Builder(VerificationActivity.this)

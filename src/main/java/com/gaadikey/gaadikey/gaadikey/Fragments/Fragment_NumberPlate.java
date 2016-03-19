@@ -109,7 +109,6 @@ public class Fragment_NumberPlate extends Fragment{
                 JSONObject jObject = json.getJSONObject(i);
                 stateArray[i] =  jObject.getString("State");
                 regNoArray[i] =  jObject.getString("RegNo");
-                Log.e("", jObject.getString("RegNo"));
                 regNoTruncatedArray[i] = regNoArray[i].substring(0,2);
                 placeArray[i] =  jObject.getString("Place");
 
@@ -190,7 +189,6 @@ public class Fragment_NumberPlate extends Fragment{
 //                {
 //                    statetext.setText("Tamilnadu");
 //                }
-                Log.e("State is ", state);
 
                 formedString += picker2.getDisplayedValues()[picker2.getValue()];
                 if (Arrays.asList(regNoArray).contains(formedString))
@@ -293,7 +291,6 @@ public class Fragment_NumberPlate extends Fragment{
         digit3.setDisplayedValues(digit3Array);
         digit3.setValue(Arrays.asList(digit3Array).indexOf(digit3filler));
 
-        Log.e("Index of digit 3 =>  "+digit3filler, " "+Arrays.asList(digit3Array).indexOf(digit3filler));
 
 
         final NumberPicker digit4 =  (NumberPicker) view.findViewById(R.id.digit4);
@@ -311,7 +308,6 @@ public class Fragment_NumberPlate extends Fragment{
             @Override
             public void onClick(View view) {
 
-                Log.e("The new plate has been updated ", "Plate");
                 SharedPreferences sharedPref5 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor_5 = sharedPref5.edit();
                 formedStringPart2 = "";
@@ -415,7 +411,6 @@ public class Fragment_NumberPlate extends Fragment{
 
 //    public void NumberPlateUpdated(View view)
 //    {
-//        Log.e("The new plate has been updated ", "Plate");
 //        SharedPreferences sharedPref5 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
 //        SharedPreferences.Editor editor_5 = sharedPref5.edit();
 //        editor_5.putString(getString(R.string.KEY_GaadiKey_Number_Saved),  formedString);

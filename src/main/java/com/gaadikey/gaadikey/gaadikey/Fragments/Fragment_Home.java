@@ -21,23 +21,20 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by madratgames on 31/10/14.
- */
-public class Fragment_Home extends Fragment  {
+public class Fragment_Home extends Fragment {
     ArrayList<String> lanes = new ArrayList<String>();
     ListView listview;
     String IMAGE_PATH = "";
     String GAADI_MSG = "";
     String GAADI_NAME = "";
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
-    {
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ImageView thumbnail = (ImageView) view.findViewById(R.id.thumbnail);
         TextView gaadiname_field = (TextView) view.findViewById(R.id.GaadiName);
-        TextView  gaadimsg_field  = (TextView) view.findViewById(R.id.GaadiMsg);
-        TextView  numberplate_textview = (TextView) view.findViewById(R.id.numberplate);
+        TextView gaadimsg_field = (TextView) view.findViewById(R.id.GaadiMsg);
+        TextView numberplate_textview = (TextView) view.findViewById(R.id.numberplate);
 
         numberplate_textview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +54,6 @@ public class Fragment_Home extends Fragment  {
         });
 
 
-
         // Download the Image dynamically, Pinging the Image URL
         // Get the image path URL by rading the persistant storage
 
@@ -71,24 +67,18 @@ public class Fragment_Home extends Fragment  {
         gaadiname_field.setText(GAADI_NAME);
 
 
-        Log.e("Retrieved IMAGE_PATH ", IMAGE_PATH);
-        Log.e("Retrieved GAADI_MSG ", GAADI_MSG);
-        Log.e("Retrieved GAADI NAME ", GAADI_NAME);
-
-
-        if(!IMAGE_PATH.equals("default")) {
+        if (!IMAGE_PATH.equals("default")) {
 
             Picasso.with(getActivity().getBaseContext()).load(IMAGE_PATH).into(thumbnail);
 
         }
 
-        TextView numberplateText =  (TextView) view.findViewById(R.id.numberplate);
-        SharedPreferences sharedPref1 =  getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
-        String numberplatestring = sharedPref1.getString(getString(R.string.KEY_GaadiKey_Number_Saved),  "KA50Q7896");
-        Log.e("The retreived number plate string is ", numberplatestring);
+        TextView numberplateText = (TextView) view.findViewById(R.id.numberplate);
+        SharedPreferences sharedPref1 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        String numberplatestring = sharedPref1.getString(getString(R.string.KEY_GaadiKey_Number_Saved), "KA50Q7896");
 
         numberplateText.setText(numberplatestring); // setting the string obtained from the KEY set by number picker change listener
-        Typeface typface=Typeface.createFromAsset(getActivity().getAssets(),"LicensePlate.ttf");
+        Typeface typface = Typeface.createFromAsset(getActivity().getAssets(), "LicensePlate.ttf");
         numberplateText.setTypeface(typface);
 
         lanes.add("Public Lane");
@@ -101,64 +91,17 @@ public class Fragment_Home extends Fragment  {
         listview.setAdapter(new StickyHomeAdapter(getActivity(), lanes));
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
-                                    long arg3)
-            {
+                                    long arg3) {
 
                 SharedPreferences sharedPref4 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor_4 = sharedPref4.edit();
-                editor_4.putString(getString(R.string.KEY_HomeMenu), ""+position ); // Incrementing the position by 1
+                editor_4.putString(getString(R.string.KEY_HomeMenu), "" + position); // Incrementing the position by 1
                 editor_4.commit();
 
-                Log.e(" The Item clicked in the list is " , ""+position);
                 ((LaunchActivity_NavDrawer) getActivity()).displayView(position + 1);
 
             }
-            });
-
-        // Removing the edittext for now
-
-
-//        final EditText edittext = (EditText) view.findViewById(R.id.editText_search);
-//
-//        edittext.setOnEditorActionListener(
-//                new EditText.OnEditorActionListener() {
-//                    @Override
-//                    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-//
-//
-//
-//                        if (event != null) {
-//                            // if shift key is down, then we want to insert the '\n' char in the TextView;
-//                            // otherwise, the default action is to send the message.
-//
-//                            if (!event.isShiftPressed())
-//                            {
-//                                Log.e(" Enter is pressed! ", "Yes");
-//                                //return true;
-//                                // Start the activity here
-//
-//                            }
-//                            return false;
-//                        }
-//
-//                        Log.e("here we are ", "Yes");
-//
-//                        Intent i = new Intent(getActivity(), LaunchActivity_NavDrawer.class);
-//                        i.putExtra("searchString",edittext.getText().toString());
-//                        i.putExtra("view", "normal");
-//
-//                        SharedPreferences sharedPref4 = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
-//                        SharedPreferences.Editor editor_4 = sharedPref4.edit();
-//                        editor_4.putString(getString(R.string.KEY_HomeMenu), "0" ); // Incrementing the position by 1
-//                        editor_4.commit();
-//                        startActivity(i);
-//
-//                        return true;
-//                    }
-//                });
-
-
-
+        });
         return view;
     }
 

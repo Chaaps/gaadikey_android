@@ -13,7 +13,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -81,12 +80,7 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             searchString = extras.getString("searchString");
-            if(searchString!=null)
-            Log.e("Obtained Searchstring is ", searchString);
         }
-//        SnippetsDB_Helper logindb;
-//        logindb=new SnippetsDB_Helper(this);
-//        //logindb=logindb.open();
 
         mTitle = mDrawerTitle = getTitle();
 
@@ -244,7 +238,6 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
                                 long id) {
             // display view for selected nav drawer item
 
-            Log.e("The Item click has occured! ", "Item click!!! " );
             searchString="";
             displayView(position);
         }
@@ -474,7 +467,6 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
 
         } else {
             // error in creating fragment
-            Log.e("MainActivity", "Error in creating fragment");
         }
     }
 
@@ -505,54 +497,6 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         mDrawerToggle.onConfigurationChanged(newConfig);
         //
     }
-//    @Override
-//    public void onNewIntent(Intent intent) {
-//
-//        Log.e("You are here in the new intent", "new intent");
-//        Bundle extras = getIntent().getExtras();
-//        if (extras != null) {
-//            String value = extras.getString("view");
-//            if(value.equals("FriendsLane"))
-//            {
-//                displayView(2);
-//                // Open the appropriate fragment here !
-//            }
-//            else
-//            if(value.equals("PublicLane"))
-//            {
-//                displayView(1);
-//            }
-//            else
-//            if(value.equals("ShoppingLane"))
-//            {
-//                displayView(4); //SHOPPINGLANE INTEGER
-//            }
-//            else
-//            if(value.equals("SafetyLane"))
-//            {
-//                displayView(3);
-//                // Open the SafetyLane  Fragment
-//            }
-//            else
-//            if(value.equals("NumberPlate"))
-//            {
-//                displayView(5);
-//            }
-//            else
-//            if(value.equals("Search"))
-//            {
-//                displayView(6);
-//            }
-//            else
-//            if(value.equals("Feedback"))
-//            {
-//                displayView(8);
-//                // The Feedback page
-//            }
-//        }
-//
-//
-//    }
 
 
     @Override
@@ -607,9 +551,6 @@ public class LaunchActivity_NavDrawer extends ActionBarActivity {
         else if(CURRENTVIEW.equals("News"))
         {
 
-            Log.e("This is ", "Triggered ");
-
-            Log.e("Backstack count is ", ""+fragment.getFragmentManager().getBackStackEntryCount());
             if (fragment != null && fragment.getFragmentManager().getBackStackEntryCount() > 0){
                 // Get the fragment fragment manager - and pop the backstack
                 fragment.getFragmentManager().popBackStack();

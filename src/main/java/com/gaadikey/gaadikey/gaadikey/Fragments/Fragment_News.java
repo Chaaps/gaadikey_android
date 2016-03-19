@@ -59,59 +59,56 @@ public class Fragment_News extends Fragment {
     // Fragment_news is here!
 
     View view;
+
     @Override
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         Bundle bundle = this.getArguments();
         entrytype = (String) bundle.get("type");
         //entrytype= bundle.getString("type", "direct");
 
-    //    if (view == null) {
-            view = inflater.inflate(R.layout.fragment_news, container, false); // fragment_news
-            pb = (ProgressBar) view.findViewById(R.id.progress);
+        //    if (view == null) {
+        view = inflater.inflate(R.layout.fragment_news, container, false); // fragment_news
+        pb = (ProgressBar) view.findViewById(R.id.progress);
 
 
-
-            Button writebutton = (Button) view.findViewById(R.id.writebutton); //write button identified
-            writebutton.setOnClickListener(new View.OnClickListener() {
+        Button writebutton = (Button) view.findViewById(R.id.writebutton); //write button identified
+        writebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Log.e("The click has occured" , "");
                 ((LaunchActivity_NavDrawer) getActivity()).writeReviewClicked(); // The write review button has been clicked
 
 
             }
         });
 
-            Log.e("Called again ", "Yes ");
-            //  final View view2 = inflater.inflate(R.layout.activity_launchdrawer, container, false);
+        //  final View view2 = inflater.inflate(R.layout.activity_launchdrawer, container, false);
 
-            System.out.println("loading listview.........");
-            listview = (ListView) view.findViewById(R.id.list);
+        System.out.println("loading listview.........");
+        listview = (ListView) view.findViewById(R.id.list);
 
-            if(newsList.size() ==0)
+        if (newsList.size() == 0)
             new NewsDataTask().execute("http://blog.gaadikey.com/wp-json/posts/");
-            else
+        else
             listview.setAdapter(new NewsAdapter(getActivity(), newsList));
 
-            //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
+        //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
 
-            listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
-                                        long arg3) {
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
+                                    long arg3) {
 
-                    //  ((YourActivityClassName)getActivity()).yourPublicMethod();
-                    String title = newsList.get(position).get("title");
-                    String byline = newsList.get(position).get("date_gmt");
-                    String body = newsList.get(position).get("content");
-                    ((LaunchActivity_NavDrawer) getActivity()).listitem_click_notify(title, byline, body); // SENDING THESE PARAMETERS to activity!
+                //  ((YourActivityClassName)getActivity()).yourPublicMethod();
+                String title = newsList.get(position).get("title");
+                String byline = newsList.get(position).get("date_gmt");
+                String body = newsList.get(position).get("content");
+                ((LaunchActivity_NavDrawer) getActivity()).listitem_click_notify(title, byline, body); // SENDING THESE PARAMETERS to activity!
 
-                }
-            });
+            }
+        });
 
- //       }
+        //       }
 
 //        else
 //        {
@@ -124,54 +121,45 @@ public class Fragment_News extends Fragment {
     }
 
 
-
     public class NewsDataTask extends AsyncTask<String, Void, String> {
 
 
-        protected void onPreExecute()
-        {
+        protected void onPreExecute() {
             pb.setVisibility(View.VISIBLE);
         }
 
-        protected String doInBackground(String... urls)
-        {
+        protected String doInBackground(String... urls) {
             return getNewsData(urls[0]);
         }
 
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
 
             pb.setVisibility(View.GONE);
             newsList = new ArrayList<HashMap<String, String>>();
-            Log.e("The result is ", result);
-            try
-            {
+            try {
                 JSONArray json = new JSONArray(result);
                 // check if this request was sucessful... if the request was successful
                 // then parse the phonebook and get contacts details
                 // contacts details are rendered one by one .
-                Log.e("The response recieved from the server is " , result );
                 // result
-                for(int i=0;i<json.length();i++)
-                {
+                for (int i = 0; i < json.length(); i++) {
                     HashMap<String, String> map = new HashMap<String, String>();
                     JSONObject jObject = json.getJSONObject(i);
                     String title = jObject.getString("title"); // The title is retrieved from the JSON!
                     String content = jObject.getString("content"); // The content is the king!
                     String date_gmt = jObject.getString("date_gmt"); // This retrieves the article date!
-                    String excerpt  = jObject.getString("excerpt");
+                    String excerpt = jObject.getString("excerpt");
                     thumbnail = "http://gaadikey.com/images/gaadi/1.jpg";
 
                     Html.fromHtml(content, new Html.ImageGetter() {
                         int imagecount = 0;
+
                         @Override
                         public Drawable getDrawable(String source) {
-                           if(imagecount <1)
-                           {
-                               imagecount++;
-                               thumbnail = source;
-                               Log.e("Source is ", source);
-                           }
+                            if (imagecount < 1) {
+                                imagecount++;
+                                thumbnail = source;
+                            }
                             return null;
                         }
                     }, null);
@@ -184,9 +172,8 @@ public class Fragment_News extends Fragment {
                     CharSequence cs = DateUtils.getRelativeTimeSpanString(mills);
 
 
-                  //  Log.e("Title is " , title);
-                 //   JSONObject attachment_meta = jObject.getJSONObject("attachment_meta");
-                  //  String thumbnail = jObject.getJSONObject("attachment_meta").getJSONObject("sizes").getJSONObject("thumbnail").getString("url");
+                    //   JSONObject attachment_meta = jObject.getJSONObject("attachment_meta");
+                    //  String thumbnail = jObject.getJSONObject("attachment_meta").getJSONObject("sizes").getJSONObject("thumbnail").getString("url");
                     //     modifiedOn = "Joined public lane "+TimeUtils.millisToLongDHMS(24000)+" ago.";
 //                    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yy:HH:mm:SSS'Z'");
 //                    Date date = DATE_FORMAT.parse(modifiedOn);
@@ -194,39 +181,27 @@ public class Fragment_News extends Fragment {
                     //  System.out.println("NewDate-->"+FORMATTER.format(date));
 
 
-
-
-
-
-
-                        map.put("title", title);
-                        map.put("content", content);
-                        map.put("date_gmt", date_gmt); // date_gmt
-                        map.put("posted_on", cs.toString());
-                        map.put("thumbnail", thumbnail); // thumbnail
-                        newsList.add(map);
+                    map.put("title", title);
+                    map.put("content", content);
+                    map.put("date_gmt", date_gmt); // date_gmt
+                    map.put("posted_on", cs.toString());
+                    map.put("thumbnail", thumbnail); // thumbnail
+                    newsList.add(map);
 
                 }
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", ""+newsList.size());
 
                 listview.setAdapter(new NewsAdapter(getActivity(), newsList));
-                if(entrytype.equals("push"))
-                {
+                if (entrytype.equals("push")) {
                     String title = newsList.get(0).get("title");
                     String byline = newsList.get(0).get("date_gmt");
                     String body = newsList.get(0).get("content");
-                    Log.e("This is a push notifiction ", "yes");
                     ((LaunchActivity_NavDrawer) getActivity()).listitem_click_notify(title, byline, body);
 
                 }
 
                 //Date newdate =  new Date()
-            }
-
-            catch (Exception e)
-            {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
+            } catch (Exception e) {
                 // The exception has been logged.
             }
 
@@ -243,7 +218,7 @@ public class Fragment_News extends Fragment {
         protected Bitmap doInBackground(Object... params) {
             String source = (String) params[0];
             mDrawable = (LevelListDrawable) params[1];
-         //   Log.d(TAG, "doInBackground " + source);
+            //   Log.d(TAG, "doInBackground " + source);
             try {
                 InputStream is = new URL(source).openStream();
                 return BitmapFactory.decodeStream(is);
@@ -259,8 +234,8 @@ public class Fragment_News extends Fragment {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-         //   Log.d(TAG, "onPostExecute drawable " + mDrawable);
-          //  Log.d(TAG, "onPostExecute bitmap " + bitmap);
+            //   Log.d(TAG, "onPostExecute drawable " + mDrawable);
+            //  Log.d(TAG, "onPostExecute bitmap " + bitmap);
             if (bitmap != null) {
                 BitmapDrawable d = new BitmapDrawable(bitmap);
                 mDrawable.addLevel(1, 1, d);
@@ -271,18 +246,17 @@ public class Fragment_News extends Fragment {
                 body.setText(t);
                 // i don't know yet a better way to refresh TextView
                 // mTv.invalidate() doesn't work as expected
-              //  CharSequence t = mTv.getText();
-              //  mTv.setText(t);
+                //  CharSequence t = mTv.getText();
+                //  mTv.setText(t);
             }
         }
     }
 
 
-    public String getNewsData(String url)
-    {
+    public String getNewsData(String url) {
         InputStream inputStream = null;
         String result = "";
-        SharedPreferences sharedPref =  this.getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = this.getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         String access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
         try {
             // create HttpClient
@@ -296,10 +270,9 @@ public class Fragment_News extends Fragment {
             // receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
             // convert inputstream to string
-            if(inputStream != null) {
+            if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-            }
-            else
+            } else
                 result = "Did not work!";
         } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
@@ -310,19 +283,15 @@ public class Fragment_News extends Fragment {
 
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line = "";
         String result = "";
-        while((line = bufferedReader.readLine()) != null)
+        while ((line = bufferedReader.readLine()) != null)
             result += line;
 
         inputStream.close();
         return result;
     }
-
-
-
-
 
 
 }

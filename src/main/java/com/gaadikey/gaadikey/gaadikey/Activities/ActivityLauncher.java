@@ -57,7 +57,6 @@ public class ActivityLauncher extends Activity {
         super.onCreate(savedInstanceState);
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String launch_code = sharedPref.getString(getString(R.string.KEY_signupstatus),  Constants.PIN_NOTDISPATCHED);
-        Log.e("The launch code is ", launch_code);
 
 
         // commenting out this in order to persist all values!
@@ -69,7 +68,6 @@ public class ActivityLauncher extends Activity {
 
         if(launch_code.equals(""+Constants.PIN_NOTDISPATCHED))
         {
-            Log.e("Status code", "PIN is not dispatched");
             Intent i = new Intent(ActivityLauncher.this, IntroActivity.class);
             i.setFlags((Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK ));
             startActivity(i);
@@ -92,8 +90,6 @@ public class ActivityLauncher extends Activity {
 
         else if( launch_code.equals(""+Constants.PIN_REQUESTSENT))
         {
-            Log.e("Launch code", "PIN is dispatched ");
-       //     startActivity(new Intent(ActivityLauncher.this, EnterPINActivity.class));
 
             Intent i = new Intent(ActivityLauncher.this, EnterPINActivity.class);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -104,7 +100,6 @@ public class ActivityLauncher extends Activity {
 
         else if( launch_code.equals(""+Constants.PIN_VERIFIED))
         {
-            Log.e("Launch code", "PIN is verified ");
           //  startActivity(new Intent(ActivityLauncher.this, MyActivity.class));
             // go to MyActivity in order to complete profile registration.
             Intent i = new Intent(ActivityLauncher.this, MyActivity.class);
@@ -115,15 +110,6 @@ public class ActivityLauncher extends Activity {
 
         else if( launch_code.equals(""+Constants.PROFILE_REGISTERED))
         {
-            Log.e("Launch code", "Profile is registered ");
-       //     startActivity(new Intent(ActivityLauncher.this,  ListMobileActivity.class));
-       //     Log.e("Launch code" , "profile registered");
-            // Once the profile is registered take it to StickyHome
-        //    startActivity(new Intent(ActivityLauncher.this, StickyHome.class));
-
-            //StickyHome
-         //   Intent i = new Intent(ActivityLauncher.this, StickyHome.class);
-            // For the fragment approach!
             Intent i = new Intent(ActivityLauncher.this, LaunchActivity_NavDrawer.class);
             i.putExtra("view", "normal");
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -141,21 +127,18 @@ public class ActivityLauncher extends Activity {
 
         else if(launch_code.equals(""+Constants.INTRO_STEP1_COMPLETED))
         {
-            Log.e("Launch code", "Intro Step 1 completed");
             startActivity(new Intent(ActivityLauncher.this, IntroStep2.class));
 
         }
 
         else if(launch_code.equals(""+Constants.INTRO_STEP2_COMPLETED))
         {
-            Log.e("Launch code", "Intro Step 1 completed");
             startActivity(new Intent(ActivityLauncher.this, IntroStep3.class));
 
         }
 
         else if(launch_code.equals(""+Constants.INTRO_STEP3_COMPLETED))
         {
-            Log.e("Launch code", "Intro Step 1 completed");
             // This should go to actual app
         }
 
@@ -195,7 +178,6 @@ public class ActivityLauncher extends Activity {
         // Restore UI state from the savedInstanceState.
 
         String myString = savedInstanceState.getString("launch_code");
-        Log.e("Launch_code retrived is ", myString);
     }
 
 

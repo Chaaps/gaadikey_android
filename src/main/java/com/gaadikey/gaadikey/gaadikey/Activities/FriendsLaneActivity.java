@@ -76,7 +76,6 @@ public class FriendsLaneActivity extends ListActivity {
         @Override
         protected String doInBackground(String... urls)
         {
-            Log.e("GET called ", " The url is " + urls[0]);
             return  getData(urls[0]);
         }
         // onPostExecute displays the results of the AsyncTask.
@@ -92,7 +91,6 @@ public class FriendsLaneActivity extends ListActivity {
                 // check if this request was sucessful... if the request was successful
                 // then parse the phonebook and get contacts details
                 // contacts details are rendered one by one .
-                Log.e("The response recieved from the server is " , result );
                 // result
                 for(int i=0;i<json.length();i++)
                 {
@@ -106,8 +104,6 @@ public class FriendsLaneActivity extends ListActivity {
                     String phonenumber2       = jObject.getString("phonenumber2");
                     String phonenumber3       = jObject.getString("phonenumber3");
                     String phonenumber4       = jObject.getString("phonenumber4");
-                    Log.e("Values ", "Name is "+Name);
-                    Log.e("Values ", "Phonenumber is "+phonenumber1);
                     map.put("Name", Name);
                     map.put("ImgUrl", ImgUrl);
                     map.put("Desc", Desc);
@@ -118,14 +114,11 @@ public class FriendsLaneActivity extends ListActivity {
                     map.put("phonenumber4",  phonenumber4);
                     contactsList.add(map);
                 }
-                //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", ""+contactsList.size());
                 setListAdapter(new FriendsAdapter(FriendsLaneActivity.this, contactsList));
             }
 
             catch (Exception e)
             {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
                 // The exception has been logged.
             }
 
@@ -179,12 +172,6 @@ public class FriendsLaneActivity extends ListActivity {
 
     protected void onListItemClick(ListView l, View v, int position, long id)
     {
-        Log.e("Click happened", "Click happened ");
-        Log.e("Here it happened ", " These are the values "+l);
-        Log.e("Here it happened ", " These are the values "+v);
-        Log.e("Here it happened ", " These are the values "+position);
-        Log.e("Here it happened ", " These are the values "+id);
-
         Toast.makeText(this, "The contact item selected in the contact list is in the position " + position, Toast.LENGTH_LONG).show();
 
         // Show a toast notification

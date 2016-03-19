@@ -51,8 +51,4 @@ public abstract class BaseSampleActivity extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void hello_test()
-    {
-
-    }
 }

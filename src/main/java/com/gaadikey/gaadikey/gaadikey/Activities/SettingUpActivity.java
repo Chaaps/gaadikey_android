@@ -71,7 +71,6 @@ public class SettingUpActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_up);
-        Log.e("Flow", "The flow is in SettingUpActivity");
 
         t = ((GaadiKey) getApplication()).getTracker(GaadiKey.TrackerName.APP_TRACKER);
         t.setScreenName("SettingUp"); // =
@@ -89,7 +88,6 @@ public class SettingUpActivity extends ActionBarActivity {
             String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 
 
-            Log.e("Phone number before is ", phoneNumber);
             phoneNumber=  phoneNumber.replace(" ", ""); // removes all spaces
             phoneNumber=  phoneNumber.replace("-", "");
             phoneNumber=  phoneNumber.replace("(", ""); // Eliminate opening brackets if any
@@ -102,10 +100,7 @@ public class SettingUpActivity extends ActionBarActivity {
             if(phoneNumber.startsWith("0")) phoneNumber = phoneNumber.substring(1, phoneNumber.length());
 
 
-            Log.e("Phone number after is ", phoneNumber );
 
-            Log.e("Name is ", name);
-            Log.e("Number is ", phoneNumber);
             cob.setName(name);
             cob.setDesc("public.gaadikey.com");
             cob.setImgUrl("http://gaadikey.com/images/gaadi/3.jpg");
@@ -127,7 +122,6 @@ public class SettingUpActivity extends ActionBarActivity {
                 count++;
         }
 
-        Log.e("Number of contacts in this phone", ""+count);
         JSONObject newjsonObject = new JSONObject();
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String ph = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
@@ -143,7 +137,6 @@ public class SettingUpActivity extends ActionBarActivity {
 
         }
 
-        Log.e("Uploaded json is" , jsonString);
         new PostDataTask().execute("https://gaadikey.in/submitcontacts", jsonString);
         phones.close();
 
@@ -179,8 +172,6 @@ public class SettingUpActivity extends ActionBarActivity {
         protected void onPostExecute(String result)
         {
 
-            Log.e("Success posting", result);
-            Log.e("Flow change should happen" , "The flow should now shift to different view that is ListMobileActivity");
           //  startActivity(new Intent(SettingUpActivity.this, ListMobileActivity.class));
             // This intent should take to StickyHome
           //  startActivity(new Intent(SettingUpActivity.this, LaunchActivity_NavDrawer.class));
@@ -204,11 +195,9 @@ public class SettingUpActivity extends ActionBarActivity {
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
 
-            Log.e("This should contain the access token ", result);
             Toast.makeText(getBaseContext(), "Access token received!", Toast.LENGTH_LONG).show();
             // The data has been sent
 
@@ -231,7 +220,6 @@ public class SettingUpActivity extends ActionBarActivity {
             // sharedPref
             // retrieve this
             access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
-            Log.e("Register ", "The retrieved access token is "+access_token);
             try {
                 // 1. create HttpClient
                 HttpClient httpclient = new DefaultHttpClient();
@@ -252,8 +240,6 @@ public class SettingUpActivity extends ActionBarActivity {
                 // 10. convert inputstream to string
                 if (inputStream != null) {
                     result = convertInputStreamToString(inputStream);
-                    Log.e("crash", "We are here and somehow crashing!");
-                    Log.e("Result in string ", result);
 
                 }
 
@@ -262,7 +248,6 @@ public class SettingUpActivity extends ActionBarActivity {
 
             } catch (Exception e) {
 
-                Log.e("Exception block", e.getLocalizedMessage());
                 // TODO Auto-generated catch block
             }
 

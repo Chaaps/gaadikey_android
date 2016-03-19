@@ -44,44 +44,39 @@ public class Fragment_NewsDetail extends Fragment {
     public static ArrayList<HashMap<String, String>> newsList = new ArrayList<HashMap<String, String>>();
 
 
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_newsdetail, container, false);
 
-         View view = inflater.inflate(R.layout.fragment_newsdetail, container, false);
-         Log.e("Title is ", ((LaunchActivity_NavDrawer)getActivity()).TITLE);
-         Log.e("Byline is ", ((LaunchActivity_NavDrawer)getActivity()).DATE);
-         Log.e("Body is ", ((LaunchActivity_NavDrawer) getActivity()).BODY);
+        title = ((LaunchActivity_NavDrawer) getActivity()).TITLE;
+        date = ((LaunchActivity_NavDrawer) getActivity()).DATE;
+        body = ((LaunchActivity_NavDrawer) getActivity()).BODY;
 
-         title = ((LaunchActivity_NavDrawer)getActivity()).TITLE;
-         date  = ((LaunchActivity_NavDrawer)getActivity()).DATE;
-         body  = ((LaunchActivity_NavDrawer)getActivity()).BODY;
+        Heading = (TextView) view.findViewById(R.id.Heading);
+        byline = (TextView) view.findViewById(R.id.byline);
+        body_tv = (TextView) view.findViewById(R.id.body_tv);
 
-                 Heading = (TextView) view.findViewById(R.id.Heading);
-                 byline  = (TextView) view.findViewById(R.id.byline);
-                 body_tv    = (TextView) view.findViewById(R.id.body_tv);
+        Heading.setText(title);
+        byline.setText("Posted " + goodDate(date));
 
-                Heading.setText(title);
-                byline.setText("Posted "+goodDate(date));
+        body_tv.setText(Html.fromHtml(body, new Html.ImageGetter() {
 
-                body_tv.setText(Html.fromHtml(body, new Html.ImageGetter() {
+            @Override
+            public Drawable getDrawable(String source) {
 
-                    @Override
-                    public Drawable getDrawable(String source) {
-
-                        LevelListDrawable d = new LevelListDrawable();
-                        Drawable empty = getResources().getDrawable(R.drawable.ic_launcher);
-                        d.addLevel(0, 0, empty);
-                        d.setBounds(0, 0, empty.getIntrinsicWidth(), empty.getIntrinsicHeight());
-                        new LoadImage().execute(source, d);
-                        return d;
-                    }
-                }, null));
+                LevelListDrawable d = new LevelListDrawable();
+                Drawable empty = getResources().getDrawable(R.drawable.ic_launcher);
+                d.addLevel(0, 0, empty);
+                d.setBounds(0, 0, empty.getIntrinsicWidth(), empty.getIntrinsicHeight());
+                new LoadImage().execute(source, d);
+                return d;
+            }
+        }, null));
 
         return view;
     }
 
-    public String goodDate(String inputdate)
-    {
+    public String goodDate(String inputdate) {
         try {
             SimpleDateFormat formatter;
             formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssz");
@@ -90,9 +85,7 @@ public class Fragment_NewsDetail extends Fragment {
             long mills = date.getTime();
             CharSequence cs = DateUtils.getRelativeTimeSpanString(mills);
             return cs.toString(); // returns formatted date
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             return null;
         }
     }

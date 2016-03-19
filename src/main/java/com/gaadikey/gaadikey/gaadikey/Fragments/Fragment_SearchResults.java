@@ -31,13 +31,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/**
- * Created by madratgames on 08/10/14.
- */
 public class Fragment_SearchResults extends Fragment {
 
     ListView listview;
-    ArrayList<HashMap<String, String>> gaadiList= new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> gaadiList = new ArrayList<HashMap<String, String>>();
 
     public static Fragment_SearchResults newInstance(String searchString) {
         Fragment_SearchResults myFragment = new Fragment_SearchResults();
@@ -48,25 +45,22 @@ public class Fragment_SearchResults extends Fragment {
     }
 
 
-
-
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_searchresults, container, false);
         EditText edt = (EditText) view.findViewById(R.id.editText_search);
         edt.setText(getArguments().getString("searchString"));
         // Fragment Search Result layout attached!
-        SharedPreferences sharedPref =  getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         String phone = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
 
-        if(!getArguments().getString("searchString").equals("")) {
+        if (!getArguments().getString("searchString").equals("")) {
             String search_retrieval_url = "https://gaadikey.in/search?gaadinumber=" + getArguments().getString("searchString"); // concatinating the searched string to the end point..
             new SearchGaadiNoTask().execute(search_retrieval_url);
 
         }
 
         listview = (ListView) view.findViewById(R.id.list);
-
 
 
         final EditText edittext = (EditText) view.findViewById(R.id.editText_search);
@@ -77,14 +71,11 @@ public class Fragment_SearchResults extends Fragment {
                     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 
 
-
                         if (event != null) {
                             // if shift key is down, then we want to insert the '\n' char in the TextView;
                             // otherwise, the default action is to send the message.
 
-                            if (!event.isShiftPressed())
-                            {
-                                Log.e(" Enter is pressed! ", "Yes");
+                            if (!event.isShiftPressed()) {
                                 //return true;
                                 // Start the activity here
 
@@ -92,7 +83,6 @@ public class Fragment_SearchResults extends Fragment {
                             return false;
                         }
 
-                        Log.e("here we are ", "Yes");
 
                         // Once the user presses the enter key carry forward the search operation!
 
@@ -100,11 +90,9 @@ public class Fragment_SearchResults extends Fragment {
                         new SearchGaadiNoTask().execute(search_retrieval_url);
 
 
-
                         return true;
                     }
                 });
-
 
 
         //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
@@ -125,73 +113,62 @@ public class Fragment_SearchResults extends Fragment {
     }
 
 
-    private class SearchGaadiNoTask extends AsyncTask<String, Void, String>
-    {
+    private class SearchGaadiNoTask extends AsyncTask<String, Void, String> {
         @Override
-        protected String doInBackground(String... urls)
-        {
-            Log.e("GET called ", " The url is " + urls[0]);
-            return  getData(urls[0]);
+        protected String doInBackground(String... urls) {
+            return getData(urls[0]);
         }
+
         // onPostExecute displays the results of the AsyncTask.
         @Override
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
 
             gaadiList = new ArrayList<HashMap<String, String>>();
 
-            try
-            {
+            try {
                 JSONArray json = new JSONArray(result);
                 // check if this request was sucessful... if the request was successful
                 // then parse the phonebook and get contacts details
                 // contacts details are rendered one by one .
-                Log.e("The response recieved from the server is " , result );
                 // result
-                for(int i=0;i<json.length();i++)
-                {
+                for (int i = 0; i < json.length(); i++) {
                     HashMap<String, String> map = new HashMap<String, String>();
                     JSONObject jObject = json.getJSONObject(i);
-                    String gaadi_no =           jObject.getString("gaadi_no");
-                    String gaadi_name =         jObject.getString("gaadi_name");
-                    String gaadi_type    =         jObject.getString("gaadi_type");
-                    String gaadi_owner_name   =          jObject.getString("gaadi_owner_name");
-                    String gaadi_owner_phonenumber       = jObject.getString("gaadi_owner_phonenumber");
-                    String gaadi_image       = jObject.getString("gaadi_image");
-                    String gaadi_status       = jObject.getString("gaadi_status");
-                    String joined_on       = jObject.getString("joined_on");
+                    String gaadi_no = jObject.getString("gaadi_no");
+                    String gaadi_name = jObject.getString("gaadi_name");
+                    String gaadi_type = jObject.getString("gaadi_type");
+                    String gaadi_owner_name = jObject.getString("gaadi_owner_name");
+                    String gaadi_owner_phonenumber = jObject.getString("gaadi_owner_phonenumber");
+                    String gaadi_image = jObject.getString("gaadi_image");
+                    String gaadi_status = jObject.getString("gaadi_status");
+                    String joined_on = jObject.getString("joined_on");
 
 
                     map.put("gaadi_no", gaadi_no);
                     map.put("gaadi_name", gaadi_name);
                     map.put("gaadi_type", gaadi_type);
                     map.put("gaadi_owner_name", gaadi_owner_name);
-                    map.put("gaadi_owner_phonenumber",  gaadi_owner_phonenumber);
-                    map.put("gaadi_image",  gaadi_image);
+                    map.put("gaadi_owner_phonenumber", gaadi_owner_phonenumber);
+                    map.put("gaadi_image", gaadi_image);
                     map.put("gaadi_status", gaadi_status);
-                    map.put("joined_on",  joined_on);
+                    map.put("joined_on", joined_on);
                     gaadiList.add(map);
                 }
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", ""+gaadiList.size());
 
 
                 listview.setAdapter(new GaadiNumberAdapter(getActivity(), gaadiList));
-            }
-
-            catch (Exception e)
-            {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
+            } catch (Exception e) {
                 // The exception has been logged.
             }
 
         }
     }
 
-    public  String getData(String url){
+    public String getData(String url) {
         InputStream inputStream = null;
         String result = "";
-        SharedPreferences sharedPref =  getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         // sharedPref
         // retrieve this
         String access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
@@ -201,7 +178,6 @@ public class Fragment_SearchResults extends Fragment {
             // Creating the httpGetObject
             HttpGet httpGet = new HttpGet(url);
             //Adds the header to the GET http object.
-            Log.e("Access token is ", access_token ); // access_token is access_token
             httpGet.addHeader("Authorization", "Bearer " + access_token);
             httpGet.addHeader("Accept-version", getString(R.string.API_VERSION));
 
@@ -219,10 +195,9 @@ public class Fragment_SearchResults extends Fragment {
             // receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
             // convert inputstream to string
-            if(inputStream != null) {
+            if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-            }
-            else
+            } else
                 result = "Did not work!";
         } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
@@ -232,10 +207,10 @@ public class Fragment_SearchResults extends Fragment {
 
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line = "";
         String result = "";
-        while((line = bufferedReader.readLine()) != null)
+        while ((line = bufferedReader.readLine()) != null)
             result += line;
 
         inputStream.close();

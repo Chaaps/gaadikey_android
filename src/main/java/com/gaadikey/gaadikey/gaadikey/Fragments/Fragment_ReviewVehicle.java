@@ -99,7 +99,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId)
             {
                 // TODO Auto-generated method stub
-                Log.e("The checked ID is ", ""+checkedId); // This retrieves the id of radio button which is checked!
 
                 // Populate the spinners as and when radio button is checked!
 
@@ -153,7 +152,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Log.e("The click has occured", "");
                 new ReviewSubmitTask().execute("http://gaadikey.in/submitarticle"); // Endpoint used to submit the article
             }
 
@@ -175,7 +173,6 @@ public class Fragment_ReviewVehicle extends Fragment {
 
             public boolean onTouch(View v, MotionEvent event) {
 
-                Log.e("We are in the body trigger", "Yes");
 
 
                 body_et.requestLayout();
@@ -210,7 +207,6 @@ public class Fragment_ReviewVehicle extends Fragment {
         {
 
 
-            Log.e("Pinging this URL ---> ", urls[0]);
 
             return GetData(urls[0]); // the 2nd parameter category is passed to a general function which then pings the appropriate category URL to get the data!
 
@@ -222,8 +218,6 @@ public class Fragment_ReviewVehicle extends Fragment {
 
             progress.setVisibility(View.GONE);
          //   pb.setVisibility(View.GONE); // hiding the loading bar
-            Log.e("And we received", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                 // The populate spinner should be present here!
@@ -241,7 +235,6 @@ public class Fragment_ReviewVehicle extends Fragment {
 
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
             // The data has been sent
@@ -298,20 +291,15 @@ public class Fragment_ReviewVehicle extends Fragment {
         {
 
             progress.setVisibility(View.GONE);
-            Log.e("Success posting", result);
-            Log.e("Response from the registration step ", result);
             try
             {
                 // Save the following  things in sharedStorage
 
-                Log.e("Response is received" , "Parse for success msg ");
             }
             catch(Exception e)
             {
-                Log.e("Parse", "Exception in parsing");
 
             }
-            Log.e("This should contain the access token ", result);
 
             AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(getActivity());
             dlgAlert.setCancelable(false);
@@ -348,11 +336,9 @@ public class Fragment_ReviewVehicle extends Fragment {
         // sharedPref
         // retrieve this
         access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
-        Log.e("Register ", "The retrieved access token is "+access_token);
         //access_token
         try {
 
-            Log.e("Inside Try block URL is ", url);
             // 1. create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
             // 2. make POST request to the given URL
@@ -371,7 +357,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             jsonObject.accumulate("category", category);  // Submits this category.
             // 4. convert JSONObject to JSON to String
             json = jsonObject.toString();
-            Log.e("Json uploaded", "The Uploaded json looks like " + json);
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
             // ObjectMapper mapper = new ObjectMapper();
             // json = mapper.writeValueAsString(person);
@@ -393,16 +378,12 @@ public class Fragment_ReviewVehicle extends Fragment {
             // 10. convert inputstream to string
             if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-                Log.e("crash", "We are here and somehow crashing!");
-                Log.e("Result in string ", result);
 
             } else
                 result = "Did not work!";
 
         } catch (Exception e)
         {
-            Log.e("Crashed again", "Crashed");
-            Log.e("Exception block", e.getLocalizedMessage());
             // TODO Auto-generated catch block
         }
 
@@ -427,7 +408,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             bikedata = new ArrayList<HashMap<String, String>>();
             bikestringdata = new ArrayList<String>();
@@ -446,7 +426,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 map.put("bike_image", bike_image);
                 map.put("bike_brand", bike_brand);
                 map.put("priority", priority);
-                Log.e("Bikes name received is  ", bike_name);
                 bikedata.add(map);
                 bikestringdata.add(bike_name);
                 // loading these variables
@@ -460,7 +439,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
                 {
-                    Log.e("Item click happened for bikes list! ", "Bikes");
                     // Since 0 is returned for the first item... don't do anything .
                     //   if(position!=0)
 
@@ -472,7 +450,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 public void onNothingSelected(AdapterView<?> parentView)
                 {
 
-                    Log.e("The very first time ", "Nothing is selected ");
                     // your code here
                 }
             });
@@ -496,7 +473,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             cardata = new ArrayList<HashMap<String, String>>();
             carstringdata = new ArrayList<String>();
@@ -515,7 +491,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 map.put("car_image", car_image);
                 map.put("car_brand", car_brand);
                 map.put("priority", priority);
-                Log.e("Cars name received is  ", car_name);
                 cardata.add(map);
                 carstringdata.add(car_name);
                 // loading these variables
@@ -532,7 +507,6 @@ public class Fragment_ReviewVehicle extends Fragment {
 
 
                     title_et.setText("Review - "+carstringdata.get(position));
-                    Log.e("Car string selection is ", ""+position);
 
 
                 }
@@ -568,7 +542,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             cabdata = new ArrayList<HashMap<String, String>>();
             cabstringdata = new ArrayList<String>();
@@ -585,7 +558,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 map.put("service_name", service_name);
                 map.put("service_image", service_image);
 
-                Log.e("Cabs name received is  ", service_name);
                 cabdata.add(map);
                 cabstringdata.add(service_name);
                 // loading these variables
@@ -602,12 +574,9 @@ public class Fragment_ReviewVehicle extends Fragment {
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
 
 
 
-                        Log.e("The Selected index in cardrop down is ", ""+position);
-                        Log.e("Cab string data is ",cabstringdata.get(position));
                         title_et.setText("Review - "+cabstringdata.get(position));
 
                         //  new ImageDownloader(caricon_imageview).execute(cardata.get(position).get("car_image"));
@@ -651,7 +620,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             busdata = new ArrayList<HashMap<String, String>>();
             busstringdata = new ArrayList<String>();
@@ -665,7 +633,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 map.put("id" , id);
                 map.put("bus_name", bus_name);
                 map.put("bus_image", bus_image);
-                Log.e("Bus name received is  ", bus_name);
                 busdata.add(map);
                 busstringdata.add(bus_name);
 
@@ -682,7 +649,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
                     title_et.setText("Review - "+busstringdata.get(position));
 
                 }
@@ -712,7 +678,6 @@ public class Fragment_ReviewVehicle extends Fragment {
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one.
-            Log.e("The response recieved from the server is " , result );
             // result
             rickshawdata = new ArrayList<HashMap<String, String>>();
             rickshawstringdata = new ArrayList<String>();
@@ -728,7 +693,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 map.put("id" , id);
                 map.put("rickshaw_name", rickshaw_name);
                 map.put("rickshaw_image", rickshaw_image);
-                Log.e("Rickshaw name received is  ", rickshaw_name);
                 rickshawdata.add(map);
                 rickshawstringdata.add(rickshaw_name);
                 // loading these variables
@@ -745,7 +709,6 @@ public class Fragment_ReviewVehicle extends Fragment {
                 @Override
                 public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
-                    Log.e("The Selected index in cardrop down is ", ""+position);
                     title_et.setText("Review - "+rickshawstringdata.get(position)); //title_et text has been set!
 
                 }

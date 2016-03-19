@@ -26,7 +26,6 @@ public final class TestFragment extends Fragment {
         StringBuilder builder = new StringBuilder();
 
         testfragadapt = test;
-        Log.e("Triggered", "Triggered");
         // Get Started Blue button has to be added for the last instance!
         // The 20 time repeater has been removed from the text!!!!!
         // The text is fetched depending on the type of intro like intro1, intro2, intro3, intro4 .. etc ...
@@ -36,31 +35,19 @@ public final class TestFragment extends Fragment {
         running_content = content; // The running_content is populated! depending on the condition change the layout of the introduction page!
 
 
-        if(content.equals("intro1"))
-        {
+        if (content.equals("intro1")) {
             builder.append("GaadiKey - Power to access the network of automobiles");
-        }
-
-        else if(content.equals("intro2"))
-        {
+        } else if (content.equals("intro2")) {
             builder.append("Find out which Gaadis do your friends have!");
-        }
-
-        else if(content.equals("intro3"))
-        {
-            builder.append ("Read Gaadi reviews by actual owners.");
-        }
-
-        else if(content.equals("intro4"))
-        {
+        } else if (content.equals("intro3")) {
+            builder.append("Read Gaadi reviews by actual owners.");
+        } else if (content.equals("intro4")) {
             builder.append("Connects you and your Gaadi with your friends and their Gaadis");
 
         }
 
         fragment.mContent = builder.toString();
         fragment.id = content;
-
-
 
 
         return fragment;
@@ -77,87 +64,55 @@ public final class TestFragment extends Fragment {
             mContent = savedInstanceState.getString(KEY_CONTENT);
         }
 
-       // mContent = savedInstanceState.getString(KEY_CONTENT); //Saved Instance state is directly read!
+        // mContent = savedInstanceState.getString(KEY_CONTENT); //Saved Instance state is directly read!
 
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState)
-    {
-        View view=null;
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
+        View view = null;
         final LayoutInflater _inflater = inflater;
-        if(id.equalsIgnoreCase("intro1"))
-        {
+        if (id.equalsIgnoreCase("intro1")) {
             view = inflater.inflate(R.layout.intro1, container, false);
 
             LinearLayout l1 = (LinearLayout) view.findViewById(R.id.layout1);
             l1.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v)
-                {
-                   // View view=null;
-                    Log.e("Tap", "yes");
-                    //view  = inflater.inflate((R.layout.intro2, container, false))
-                    // Start new activity from a fragment
-                    //getActivity().getViewPager().setCurrentItem(index);
-                    // IntroActivity.getActivity().
+                public void onClick(View v) {
+
                 }
             });
 
 
             return view;
-        }
-        else if(id.equalsIgnoreCase("intro2"))
-        {
+        } else if (id.equalsIgnoreCase("intro2")) {
             view = inflater.inflate(R.layout.intro2, container, false);
             LinearLayout l2 = (LinearLayout) view.findViewById(R.id.layout2);
             l2.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v)
-                {
-                    // View view=null;
-                    Log.e("Tap", "yes");
-                    //testfragadapt.getItem(3);
+                public void onClick(View v) {
 
-                    //view  = inflater.inflate((R.layout.intro2, container, false))
-                    // Start new activity from a fragment
-                    //getActivity().getViewPager().setCurrentItem(index);
-                    // IntroActivity.getActivity().
 
                 }
             });
 
 
             return view;
-        }
-        else if(id.equalsIgnoreCase("intro3"))
-        {
+        } else if (id.equalsIgnoreCase("intro3")) {
             view = inflater.inflate(R.layout.intro3, container, false);
             LinearLayout l3 = (LinearLayout) view.findViewById(R.id.layout3);
             l3.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v)
-                {
-                    // View view=null;
-                    Log.e("Tap", "yes");
-                    //testfragadapt.getItem(4);
-
-                    //view  = inflater.inflate((R.layout.intro2, container, false))
-                    // Start new activity from a fragment
-                    //getActivity().getViewPager().setCurrentItem(index);
-                    // IntroActivity.getActivity().
+                public void onClick(View v) {
 
                 }
             });
             return view;
-        }
-        else if(id.equalsIgnoreCase("intro4"))
-        {
+        } else if (id.equalsIgnoreCase("intro4")) {
             view = inflater.inflate(R.layout.intro4, container, false);
 
-            Button button = (Button)  view.findViewById(R.id.StartButton);
+            Button button = (Button) view.findViewById(R.id.StartButton);
 
             button.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v)
-                {
+                public void onClick(View v) {
                     // Start new activity from a fragment
 
                     Intent intent = new Intent(getActivity(), VerificationActivity.class);
@@ -170,7 +125,6 @@ public final class TestFragment extends Fragment {
         }
 
         return view;
-
 
 
 //
@@ -200,12 +154,10 @@ public final class TestFragment extends Fragment {
 //        }
 //
 //        layout.addView(text);
-//        Log.e("The running_content contains ", running_content);
 //
 ////        if(running_content.equals("intro4"))
 ////        {
 ////
-////            Log.e("Content is intro4 ", "Button would be added");
 ////            // Add the button here.. on click it has to react and go to verify phonenumber
 ////            Button btn = new Button(getActivity());
 ////            btn.setGravity(Gravity.CENTER);

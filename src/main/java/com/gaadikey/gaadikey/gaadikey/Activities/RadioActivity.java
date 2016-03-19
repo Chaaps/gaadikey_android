@@ -2,7 +2,6 @@ package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,8 +14,6 @@ public class RadioActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio);
-      //  AlertDialogView();
-        Log.e("We are at Radio Activity" , "The Radio Activity is here "); // consoling that it has entered radio activity!
 
     }
 

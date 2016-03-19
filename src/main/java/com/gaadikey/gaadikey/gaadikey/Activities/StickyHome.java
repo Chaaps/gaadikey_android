@@ -64,9 +64,6 @@ public class StickyHome extends ListActivity {
         gaadiname_field.setText(GAADI_NAME);
 
 
-        Log.e("Retrieved IMAGE_PATH ", IMAGE_PATH);
-        Log.e("Retrieved GAADI_MSG ", GAADI_MSG);
-        Log.e("Retrieved GAADI NAME ", GAADI_NAME);
 
 
         if(!IMAGE_PATH.equals("default")) {
@@ -100,7 +97,6 @@ public class StickyHome extends ListActivity {
 
                             if (!event.isShiftPressed())
                             {
-                                        Log.e(" Enter is pressed! ", "Yes");
                                 //return true;
                                 // Start the activity here
 
@@ -108,7 +104,6 @@ public class StickyHome extends ListActivity {
                             return false;
                         }
 
-                        Log.e("here we are ", "Yes");
 
                         Intent i = new Intent(StickyHome.this, LaunchActivity_NavDrawer.class);
                         i.putExtra("searchString",edittext.getText().toString());
@@ -134,14 +129,12 @@ public class StickyHome extends ListActivity {
 //            public boolean onKey(View v, int keyCode, KeyEvent event)
 //            {
 //
-//                Log.e("Log", "Log");
 //
 //                //(event.getAction() == KeyEvent.ACTION_DOWN) &&
 //                // If the event is a key-down event on the "enter" button
 //                if ( event != null &&
 //                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
 //
-//                    Log.e("Enter captured from textbox", "Enter Captured! ");
 //                    //Storing this as 0 in Key_HomeMenu so that it opens up search results fragment!
 //
 //                    SharedPreferences sharedPref4 = getSharedPreferences("android_shared", Context.MODE_PRIVATE);
@@ -168,7 +161,6 @@ public class StickyHome extends ListActivity {
         editor_4.putString(getString(R.string.KEY_HomeMenu), "" + (position+1) ); // Incrementing the position by 1
         editor_4.commit();
 
-        Log.e("Click happened", "Click happened ");
         // Toast.makeText(this, "You clicked " + lanes.get(position), Toast.LENGTH_LONG).show();
         // Removing toast UI from the code.. Launching the activity directly from here!
         //  Open the activity which opens up  Public Lane
@@ -239,7 +231,6 @@ public class StickyHome extends ListActivity {
 
 
 
-        Log.e("Number Plate has been clicked" , "NumberPlate ");
 
         Intent i = new Intent(StickyHome.this, LaunchActivity_NavDrawer.class);
         startActivity(i);
@@ -247,14 +238,9 @@ public class StickyHome extends ListActivity {
 
     }
 
-    public void SearchGaadiNo(View view)
-    {
-        Log.e("Search Gaadi No.. ", "Search");
-    }
 
     public void ImageTap(View view)
     {
-        Log.e("Image Tap", "Image Tap has occured ");
         // Show a popup asking the user if they wish to change the gaadi pic
 
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -262,11 +248,9 @@ public class StickyHome extends ListActivity {
             public void onClick(DialogInterface dialog, int which) {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
-                        Log.e("Dialog selection", "Yes");
                               break;
 
                     case DialogInterface.BUTTON_NEGATIVE:
-                        Log.e("Dialog selection", "No");
                         break;
                 }
             }
@@ -305,7 +289,6 @@ public class StickyHome extends ListActivity {
                 InputStream in = new java.net.URL(url).openStream();
                 mIcon = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
-                Log.e("Error", e.getMessage());
             }
             return mIcon;
         }

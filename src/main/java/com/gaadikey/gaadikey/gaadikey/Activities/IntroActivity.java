@@ -28,16 +28,4 @@ public class IntroActivity extends BaseSampleActivity {
 
     }
 
-    public void setCurrentPagerItem(int item)
-    {
-        mPager.setCurrentItem(item);
-    }
-
-    public ViewPager getViewPager() {
-        if (null == mPager) {
-            mPager = (ViewPager) findViewById(R.id.pager);
-        }
-        return mPager;
-    }
-
 }

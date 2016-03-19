@@ -44,10 +44,9 @@ public class Fragment_PublicLane extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
-    {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_publiclane, container,false);
+        View view = inflater.inflate(R.layout.fragment_publiclane, container, false);
         pb = (ProgressBar) view.findViewById(R.id.progress);
 
         System.out.println("loading listview.........");
@@ -59,65 +58,11 @@ public class Fragment_PublicLane extends Fragment {
         listview = (ListView) view.findViewById(R.id.list);
 
 
-
-      //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
+        //  listview.setAdapter(new SourceCode_FragmentAdapter(getActivity(), codeid, codelang, codetitle, codesource, codeoutput));
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> arg0, View arg1, final int position,
                                     long arg3) {
-
-
-                  // If you wish to show a dialog box with options, comment out the below code!
-
-
-//                //final String item = (String) arg0.getItemAtPosition(position);
-//                AlertDialog.Builder adb = new AlertDialog.Builder(getActivity());
-//
-//                // LayoutInflater inflater= getActivity().getLayoutInflater();
-//                //this is what I did to add the layout to the alert dialog
-//                adb.setTitle("Browse");
-//                adb.setMessage("Is this your friend?");
-//               // adb.setIcon(R.drawable.cmd);
-//
-//                //final EditText input = new EditText(getActivity());
-//                //input.setText("Send a message: ");
-//                //adb.setView(input);
-//
-//                adb.setNegativeButton("Execute", new DialogInterface.OnClickListener(){
-//                    public void onClick(DialogInterface dialog,int id) {
-//
-//                        Log.e("Negative action clicked", "Negative");
-//                      //  Intent i=new Intent(getActivity(), activity_compiler.class);
-//                      //   i.putExtras(bundle);
-//                      //  startActivity(i);
-//                    }
-//                });
-//
-//                // Setting Negative "Save" Button
-//                adb.setNeutralButton("Save", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        // User pressed No button. Write Logic Here
-//                        //System.out.println("value of id=========" + codeid[position]);
-//
-//                        Toast.makeText(getActivity(), "Code saved in my codes", Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//                // Setting Netural "share" Button
-//                adb.setPositiveButton("share", new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        // User pressed Cancel button. Write Logic Here
-//                        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
-//                        sharingIntent.setType("text/plain");
-//                        String shareBody = "Here is the share content body";
-//                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
-//                        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
-//                        startActivity(Intent.createChooser(sharingIntent, "Share via"));
-//                    }
-//                });
-//
-//
-//                adb.show();
 
 
             }
@@ -127,51 +72,42 @@ public class Fragment_PublicLane extends Fragment {
         return view;
 
 
-
     }
-
 
 
     public class PublicDataTask extends AsyncTask<String, Void, String> {
 
 
-        protected void onPreExecute()
-        {
+        protected void onPreExecute() {
             pb.setVisibility(View.VISIBLE);
         }
 
-        protected String doInBackground(String... urls)
-        {
+        protected String doInBackground(String... urls) {
             return getPublicData(urls[0]);
         }
 
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
             pb.setVisibility(View.GONE);
             publicList = new ArrayList<HashMap<String, String>>();
-            Log.e("The result is ", result);
-            try
-            {
+            try {
                 JSONArray json = new JSONArray(result);
                 // check if this request was sucessful... if the request was successful
                 // then parse the phonebook and get contacts details
                 // contacts details are rendered one by one .
-                Log.e("The response recieved from the server is " , result );
                 // result
-                for(int i=0;i<json.length();i++)
-                {
+                for (int i = 0; i < json.length(); i++) {
                     HashMap<String, String> map = new HashMap<String, String>();
                     JSONObject jObject = json.getJSONObject(i);
-                    String vehiclename =           jObject.getString("vehiclename");
-                    String gaadipic =         jObject.getString("gaadipic");
+                    String vehiclename = jObject.getString("vehiclename");
+                    String gaadipic = jObject.getString("gaadipic");
                     String rootstring = "http://gaadikey.com/images";
-                    String web_image_path =  gaadipic;
+                    String web_image_path = gaadipic;
                     String path = "";
-                    if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
-                    String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
+                    if (web_image_path.length() > rootstring.length() + 10)
+                        path = web_image_path.substring(rootstring.length());
+                    String resize_path = "http://gaadikey.com/images/resize.php?src=" + path + "&w=200";
 
-                    Log.e("Image path is ", resize_path);
-                    String modifiedOn    =         jObject.getString("modifiedOn");
+                    String modifiedOn = jObject.getString("modifiedOn");
                     //     modifiedOn = "Joined public lane "+TimeUtils.millisToLongDHMS(24000)+" ago.";
 //                    SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yy:HH:mm:SSS'Z'");
 //                    Date date = DATE_FORMAT.parse(modifiedOn);
@@ -182,28 +118,22 @@ public class Fragment_PublicLane extends Fragment {
                     Date date = formatter.parse(modifiedOn.substring(0, 24));
                     FORMATTER = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss.SSS");
 
-                    Log.e("Formatter date", FORMATTER.format(date));
                     Date newdate = FORMATTER.parse(FORMATTER.format(date));
                     //  System.out.println("NewDate-->"+FORMATTER.format(date));
 
                     long mills = newdate.getTime();
                     CharSequence cs = DateUtils.getRelativeTimeSpanString(mills);
-                    if(!vehiclename.equals("null")) {
+                    if (!vehiclename.equals("null")) {
                         map.put("vehiclename", vehiclename);
                         map.put("gaadipic", resize_path);
-                        map.put("modifiedOn", "Joined public lane "+cs.toString()+" ");
+                        map.put("modifiedOn", "Joined public lane " + cs.toString() + " ");
                         publicList.add(map);
                     }
                 }
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", ""+publicList.size());
 
                 listview.setAdapter(new PublicLaneAdapter(getActivity(), publicList));
-            }
-
-            catch (Exception e)
-            {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
+            } catch (Exception e) {
                 // The exception has been logged.
             }
 
@@ -212,11 +142,10 @@ public class Fragment_PublicLane extends Fragment {
     }
 
 
-    public String getPublicData(String url)
-    {
+    public String getPublicData(String url) {
         InputStream inputStream = null;
         String result = "";
-        SharedPreferences sharedPref =  this.getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
+        SharedPreferences sharedPref = this.getActivity().getSharedPreferences("android_shared", Context.MODE_PRIVATE);
         String access_token = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
         try {
             // create HttpClient
@@ -226,17 +155,15 @@ public class Fragment_PublicLane extends Fragment {
             //Adds the header to the GET http object.
             httpGet.addHeader("Authorization", "Bearer " + access_token);
             httpGet.addHeader("Accept-version", getString(R.string.API_VERSION)); // Added API_VERSION in the header!
-            Log.e("The access token is " , access_token);
             // Access Token is now attached as a Bearer token!
             // make GET request to the given URL
             HttpResponse httpResponse = httpclient.execute(httpGet);
             // receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
             // convert inputstream to string
-            if(inputStream != null) {
+            if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-            }
-            else
+            } else
                 result = "Did not work!";
         } catch (Exception e) {
             Log.d("InputStream", e.getLocalizedMessage());
@@ -247,19 +174,15 @@ public class Fragment_PublicLane extends Fragment {
 
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line = "";
         String result = "";
-        while((line = bufferedReader.readLine()) != null)
+        while ((line = bufferedReader.readLine()) != null)
             result += line;
 
         inputStream.close();
         return result;
     }
-
-
-
-
 
 
 }

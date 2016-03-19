@@ -69,14 +69,12 @@ public class PublicLaneActivity extends ListActivity {
         protected void onPostExecute(String result)
         {
             publicList = new ArrayList<HashMap<String, String>>();
-            Log.e("The result is ", result);
             try
             {
                 JSONArray json = new JSONArray(result);
                 // check if this request was sucessful... if the request was successful
                 // then parse the phonebook and get contacts details
                 // contacts details are rendered one by one .
-                Log.e("The response recieved from the server is " , result );
                 // result
                 for(int i=0;i<json.length();i++)
                 {
@@ -95,7 +93,6 @@ public class PublicLaneActivity extends ListActivity {
                     Date date = formatter.parse(modifiedOn.substring(0, 24));
                     FORMATTER = new SimpleDateFormat("dd-MMM-yyyy HH:mm:ss.SSS");
 
-                    Log.e("Formatter date", FORMATTER.format(date));
                     Date newdate = FORMATTER.parse(FORMATTER.format(date));
                   //  System.out.println("NewDate-->"+FORMATTER.format(date));
 
@@ -109,13 +106,11 @@ public class PublicLaneActivity extends ListActivity {
                     }
                 }
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-                Log.e("The number of items in the list is ", ""+publicList.size());
                 setListAdapter(new PublicLaneAdapter(PublicLaneActivity.this, publicList));
             }
 
             catch (Exception e)
             {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
                 // The exception has been logged.
             }
 

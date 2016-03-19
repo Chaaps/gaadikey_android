@@ -63,8 +63,6 @@ public class EnterPINActivity extends ActionBarActivity {
         pb = (ProgressBar) findViewById(R.id.progress);
         // selecting the progressbar component by choosing the id from layout
 
-        Log.e("PIN", "Entered PIN activity. You will have to Enter the PIN. ");
-        Log.e("Flow", "The control has reached here!");
         TimeText = (TextView) findViewById(R.id.TimeText);
         countDownTimer = new MyCountDownTimer(startTime, interval);
         countDownTimer.start();
@@ -72,9 +70,6 @@ public class EnterPINActivity extends ActionBarActivity {
         t.setScreenName("EnterPINActivity"); // =
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        // commented out!
-        //Log.e("Access token (persistant) " , "The access token which is saved is " +defaultString);
-       // int defaultValue = getResources().getInteger(R.string.saved_high_score_default);
     }
 
     public void onSaveInstanceState(Bundle outState) {
@@ -82,15 +77,6 @@ public class EnterPINActivity extends ActionBarActivity {
         //outState.putString(KEY_CONTENT, mContent);
     }
 
-
-    //Disable Menu Items to stop showing Settings and Other Options on Menu Click
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.enter_pin, menu);
-//        return true;
-//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -104,8 +90,7 @@ public class EnterPINActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void PIN_Submission_Click(View Button)
-    {
+    public void PIN_Submission_Click(View Button) {
 
         countDownTimer.cancel();
 
@@ -115,60 +100,47 @@ public class EnterPINActivity extends ActionBarActivity {
         pinSubmissionClick.setFocusable(false); // removes the focus from the button!
 
 
-
         t.send(new HitBuilders.EventBuilder()
                 .setCategory("PINSubmitted")
                 .setAction("PIN_SubmitClick")
                 .setLabel("")
                 .build());
-        Log.e("The Button Click has occured. ", "Click");
         //Disable the Submission button immediately after click event has occurred. In order to avoid multiple clicks!
 
-
-        //     // PIN submission click.. When the PIN submit is clicked.... It has to post the received PIN to server to receive the access token.
-        Log.e("PIN Submission CLICK", "The PIN submission has been clicked...");
         final EditText pinField = (EditText) findViewById(R.id.PIN);
 
         PIN = pinField.getText().toString();
-        Log.e("PIN" , "The recieved PIN is "+PIN) ;
-        SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+        SharedPreferences sharedPref = getSharedPreferences("android_shared", MODE_PRIVATE);
         phonenumber = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
-        Log.e("PIN verification" , "The phone number retrieved is "+phonenumber);
         // The Recieved PIN is ..
-        new HttpAsyncGetTask().execute("https://gaadikey.in/generated?phonenumber="+phonenumber);
+        new HttpAsyncGetTask().execute("https://gaadikey.in/generated?phonenumber=" + phonenumber);
     }
     // write  the httpasyncgettask function  out here...
     // this has to submit the phonenumber to server and should return the access token... along with the expiry date if any  .
     // here is the function which does http get task asynchronously....
     // should add "GET method" which just accepts the URL which is appended with PIN.  http://gaadikey.in/generated?phonenumber=9739888428
 
-    private class HttpAsyncGetTask extends AsyncTask<String, Void, String>
-    {
+    private class HttpAsyncGetTask extends AsyncTask<String, Void, String> {
 
         @Override
-        protected void onPreExecute()
-        {
+        protected void onPreExecute() {
             pb.setVisibility(View.VISIBLE);
 
         }
 
         @Override
-        protected String doInBackground(String... urls)
-        {
-            Log.e("GET called " , " The url is "+urls[0]);
-            return  GET(urls[0]);
+        protected String doInBackground(String... urls) {
+            return GET(urls[0]);
         }
+
         // onPostExecute displays the results of the AsyncTask.
         @Override
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
 
             pb.setVisibility(View.GONE); // Hiding the progress bar here!
             try {
                 JSONObject jObject = new JSONObject(result);
                 String actualPIN = jObject.getString("PIN");
-                Log.e("enteredPIN", PIN);
-                Log.e("actualPIN", actualPIN);
 
                 if (PIN.equals(actualPIN)) {
 
@@ -180,14 +152,13 @@ public class EnterPINActivity extends ActionBarActivity {
 //                            .setIcon(android.R.drawable.ic_dialog_alert)
 //                            .show();
 
-                    SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+                    SharedPreferences sharedPref = getSharedPreferences("android_shared", MODE_PRIVATE);
                     SharedPreferences.Editor editor2 = sharedPref.edit();
                     //The verified phone number is updated.
                     editor2.putString(getString(R.string.KEY_phonenumber), phonenumber);
                     editor2.commit();
 
-                     new  GetAccessTokenPostTask().execute("https://gaadikey.in/token");
-
+                    new GetAccessTokenPostTask().execute("https://gaadikey.in/token");
 
 
                     // Store the phonenumber if PIN is verified!
@@ -195,8 +166,7 @@ public class EnterPINActivity extends ActionBarActivity {
                     // KEY_phonenumber
 
 
-                } else
-                {
+                } else {
 
                     Toast.makeText(getBaseContext(), "Please enter a valid PIN.", Toast.LENGTH_LONG).show();
 
@@ -209,12 +179,8 @@ public class EnterPINActivity extends ActionBarActivity {
                 }
 
                 // startActivity
-            }
-
-            catch (Exception e)
-            {
-                    Log.e("Exception", "The Exception has occured "+e.getMessage());
-                    // The exception has been logged.
+            } catch (Exception e) {
+                // The exception has been logged.
             }
 
         }
@@ -225,68 +191,52 @@ public class EnterPINActivity extends ActionBarActivity {
 
 
         @Override
-        protected  void onPreExecute()
-        {
+        protected void onPreExecute() {
 
             pb.setVisibility(View.VISIBLE);
 
 
         }
-        @Override
-        protected String doInBackground(String... urls)
-        {
 
-            Log.e("Post", "Calling this URL in background "+urls[0]);
+        @Override
+        protected String doInBackground(String... urls) {
+
             return generateAccessToken(urls[0]);
         }
+
         // onPostExecute displays the results of the AsyncTask.
         @Override
-        protected void onPostExecute(String result)
-        {
+        protected void onPostExecute(String result) {
 
             pb.setVisibility(View.GONE);
 
-            Log.e("Success posting", result);
 
-            try
-             {
-                    JSONObject jObject = new JSONObject(result);
-                    String access_token = jObject.getString("access_token");
-                    String token_type   = jObject.getString("token_type");
-                    Log.e("The access token is",  access_token );
-                    Log.e("The token type is",   token_type );
-                    // Save the following things in sharedStorage
+            try {
+                JSONObject jObject = new JSONObject(result);
+                String access_token = jObject.getString("access_token");
+                String token_type = jObject.getString("token_type");
+                // Save the following things in sharedStorage
 
 
-                    SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPref.edit();
-                    editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_VERIFIED);
-                    editor.commit();
+                SharedPreferences sharedPref = getSharedPreferences("android_shared", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString(getString(R.string.KEY_signupstatus), Constants.PIN_VERIFIED);
+                editor.commit();
 
-                   // SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor2 = sharedPref.edit();
-                    editor2.putString(getString(R.string.KEY_ACCESS_TOKEN), access_token);
-                    editor2.commit();
+                // SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor2 = sharedPref.edit();
+                editor2.putString(getString(R.string.KEY_ACCESS_TOKEN), access_token);
+                editor2.commit();
 
+                String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
 
-                    Log.e("Persistence" , "Successfully inserted the access_token into the sharedPreferenes storage");
-
-
-                    String theString = sharedPref.getString(getString(R.string.KEY_ACCESS_TOKEN), "the default stuff");
-                    Log.e("Retrived value",  "The retrieved stuff is "+theString ) ;
-
-                    startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
-                    finish();
+                startActivity(new Intent(EnterPINActivity.this, MyActivity.class));
+                finish();
 
 
-             }
-            catch(Exception e)
-             {
-                 Log.e("Parse", "Exception in parsing");
+            } catch (Exception e) {
 
-             }
-
-            Log.e("This should contain the access token ", result);
+            }
             Toast.makeText(getBaseContext(), "Access token received!", Toast.LENGTH_LONG).show();
             // The data has been sent
 
@@ -298,28 +248,24 @@ public class EnterPINActivity extends ActionBarActivity {
         }
     }
 
- //  This method has been put outside the class so that it fixes the this references appropriately.
+    //  This method has been put outside the class so that it fixes the this references appropriately.
 
-    public String generateAccessToken(String url)
-    {
+    public String generateAccessToken(String url) {
 
-        Log.e("URL" , "the URL is "+url);
         InputStream inputStream = null;
         String result = "";
         String clientid = "GaadiKeyClient";
         String clientkey = "gaadi";
-        try
-        {
+        try {
             // 1. create HttpClient
             HttpClient httpclient = new DefaultHttpClient();
             // 2. make POST request to the given URL
             HttpPost httpPost = new HttpPost(url);
 
-            SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
+            SharedPreferences sharedPref = getSharedPreferences("android_shared", MODE_PRIVATE);
             phonenumber = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
 
-            String formdata = "grant_type=password&username="+phonenumber+"&password="+PIN;
-            Log.e("Json uploaded", "The Uploaded form data looks like "+formdata);
+            String formdata = "grant_type=password&username=" + phonenumber + "&password=" + PIN;
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
             // ObjectMapper mapper = new ObjectMapper();
             // json = mapper.writeValueAsString(person);
@@ -331,23 +277,19 @@ public class EnterPINActivity extends ActionBarActivity {
             String base64EncodedCredentials = Base64.encodeToString(credentials.getBytes(), Base64.NO_WRAP);// 7. Set some headers to inform server about the type of the content
             httpPost.addHeader("Authorization", "Basic " + base64EncodedCredentials);//httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
-         //   httpPost.setHeader("Accept-version", getString(R.string.API_VERSION));
+            //   httpPost.setHeader("Accept-version", getString(R.string.API_VERSION));
             // accept-version has been added to recieve the token
             HttpResponse httpResponse = httpclient.execute(httpPost);
             // 9. receive response as inputStream
             inputStream = httpResponse.getEntity().getContent();
             // 10. convert inputstream to string
-            if(inputStream != null) {
+            if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-                Log.e("crash" , "We are here and somehow crashing!");
-                Log.e("Result in string ", result);
-            }
-            else
+            } else
                 result = "Did not work!";
 
         } catch (Exception e) {
 
-            Log.e("Exception block", e.getLocalizedMessage());
             // TODO Auto-generated catch block
         }
 
@@ -355,7 +297,7 @@ public class EnterPINActivity extends ActionBarActivity {
 
     }
 
-    public  String GET(String url){
+    public String GET(String url) {
         InputStream inputStream = null;
         String result = "";
         try {
@@ -373,12 +315,11 @@ public class EnterPINActivity extends ActionBarActivity {
             inputStream = httpResponse.getEntity().getContent();
 
             // convert inputstream to string
-            if(inputStream != null) {
+            if (inputStream != null) {
                 result = convertInputStreamToString(inputStream);
                 JSONObject jObject = new JSONObject(result);
                 String actualPIN = jObject.getString("PIN");
-                if(PIN.equals(actualPIN) )
-                {
+                if (PIN.equals(actualPIN)) {
                     new AlertDialog.Builder(this)
                             .setTitle("Verification Status")
                             .setMessage("Verification Success! Thanƒks for verifying your PIN. You can now build Gaadi Key profile")
@@ -386,20 +327,14 @@ public class EnterPINActivity extends ActionBarActivity {
                             .show();
 
 
-
-                }
-
-                else
-                {
+                } else {
                     new AlertDialog.Builder(this)
                             .setTitle("Verification Status")
                             .setMessage("The PIN which you entered is not matching! Please enter a valid PIN.")
                             .setIcon(android.R.drawable.ic_dialog_alert)
                             .show();
                 }
-            }
-
-            else
+            } else
                 result = "Did not work!";
 
         } catch (Exception e) {
@@ -411,10 +346,10 @@ public class EnterPINActivity extends ActionBarActivity {
     // This converts the received data which is in input stream format to string.
 
     private static String convertInputStreamToString(InputStream inputStream) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader( new InputStreamReader(inputStream));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String line = "";
         String result = "";
-        while((line = bufferedReader.readLine()) != null)
+        while ((line = bufferedReader.readLine()) != null)
             result += line;
         // reads line by line to generate the string..
         inputStream.close();
@@ -427,16 +362,17 @@ public class EnterPINActivity extends ActionBarActivity {
         public MyCountDownTimer(long startTime, long interval) {
             super(startTime, interval);
         }
+
         @Override
 
         public void onFinish() {
 
             TimeText.setText("Time's up!");
         }
+
         @Override
         public void onTick(long millisUntilFinished) {
 
-            Log.e("Tick Tick", "Tick Tick");
             TimeText.setText("You will receive PIN within " + millisUntilFinished / 1000 + " seconds");
         }
 

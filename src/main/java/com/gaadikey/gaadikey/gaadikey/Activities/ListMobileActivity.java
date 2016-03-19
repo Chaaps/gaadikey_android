@@ -48,15 +48,12 @@ public class ListMobileActivity extends ListActivity {
 		//setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile,
 		//		R.id.label, MOBILE_OS));
 
-        Log.e("Call", "PhoneBook retrieval calling");
         SharedPreferences sharedPref =  getSharedPreferences("android_shared" , MODE_PRIVATE);
         String phone = sharedPref.getString(getString(R.string.KEY_phonenumber), "the default stuff");
 
         String thecontacts_retrieval_url = "http://gaadikey.in/dummycontacts?phonenumber="+phone;
         new RetrivePhoneBook_GetTask().execute(thecontacts_retrieval_url);
-        Log.e("Call", "PhoneBook retrieval called");
        // setListAdapter(new MobileArrayAdapter(this, MOBILE_OS));
-        Log.e("List Adapter", "List Adapter is set");
 
 
         // Call The  /dummyContacts API from here..  so that you can dispaly the JSON in a phonebook format
@@ -66,11 +63,6 @@ public class ListMobileActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id)
     {
-        Log.e("Click happened", "Click happened ");
-        Log.e("Here it happened ", " These are the values "+l);
-        Log.e("Here it happened ", " These are the values "+v);
-        Log.e("Here it happened ", " These are the values "+position);
-        Log.e("Here it happened ", " These are the values "+id);
 
         Toast.makeText(this,"You clicked bike "+position, Toast.LENGTH_LONG ).show();
 
@@ -132,7 +124,6 @@ public class ListMobileActivity extends ListActivity {
             jsonObject.accumulate("sendto", vn.get_sendto());
             // 4. convert JSONObject to JSON to String
             json = jsonObject.toString();
-            Log.e("Json uploaded", "The Uploaded json looks like "+json);
             // ** Alternative way to convert Person object to JSON string usin Jackson Lib
             // ObjectMapper mapper = new ObjectMapper();
             // json = mapper.writeValueAsString(person);
@@ -149,8 +140,6 @@ public class ListMobileActivity extends ListActivity {
             // 10. convert inputstream to string
             if(inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-                Log.e("crash", "We are here and somehow crashing!");
-                Log.e("Result in string ", result);
 
             }
             else
@@ -158,7 +147,6 @@ public class ListMobileActivity extends ListActivity {
 
         } catch (Exception e) {
 
-            Log.e("Exception block", e.getLocalizedMessage());
             // TODO Auto-generated catch block
         }
 
@@ -177,7 +165,6 @@ public class ListMobileActivity extends ListActivity {
         protected void onPostExecute(String result)
         {
 
-            Log.e("Success posting", result);
             new AlertDialog.Builder(ListMobileActivity.this)
                     .setTitle("Success Posting")
                     .setMessage("Success Posting to URL")
@@ -250,7 +237,6 @@ public class ListMobileActivity extends ListActivity {
         @Override
         protected String doInBackground(String... urls)
         {
-            Log.e("GET called " , " The url is "+urls[0]);
             return  getData(urls[0]);
         }
         // onPostExecute displays the results of the AsyncTask.
@@ -269,7 +255,6 @@ public class ListMobileActivity extends ListActivity {
 
                 // contacts details are rendered one by one .
 
-                Log.e("The response recieved from the server is " , result );
                 // result
 
                 for(int i=0;i<json.length();i++)
@@ -285,8 +270,6 @@ public class ListMobileActivity extends ListActivity {
                     String phonenumber2       = jObject.getString("phonenumber2");
                     String phonenumber3       = jObject.getString("phonenumber3");
                     String phonenumber4       = jObject.getString("phonenumber4");
-                    Log.e("Values ", "Name is "+Name);
-                    Log.e("Values ", "Phonenumber is "+phonenumber1);
 
 
                     map.put("Name", Name);
@@ -303,8 +286,6 @@ public class ListMobileActivity extends ListActivity {
 
                 //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobile, COUNTRIES));
 
-                Log.e("The number of items in the list is ", ""+contactsList.size());
-
                 setListAdapter(new MobileArrayAdapter(ListMobileActivity.this, contactsList));
 
                  // Temporarily commenting out.. Should so something  once we get hold of the jSonArray ( the 1st item )
@@ -318,8 +299,6 @@ public class ListMobileActivity extends ListActivity {
 //                String phonenumber2       = jObject.getString("phonenumber2");
 //                String phonenumber3       = jObject.getString("phonenumber3");
 //                String phonenumber4       = jObject.getString("phonenumber4");
-//                Log.e("enteredPIN", PIN);
-//                Log.e("actualPIN", actualPIN);
 
 
 
@@ -328,7 +307,6 @@ public class ListMobileActivity extends ListActivity {
 
             catch (Exception e)
             {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
                 // The exception has been logged.
             }
 

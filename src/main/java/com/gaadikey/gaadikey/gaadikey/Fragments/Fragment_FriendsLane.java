@@ -78,7 +78,6 @@ public class Fragment_FriendsLane extends Fragment{
 
                         try {
 
-                            Log.e("Click", "Click");
 
                             Intent sendIntent = new Intent(Intent.ACTION_VIEW);
                             sendIntent.putExtra("sms_body", "default content");
@@ -113,7 +112,6 @@ public class Fragment_FriendsLane extends Fragment{
         @Override
         protected String doInBackground(String... urls)
         {
-            Log.e("GET called ", " The url is " + urls[0]);
             return  getData(urls[0]);
         }
         // onPostExecute displays the results of the AsyncTask.
@@ -130,7 +128,6 @@ public class Fragment_FriendsLane extends Fragment{
             // check if this request was sucessful... if the request was successful
             // then parse the phonebook and get contacts details
             // contacts details are rendered one by one .
-            Log.e("The response recieved from the server is " , result );
             // result
             for(int i=0;i<json.length();i++)
             {
@@ -146,8 +143,6 @@ public class Fragment_FriendsLane extends Fragment{
 //                String phonenumber2       = jObject.getString("phonenumber2");
 //                String phonenumber3       = jObject.getStri ng("phonenumber3");
 //                String phonenumber4       = jObject.getString("phonenumber4");
-//                Log.e("Values ", "Name is "+Name);
-//                Log.e("Values ", "Phonenumber is "+phonenumber1);
 //                map.put("Name", Name);
 //                map.put("ImgUrl", ImgUrl);
 //                map.put("Desc", Desc);
@@ -182,7 +177,6 @@ public class Fragment_FriendsLane extends Fragment{
                 if(web_image_path.length() > rootstring.length() + 10 )  path = web_image_path.substring(rootstring.length());
                 String resize_path = "http://gaadikey.com/images/resize.php?src="+path+"&w=200";
 
-                Log.e("Image path is ", resize_path);
                 map.put("phonenumber", phonenumber);
                 map.put("memberstatus", memberstatus);
                 map.put("name", name);
@@ -198,13 +192,11 @@ public class Fragment_FriendsLane extends Fragment{
 
             contactsList.addAll(nonMembersList);
             //setListAdapter(new ArrayAdapter<String>(this, R.layout.list_mobil                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          e, COUNTRIES));
-            Log.e("The number of items in the list is ", ""+contactsList.size());
             listview.setAdapter(new FriendsAdapter(getActivity(), contactsList));
         }
 
             catch (Exception e)
             {
-                Log.e("Exception", "The Exception has occured "+e.getMessage());
                 // The exception has been logged.
             }
 

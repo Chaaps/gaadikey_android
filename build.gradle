@@ -28,7 +28,8 @@ android {
         versionCode 29
         versionName "3.3"
     }
-    buildTypes {
+    lintOptions{
+        abortOnError false
     }
 
 }

@@ -87,7 +87,6 @@ public class AccessTokenActivity extends ActionBarActivity {
         protected void onPostExecute(String result)
         {
 
-            Log.e("Success posting", result);
             new AlertDialog.Builder(AccessTokenActivity.this)
                     .setTitle("Registration (2/2)")
                     .setMessage("We have recieved your Phone number. Please check your Email Inbox for the PIN and verify it below.")
@@ -150,16 +149,12 @@ public class AccessTokenActivity extends ActionBarActivity {
             // 10. convert inputstream to string
             if(inputStream != null) {
                 result = convertInputStreamToString(inputStream);
-                Log.e("crash" , "We are here and somehow crashing!");
-                Log.e("Result in string ", result);
 
             }
             else
                 result = "Did not work!";
 
         } catch (Exception e) {
-
-            Log.e("Exception block", e.getLocalizedMessage());
             // TODO Auto-generated catch block
         }
 

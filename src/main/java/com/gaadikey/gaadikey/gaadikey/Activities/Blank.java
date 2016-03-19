@@ -2,10 +2,8 @@ package com.gaadikey.gaadikey.gaadikey.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.gaadikey.gaadikey.gaadikey.R;
 
@@ -18,13 +16,6 @@ public class Blank extends ActionBarActivity {
         setContentView(R.layout.activity_blank);
     }
 
-
-    private void clicked(View v)
-    {
-        Log.e("SOMETHING IS CLICKED", "");
-        // MAKE HTTP REQUEST TO THIS URL
-        // HTTP://GAA
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

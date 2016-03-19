@@ -71,7 +71,6 @@ public class MobileArrayAdapter extends ArrayAdapter<HashMap<String, String>> {
                 InputStream in = new java.net.URL(url).openStream();
                 mIcon = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
-                Log.e("Error", e.getMessage());
             }
             return mIcon;
         }
