@@ -3,25 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/on_boarding_bg"
     tools:context="com.gaadikey.gaadikey.gaadikey.activities.OnBoardingActivity">
 
-    <ImageView
-        android:id="@+id/gaadikey_customer_car"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/gaadikey_car"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gaadikey_on_boarding_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <ImageView
-        android:id="@+id/gaadikey_customer_key"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/gaadikey_key"
-        android:visibility="gone"/>
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_gravity="center|bottom">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/on_boarding_indicator1"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/on_boarding_indicator2"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/on_boarding_indicator1"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
 
 </FrameLayout>
