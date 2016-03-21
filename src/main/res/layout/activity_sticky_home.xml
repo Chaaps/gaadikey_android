@@ -47,7 +47,7 @@
             android:text="Honda Unicorn 150 CC"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="20dp"
-    />
+            android:layout_marginLeft="20dp" />
 
         <!-- Genre -->
     <TextView
@@ -74,7 +74,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Post"
-        android:onClick="Status_Submission_Click"
         android:id="@+id/PostButton"
         android:layout_toRightOf="@+id/statusMsg"
         android:layout_centerHorizontal="true"

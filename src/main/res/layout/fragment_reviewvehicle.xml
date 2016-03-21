@@ -2,121 +2,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".fragments.Fragment_Feedback">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       >
+        android:layout_height="match_parent">
+
         <RelativeLayout
             android:id="@+id/hideable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
-            android:text="We pay for you when you tell us about your Gaadi. Publish a cool article with more than 250 words and get mobile recharge of 25 Rs!"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:id="@+id/textView" />
-        <RadioGroup
-            android:id="@+id/radioGroup1"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textView"
-            android:layout_marginTop="24dp" >
-            <RadioButton
-                android:id="@+id/bikeradio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Bike" />
-            <RadioButton
-                android:id="@+id/carradio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Car" />
-            <RadioButton
-                android:id="@+id/cabradio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cab" />
-            <RadioButton
-                android:id="@+id/busradio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bus" />
-            <RadioButton
-                android:id="@+id/rickshawradio"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rickshaw" />
-        </RadioGroup>
 
-        <Spinner
-            android:layout_below="@+id/radioGroup1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/generalspinner"
-            android:background="@android:drawable/btn_dropdown"
-            android:layout_gravity="center_horizontal"
-            android:spinnerMode="dialog"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:text="We pay for you when you tell us about your Gaadi. Publish a cool article with more than 250 words and get mobile recharge of 25 Rs!" />
 
-        <TextView
-            android:text="Review Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/generalspinner"
-            android:id="@+id/titlelabel" />
+            <RadioGroup
+                android:id="@+id/radioGroup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/textView"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/bikeradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Bike" />
+
+                <RadioButton
+                    android:id="@+id/carradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Car" />
+
+                <RadioButton
+                    android:id="@+id/cabradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cab" />
+
+                <RadioButton
+                    android:id="@+id/busradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bus" />
+
+                <RadioButton
+                    android:id="@+id/rickshawradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rickshaw" />
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/generalspinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGroup1"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:drawable/btn_dropdown"
+                android:spinnerMode="dialog" />
+
+            <TextView
+                android:id="@+id/titlelabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/generalspinner"
+                android:text="Review Title" />
+
+            <EditText
+
+                android:id="@+id/thetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titlelabel"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/DescLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thetitle"
+                android:text="Review Description" />
+        </RelativeLayout>
+
         <EditText
-
-            android:layout_width="wrap_content"
+            android:id="@+id/body"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:id="@+id/thetitle"
-            android:layout_below="@+id/titlelabel"
-            />
-        <TextView
-            android:text="Review Description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/thetitle"
-            android:id="@+id/DescLabel" />
-       </RelativeLayout>
-        <EditText
+            android:layout_below="@+id/hideable"
+            android:gravity="top|left"
             android:inputType="textMultiLine"
             android:lines="8"
-            android:minLines="6"
-            android:gravity="top|left"
             android:maxLines="10"
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent"
-            android:scrollbars="vertical"
-            android:id="@+id/body"
-            android:layout_below="@+id/hideable"
-            />
+            android:minLines="6"
+            android:scrollbars="vertical" />
 
         <Button
+            android:id="@+id/articlesubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit"
-            android:id="@+id/articlesubmit"
             android:layout_below="@+id/body"
             android:layout_centerHorizontal="true"
-            />
+            android:text="Submit" />
 
         <ProgressBar
             android:id="@+id/progress"
             style="?android:attr/progressBarStyleLarge"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
 
 
     </RelativeLayout>

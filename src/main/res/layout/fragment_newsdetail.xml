@@ -3,60 +3,61 @@
     android:id="@+id/newsframe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".fragments.Fragment_NewsDetail">
 
     <RelativeLayout
         android:id="@+id/DetailView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin">
+        android:paddingTop="@dimen/activity_vertical_margin">
+
         <TextView
+            android:id="@+id/Heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
             android:paddingBottom="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
+            android:paddingTop="15dp"
             android:text="Loading title"
-            android:textStyle="bold"
             android:textSize="20dp"
-            android:id="@+id/Heading"
-            android:layout_below="@+id/textView2"
-            android:layout_centerHorizontal="true" />
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/byline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Heading"
-            android:id="@+id/byline"
-            android:text="date 11-02-2014"
-            />
+            android:text="date 11-02-2014" />
+
         <ScrollView
-            android:layout_below="@+id/byline"
             android:layout_width="wrap_content"
-            android:layout_height="fill_parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/body_tv"
-            android:text="The body goes here!"
-            />
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/byline">
+
+            <TextView
+                android:id="@+id/body_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The body goes here!" />
         </ScrollView>
 
         <ProgressBar
             android:id="@+id/progress"
             style="?android:attr/progressBarStyleLarge"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            />
+            android:visibility="gone" />
 
     </RelativeLayout>
 </FrameLayout>

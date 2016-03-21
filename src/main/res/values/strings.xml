@@ -117,4 +117,9 @@
     <string name="title_activity_activity__about">Activity_About</string>
     <string name="title_activity_radio">Choose your mode of transportation</string>
 
+    <string name="on_boarding_intro1">GaadiKey - Power to access the\nnetwork of automobiles</string>
+    <string name="on_boarding_intro2">Connects you and your Gaadi with\nyour friends and their Gaadis</string>
+    <string name="on_boarding_intro3">Find out which Gaadis\ndo your friends have!</string>
+    <string name="on_boarding_intro4">Read Gaadi reviews by actual owners.</string>
+
 </resources>

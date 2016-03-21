@@ -7,4 +7,7 @@
     <color name="list_divider">#40411E</color>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
+    <color name="gaadikey_global_yellow">#E0DA1F</color>
+    <color name="gaadikey_global_on_boarding_center">#FCF749</color>
+    <color name="gaadikey_global_on_boarding_end">#FAF687</color>
 </resources>

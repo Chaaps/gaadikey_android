@@ -15,4 +15,5 @@ public class Constants {
     public static String INTRO_STEP3_COMPLETED = "7";
     public static String RESET_OCCURRED =        "8";
     public static String VERIFY_VISITED =        "9";
+    public static String CHAPPUZ_GAAIKEY  =       "2016";
 }

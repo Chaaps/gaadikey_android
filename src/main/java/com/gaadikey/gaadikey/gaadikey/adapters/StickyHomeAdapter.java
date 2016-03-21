@@ -15,23 +15,21 @@ import java.util.ArrayList;
 /**
  * Created by madratgames on 22/09/14.
  */
-public class StickyHomeAdapter extends ArrayAdapter <String>{
+public class StickyHomeAdapter extends ArrayAdapter<String> {
 
     private Context context;
     private final ArrayList<String> laneList;
 
 
-    public StickyHomeAdapter(Context context, ArrayList<String> val)
-    {
-        super(context, R.layout.list_lanes, val );
+    public StickyHomeAdapter(Context context, ArrayList<String> val) {
+        super(context, R.layout.list_lanes, val);
         this.context = context;
         this.laneList = val;
 
     }
 
 
-    public View getView(int position, View convertView, ViewGroup parent)
-    {
+    public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_mobile, parent, false);
@@ -53,7 +51,7 @@ public class StickyHomeAdapter extends ArrayAdapter <String>{
         } else if (s.equals("News")) {
             imageView.setImageResource(R.drawable.feedback);
         }
-      //  new ImageDownloader(imageView).execute(contactlist.get(position).get("ImgUrl"));
+        //  new ImageDownloader(imageView).execute(contactlist.get(position).get("ImgUrl"));
 
         return rowView;
     }

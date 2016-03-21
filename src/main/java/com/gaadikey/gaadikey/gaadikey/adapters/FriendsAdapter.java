@@ -56,7 +56,6 @@ public class FriendsAdapter extends ArrayAdapter <HashMap<String, String>>  {
 
                 try {
 
-                    Log.e("Click", "Click");
                     int pos = (Integer) v.getTag();
 
 
@@ -110,7 +109,6 @@ public class FriendsAdapter extends ArrayAdapter <HashMap<String, String>>  {
                 InputStream in = new java.net.URL(url).openStream();
                 mIcon = BitmapFactory.decodeStream(in);
             } catch (Exception e) {
-                Log.e("Error", e.getMessage());
             }
             return mIcon;
         }

@@ -4,7 +4,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0-beta6'
+        classpath 'com.android.tools.build:gradle:2.1.0-alpha3'
     }
 }
 
@@ -28,7 +28,8 @@ android {
         versionCode 29
         versionName "3.3"
     }
-    buildTypes {
+    lintOptions{
+        abortOnError false
     }
 
 }
@@ -37,7 +38,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.google.android.gms:play-services:8.4.0'
-    compile 'com.android.support:appcompat-v7:22.+'
-    compile 'com.android.support:support-v4:22.+'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:support-v4:23.2.1'
     compile 'com.mcxiaoke.viewpagerindicator:library:2.4.1@aar'
 }
