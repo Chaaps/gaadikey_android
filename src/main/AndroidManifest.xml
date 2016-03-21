@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gaadikey.gaadikey.gaadikey" >
-
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+    package="com.gaadikey.gaadikey.gaadikey">
 
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -26,42 +22,32 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MyActivity"
+            android:name=".activities.GaadiKeyActivity"/>
+        <activity
+            android:name=".activities.MyActivity"
             android:label="@string/app_name"
             android:noHistory="true"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".AccessTokenActivity"
+            android:name=".activities.AccessTokenActivity"
             android:label="Access Key stuff"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".VerificationActivity"
+            android:name=".activities.VerificationActivity"
             android:label="@string/title_activity_verification"
-            android:screenOrientation="portrait" >
-
-            <!--
-            intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
-            -->
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".ContactsActivity"
-            android:label="@string/title_activity_contacts" >
-        </activity>
+            android:name=".activities.ContactsActivity"
+            android:label="@string/title_activity_contacts" />
         <activity
-            android:name=".ListMobileActivity"
-            android:label="Your Contacts" >
-        </activity>
+            android:name=".activities.ListMobileActivity"
+            android:label="Your Contacts" />
 
         <receiver
             android:name=".GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
+            android:permission="com.google.android.c2dm.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
@@ -72,102 +58,84 @@
         <service android:name=".GcmMessageHandler" />
 
         <activity
-            android:name=".Blank"
-            android:label="@string/title_activity_blank" >
-        </activity>
+            android:name=".activities.Blank"
+            android:label="@string/title_activity_blank" />
         <activity
-            android:name=".EnterPINActivity"
+            android:name=".activities.EnterPINActivity"
             android:label="@string/title_activity_enter_pin"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityLauncher"
+            android:name=".activities.ActivityLauncher"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_activity_launcher"
             android:noHistory="true"
-            android:theme="@style/FullscreenTheme" >
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:theme="@style/FullscreenTheme" />
         <activity
-            android:name=".SettingUpActivity"
+            android:name=".activities.SettingUpActivity"
             android:label="@string/title_activity_setting_up"
             android:noHistory="true"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".IntroStep1"
-            android:label="@string/title_activity_intro_step1" >
-        </activity>
+            android:name=".activities.IntroStep1"
+            android:label="@string/title_activity_intro_step1" />
         <activity
-            android:name=".IntroStep2"
-            android:label="@string/title_activity_intro_step2" >
-        </activity>
+            android:name=".activities.IntroStep2"
+            android:label="@string/title_activity_intro_step2" />
         <activity
-            android:name=".IntroStep3"
-            android:label="@string/title_activity_intro_step3" >
-        </activity>
+            android:name=".activities.IntroStep3"
+            android:label="@string/title_activity_intro_step3" />
         <activity
-            android:name=".StickyHome"
+            android:name=".activities.StickyHome"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_sticky_home"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".PublicLaneActivity"
+            android:name=".activities.PublicLaneActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_public_lane"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".FriendsLaneActivity"
-            android:label="@string/title_activity_friends_lane" >
-        </activity>
+            android:name=".activities.FriendsLaneActivity"
+            android:label="@string/title_activity_friends_lane" />
         <activity
-            android:name=".SafetyLaneActivity"
-            android:label="@string/title_activity_safety_lane" >
-        </activity>
+            android:name=".activities.SafetyLaneActivity"
+            android:label="@string/title_activity_safety_lane" />
         <activity
-            android:name=".ShoppinglaneActivity"
-            android:label="@string/title_activity_shoppinglane" >
-        </activity>
+            android:name=".activities.ShoppinglaneActivity"
+            android:label="@string/title_activity_shoppinglane" />
         <activity
-            android:name=".TripsLaneActivity"
-            android:label="@string/title_activity_trips_lane" >
-        </activity>
+            android:name=".activities.TripsLaneActivity"
+            android:label="@string/title_activity_trips_lane" />
         <activity
-            android:name=".WelcomesYou"
+            android:name=".activities.WelcomesYou"
             android:label="@string/title_activity_welcomes_you"
-            android:noHistory="true" >
-        </activity>
+            android:noHistory="true" />
         <activity
-            android:name=".IntroActivity"
+            android:name=".activities.IntroActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_intro"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
-        </activity>
+            android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".LaunchActivity_NavDrawer"
+            android:name=".activities.LaunchActivity_NavDrawer"
             android:label=" "
-
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <!-- Google Analytics Version v4 needs this value for easy tracking -->
         <meta-data
             android:name="com.google.android.gms.analytics.globalConfigResource"
             android:resource="@xml/global_tracker" />
 
         <activity
-            android:name=".RadioActivity"
-            android:label="@string/title_activity_radio"
-            >
-
+            android:name=".activities.RadioActivity"
+            android:label="@string/title_activity_radio" />
+        <activity
+            android:name=".activities.OnBoardingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

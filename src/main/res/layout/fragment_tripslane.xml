@@ -2,114 +2,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.gaadikey.gaadikey.gaadikey.Fragment_TripsLane">
+    tools:context=".fragments.Fragment_TripsLane">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:text="No Trips are planned! TRIP_PUBLIC, TRIP_FRIENDS tab would be added soon. "
-        android:id="@+id/textView"
-        android:layout_below="@+id/textView2"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:text="Choose Riders / Drivers"
-        android:id="@+id/chooselabel"
-        android:layout_below="@+id/textView"
-        />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/chooselabel"
-        android:id="@+id/FromSection"
-        >
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
             android:paddingBottom="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="From"
-            android:id="@+id/fromlabel"
+            android:paddingTop="15dp"
+            android:text="No Trips are planned! TRIP_PUBLIC, TRIP_FRIENDS tab would be added soon. " />
+
+        <TextView
+            android:id="@+id/chooselabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/textView"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="15dp"
             android:paddingBottom="15dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
-            android:text="This field would be a text field they enter from details here!"
-            android:id="@+id/fromtextfield"
-            />
-    </LinearLayout>
+            android:paddingTop="15dp"
+            android:text="Choose Riders / Drivers" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/toSection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/FromSection"
-        >
-
-        <TextView
+        <LinearLayout
+            android:id="@+id/FromSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="To"
-            android:id="@+id/tolabel"
-            android:layout_below="@+id/textView"
-            />
+            android:layout_below="@+id/chooselabel">
 
-        <TextView
+            <TextView
+                android:id="@+id/fromlabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="From" />
+
+            <TextView
+                android:id="@+id/fromtextfield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="This field would be a text field they enter from details here!" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="This field would be a text field they enter to details here!"
-            android:id="@+id/totextfield"
-            />
-    </LinearLayout>
+            android:layout_below="@+id/FromSection"
+            android:orientation="horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/button"
-        android:layout_below="@+id/toSection"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:id="@+id/tolabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="To" />
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/totextfield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="This field would be a text field they enter to details here!" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toSection"
+            android:layout_centerHorizontal="true"
+            android:text="Submit" />
+
+    </RelativeLayout>
 </FrameLayout>

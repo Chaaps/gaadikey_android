@@ -15,6 +15,9 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.WakefulBroadcastReceiver;
 import android.util.Log;
 
+import com.gaadikey.gaadikey.gaadikey.activities.LaunchActivity_NavDrawer;
+import com.gaadikey.gaadikey.gaadikey.activities.WelcomesYou;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -23,7 +26,7 @@ import java.net.URL;
 
 public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
 
-    int NOTIFICATION_ID=12344;
+    int NOTIFICATION_ID = 12344;
     NotificationCompat.Builder mBuilder = null;
     Intent theintent;
     Context thecontext;
@@ -35,95 +38,74 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-       
-    	// Explicitly specify that GcmMessageHandler will handle the intent.
-         thecontext = context;
-         comp = new ComponentName(context.getPackageName(),
-        		GcmMessageHandler.class.getName());
+
+        // Explicitly specify that GcmMessageHandler will handle the intent.
+        thecontext = context;
+        comp = new ComponentName(context.getPackageName(),
+                GcmMessageHandler.class.getName());
 
         theintent = intent;
 
-      //  Intent notificationIntent = new Intent(context, ListMobileActivity.class);
+        //  Intent notificationIntent = new Intent(context, ListMobileActivity.class);
         // WelcomesYou page opens up  when a notification is received! This can be based on the message
 
-        Bundle messages =  intent.getExtras();
+        Bundle messages = intent.getExtras();
         thetitle = messages.getString("title");
         themessage = messages.getString("message");
         thenavigationpage = ""; //check for n
 
         thenavigationpage = messages.getString("navigation_page");
         if (thenavigationpage == null)
-        thenavigationpage = "no_navigation";
+            thenavigationpage = "no_navigation";
 
-        Log.e("Navigation page is " , thenavigationpage);
         Intent notificationIntent; // Variable to declare the next Activity to be called!
         pendingIntent = null; // The Pending Intent
 
-        if(thenavigationpage.equals("welcome")) {
+        if (thenavigationpage.equals("welcome")) {
 
             notificationIntent = new Intent(context, WelcomesYou.class);
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-        else if(thenavigationpage.equals("safetylane")){
+        } else if (thenavigationpage.equals("safetylane")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "SafetyLane");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-        else if(thenavigationpage.equals("friendslane")) {
+        } else if (thenavigationpage.equals("friendslane")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "FriendsLane");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-        else if(thenavigationpage.equals("publiclane")) {
+        } else if (thenavigationpage.equals("publiclane")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "PublicLane");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-        else if(thenavigationpage.equals("shoppinglane")) {
+        } else if (thenavigationpage.equals("shoppinglane")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "ShoppingLane");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-        else if(thenavigationpage.equals("search")) {
+        } else if (thenavigationpage.equals("search")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "Search");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-        else if(thenavigationpage.equals("numberplate")) {
+        } else if (thenavigationpage.equals("numberplate")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "NumberPlate");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-
-        else if(thenavigationpage.equals("feedback")) {
+        } else if (thenavigationpage.equals("feedback")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "Feedback");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-        else if(thenavigationpage.startsWith("news")) {
+        } else if (thenavigationpage.startsWith("news")) {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "NewsPush");
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-        }
-        else
-        {
+        } else {
             notificationIntent = new Intent(context, LaunchActivity_NavDrawer.class);
             notificationIntent.putExtra("view", "normal"); // when it is normal
             pendingIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
 
 
-
-        if(thenavigationpage.startsWith("news"))
-        {
-            String imageurl = thenavigationpage.substring(5,thenavigationpage.length());
-            Log.e("The image URL received is " , imageurl);
-            // This downloads the image asynchronously and updates the notification thread!
+        if (thenavigationpage.startsWith("news")) {
+            String imageurl = thenavigationpage.substring(5, thenavigationpage.length());
 
             new BitmapWorkerTask().execute(imageurl);
 
@@ -133,12 +115,9 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
 
 
             //mBuilder.setLargeIcon(bitmap);
-        }
+        } else {
 
-        else
-        {
-
-            createNotification(thetitle, themessage, pendingIntent , null);
+            createNotification(thetitle, themessage, pendingIntent, null);
             // .setSmallIcon(R.drawable.my_drawable_resource)
 
         }
@@ -163,17 +142,12 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
     }
 
 
-    public void createNotification(String title, String message, PendingIntent pendingIntent, Bitmap bitmap)
-    {
-        Log.e("Title ", title);
-        Log.e("Message ", message);
-
+    public void createNotification(String title, String message, PendingIntent pendingIntent, Bitmap bitmap) {
         mBuilder = new NotificationCompat.Builder(thecontext);
         mBuilder.setSmallIcon(R.drawable.ic_launcher);
         mBuilder.setContentTitle(title);
         mBuilder.setContentText(message);
-        if(bitmap!=null)
-        {
+        if (bitmap != null) {
             NotificationCompat.BigPictureStyle bigPicStyle = new NotificationCompat.BigPictureStyle();
             bigPicStyle.bigPicture(bitmap);
             bigPicStyle.setBigContentTitle(message);
@@ -208,7 +182,6 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
         protected Bitmap doInBackground(String... params) {
 
             try {
-                Log.e("Downloading image in background", "yes");
 
                 return BitmapFactory.decodeStream((InputStream) new URL(params[0])
                         .getContent());
@@ -223,8 +196,6 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver {
         // Once complete, see if ImageView is still around and set bitmap.
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-
-            Log.e("Download complete. Creating notification ", "Yes ");
             createNotification(thetitle, themessage, pendingIntent, bitmap);
 
 

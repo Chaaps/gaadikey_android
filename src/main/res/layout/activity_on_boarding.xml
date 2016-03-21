@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/on_boarding_bg"
+    tools:context="com.gaadikey.gaadikey.gaadikey.activities.OnBoardingActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gaadikey_on_boarding_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_gravity="center|bottom">
+
+        <ImageView
+            android:id="@+id/on_boarding_indicator_image1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/on_boarding_indicator1"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/on_boarding_indicator_image2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/on_boarding_indicator2"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/on_boarding_indicator_image3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="2dp"
+            android:src="@drawable/on_boarding_indicator1"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+</FrameLayout>

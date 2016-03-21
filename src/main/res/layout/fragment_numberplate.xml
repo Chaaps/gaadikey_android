@@ -2,142 +2,135 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.gaadikey.gaadikey.gaadikey.Fragment_NumberPlate">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".fragments.Fragment_NumberPlate">
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        >
+        android:paddingTop="@dimen/activity_vertical_margin">
+
         <TextView
-            android:text="Enter your Gaadi number"
+            android:id="@+id/gaadiNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView"
+            android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_vertical_margin"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:id="@+id/gaadiNumber" />
+            android:text="Enter your Gaadi number" />
 
         <!--<EditText-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:inputType="phone"-->
-            <!--android:ems="10"-->
-            <!--android:id="@+id/gaadiNumber"-->
-            <!--android:layout_below="@+id/textView2"-->
-            <!--android:layout_centerHorizontal="true" />-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="phone"-->
+        <!--android:ems="10"-->
+        <!--android:id="@+id/gaadiNumber"-->
+        <!--android:layout_below="@+id/textView2"-->
+        <!--android:layout_centerHorizontal="true" />-->
 
         <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/picker1"
-            android:layout_below="@+id/gaadiNumber"
-            ></NumberPicker>
-        <NumberPicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/picker2"
-            android:layout_toRightOf="@+id/picker1"
-            android:layout_below="@+id/gaadiNumber"
-            ></NumberPicker>
-        <NumberPicker
-            android:layout_width="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"
+            android:layout_toRightOf="@+id/picker1"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/picker3"
-            android:layout_toRightOf="@+id/picker2"
-            android:layout_below="@+id/gaadiNumber"
-            ></NumberPicker>
-        <NumberPicker
             android:layout_width="20dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"
+            android:layout_toRightOf="@+id/picker2"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/picker4"
-            android:layout_toRightOf="@+id/picker3"
-            android:layout_below="@+id/gaadiNumber">
-         </NumberPicker>
-
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"
+            android:layout_toRightOf="@+id/picker3"></NumberPicker>
 
 
         <NumberPicker
-            android:layout_marginLeft="20dp"
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
             android:id="@+id/digit1"
-            android:layout_toRightOf="@+id/picker4"
-            android:layout_below="@+id/gaadiNumber"
-            ></NumberPicker>
-        <NumberPicker
             android:layout_width="20dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/picker4"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/digit2"
-            android:layout_toRightOf="@+id/digit1"
-            android:layout_below="@+id/gaadiNumber">
-        </NumberPicker>
-        <NumberPicker
             android:layout_width="20dp"
             android:layout_height="wrap_content"
-            android:id="@+id/digit3"
-            android:layout_toRightOf="@+id/digit2"
             android:layout_below="@+id/gaadiNumber"
-            ></NumberPicker>
+            android:layout_toRightOf="@+id/digit1"></NumberPicker>
+
         <NumberPicker
+            android:id="@+id/digit3"
             android:layout_width="20dp"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"
+            android:layout_toRightOf="@+id/digit2"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/digit4"
-            android:layout_toRightOf="@+id/digit3"
-            android:layout_below="@+id/gaadiNumber">
-        </NumberPicker>
-
-
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gaadiNumber"
+            android:layout_toRightOf="@+id/digit3"></NumberPicker>
 
 
         <!--<EditText-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:inputType="phone"-->
-            <!--android:ems="4"-->
-            <!--android:id="@+id/gaadilastdigits"-->
-            <!--android:layout_below="@+id/gaadiNumber"-->
-            <!--android:layout_marginTop="80dp"-->
-            <!--android:layout_toRightOf="@+id/picker4"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:gravity="center_horizontal"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:inputType="phone"-->
+        <!--android:ems="4"-->
+        <!--android:id="@+id/gaadilastdigits"-->
+        <!--android:layout_below="@+id/gaadiNumber"-->
+        <!--android:layout_marginTop="80dp"-->
+        <!--android:layout_toRightOf="@+id/picker4"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:gravity="center_horizontal"-->
 
-             <!--/>-->
+        <!--/>-->
 
         <TextView
-            android:text=""
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/statename"
-            android:layout_below="@+id/picker1"
-            >
-         </TextView>
-
-        <TextView
-            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/locationname"
             android:layout_below="@+id/picker1"
-            android:layout_toRightOf="@+id/statename"/>
+            android:text=""></TextView>
+
+        <TextView
+            android:id="@+id/locationname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/picker1"
+            android:layout_toRightOf="@+id/statename"
+            android:text="" />
 
         <Button
+            android:id="@+id/updatebutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Update"
-            android:id="@+id/updatebutton"
             android:layout_below="@+id/statename"
             android:layout_centerHorizontal="true"
-            />
+            android:text="Update" />
 
     </RelativeLayout>
 

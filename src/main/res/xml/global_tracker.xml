@@ -7,5 +7,5 @@
     <!-- Treat events as test events and don't send to google -->
 <bool name="ga_dryRun">false</bool>0
     <!-- The screen names that will appear in reports -->
-<string name="com.gaadikey.gaadikey.gaadikey.MyActivity">ActivityLauncher</string>
+<string name="com.gaadikey.gaadikey.gaadikey.activities.MyActivity">ActivityLauncher</string>
  </resources>
