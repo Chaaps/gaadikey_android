@@ -3,7 +3,6 @@ package com.gaadikey.gaadikey.gaadikey;
  * Created by madratgames on 13/11/14.
  */
 import android.app.Application;
-
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
