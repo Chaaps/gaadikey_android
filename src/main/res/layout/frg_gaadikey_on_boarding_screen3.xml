@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:foregroundGravity="center_vertical"
-        android:src="@drawable/car_pg3"
+        android:src="@drawable/car_sp_3"
         tools:ignore="ContentDescription" />
 
 </FrameLayout>
