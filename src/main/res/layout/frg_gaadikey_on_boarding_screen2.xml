@@ -26,9 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:foregroundGravity="center_vertical"
-        android:paddingLeft="130dp"
-        android:paddingRight="130dp"
-        android:src="@drawable/gaadikey_key"
+        android:src="@drawable/key"
         tools:ignore="ContentDescription" />
 
 </FrameLayout>

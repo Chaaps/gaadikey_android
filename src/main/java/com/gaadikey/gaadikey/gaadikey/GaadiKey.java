@@ -2,14 +2,16 @@ package com.gaadikey.gaadikey.gaadikey;
 /**
  * Created by madratgames on 13/11/14.
  */
-import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
 
-public class GaadiKey extends Application {
+public class GaadiKey extends MultiDexApplication {
 
     // The following line should be changed to include the correct property id.
     private static final String PROPERTY_ID = "UA-56315292-2";
@@ -29,6 +31,12 @@ public class GaadiKey extends Application {
 
     public GaadiKey() {
         super();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     public synchronized Tracker getTracker(TrackerName trackerId) {
